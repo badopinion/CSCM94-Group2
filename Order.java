@@ -67,6 +67,12 @@ Public class Order{
     }
 
     //method to calculate sum of price of order
-
+    public float getOrderPrice(){
+        float sum = 0;
+        for (MenuItem menuItem : orderedMenuItems){
+            sum += menuItem.getPrice();
+        }
+        return sum;
+    }
 
 }
