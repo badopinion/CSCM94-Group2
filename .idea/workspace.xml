@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a45f5324-2daa-4058-b6a0-4e7ec3819a85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Shift.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Staff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chef.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Waiter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,5 +46,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
