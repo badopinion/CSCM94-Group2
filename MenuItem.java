@@ -2,8 +2,9 @@ public class MenuItem {
 	private String name;
     private String description;
 	private float price;
-	private boolean onMenu;
-	private boolean currentSpecial;
+	// Both of the below can be toggled on or off to prevent them being returned inappropriately.
+	private boolean onMenu; // Is this item currently being served?
+	private boolean currentSpecial; // Is this item a special?
 	
 	// Constructor
 	public MenuItem(String name, String description, float price, boolean onMenu, boolean isSpecial){
