@@ -8,7 +8,7 @@ public class Shift{
     private boolean shiftApproved;
 
     //Constructor
-    public Shift(int year, int month, int date, int startHour, int startMin, int endHour, int endMinute){
+    public Shift(int year, int month, int date, int startHour, int startMin, int endHour, int endMin){
         this.start = new Date(year, month, date, startHour, startMin);
         this.end = new Date(year, month, date, endHour, endMin);
         this.shiftApproved = false;

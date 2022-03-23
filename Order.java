@@ -15,7 +15,7 @@ public class Order{
     private boolean orderCancelled;
 
     //menuItems not yet created
-    private ArrayList<menuItem> orderedMenuItems = new ArrayList<menuItem>();
+    private ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
 
 
     //Constructor
@@ -48,7 +48,7 @@ public class Order{
         return orderCancelled;
     }
 
-    public ArrayList<menuItem> getOrderedMenuItems() {
+    public ArrayList<MenuItem> getOrderedMenuItems() {
         return orderedMenuItems;
     }
 
