@@ -6,7 +6,7 @@
 
 import java.util.ArrayList;
 
-Public class Order{
+public class Order{
     private int orderID;
     private Customer customer;
     //orderNotes could be used to store dietary requirements e.g. "nut allergy" or customer request e.g. "no potatoes"
