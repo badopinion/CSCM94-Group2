@@ -10,14 +10,15 @@ public class Staff extends User{
     private ArrayList<Shift> shifts = new ArrayList<Shift>();
 
     //Constructor
-    public Staff(String firstName, String lastName, int staffId, String homeAddress){
+    public Staff(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+		super(username, password);
         this.firstName = firstName;
         this.lastName = lastName;
         this.staffId = staffId;
         this.homeAddress = homeAddress;
     }
 
-    //Getters
+    //Getters below
 
     public String getFirstName() {
         return firstName;
