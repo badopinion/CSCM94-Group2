@@ -15,44 +15,52 @@ public class MenuItem {
 		this.currentSpecial = currentSpecial;
 	}
 	
-	// Getters & Setters
+	// Getters &
 	public String getName(){
 		return this.name;
 	}
-	
-	public void setName(String newName){
-		this.name = newName;
-	}
-	
+
 	public String getDescription(){
 		return this.description;
+	}
+
+	public float getPrice(){
+		return this.price;
+	}
+
+	public boolean isOnMenu(){
+		return this.onMenu;
+	}
+
+	public boolean isSpecial(){
+		return this.currentSpecial;
+	}
+
+	//Setters
+
+	public void setName(String newName){
+		this.name = newName;
 	}
 	
 	public void setDescription(String newDescription){
 		this.description = newDescription;
 	}
 	
-	public float getPrice(){
-		return this.price;
-	}
-	
 	public void setPrice(float newPrice){
 		this.price = newPrice;
-	}
-	
-	public boolean isOnMenu(){
-		return this.onMenu;
 	}
 	
 	public void setOnMenu(boolean onMenu){
 		this.onMenu = onMenu;
 	}
 	
-	public boolean isSpecial(){
-		return this.currentSpecial;
-	}
-	
 	public void setSpecial(boolean special){
 		this.currentSpecial = special;
+	}
+
+	//toString Method - OJ
+
+	public String toString(){
+		return name + ", " + description + ", " + price + ", " + "on menu: " + onMenu + ", " + "is special: " + currentSpecial;
 	}
 }

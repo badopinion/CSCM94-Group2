@@ -3,58 +3,31 @@ import java.util.Date;
 
 public class Staff extends User{
 
-    private String firstName;
-    private String lastName;
     private int staffId;
-    private String homeAddress;
+
     private ArrayList<Shift> shifts = new ArrayList<Shift>();
 
-    //Constructor
-    public Staff(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
-		super(username, password);
-        this.firstName = firstName;
-        this.lastName = lastName;
+    //Constructor - OJ
+    public Staff(String username, String password, String firstName, String lastName, String homeAddress, int staffId){
+        super(username, password, firstName, lastName, homeAddress);
         this.staffId = staffId;
-        this.homeAddress = homeAddress;
     }
 
-    //Getters below
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
+    //Getters - OJ
     public int getStaffId() {
         return staffId;
     }
 
-    public String getHomeAddress() {
-        return homeAddress;
-    }
 
+    // Method returns arrayList of shifts
     public ArrayList<Shift> getShifts() {
         return shifts;
     }
 
-    //Setters below
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
+    //Setters - OJ
     public void setStaffId(int staffId) {
         this.staffId = staffId;
     }
 
-    public void setHomeAddress(String homeAddress) {
-        this.homeAddress = homeAddress;
-    }
+
 }

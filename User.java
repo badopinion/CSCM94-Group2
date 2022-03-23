@@ -1,19 +1,58 @@
 public class User {
-    String username;
+  String username;
 	String password;
+  private String firstName;
+  private String lastName;
+  private String homeAddress;
 	
-	//Constructor
+	// Constructor
     public User(String username, String password){
 		this.username = username;
 		this.password = password;
 	}
-	
-	// Get username. No username setter; uniqueness enforced by Login class at class instantiation.
+    
+
+  //Constructor - OJ
+  public User(String firstName, String lastName, String homeAddress) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.homeAddress = homeAddress;
+  }
+
+
+  //Getters - OJ
+  public String getFirstName() {
+      return firstName;
+  }
+
+  public String getLastName() {
+      return lastName;
+  }
+
+  public String getHomeAddress() {
+      return homeAddress;
+  }
+  
+  // No username setter; uniqueness enforced by Login class at class instantiation. JB
 	public String getUsername(){
 		return username;
 	}
-	
-	// Returns true if input and username match
+
+
+  //Setters - OJ
+  public void setFirstName(String firstName) {
+      this.firstName = firstName;
+  }
+
+  public void setLastName(String lastName) {
+      this.lastName = lastName;
+  }
+
+  public void setHomeAddress(String homeAddress) {
+      this.homeAddress = homeAddress;
+  }
+  
+  // Returns true if input and username match
 	public checkUserName(String input){
 		return username.equals(input);
 	}
