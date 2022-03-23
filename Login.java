@@ -1,9 +1,10 @@
 public class Login {
-	User loggedIn = null; // Currently logged in user.
-	ArrayList<User> userList = new ArrayList<User>(); // All user profiles.
+	User loggedIn = null; // Currently logged in user. JB
+	ArrayList<User> userList = new ArrayList<User>(); // All user profiles. JB
 
 	// Constructor takes no argument. At system start up no user should be logged in. JB
     public Login() {
+		
     }
 
 	// Replaces currently logged in user with the user specified as argument. JB
@@ -16,33 +17,58 @@ public class Login {
 		this.loggedIn = null;
 	}
 
-	// TODO: ALL METHODS BELOW NEED TESTING BEFORE PULL REQUEST - JB.
+	// TODO: ALL METHODS BELOW NEED TESTING BEFORE PULL REQUEST. JB
+	// TODO: Ongoing - Methods below will need updating to keep up with any changes to constructors. JB
 	
 	// Methods to create users (of all types). No duplicate usernames.
 	// All users created are added to Login's arraylist of users.
-	// Other classes query Login to get hold of them.
-	// Returns false if username was already taken. JB
+	// Other classes call methods of Login to get hold of them.
+	// Return false if entered username was already taken. JB
 	// TODO: Manager, Waiter, Chef, Driver, Customer
-	public static String newManager(){
-		
-	}
-	
-	public static String newWaiter(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+	public static boolean newManager(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
 		for(User u : userList){
-			if(u.checkUsername){
+			if(u.checkUsername(username)){
 				return false;
 			}
-			userList.add(new User(username, password, firstName, lastName, staffId));
+			userList.add(new Manager(username, password, firstName, lastName, staffId, homeAddress))
+		}
+	}
+	
+	public static boolean newWaiter(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+		for(User u : userList){
+			if(u.checkUsername(username)){
+				return false;
+			}
+			userList.add(new Waiter(username, password, firstName, lastName, staffId, homeAddress));
 			return true;
 		}
 	}
 	
-	public static String newChef(){
-		
+	public static boolean newChef(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+		for(User u : userList){
+			if(u.checkUsername(username)){
+				return false;
+			}
+			userList.add(new Chef(username, password, firstName, lastName, staffId, homeAddress));
+		}
 	}
 	
-	public static String newDriver(){
-		
+	public static boolean newDriver(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+		for(User u : userList){
+			if(u.checkUsername(username)){
+				return false;
+			}
+			userList.add(new Driver(username, password, firstName, lastName, staffId, homeAddress));
+		}
+	}
+	
+	public static boolean newCustomer(String username, String password, String firstName, String lastName, String homeAddress, int customerId){
+		for(User u : userList){
+			if(u.checkUsername(username)){
+				return false;
+			}
+			userList.add(new Customer(username, password, firstName, lastName, homeAddress, customerId));
+		}
 	}
 	
 	// Checks what type of user is logged in and returns as string. JB
