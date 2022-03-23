@@ -8,8 +8,8 @@ public class Staff extends User{
     private ArrayList<Shift> shifts = new ArrayList<Shift>();
 
     //Constructor - OJ
-    public Staff(String firstName, String lastName, String homeAddress, int staffId){
-        super(firstName, lastName, homeAddress);
+    public Staff(String username, String password, String firstName, String lastName, String homeAddress, int staffId){
+        super(username, password, firstName, lastName, homeAddress);
         this.staffId = staffId;
     }
 

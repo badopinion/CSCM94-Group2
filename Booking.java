@@ -46,4 +46,6 @@ public class Booking {
 	public void cancel(){
 		this.cancelled = true;
 	}
+	
+	// TODO: Test doing maths on dates. Should be fine as a date is essentially a long, but test anyway
 }
