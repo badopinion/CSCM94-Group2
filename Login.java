@@ -30,7 +30,7 @@ public class Login {
 			if(u.checkUsername(username)){
 				return false;
 			}
-			userList.add(new Manager(username, password, firstName, lastName, staffId, homeAddress))
+			userList.add(new Manager(username, password, firstName, lastName, staffId, homeAddress));
 		}
 	}
 	

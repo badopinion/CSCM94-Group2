@@ -48,17 +48,17 @@ public class User {
 	}
   
 	// Returns true if input and username match - JB
-	public checkUserName(String input){
+	public boolean checkUserName(String input){
 		return username.equals(input);
 	}
 	
 	// Returns true if input and password match - JB
-	public checkPassword(String input){
+	public boolean checkPassword(String input){
 		return password.equals(input);
 	}
 	
 	// Returns true if passed correct username and password - JB
-	public checkCredentials(String userIn, String passIn){
+	public boolean checkCredentials(String userIn, String passIn){
 		return checkUserName(userIn) && checkPassword(passIn);
 	}
 }
