@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Menu {
 	private ArrayList<MenuItem> menuItems = new ArrayList<MenuItem>();
 	
@@ -29,6 +31,7 @@ public class Menu {
 				currentSpecs.add(item);
 			}
 		}
+		return currentSpecs;
 	}
 
 	//Prints menuItems to console - input required is arrayList (returned by one of above methods) - OJ
@@ -45,8 +48,16 @@ public class Menu {
 
 	//Creates a menuItem object and adds to arrayList of menu items - OJ
 	public void createAndAddMenuItem(String name, String description, float price, boolean onMenu, boolean isSpecial){
-		menuItem newItem = new menuItem(name, description, price, onMenu, isSpecial);
+		MenuItem newItem = new MenuItem(name, description, price, onMenu, isSpecial);
 		addItem(newItem);
+	}
+
+	//This method populates the menu - OJ
+	public void populateMenu(){
+		createAndAddMenuItem("Cheese Burger", "150g Beef patty with cheddar cheese on a brioche bun", 12.5f, true, false);
+		createAndAddMenuItem("Ham and Cheese Toastie", "locally sourced ham with cheddar, as a toastie", 8.0f, true, false);
+		createAndAddMenuItem("Mushroom soup", "Mushrooms in a soup served with fresh baguette", 8.0f, true, false);
+		createAndAddMenuItem("American Hot Pizza", "The classic, cooked in our new pizza oven", 12.0f, true, true);
 	}
 
 	// TODO: methods to set items on/off menu and as special or not special.
