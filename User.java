@@ -5,7 +5,7 @@ public class User {
 	private String lastName;
 	private String homeAddress;
 	
-	//Constructor - OJ
+	//Constructor - JB
 	public User(String username, String password, String firstName, String lastName, String homeAddress) {
 		this.username = username;
 		this.password = password;
@@ -15,7 +15,7 @@ public class User {
 	}
 
 
-	//Getters - OJ
+	//Getters - JB
 	public String getFirstName() {
 		return firstName;
 	}
@@ -27,14 +27,14 @@ public class User {
 	public String getHomeAddress() {
 		return homeAddress;
 	}
-  
-  // No username setter; uniqueness enforced by Login class at class instantiation. JB
+
+	// No username setter; uniqueness enforced by Login class at class instantiation. JB
 	public String getUsername(){
 		return username;
 	}
 
 
-  //Setters - OJ
+  //Setters - JB
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
@@ -48,7 +48,7 @@ public class User {
 	}
   
 	// Returns true if input and username match - JB
-	public boolean checkUserName(String input){
+	public boolean checkUsername(String input){
 		return username.equals(input);
 	}
 	
@@ -59,6 +59,6 @@ public class User {
 	
 	// Returns true if passed correct username and password - JB
 	public boolean checkCredentials(String userIn, String passIn){
-		return checkUserName(userIn) && checkPassword(passIn);
+		return checkUsername(userIn) && checkPassword(passIn);
 	}
 }

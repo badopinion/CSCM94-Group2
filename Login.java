@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+
 public class Login {
-	User loggedIn = null; // Currently logged in user. JB
+	User loggedIn = null; // User that is currently logged in. JB
 	ArrayList<User> userList = new ArrayList<User>(); // All user profiles. JB
 
 	// Constructor takes no argument. At system start up no user should be logged in. JB
@@ -8,12 +10,12 @@ public class Login {
     }
 
 	// Replaces currently logged in user with the user specified as argument. JB
-    public static void login(User userIn) {
+    public void login(User userIn) {
         this.loggedIn = userIn;
     }
 	
 	// Logs user out (replaces currently logged in user with null). JB
-	public static void logout(){
+	public void logout(){
 		this.loggedIn = null;
 	}
 
@@ -25,54 +27,58 @@ public class Login {
 	// Other classes call methods of Login to get hold of them.
 	// Return false if entered username was already taken. JB
 	// TODO: Manager, Waiter, Chef, Driver, Customer
-	public static boolean newManager(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+	public boolean newManager(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
 				return false;
 			}
-			userList.add(new Manager(username, password, firstName, lastName, staffId, homeAddress));
 		}
+		userList.add(new Manager(username, password, firstName, lastName, staffId, homeAddress));
+		return true;
 	}
 	
-	public static boolean newWaiter(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+	public boolean newWaiter(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
 				return false;
 			}
-			userList.add(new Waiter(username, password, firstName, lastName, staffId, homeAddress));
-			return true;
 		}
+		userList.add(new Waiter(username, password, firstName, lastName, staffId, homeAddress));
+		return true;
 	}
 	
-	public static boolean newChef(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+	public boolean newChef(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
 				return false;
 			}
-			userList.add(new Chef(username, password, firstName, lastName, staffId, homeAddress));
 		}
+		userList.add(new Chef(username, password, firstName, lastName, staffId, homeAddress));
+		return true;
 	}
 	
-	public static boolean newDriver(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+	public boolean newDriver(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
 				return false;
 			}
-			userList.add(new Driver(username, password, firstName, lastName, staffId, homeAddress));
 		}
+		userList.add(new Driver(username, password, firstName, lastName, staffId, homeAddress));
+		return true;
 	}
 	
-	public static boolean newCustomer(String username, String password, String firstName, String lastName, String homeAddress, int customerId){
+	public boolean newCustomer(String username, String password, String firstName, String lastName, String homeAddress, int customerId){
 		for(User u : userList){
 			if(u.checkUsername(username)){
 				return false;
 			}
-			userList.add(new Customer(username, password, firstName, lastName, homeAddress, customerId));
 		}
+		userList.add(new Customer(username, password, firstName, lastName, homeAddress, customerId));
+		return true;
 	}
 	
 	// Checks what type of user is logged in and returns as string. JB
-	public static String checkLoggedInUserType(){
+	public String checkLoggedInUserType(){
 		if(loggedIn instanceof Manager) return "Manager";
 		if(loggedIn instanceof Waiter) return "Waiter";
 		if(loggedIn instanceof Driver) return "Driver";
@@ -82,7 +88,7 @@ public class Login {
 	}
 	
 	// Checks what type of user was passed as argument to this method and returns as string. JB
-	public static String checkUserType(User userIn){
+	public String checkUserType(User userIn){
 		if(userIn instanceof Manager) return "Manager";
 		if(userIn instanceof Waiter) return "Waiter";
 		if(userIn instanceof Driver) return "Driver";
@@ -93,7 +99,7 @@ public class Login {
 	
 	// Checks username and password for matching user. If found log user in.
 	// Returns true if a user was logged in and false if invalid (for the sake of output). JB
-	public static boolean loginWithCredentials(String username, String password){
+	public boolean loginWithCredentials(String username, String password){
 		for(User u : userList){
 			if(u.checkCredentials(username, password)){
 				this.loggedIn = u;
@@ -101,5 +107,14 @@ public class Login {
 			}
 		}
 		return false;
+	}
+
+	public User getUserFromUsername(String username){
+    	for(User u : userList){
+    		if(u.getUsername().equals(username)){
+    			return u;
+    		}
+		}
+    	return null;
 	}
 }

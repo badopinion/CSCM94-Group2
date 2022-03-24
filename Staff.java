@@ -9,8 +9,8 @@ public class Staff extends User{
 
     //Constructor - OJ
 
-    public Staff(String firstName, String lastName, int staffId, String homeAddress){
-        super(firstName, lastName, homeAddress);
+    public Staff(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+        super(username, password, firstName, lastName, homeAddress);
 
         this.staffId = staffId;
     }

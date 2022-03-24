@@ -1,8 +1,4 @@
-
 public class Main{
-
-
-
     public static void main (String[] args){
         Table table1 = new Table(1, 6);
         System.out.println("Table number: " + table1.getTableNumber());
@@ -11,5 +7,17 @@ public class Main{
 
         cafe94Menu.populateMenu();
         cafe94Menu.printMenuItems(cafe94Menu.getCurrentItems());
+
+        Login login = new Login();
+        login.newManager("manager", "madwithpower", "Bob", "Bossman", 1, "10 Downing Street");
+        // Below: Check whether duplicate usernames can exist.
+        // Wants returns of true for the first time we create Steve, then false for the second. JB
+        System.out.println(login.newWaiter("waiter", "ihatetheserviceindustry", "Steve", "Loa", 2, "Under a bridge"));
+        System.out.println(login.newWaiter("waiter", "ihatetheserviceindustry", "Steve", "Loa", 2, "Under a bridge"));
+        login.loginWithCredentials("manager", "madwithpower");
+        System.out.println(login.checkLoggedInUserType());
+        User steve = login.getUserFromUsername("waiter");
+        System.out.println(steve.getUsername());
+        System.out.println(login.checkUserType(steve));
     }
 }
