@@ -12,7 +12,7 @@ public class MenuItem {
 		this.description = description;
 		this.price = price;
 		this.onMenu = onMenu;
-		this.currentSpecial = currentSpecial;
+		this.currentSpecial = isSpecial;
 	}
 	
 	// Getters &
