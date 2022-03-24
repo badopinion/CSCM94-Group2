@@ -12,7 +12,7 @@ public class Menu {
 		return menuItems;
 	}
 	
-	// Returns only those items that are currently being served (onMenu is true)
+	// Returns only those items that are currently being served (onMenu is true) - JB
 	public ArrayList<MenuItem> getCurrentItems(){
 		ArrayList<MenuItem> currentItems = new ArrayList<MenuItem>();
 		for(MenuItem item : menuItems){
@@ -23,7 +23,7 @@ public class Menu {
 		return currentItems;
 	}
 	
-	// Returns only those items that are currently being served, and are specials.
+	// Returns only those items that are currently being served, and are specials. - JB
 	public ArrayList<MenuItem> getCurrentSpecials(){
 		ArrayList <MenuItem> currentSpecs = getCurrentItems();
 		for(MenuItem item : currentSpecs){
@@ -41,7 +41,7 @@ public class Menu {
 		}
 	}
 
-	
+	// Method to add a new item to menu - JB
 	public void addItem(MenuItem newItem){
 		menuItems.add(newItem);
 	}
@@ -52,6 +52,38 @@ public class Menu {
 		addItem(newItem);
 	}
 
+	//Method to return menuItem by name - returns null if no matching item exists - OJ
+	//TODO - this method returns null if no match is found. is this a problem? if so how to solve it? - OJ
+	public MenuItem returnMenuItemByName (String desiredMenuItemName){
+		for (MenuItem menuItem : menuItems){
+			if (menuItem.getName() == desiredMenuItemName){
+				return menuItem;
+			}
+		}
+		return null;
+	}
+
+	//Method to set menu item as special or not (true = special) - OJ
+	public void setMenuItemSpecialOrNot(String menuItemName, boolean isSpecial){
+		MenuItem menuItem = returnMenuItemByName(menuItemName);
+		if (menuItem == null){
+			System.out.println("Menu item not found.");
+		} else {
+			menuItem.setSpecial(isSpecial);
+		}
+	}
+
+	//Method to set menu item as on or off (true = on) - OJ
+	public void setMenuItemIsOnOrOff(String menuItemName, boolean isOn){
+		MenuItem menuItem = returnMenuItemByName(menuItemName);
+		if (menuItem == null){
+			System.out.println("Menu item not found.");
+		} else {
+			menuItem.setOnMenu(isOn);
+		}
+	}
+
+
 	//This method populates the menu - OJ
 	public void populateMenu(){
 		createAndAddMenuItem("Cheese Burger", "150g Beef patty with cheddar cheese on a brioche bun", 12.5f, true, false);
@@ -60,11 +92,7 @@ public class Menu {
 		createAndAddMenuItem("American Hot Pizza", "The classic, cooked in our new pizza oven", 12.0f, true, true);
 	}
 
-	// TODO: methods to set items on/off menu and as special or not special.
-	// TODO: create some menu items and add them to array list
 
-
-	//Method to create some basic menuitems and populate the menu
 
 
 

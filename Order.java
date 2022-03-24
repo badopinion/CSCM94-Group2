@@ -9,17 +9,15 @@ import java.util.ArrayList;
 public class Order{
     private int orderID;
     private Customer customer;
-    //orderNotes could be used to store dietary requirements e.g. "nut allergy" or customer request e.g. "no potatoes"
+    //orderNotes could be used to store dietary requirements e.g. "nut allergy" or request e.g. "no potatoes" - OJ
     private String orderNotes;
     private boolean orderCompleted;
     private boolean orderCancelled;
-
-    //menuItems not yet created
-    private ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
+    private ArrayList<MenuItem> orderedMenuItems;
 
 
     //Constructor
-    public Order(int orderID, Customer customer, String orderNotes) {
+    public Order(int orderID, Customer customer, String orderNotes, ArrayList<MenuItem> orderedMenuItems) {
         this.orderID = orderID;
         this.customer = customer;
         this.orderNotes = orderNotes;
