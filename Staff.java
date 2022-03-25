@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * A staff class (child of user)
+ * @author Oliver Jackson
+ * @version 1
+ */
+
 public class Staff extends User{
 
     private int staffId;

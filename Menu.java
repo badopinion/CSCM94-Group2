@@ -1,4 +1,11 @@
 import java.util.ArrayList;
+import java.util.Date;
+
+/**
+ * A menu class that aggrigates menuItems and provides functionality for ordering food / drink
+ * @author Oliver Jackson
+ * @version 1
+ */
 
 public class Menu {
 	private ArrayList<MenuItem> menuItems = new ArrayList<MenuItem>();
@@ -53,7 +60,7 @@ public class Menu {
 	}
 
 	//Method to return menuItem by name - returns null if no matching item exists - OJ
-	//TODO - this method returns null if no match is found. is this a problem? if so how to solve it? - OJ
+	// any method using this must handle a potential null return
 	public MenuItem returnMenuItemByName (String desiredMenuItemName){
 		for (MenuItem menuItem : menuItems){
 			if (menuItem.getName() == desiredMenuItemName){
@@ -91,6 +98,49 @@ public class Menu {
 		createAndAddMenuItem("Mushroom soup", "Mushrooms in a soup served with fresh baguette", 8.0f, true, false);
 		createAndAddMenuItem("American Hot Pizza", "The classic, cooked in our new pizza oven", 12.0f, true, true);
 	}
+
+	//TODO - method to place order (creates order with constructor and sends it to restaraunt arraylist of orders
+	//and sends it to customer order history)
+	//this method uses varags to accept any number of order items beyond the 1st one
+	//takes orderNotes argument, if no notes enter empty string
+
+	public void placeEatinOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, MenuItem menuItem1, MenuItem... menuItems){
+		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
+		orderedMenuItems.add(menuItem1);
+		for (MenuItem menuItem : menuItems){
+			orderedMenuItems.add(menuItem)
+		}
+		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
+		Eatin eatinOrder = new EatIn(table, restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems);
+		restaurant.addOrder(eatinOrder);
+	}
+
+	//Method to place takeaway order - OJ
+	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, MenuItem menuItem1, MenuItem... menuItems, Date pickUpTime){
+		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
+		orderedMenuItems.add(menuItem1);
+		for (MenuItem menuItem : menuItems){
+			orderedMenuItems.add(menuItem)
+		}
+		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
+		Takeaway takeawayOrder = new Takeaway(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, pickUpTime);
+		restaurant.addOrder(takeawayOrder);
+	}
+
+	public void placeDeliveryOrder(Restaurant restaurant, Customer customer, String orderNotes, MenuItem menuItem1, MenuItem... menuItems, String deliveryAddress){
+		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
+		orderedMenuItems.add(menuItem1);
+		for (MenuItem menuItem : menuItems){
+			orderedMenuItems.add(menuItem)
+		}
+		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
+		Delivery deliveryOrder = new Delivery(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, deliveryAddress);
+		restaurant.addOrder(deliveryOrder);
+	}
+
+	//Method to create order (eatin/ takeaway / delivery)
+
+
 
 
 

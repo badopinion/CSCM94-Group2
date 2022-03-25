@@ -1,5 +1,11 @@
 import java.util.Date;
 
+/**
+ * A shift class
+ * @author Oliver Jackson
+ * @version 1
+ */
+
 public class Shift{
 
     private Date start;

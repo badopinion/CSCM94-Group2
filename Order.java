@@ -3,8 +3,13 @@
 //       -  similarly have decided with jo that we will not include which staff member served an order
 //        with exception of delivery driver (delivery object will hold reference to a delivery driver)
 // OJ 17/03/22
-
 import java.util.ArrayList;
+
+/**
+ * An order class (child: Eatin, Takeaway, Delivery)
+ * @author Oliver Jackson
+ * @version 1
+ */
 
 public class Order{
     private int orderID;
@@ -16,13 +21,24 @@ public class Order{
     private ArrayList<MenuItem> orderedMenuItems;
 
 
-    //Constructor
+    //Constructor with ordernotes - OJ
     public Order(int orderID, Customer customer, String orderNotes, ArrayList<MenuItem> orderedMenuItems) {
         this.orderID = orderID;
         this.customer = customer;
         this.orderNotes = orderNotes;
         this.orderCompleted = false;
         this.orderCancelled = false;
+        this.orderedMenuItems = orderedMenuItems;
+    }
+
+    //Constructor without orderNotes - OJ
+    public Order(int orderID, Customer customer, ArrayList<MenuItem> orderedMenuItems) {
+        this.orderID = orderID;
+        this.customer = customer;
+        this.orderNotes = "";
+        this.orderCompleted = false;
+        this.orderCancelled = false;
+        this.orderedMenuItems = orderedMenuItems;
     }
 
     //Getters
@@ -64,7 +80,7 @@ public class Order{
         this.orderCancelled = orderCancelled;
     }
 
-    //method to calculate sum of price of order
+    //method to calculate sum of price of order - OJ
     public float getOrderPrice(){
         float sum = 0;
         for (MenuItem menuItem : orderedMenuItems){
