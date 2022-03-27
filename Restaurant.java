@@ -52,7 +52,6 @@ public class Restaurant {
 
     //Method that takes a Customer object and returns a customer order history arraylist - OJ
     //returns an empty arraylist if no orders match
-    // TODO - check this is working properly
     public ArrayList<Order> returnCustomerOrderHistory(Customer customer) {
         ArrayList<Order> customerOrders = new ArrayList<Order>();
         for (Order order : orders) {
@@ -66,7 +65,7 @@ public class Restaurant {
 
     //Returns arraylist of all eatins - OJ
     //Empty arraylist if no match
-    public ArrayList<Order> returnEatinOrders(){
+    public ArrayList<Order> returnEatInOrders(){
         ArrayList<Order> eatinOrders = new ArrayList<Order>();
         for (Order order : orders){
             if (order instanceof EatIn){

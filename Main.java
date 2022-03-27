@@ -10,12 +10,20 @@ public class Main{
         cafe94Menu.printMenuItems();
         System.out.println(cafe94Menu.returnMenuItemByName("Pasta Carbonara"));
 
-        Customer jamesTabor = new Customer("james.tabor", "1234", "james", "tabor", "10 Swansea Road, Swansea, Wales", 1);
+        Customer jamesTabor = new Customer("jamesTabor", "1234", "james", "tabor", "10 Swansea Road, Swansea, Wales");
         Restaurant cafe94 = new Restaurant();
 
-        cafe94Menu.placeEatInOrder(cafe94, jamesTabor, "", table1, "Cheese Burger", "Mushroom soup");
+        cafe94Menu.placeEatInOrder(cafe94, jamesTabor, "", table1, cafe94Menu.returnMenuItemByName("Cheese Burger"), cafe94Menu.returnMenuItemByName("Mushroom soup"));
+        cafe94Menu.placeTakeawayOrder(cafe94, jamesTabor, "", "12:30", cafe94Menu.returnMenuItemByName("Cheese Burger"));
+        cafe94Menu.placeDeliveryOrder(cafe94, jamesTabor, "", "1 Swansea Lane, Swansea", cafe94Menu.returnMenuItemByName("Cheese Burger"));
         System.out.println("James would like to order");
         System.out.println(cafe94.returnCustomerOrderHistory(jamesTabor));
+        System.out.println("eatIn orders:");
+        System.out.println(cafe94.returnEatInOrders());
+        System.out.println("takeaway orders:");
+        System.out.println(cafe94.returnTakeawayOrders());
+        System.out.println("delivery orders:");
+        System.out.println(cafe94.returnDeliveryOrders());
 
 
 

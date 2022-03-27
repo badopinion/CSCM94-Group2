@@ -14,11 +14,5 @@ public class EatIn extends Order{
         this.table = table;
     }
 
-    //Constructor without orderNotes - OJ
-    public EatIn(Table table, int orderID, Customer customer, ArrayList<MenuItem> menuItems){
-        super(orderID, customer, menuItems);
-        this.table = table;
-    }
-
 
 }

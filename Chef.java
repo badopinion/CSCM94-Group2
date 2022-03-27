@@ -7,7 +7,7 @@
 
 public class Chef extends Staff{
 
-    public Chef(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
-        super(username, password, firstName, lastName, staffId, homeAddress);
+    public Chef(String username, String password, String firstName, String lastName, String homeAddress){
+        super(username, password, firstName, lastName, homeAddress);
     }
 }

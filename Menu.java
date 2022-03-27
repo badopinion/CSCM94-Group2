@@ -41,12 +41,7 @@ public class Menu {
 		return currentSpecs;
 	}
 
-	//Prints all menuItems to console - input required is arrayList (returned by one of above methods) - OJ
-//	public void printMenuItems(ArrayList <MenuItem> items){
-//		for(MenuItem item : items){
-//			System.out.println(item);
-//		}
-//	}
+	//Prints all menuItems - OJ
 	public void printMenuItems(){
 		for(MenuItem item : menuItems){
 			System.out.println(item);
@@ -109,7 +104,7 @@ public class Menu {
 	//this method uses varags to accept any number of order items beyond the 1st one
 	//takes orderNotes argument, if no notes enter empty string
 
-	public void placeEatinOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, MenuItem menuItem1, MenuItem... menuItems){
+	public void placeEatInOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, MenuItem menuItem1, MenuItem... menuItems){
 		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
 		orderedMenuItems.add(menuItem1);
 		for (MenuItem menuItem : menuItems){
@@ -121,7 +116,7 @@ public class Menu {
 	}
 
 	//Method to place takeaway order - OJ
-	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, Date pickUpTime, MenuItem menuItem1, MenuItem... menuItems){
+	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, String pickUpTime, MenuItem menuItem1, MenuItem... menuItems){
 		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
 		orderedMenuItems.add(menuItem1);
 		for (MenuItem menuItem : menuItems){

@@ -27,23 +27,23 @@ public class Login {
 	// Other classes call methods of Login to get hold of them.
 	// Return false if entered username was already taken. JB
 	// TODO: Manager, Waiter, Chef, Driver, Customer
-	public boolean newManager(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+	public boolean newManager(String username, String password, String firstName, String lastName, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
 				return false;
 			}
 		}
-		userList.add(new Manager(username, password, firstName, lastName, staffId, homeAddress));
+		userList.add(new Manager(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 	
-	public boolean newWaiter(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+	public boolean newWaiter(String username, String password, String firstName, String lastName, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
 				return false;
 			}
 		}
-		userList.add(new Waiter(username, password, firstName, lastName, staffId, homeAddress));
+		userList.add(new Waiter(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 	
@@ -53,7 +53,7 @@ public class Login {
 				return false;
 			}
 		}
-		userList.add(new Chef(username, password, firstName, lastName, staffId, homeAddress));
+		userList.add(new Chef(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 	
@@ -63,7 +63,7 @@ public class Login {
 				return false;
 			}
 		}
-		userList.add(new Driver(username, password, firstName, lastName, staffId, homeAddress));
+		userList.add(new Driver(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 	
@@ -73,7 +73,7 @@ public class Login {
 				return false;
 			}
 		}
-		userList.add(new Customer(username, password, firstName, lastName, homeAddress, customerId));
+		userList.add(new Customer(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 	

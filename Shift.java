@@ -1,4 +1,5 @@
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * A shift class
@@ -8,30 +9,40 @@ import java.util.Date;
 
 public class Shift{
 
-    private Date start;
-    private Date end;
+    private Staff staffMember;
+    private LocalDateTime start;
+    private LocalDateTime end;
     //manager can approve that this shift has been worked
     private boolean shiftApproved;
 
     //Constructor
-    public Shift(int year, int month, int date, int startHour, int startMin, int endHour, int endMin){
-        this.start = new Date(year, month, date, startHour, startMin);
-        this.end = new Date(year, month, date, endHour, endMin);
+    public Shift(Staff staffmember, String date, String startTime, String endTime){
+        this.staffMember = staffmember;
+        String startDateTime = date + " " + startTime;
+        String endDateTime = date + " " + endTime;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        start = LocalDateTime.parse(startDateTime, formatter);
+        end = LocalDateTime.parse(endDateTime, formatter);
         this.shiftApproved = false;
     }
 
     //Getters
-    public Date getStart(){
+    public LocalDateTime getStart(){
         return this.start;
     }
 
-    public Date getEnd(){
+    public LocalDateTime getEnd(){
         return this.end;
+    }
+
+    public Staff getStaffMember() {
+        return staffMember;
     }
 
     //this method is used to approve whether or not the staff member worked the shift
     public void setShiftApproved(boolean yesOrNo){
         shiftApproved = yesOrNo;
     }
+
 
 }
