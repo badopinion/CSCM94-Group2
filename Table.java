@@ -1,25 +1,48 @@
-public class Table {
-    private int tableNumber;
-    private int capacity;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
-    public Table(int tableNumber, int capacity) {
-        this.tableNumber = tableNumber;
-        this.capacity = capacity;
+public class Table {
+
+    private String tableID;
+    private int numberOfSeats;
+    private boolean available;
+    private int maximumCapacity;
+
+    // private ArrayList<bookinglist>Booking =new ArrayList bookingList;
+    private ArrayList<Booking> bookingList = new ArrayList<>();
+
+    public Table(String tabelID_, int numberOfSeats_, int capacity_) {
+        this.tableID = tabelID_;
+        this.numberOfSeats = numberOfSeats_;
+        this.maximumCapacity = capacity_;
     }
 
-    public int getTableNumber() {
-        return this.tableNumber;
+    public boolean checkAvailability(LocalDateTime checkedDate) {
+
+        return true;
+    }
+
+    public void addBooking(Booking toBeAdded) {
+        bookingList.add(toBeAdded);
+    }
+
+    public String getTableID() {
+        return this.tableID;
     }
 
     public int getCapacity() {
-        return this.capacity;
+        return this.maximumCapacity;
     }
 
-    public void setTableNumber(int tableNumber) {
-        this.tableNumber = tableNumber;
+    public int getNumberOfSeats() {
+        return this.numberOfSeats;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public boolean getAvailable() {
+        return this.available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 }
