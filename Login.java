@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.io.*;
 
-public class Login {
+public class Login implements Serializable {
 	User loggedIn = null; // User that is currently logged in. JB
 	ArrayList<User> userList = new ArrayList<User>(); // All user profiles. JB
 
-	// Constructor takes no argument. At system start up no user should be logged in. JB
+	// Constructor takes no argument. At first system start up no user should be logged in. JB
     public Login() {
 		
     }
@@ -84,7 +85,7 @@ public class Login {
 		if(loggedIn instanceof Driver) return "Driver";
 		if(loggedIn instanceof Chef) return "Chef";
 		if(loggedIn instanceof Customer) return "Customer";
-		return "Invalid subclass";
+		return "Invalid subclass"; // If you ever see this return "Invalid subclass", there's a bug. Let us know! -JB
 	}
 	
 	// Checks what type of user was passed as argument to this method and returns as string. JB
@@ -94,7 +95,7 @@ public class Login {
 		if(userIn instanceof Driver) return "Driver";
 		if(userIn instanceof Chef) return "Chef";
 		if(userIn instanceof Customer) return "Customer";
-		return "Invalid subclass";
+		return "Invalid subclass"; // If you ever see this return "Invalid subclass", there's a bug. Let us know! -JB
 	}
 	
 	// Checks username and password for matching user. If found log user in.

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
+import java.io.*;
 
-public class Menu {
+public class Menu implements Serializable {
 	private ArrayList<MenuItem> menuItems = new ArrayList<MenuItem>();
 	
 	// Constructor
@@ -56,7 +57,7 @@ public class Menu {
 	//TODO - this method returns null if no match is found. is this a problem? if so how to solve it? - OJ
 	public MenuItem returnMenuItemByName (String desiredMenuItemName){
 		for (MenuItem menuItem : menuItems){
-			if (menuItem.getName() == desiredMenuItemName){
+			if (menuItem.getName().equals(desiredMenuItemName)){
 				return menuItem;
 			}
 		}

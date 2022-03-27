@@ -1,4 +1,6 @@
-public class MenuItem {
+import java.io.*;
+
+public class MenuItem implements Serializable {
 	private String name;
     private String description;
 	private float price;

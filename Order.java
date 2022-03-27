@@ -5,8 +5,9 @@
 // OJ 17/03/22
 
 import java.util.ArrayList;
+import java.io.*;
 
-public class Order{
+public class Order implements Serializable {
     private int orderID;
     private Customer customer;
     //orderNotes could be used to store dietary requirements e.g. "nut allergy" or request e.g. "no potatoes" - OJ
