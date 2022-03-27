@@ -1,3 +1,10 @@
+/**
+ * A menuItem class (food and drink that can be ordered)
+ * menuItems can be special or not, on or off
+ * @author Oliver Jackson
+ * @version 1
+ */
+
 public class MenuItem {
 	private String name;
     private String description;
