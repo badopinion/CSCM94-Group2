@@ -31,24 +31,24 @@ public class Restaurant {
     }
 
     //method to add order to orders - OJ
-    public void addOrder(Order){
+    public void addOrder(Order order){
         orders.add(order);
     }
 
     //method to show all orders that have not been fulfilled and have not been cancelled - OJ
     //returns an ArrayList
     public ArrayList<Order> unfulfilledOrders(){
-        ArrayList<Order> unfulfilledOrders = new ArrayList<Order>()
+        ArrayList<Order> unfulfilledOrders = new ArrayList<Order>();
         for(Order order : orders){
-            if (order.isOrderCompleted == false){
-                if (order.isOrderCancelled == false) {
+            if (order.isOrderCompleted() == false){
+                if (order.isOrderCancelled() == false) {
                     unfulfilledOrders.add(order);
                 }
             }
         }
         return unfulfilledOrders;
-        }
     }
+
 
     //Method that takes a Customer object and returns a customer order history arraylist - OJ
     //returns an empty arraylist if no orders match
@@ -56,20 +56,20 @@ public class Restaurant {
     public ArrayList<Order> returnCustomerOrderHistory(Customer customer) {
         ArrayList<Order> customerOrders = new ArrayList<Order>();
         for (Order order : orders) {
-            if (order.getCustomer == customer) {
+            if (order.getCustomer() == customer) {
                 customerOrders.add(order);
             }
         }
         return customerOrders;
     }
-}
+
 
     //Returns arraylist of all eatins - OJ
     //Empty arraylist if no match
     public ArrayList<Order> returnEatinOrders(){
         ArrayList<Order> eatinOrders = new ArrayList<Order>();
         for (Order order : orders){
-            if (order instanceof Eatin){
+            if (order instanceof EatIn){
                 eatinOrders.add(order);
             }
         }
@@ -82,7 +82,7 @@ public class Restaurant {
         ArrayList<Order> takeawayOrders = new ArrayList<Order>();
         for (Order order : orders){
             if (order instanceof Takeaway){
-                eatinOrders.add(order);
+                takeawayOrders.add(order);
             }
         }
         return takeawayOrders;
@@ -94,8 +94,10 @@ public class Restaurant {
         ArrayList<Order> deliveryOrders = new ArrayList<Order>();
         for (Order order : orders){
             if (order instanceof Delivery){
-                eatinOrders.add(order);
+                deliveryOrders.add(order);
             }
         }
         return deliveryOrders;
     }
+
+}

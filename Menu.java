@@ -41,9 +41,14 @@ public class Menu {
 		return currentSpecs;
 	}
 
-	//Prints menuItems to console - input required is arrayList (returned by one of above methods) - OJ
-	public void printMenuItems(ArrayList <MenuItem> items){
-		for(MenuItem item : items){
+	//Prints all menuItems to console - input required is arrayList (returned by one of above methods) - OJ
+//	public void printMenuItems(ArrayList <MenuItem> items){
+//		for(MenuItem item : items){
+//			System.out.println(item);
+//		}
+//	}
+	public void printMenuItems(){
+		for(MenuItem item : menuItems){
 			System.out.println(item);
 		}
 	}
@@ -108,30 +113,30 @@ public class Menu {
 		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
 		orderedMenuItems.add(menuItem1);
 		for (MenuItem menuItem : menuItems){
-			orderedMenuItems.add(menuItem)
+			orderedMenuItems.add(menuItem);
 		}
 		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
-		Eatin eatinOrder = new EatIn(table, restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems);
+		EatIn eatinOrder = new EatIn(table, restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems);
 		restaurant.addOrder(eatinOrder);
 	}
 
 	//Method to place takeaway order - OJ
-	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, MenuItem menuItem1, MenuItem... menuItems, Date pickUpTime){
+	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, Date pickUpTime, MenuItem menuItem1, MenuItem... menuItems){
 		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
 		orderedMenuItems.add(menuItem1);
 		for (MenuItem menuItem : menuItems){
-			orderedMenuItems.add(menuItem)
+			orderedMenuItems.add(menuItem);
 		}
 		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
 		Takeaway takeawayOrder = new Takeaway(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, pickUpTime);
 		restaurant.addOrder(takeawayOrder);
 	}
 
-	public void placeDeliveryOrder(Restaurant restaurant, Customer customer, String orderNotes, MenuItem menuItem1, MenuItem... menuItems, String deliveryAddress){
+	public void placeDeliveryOrder(Restaurant restaurant, Customer customer, String orderNotes, String deliveryAddress, MenuItem menuItem1, MenuItem... menuItems){
 		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
 		orderedMenuItems.add(menuItem1);
 		for (MenuItem menuItem : menuItems){
-			orderedMenuItems.add(menuItem)
+			orderedMenuItems.add(menuItem);
 		}
 		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
 		Delivery deliveryOrder = new Delivery(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, deliveryAddress);

@@ -5,7 +5,19 @@ public class Main{
 
         Menu cafe94Menu = new Menu();
         cafe94Menu.populateMenu();
-        cafe94Menu.printMenuItems(cafe94Menu.getCurrentItems());
+        cafe94Menu.printMenuItems();
+        cafe94Menu.createAndAddMenuItem("Pasta Carbonara", "An italian classic", 12.5f, true, false);
+        cafe94Menu.printMenuItems();
+        System.out.println(cafe94Menu.returnMenuItemByName("Pasta Carbonara"));
+
+        Customer jamesTabor = new Customer("james.tabor", "1234", "james", "tabor", "10 Swansea Road, Swansea, Wales", 1);
+        Restaurant cafe94 = new Restaurant();
+
+        cafe94Menu.placeEatInOrder(cafe94, jamesTabor, "", table1, "Cheese Burger", "Mushroom soup");
+        System.out.println("James would like to order");
+        System.out.println(cafe94.returnCustomerOrderHistory(jamesTabor));
+
+
 
         //Some testing below - OJ
 

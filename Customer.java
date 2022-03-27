@@ -6,9 +6,11 @@ import java.util.ArrayList;
  * @version 1
  */
 
+//TODO - do we need customerID? I propose removing it - OJ
+
 public class Customer extends User{
     private int customerId;
-    private ArrayList<Order> orderHistory = new ArrayList<Order>;
+    private ArrayList<Order> orderHistory = new ArrayList<Order>();
 
 
     public Customer(String username, String password, String firstName, String lastName, String homeAddress, int customerId){

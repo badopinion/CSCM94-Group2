@@ -7,6 +7,8 @@ import java.util.Date;
  * @version 1
  */
 
+//TODO - do we need staffID? I propose removing it - OJ
+
 public class Staff extends User{
 
     private int staffId;
