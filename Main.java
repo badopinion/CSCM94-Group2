@@ -43,7 +43,11 @@ public class Main{
         customerArrayList.add(customer2);
         Save save = new Save();
         save.saveCustomers(customerArrayList);
-
+        ArrayList<Customer> customerArrayListLoad = new ArrayList<Customer>();
+        Load load = new Load();
+        customerArrayListLoad = load.loadCustomerList();
+        System.out.println(customerArrayListLoad.get(0).getFirstName());
+        System.out.println(customerArrayListLoad.get(1).getFirstName());
     }
 
 }

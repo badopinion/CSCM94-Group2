@@ -10,4 +10,12 @@ public class Customer extends User implements Serializable {
 		super(username, password, firstName, lastName, homeAddress);
     this.customerId = customerId;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "customerId=" + customerId +
+
+                '}';
+    }
 }
