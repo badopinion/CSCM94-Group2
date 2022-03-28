@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Date;
-
+/**
+ * Save class
+ * @author Sam Raine/ADAM
+ * @version 1
+ */
 public class GenerateReport {
     private float convertShiftsIntoInt(ArrayList<Shift> shiftList,Date currentDate){
         float shiftTime = 0;
