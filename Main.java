@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main{
     public static void main (String[] args){
         Table table1 = new Table(1, 6);
@@ -6,6 +8,7 @@ public class Main{
         Menu cafe94Menu = new Menu();
         cafe94Menu.populateMenu();
         cafe94Menu.printMenuItems(cafe94Menu.getCurrentItems());
+
 
         //Some testing below - OJ
 
@@ -30,5 +33,17 @@ public class Main{
 //        User steve = login.getUserFromUsername("waiter");
 //        System.out.println(steve.getUsername());
 //        System.out.println(login.checkUserType(steve));
+
+        //Save Testing - SR
+
+        Customer customer = new Customer("Sam","password","Sam","Raine","Swansea",1);
+        Customer customer2 = new Customer("Sam2","password","Sam2","Raine2","Swansea",2);
+        ArrayList<Customer> customerArrayList = new ArrayList<Customer>();
+        customerArrayList.add(customer);
+        customerArrayList.add(customer2);
+        Save save = new Save();
+        save.saveCustomers(customerArrayList);
+
     }
+
 }

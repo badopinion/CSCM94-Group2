@@ -1,6 +1,8 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Customer extends User{
+public class Customer extends User implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int customerId;
     private ArrayList<Order> orderHis;
 
