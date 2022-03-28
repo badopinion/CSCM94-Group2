@@ -24,7 +24,11 @@ public class Order{
         this.orderCompleted = false;
         this.orderCancelled = false;
     }
-
+    public Order( int orderID, Customer customer, String orderNotes){
+        this.orderID = orderID;
+        this.customer = customer;
+        this.orderNotes = orderNotes;
+    }
     //Getters
     public int getOrderID() {
         return orderID;
