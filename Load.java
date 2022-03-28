@@ -1,10 +1,14 @@
 import java.io.*;
 
 import java.util.ArrayList;
-
+/**
+ * Load class
+ * @author Sam Raine
+ * @version 1
+ */
 //Save Class written by SR
 public class Load {
-
+    //load customers from  customer txt (will add rest  once you guys approve it)
     public ArrayList<Customer> loadCustomerList() {
         ArrayList<Customer> customersList = new ArrayList<Customer>();
         try {

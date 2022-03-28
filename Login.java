@@ -33,7 +33,7 @@ public class Login {
 				return false;
 			}
 		}
-		userList.add(new Manager(username, password, firstName, lastName, homeAddress));
+		//userList.add(new Manager(username, password, firstName, lastName, homeAddress,StaffType.MANAGER));
 		return true;
 	}
 	
@@ -43,7 +43,7 @@ public class Login {
 				return false;
 			}
 		}
-		userList.add(new Waiter(username, password, firstName, lastName, homeAddress));
+		//userList.add(new Waiter(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 	
@@ -53,7 +53,7 @@ public class Login {
 				return false;
 			}
 		}
-		userList.add(new Chef(username, password, firstName, lastName, homeAddress));
+	//	userList.add(new Chef(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 	
@@ -63,7 +63,7 @@ public class Login {
 				return false;
 			}
 		}
-		userList.add(new Driver(username, password, firstName, lastName, homeAddress));
+		//userList.add(new Driver(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 	
@@ -73,7 +73,7 @@ public class Login {
 				return false;
 			}
 		}
-		userList.add(new Customer(username, password, firstName, lastName, homeAddress));
+		//userList.add(new Customer(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 	

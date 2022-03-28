@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Main{
@@ -54,10 +56,18 @@ public class Main{
 //        System.out.println(steve.getUsername());
 //        System.out.println(login.checkUserType(steve));
 
+
+        //Generate Report Testing - SR
+        String Date = "2022-03-28 10:30";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        LocalDateTime date = LocalDateTime.parse(Date, formatter);
+        String dateToString = date.toString();
+        String dateString =  dateToString.substring(0,10);
+        System.out.println(dateString);
         //Save Testing - SR
 
-        Customer customer = new Customer("Sam","password","Sam","Raine","Swansea",1);
-        Customer customer2 = new Customer("Sam2","password","Sam2","Raine2","Swansea",2);
+        Customer customer = new Customer("Sam","password","Sam","Raine","Swansea");
+        Customer customer2 = new Customer("Sam2","password","Sam2","Raine2","Swansea");
         ArrayList<Customer> customerArrayList = new ArrayList<Customer>();
         customerArrayList.add(customer);
         customerArrayList.add(customer2);
