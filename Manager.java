@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 
+/**
+ * A Manager class (child of Staff)
+ * @author Oliver Jackson
+ * @version 1
+ */
+
 public class Manager extends Staff{
     private ArrayList<Staff> staffMembers;
 

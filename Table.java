@@ -1,3 +1,9 @@
+/**
+ * A table class
+ * @author Oliver Jackson
+ * @version 1
+ */
+
 public class Table {
     private int tableNumber;
     private int capacity;
