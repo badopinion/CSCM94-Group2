@@ -2,7 +2,7 @@ import java.io.*;
 
 import java.util.ArrayList;
 
-
+//Save Class written by SR
 public class Load {
 
     public ArrayList<Customer> loadCustomerList() {

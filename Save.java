@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
+//Save Class written by SR
 public class Save {
 
     public void saveCustomers(ArrayList<Customer> customerList) {

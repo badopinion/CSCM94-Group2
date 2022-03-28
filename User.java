@@ -1,5 +1,5 @@
 import java.io.Serializable;
-
+//Added Serializable to be able to save object in text file -SR
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String username;
