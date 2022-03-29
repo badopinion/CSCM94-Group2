@@ -1,0 +1,47 @@
+**Some notes for OJ**
+
+How are orders going to be managed / processed by the program?
+
+order contains an arraylist of orderedMenuItems
+
+pass arrayList of menuItemsOrdered to the constructor
+
+create order in menu class
+
+once constructed
+
+restaurant will aggregate all types of orders together
+restaurant will show / have method to return full list or orders that are not complete and are not cancelled
+
+methods to return eat ins
+method to return deliveries
+method to return takeaway
+
+orders are marked complete by chef or waiter
+(order needs setter to mark complete)
+
+eat in / takeaway / collection are all subclasses of order (need to create takeaway and collection)
+
+eatin will hold reference to the table object (not the other way round)
+
+
+have done today
+
+added comments to show which classes i have @authored
+
+created takeaway
+created delivery
+
+restaurant holds arraylst of orders
+restaurant:
+-   can return order array list
+-   can return orders that are unfulfilled
+-   can return orders placed by a specific customer (customer order history)
+-   methods to return eat ins
+-   method to return deliveries
+-   method to return takeaway
+
+all order types can be constructed with or without ordernotes - if without order notes is set to empty string
+(consider revising how this works?)
+
+methods to place eatinOrder, deliveryOrder, takeawayOrder
