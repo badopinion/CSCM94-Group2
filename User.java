@@ -1,4 +1,12 @@
-public class User {
+import java.io.*;
+
+/**
+ * Superclass of all user types. Contains information and methods relevant to all users.
+ * @author: Jo Butler
+ * @version: 2
+ */
+
+public class User implements Serializable {
 	private String username;
 	private String password;
 	private String firstName;
@@ -13,7 +21,6 @@ public class User {
 		this.lastName = lastName;
 		this.homeAddress = homeAddress;
 	}
-
 
 	//Getters - JB
 	public String getFirstName() {
@@ -33,8 +40,7 @@ public class User {
 		return username;
 	}
 
-
-  //Setters - JB
+  	//Setters - JB
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}

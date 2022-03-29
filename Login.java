@@ -1,6 +1,14 @@
 import java.util.ArrayList;
+import java.io.*;
 
-public class Login {
+/**
+ * Login holds all user profiles and keeps track of which user is currently logged in.
+ * To get user information or log users in or out, other classes reference Login.
+ * @author Jo Butler
+ * @version 3
+ */
+
+public class Login implements Serializable {
 	User loggedIn = null; // User that is currently logged in. JB
 	ArrayList<User> userList = new ArrayList<User>(); // All user profiles. JB
 
@@ -19,14 +27,10 @@ public class Login {
 		this.loggedIn = null;
 	}
 
-	// TODO: ALL METHODS BELOW NEED TESTING BEFORE PULL REQUEST. JB
-	// TODO: Ongoing - Methods below will need updating to keep up with any changes to constructors. JB
-	
 	// Methods to create users (of all types). No duplicate usernames.
 	// All users created are added to Login's arraylist of users.
 	// Other classes call methods of Login to get hold of them.
 	// Return false if entered username was already taken. JB
-	// TODO: Manager, Waiter, Chef, Driver, Customer
 	public boolean newManager(String username, String password, String firstName, String lastName, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
@@ -109,6 +113,7 @@ public class Login {
 		return false;
 	}
 
+	// Gets user
 	public User getUserFromUsername(String username){
     	for(User u : userList){
     		if(u.getUsername().equals(username)){

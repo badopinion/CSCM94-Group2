@@ -6,6 +6,7 @@
 import java.util.ArrayList;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.io.*;
 
 /**
  * An order class (child: Eatin, Takeaway, Delivery)
@@ -13,7 +14,7 @@ import java.time.format.DateTimeFormatter;
  * @version 1
  */
 
-public class Order{
+public class Order implements Serializable{
     private int orderID;
     private Customer customer;
     //orderNotes could be used to store dietary requirements e.g. "nut allergy" or request e.g. "no potatoes" - OJ

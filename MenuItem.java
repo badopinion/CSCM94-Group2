@@ -1,11 +1,13 @@
+import java.io.*;
+
 /**
  * A menuItem class (food and drink that can be ordered)
  * menuItems can be special or not, on or off
- * @author Oliver Jackson
+ * @author Oliver Jackson, Jo Butler
  * @version 1
  */
 
-public class MenuItem {
+public class MenuItem implements Serializable {
 	private String name;
     private String description;
 	private float price;

@@ -1,19 +1,31 @@
 import java.util.ArrayList;
+import java.io.*;
 
 /**
- * A Restaurant class that aggregates orders and holds methods to show outstanding orders...
- * @author Oliver Jackson
- * @version 1
+ * A Restaurant class that aggregates orders and holds methods to show outstanding orders.
+ * One instance. Restaurant also holds reference to other single-instance aggregator objects.
+ * Restaurant can be saved to disk, which saves the entire program state due to the references it holds.
+ * @author Oliver Jackson, Jo Butler
+ * @version 2
  */
 
-public class Restaurant {
+public class Restaurant implements Serializable {
+    // Order functionality variables - OJ
     private ArrayList<Order> orders;
-    //order counter is the number of orders ever ordered, and is used for orderID
+    //order counter is the number of orders ever ordered, and is used for orderID - OJ
     private int orderCounter;
 
+    // References to other aggregator methods - JB
+    private Login login;
+    public Menu menu;
+
+    // Constructor - OJ
     public Restaurant() {
         this.orders = new ArrayList<Order>();
         this.orderCounter = 0;
+        this.login = new Login();
+        this.menu = new Menu();
+        this.menu.populateMenu();
     }
 
     //Getters
@@ -99,4 +111,29 @@ public class Restaurant {
         return deliveryOrders;
     }
 
+    //Saves the restaurant object (and all aggregated or referenced objects with it - full system state save) - JB
+    //Please note the load function is in Main. Need to be able to load before instantiating - JB
+    public void saveRestaurant(){
+        try {
+            File restaurantFile = new File("restaurant.ser");
+            if(restaurantFile.isFile()){
+                System.out.println("Attempting to overwrite old Restaurant data:");
+                if(restaurantFile.delete()){
+                    System.out.println("Deleted old Restaurant data from file.");
+                } else {
+                    System.out.println("Attempted to delete old Restaurant data from file, but failed.");
+                }
+            }
+            restaurantFile.createNewFile();
+            FileOutputStream fos = new FileOutputStream("restaurant.ser");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(this);
+            oos.close();
+            fos.close();
+            System.out.println("Restaurant object saved to restaurant.ser");
+        } catch (IOException ioe) {
+            System.out.println("IOException while trying to save Restaurant object.");
+            ioe.printStackTrace();
+        }
+    }
 }

@@ -1,10 +1,12 @@
+import java.io.*;
+
 /**
  * A table class
  * @author Oliver Jackson
  * @version 1
  */
 
-public class Table {
+public class Table implements Serializable{
     private int tableNumber;
     private int capacity;
 
