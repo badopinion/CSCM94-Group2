@@ -23,7 +23,7 @@
          <children>
             <Label alignment="CENTER" prefHeight="83.0" prefWidth="292.0" text="Customer platform options" textAlignment="CENTER" textFill="#265560">
                <font>
-                  <Font name="System Bold" size="19.0" />
+                  <Font name="Arial Black" size="19.0" />
                </font>
             </Label>
             <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="59.0" prefWidth="216.0" text="View profile" GridPane.rowIndex="1">

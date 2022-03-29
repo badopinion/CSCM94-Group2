@@ -11,7 +11,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="477.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.CustomerBookingController">
    <children>
       <Pane layoutY="32.0" prefHeight="367.0" prefWidth="132.0">
@@ -47,11 +46,10 @@
       </Pane>
       <TableView layoutX="328.0" layoutY="53.0" prefHeight="341.0" prefWidth="372.0">
         <columns>
-          <TableColumn prefWidth="44.6666259765625" text="Date" />
-          <TableColumn prefWidth="47.99993896484375" text="Time" />
-            <TableColumn prefWidth="96.66653442382812" text="Guest number" />
-            <TableColumn prefWidth="77.33331298828125" text="Approved" />
-            <TableColumn prefWidth="92.666748046875" text="BookingID" />
+          <TableColumn prefWidth="54.66668701171875" text="Date" />
+          <TableColumn prefWidth="61.33331298828125" text="Time" />
+            <TableColumn prefWidth="109.99996948242188" text="Guest number" />
+            <TableColumn prefWidth="140.6666259765625" text="Approved" />
         </columns>
       </TableView>
       <Label layoutX="328.0" layoutY="22.0" prefHeight="15.0" prefWidth="121.0" text="Bookings">
