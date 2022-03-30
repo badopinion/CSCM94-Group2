@@ -1,8 +1,8 @@
 import java.io.*;
 
 /**
- * A menuItem class (food and drink that can be ordered)
- * menuItems can be special or not, on or off
+ * A menuItem class (food and drink that can be ordered).
+ * menuItems can be special or not, on or off service.
  * @author Oliver Jackson, Jo Butler
  * @version 1
  */

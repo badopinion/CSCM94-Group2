@@ -3,7 +3,7 @@ import java.util.Date;
 import java.io.*;
 
 /**
- * A menu class that aggrigates menuItems and provides functionality for ordering food / drink
+ * A menu class that aggrigates menuItems and provides functionality for ordering food / drink.
  * @author Oliver Jackson, Jo Butler
  * @version 2
  */
