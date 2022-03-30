@@ -3,7 +3,7 @@ import java.time.format.DateTimeFormatter;
 import java.io.*;
 
 /**
- * A shift class
+ * A shift class.
  * @author Oliver Jackson
  * @version 1
  */
