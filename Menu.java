@@ -1,13 +1,14 @@
 import java.util.ArrayList;
 import java.util.Date;
+import java.io.*;
 
 /**
  * A menu class that aggrigates menuItems and provides functionality for ordering food / drink
- * @author Oliver Jackson
- * @version 1
+ * @author Oliver Jackson, Jo Butler
+ * @version 2
  */
 
-public class Menu {
+public class Menu implements Serializable {
 	private ArrayList<MenuItem> menuItems = new ArrayList<MenuItem>();
 	
 	// Constructor
@@ -60,10 +61,11 @@ public class Menu {
 	}
 
 	//Method to return menuItem by name - returns null if no matching item exists - OJ
-	// any method using this must handle a potential null return
+	//Any method using this must handle a potential null return
+	//IF EVER CONFLICT RESOLVING THIS IN GIT, use .equals() and not == . With ==, stuff breaks after save/load - JB
 	public MenuItem returnMenuItemByName (String desiredMenuItemName){
 		for (MenuItem menuItem : menuItems){
-			if (menuItem.getName() == desiredMenuItemName){
+			if (menuItem.getName().equals(desiredMenuItemName)){
 				return menuItem;
 			}
 		}
@@ -89,7 +91,6 @@ public class Menu {
 			menuItem.setOnMenu(isOn);
 		}
 	}
-
 
 	//This method populates the menu - OJ
 	public void populateMenu(){
@@ -137,8 +138,6 @@ public class Menu {
 		Delivery deliveryOrder = new Delivery(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, deliveryAddress);
 		restaurant.addOrder(deliveryOrder);
 	}
-
-	//Method to create order (eatin/ takeaway / delivery)
 
 
 
