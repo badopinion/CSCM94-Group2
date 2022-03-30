@@ -51,7 +51,7 @@ public class Login implements Serializable {
 		return true;
 	}
 	
-	public boolean newChef(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+	public boolean newChef(String username, String password, String firstName, String lastName, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
 				return false;
@@ -61,7 +61,7 @@ public class Login implements Serializable {
 		return true;
 	}
 	
-	public boolean newDriver(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+	public boolean newDriver(String username, String password, String firstName, String lastName, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
 				return false;
@@ -71,7 +71,7 @@ public class Login implements Serializable {
 		return true;
 	}
 	
-	public boolean newCustomer(String username, String password, String firstName, String lastName, String homeAddress, int customerId){
+	public boolean newCustomer(String username, String password, String firstName, String lastName, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
 				return false;
@@ -113,7 +113,7 @@ public class Login implements Serializable {
 		return false;
 	}
 
-	// Gets user
+	// Gets user from username. JB
 	public User getUserFromUsername(String username){
     	for(User u : userList){
     		if(u.getUsername().equals(username)){
@@ -121,5 +121,10 @@ public class Login implements Serializable {
     		}
 		}
     	return null;
+	}
+
+	// Gets user that is logged in. JB
+	public User getLoggedIn(){
+    	return this.loggedIn;
 	}
 }

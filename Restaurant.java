@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.io.*;
 
 /**
- * A Restaurant class that aggregates orders and holds methods to show outstanding orders.
+ * A Restaurant class that aggregates orders and holds methods to show outstanding orders. Also aggregates Tables.
  * One instance. Restaurant also holds reference to other single-instance aggregator objects.
  * Restaurant can be saved to disk, which saves the entire program state due to the references it holds.
  * @author Oliver Jackson, Jo Butler
@@ -15,8 +15,11 @@ public class Restaurant implements Serializable {
     //order counter is the number of orders ever ordered, and is used for orderID - OJ
     private int orderCounter;
 
+    // Restaurant aggregates tables. JB
+    private Table[] tables;
+
     // References to other aggregator methods - JB
-    private Login login;
+    public Login login;
     public Menu menu;
 
     // Constructor - OJ
@@ -26,6 +29,11 @@ public class Restaurant implements Serializable {
         this.login = new Login();
         this.menu = new Menu();
         this.menu.populateMenu();
+        this.tables = new Table[] {
+                new Table(1,2), new Table(2,2), new Table(3,2), new Table(4,2),
+                new Table(5,4), new Table(6,4), new Table(7,4), new Table(8,4),
+                new Table(9,8), new Table(10,8), new Table(11,10)
+        };
     }
 
     //Getters
@@ -35,6 +43,10 @@ public class Restaurant implements Serializable {
 
     public ArrayList<Order> getAllOrders() {
         return orders;
+    }
+
+    public Table getTable(int tableNumber){
+        return tables[tableNumber-1]; // I assume the restaurant itself doesn't use java's 0-based indexing - JB
     }
 
     //Setters
@@ -112,7 +124,7 @@ public class Restaurant implements Serializable {
     }
 
     //Saves the restaurant object (and all aggregated or referenced objects with it - full system state save) - JB
-    //Please note the load function is in Main. Need to be able to load before instantiating - JB
+    //Please note the load function is in Main. Need to be able to load without previous instance existing - JB
     public void saveRestaurant(){
         try {
             File restaurantFile = new File("restaurant.ser");

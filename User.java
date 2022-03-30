@@ -1,7 +1,8 @@
 import java.io.*;
 
 /**
- * Superclass of all user types. Contains information and methods relevant to all users.
+ * Superclass of all user types. Contains information and methods relevant to all users
+ * (child: Customer, Staff, Manager, Waiter, Driver, Chef)
  * @author: Jo Butler
  * @version: 2
  */

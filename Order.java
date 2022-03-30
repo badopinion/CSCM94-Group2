@@ -34,8 +34,6 @@ public class Order implements Serializable{
         this.orderCancelled = false;
         this.orderedMenuItems = orderedMenuItems;
         orderDateTime = LocalDateTime.now();
-
-
     }
 
     //Getters
