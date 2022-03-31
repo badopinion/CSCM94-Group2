@@ -6,7 +6,7 @@ public class Main{
         Menu cafe94Menu = new Menu();
         cafe94Menu.populateMenu();
         cafe94Menu.printMenuItems();
-        cafe94Menu.createAndAddMenuItem("Pasta Carbonara", "An italian classic", 12.5f, true, false);
+        cafe94Menu.createAndAddMenuItem("Pasta Carbonara", "An italian classic", 12.5f, true, false, MenuItemType.FOOD);
         cafe94Menu.printMenuItems();
         System.out.println(cafe94Menu.returnMenuItemByName("Pasta Carbonara"));
 
@@ -24,6 +24,9 @@ public class Main{
         System.out.println(cafe94.returnTakeawayOrders());
         System.out.println("delivery orders:");
         System.out.println(cafe94.returnDeliveryOrders());
+
+        System.out.println();
+        System.out.println(cafe94Menu.returnMenuItemsByType(cafe94Menu.getCurrentItems(), MenuItemType.COFFEE));
 
 
 
