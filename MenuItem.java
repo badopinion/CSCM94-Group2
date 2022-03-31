@@ -14,14 +14,16 @@ public class MenuItem implements Serializable {
 	// Both of the below can be toggled on or off to prevent them being returned inappropriately.
 	private boolean onMenu; // Is this item currently being served?
 	private boolean currentSpecial; // Is this item a special?
+	private MenuItemType menuItemType;
 	
 	// Constructor
-	public MenuItem(String name, String description, float price, boolean onMenu, boolean isSpecial){
+	public MenuItem(String name, String description, float price, boolean onMenu, boolean isSpecial, MenuItemType menuItemType){
 		this.name = name;
 		this.description = description;
 		this.price = price;
 		this.onMenu = onMenu;
 		this.currentSpecial = isSpecial;
+		this.menuItemType = menuItemType;
 	}
 	
 	// Getters &
@@ -45,6 +47,10 @@ public class MenuItem implements Serializable {
 		return this.currentSpecial;
 	}
 
+	public MenuItemType getMenuItemType() {
+		return menuItemType;
+	}
+
 	//Setters
 
 	public void setName(String newName){
@@ -65,6 +71,10 @@ public class MenuItem implements Serializable {
 	
 	public void setSpecial(boolean special){
 		this.currentSpecial = special;
+	}
+
+	public void setMenuItemType(MenuItemType menuItemType) {
+		this.menuItemType = menuItemType;
 	}
 
 	//toString Method - OJ
