@@ -11,7 +11,28 @@ import java.time.format.DateTimeFormatter;
 
 public class Main{
     public static void main (String[] args){
+    //OJ naked tests
+        Table table1 = new Table(1, 6);
+        System.out.println("Table number: " + table1.getTableNumber());
 
+        Restaurant cafe94 = new Restaurant();
+        Menu cafe94Menu = new Menu();
+        cafe94Menu.populateMenu();
+        cafe94Menu.printMenuItems();
+
+
+        Customer jamesTabor = new Customer("jamesTabor", "1234", "james", "tabor", "10 Swansea Road, Swansea, Wales");
+
+
+        cafe94Menu.placeEatInOrder(cafe94, jamesTabor, "", table1, cafe94Menu.returnMenuItemByName("Cheese Burger"), cafe94Menu.returnMenuItemByName("Mushroom soup"));
+        cafe94Menu.placeTakeawayOrder(cafe94, jamesTabor, "", "12:30", cafe94Menu.returnMenuItemByName("Cheese Burger"));
+        cafe94Menu.placeDeliveryOrder(cafe94, jamesTabor, "", "1 Swansea Lane, Swansea", cafe94Menu.returnMenuItemByName("Cheese Burger"));
+        System.out.println();
+        System.out.println(cafe94.returnCustomerOrderHistory(jamesTabor));
+        System.out.println();
+        System.out.println(cafe94Menu.returnMenuItemsByType(cafe94Menu.getCurrentItems(), MenuItemType.COFFEE));
+
+    //JB Tests w/ restaurant object
         // If a file called restaurant.ser exists: load the Restaurant object from that file.
         // If no such file exists, instantiate a new Restaurant object. - JB
         Restaurant restaurant = null;
@@ -66,44 +87,10 @@ public class Main{
 
         restaurant.saveRestaurant();
 
-        //Tests from before restaurant rework. Preserved for reference, to be removed before submission - JB
-
-//        Table table1 = new Table(1, 6);
-//        System.out.println("Table number: " + table1.getTableNumber());
-
-//        Menu cafe94Menu = new Menu();
-//        cafe94Menu.populateMenu();
-//        cafe94Menu.printMenuItems();
-//        cafe94Menu.createAndAddMenuItem("Pasta Carbonara", "An italian classic", 12.5f, true, false);
-//        cafe94Menu.printMenuItems();
-//        System.out.println(cafe94Menu.returnMenuItemByName("Pasta Carbonara"));
-
-//        Customer jamesTabor = new Customer("jamesTabor", "1234", "james", "tabor", "10 Swansea Road, Swansea, Wales");
-//        Restaurant cafe94 = new Restaurant();
-
-//        cafe94Menu.placeEatInOrder(cafe94, jamesTabor, "", table1, cafe94Menu.returnMenuItemByName("Cheese Burger"), cafe94Menu.returnMenuItemByName("Mushroom soup"));
-//        cafe94Menu.placeTakeawayOrder(cafe94, jamesTabor, "", "12:30", cafe94Menu.returnMenuItemByName("Cheese Burger"));
-//        cafe94Menu.placeDeliveryOrder(cafe94, jamesTabor, "", "1 Swansea Lane, Swansea", cafe94Menu.returnMenuItemByName("Cheese Burger"));
-//        System.out.println("James would like to order");
-//        System.out.println(cafe94.returnCustomerOrderHistory(jamesTabor));
-//        System.out.println("eatIn orders:");
-//        System.out.println(cafe94.returnEatInOrders());
-//        System.out.println("takeaway orders:");
-//        System.out.println(cafe94.returnTakeawayOrders());
-//        System.out.println("delivery orders:");
-//        System.out.println(cafe94.returnDeliveryOrders());
 
 
 
-        //Some testing below - OJ
 
-//        System.out.println(cafe94Menu.returnMenuItemByName("Cheese Burger"));
-//        cafe94Menu.setMenuItemIsOnOrOff("Cheese Burger", false);
-//        System.out.println(cafe94Menu.returnMenuItemByName("Cheese Burger"));
-//        cafe94Menu.setMenuItemSpecialOrNot("Cheese Burger", true);
-//        System.out.println(cafe94Menu.returnMenuItemByName("Cheese Burger"));
-//        System.out.println(cafe94Menu.returnMenuItemByName("Burger"));
-//        cafe94Menu.setMenuItemSpecialOrNot("Burger", true);
 
       //Some testing below - JB
 
