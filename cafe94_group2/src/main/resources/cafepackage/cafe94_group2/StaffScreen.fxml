@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.StaffScreenController">
+   <top>
+      <AnchorPane prefHeight="73.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="35.0" layoutY="11.0" prefHeight="51.0" prefWidth="191.0" text="Staff">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Text layoutX="214.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select your employee type" wrappingWidth="335.5735778808594">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="327.0" prefWidth="181.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="managerChoose" layoutX="19.0" layoutY="110.0" mnemonicParsing="false" onAction="#ManagerChooseOnAction" prefHeight="85.0" prefWidth="143.0" text="Manager" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="327.0" prefWidth="241.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="waiterChoose" layoutX="53.0" layoutY="14.0" mnemonicParsing="false" onAction="#WaiterChooseOnAction" prefHeight="95.0" prefWidth="124.0" text="Waiter" />
+            <Button fx:id="chefChoose" layoutX="47.0" layoutY="208.0" mnemonicParsing="false" onAction="#ChefChooseOnAction" prefHeight="90.0" prefWidth="134.0" text="Chef" />
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="driverChoose" layoutX="37.0" layoutY="107.0" mnemonicParsing="false" onAction="#DriverChooseOnAction" prefHeight="90.0" prefWidth="142.0" text="Driver" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
