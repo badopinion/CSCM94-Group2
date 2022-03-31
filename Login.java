@@ -112,6 +112,8 @@ public class Login implements Serializable {
 		}
 		return false;
 	}
+	
+	// Getters - JB
 
 	// Gets user from username. JB
 	public User getUserFromUsername(String username){
@@ -126,5 +128,21 @@ public class Login implements Serializable {
 	// Gets user that is logged in. JB
 	public User getLoggedIn(){
     	return this.loggedIn;
+	}
+	
+	// Gets the full list of users
+	public ArrayList<User> getUserList(){
+		return userList;
+	}
+	
+	// Gets a list of only staff
+	public ArrayList<Staff> getStaffList(){
+		ArrayList<Staff> staffList = new ArrayList<Staff>();
+		for(User u : userList){
+			if(u instanceof Staff){
+				staffList.add((Staff)u);
+			}
+		}
+		return staffList;
 	}
 }

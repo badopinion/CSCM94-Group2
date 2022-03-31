@@ -1,6 +1,7 @@
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 /**
  * Upon program start, main creates Restaurant, by loading from save data or making a new one if no saved data exists.
@@ -41,7 +42,7 @@ public class Main{
         System.out.println(restaurant.login.newWaiter("waiter", "ihatetheserviceindustry", "Steve", "Loa", "Under a bridge"));
         restaurant.login.loginWithCredentials("manager", "madwithpower");
         System.out.println(restaurant.login.checkLoggedInUserType());
-        User steve = restaurant.login.getUserFromUsername("waiter");
+        Waiter steve = (Waiter) restaurant.login.getUserFromUsername("waiter");
         System.out.println(restaurant.login.checkUserType(steve));
         restaurant.login.newCustomer("jamesTabor", "1234", "James", "Tabor", "10 Swansea Road, Swansea, Wales");
         //Order tests - JB
@@ -63,6 +64,17 @@ public class Main{
         System.out.println(restaurant.getTable(1).addBooking(2, LocalDateTime.of(2023, 05, 28, 14, 33, 1), 60, jt));
         System.out.println(restaurant.getTable(1).addBooking(2, LocalDateTime.of(2023, 05, 28, 14, 35, 1), 30, jt));
         System.out.println(restaurant.getTable(1).addBooking(2, LocalDateTime.of(2023, 05, 28, 14, 00, 1), 200, jt));
+		//Testing reports - JB
+		System.out.println("Testing staff hours report.");
+		Shift workedShift = new Shift(steve, "2022-03-04", "11:00", "21:00");
+		steve.addShift(new Shift(steve, "2022-03-01", "10:00", "18:00"));
+		steve.addShift(workedShift);
+		steve.approveShift(workedShift);
+		Report reports = new Report();
+		ArrayList<StaffHours> staffWorkReport = reports.hoursWorkedReport(restaurant);
+		for(StaffHours sh : staffWorkReport){
+			System.out.println(sh.staffMember.getFirstName() + " " + sh.staffMember.getLastName() + ": " + sh.hours + " hours worked.");
+		}
 
         restaurant.saveRestaurant();
 
