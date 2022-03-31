@@ -15,25 +15,7 @@ public class Menu {
 		
 	}
 
-	//Method to set menu item as special or not (true = special) - OJ
-	public void setMenuItemSpecialOrNot(String menuItemName, boolean isSpecial){
-		MenuItem menuItem = returnMenuItemByName(menuItemName);
-		if (menuItem == null){
-			System.out.println("Menu item not found.");
-		} else {
-			menuItem.setSpecial(isSpecial);
-		}
-	}
 
-	//Method to set menu item as on or off (true = on) - OJ
-	public void setMenuItemIsOnOrOff(String menuItemName, boolean isOn){
-		MenuItem menuItem = returnMenuItemByName(menuItemName);
-		if (menuItem == null){
-			System.out.println("Menu item not found.");
-		} else {
-			menuItem.setOnMenu(isOn);
-		}
-	}
 	
 	public ArrayList<MenuItem> getAllItems(){
 		return menuItems;
@@ -95,7 +77,7 @@ public class Menu {
 	// any method using this must handle a potential null return
 	public MenuItem returnMenuItemByName (String desiredMenuItemName){
 		for (MenuItem menuItem : menuItems){
-			if (menuItem.getName() == desiredMenuItemName){
+			if (menuItem.getName().toLowerCase().equals(desiredMenuItemName.toLowerCase())){
 				return menuItem;
 			}
 		}
@@ -110,14 +92,32 @@ public class Menu {
 	public ArrayList<MenuItem> returnMenuItemsByType(ArrayList<MenuItem> menuItems, MenuItemType menuItemType){
 		ArrayList<MenuItem> menuItemsOfType = new ArrayList<MenuItem>();
 		for (MenuItem menuItem : menuItems){
-			if (menuItem.getMenuItemType == menuItemType) {
+			if (menuItem.getMenuItemType() == menuItemType) {
 				menuItemsOfType.add(menuItem);
 			}
 		}
 		return menuItemsOfType;
 	}
 
+	//Method to set menu item as special or not (true = special) - OJ
+	public void setMenuItemSpecialOrNot(String menuItemName, boolean isSpecial){
+		MenuItem menuItem = returnMenuItemByName(menuItemName);
+		if (menuItem == null){
+			System.out.println("Menu item not found.");
+		} else {
+			menuItem.setSpecial(isSpecial);
+		}
+	}
 
+	//Method to set menu item as on or off (true = on) - OJ
+	public void setMenuItemIsOnOrOff(String menuItemName, boolean isOn){
+		MenuItem menuItem = returnMenuItemByName(menuItemName);
+		if (menuItem == null){
+			System.out.println("Menu item not found.");
+		} else {
+			menuItem.setOnMenu(isOn);
+		}
+	}
 
 
 
@@ -129,6 +129,7 @@ public class Menu {
 		createAndAddMenuItem("Ham and cheese toastie", "locally sourced ham with cheddar, as a toastie", 8.0f, true, false, MenuItemType.FOOD);
 		createAndAddMenuItem("Mushroom soup", "Mushrooms in a soup served with fresh baguette", 8.0f, true, false, MenuItemType.FOOD);
 		createAndAddMenuItem("American hot pizza", "The classic, cooked in our new pizza oven", 12.0f, true, true, MenuItemType.FOOD);
+		createAndAddMenuItem("Pasta Carbonara", "An italian classic", 12.5f, true, false, MenuItemType.FOOD);
 		createAndAddMenuItem("Heineken beer", "One pint 5%", 4.0f, true, false, MenuItemType.DRINK);
 		createAndAddMenuItem("Rioja red wine", "175ml glass 13%", 4.0f, true, false, MenuItemType.DRINK);
 		createAndAddMenuItem("Flat white coffee", "Two shots of espresso and hot frothy milk", 3.5f,true, false, MenuItemType.COFFEE);

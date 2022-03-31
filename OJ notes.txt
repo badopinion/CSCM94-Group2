@@ -55,3 +55,6 @@ menuitem == coffee
 
 change returnmenuitembyname method (in menu) to include a try catch for null pointer exception
 remove if menuitem == null in other methods
+
+trycatch for return menuitem by type
+
