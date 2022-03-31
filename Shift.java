@@ -1,13 +1,14 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.io.*;
 
 /**
- * A shift class
+ * A shift class.
  * @author Oliver Jackson
  * @version 1
  */
 
-public class Shift{
+public class Shift implements Serializable{
 
     private Staff staffMember;
     private LocalDateTime start;
