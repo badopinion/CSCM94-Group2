@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.StaffScreenController">
    <top>
       <AnchorPane prefHeight="73.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -27,22 +27,22 @@
    <left>
       <AnchorPane prefHeight="327.0" prefWidth="181.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="19.0" layoutY="110.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="143.0" text="Manager" />
+            <Button fx:id="managerChoose" layoutX="19.0" layoutY="110.0" mnemonicParsing="false" onAction="#ManagerChooseOnAction" prefHeight="85.0" prefWidth="143.0" text="Manager" />
          </children>
       </AnchorPane>
    </left>
    <center>
       <AnchorPane prefHeight="327.0" prefWidth="241.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="53.0" layoutY="14.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="124.0" text="Waiter" />
-            <Button layoutX="47.0" layoutY="208.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="134.0" text="Chef" />
+            <Button fx:id="waiterChoose" layoutX="53.0" layoutY="14.0" mnemonicParsing="false" onAction="#WaiterChooseOnAction" prefHeight="95.0" prefWidth="124.0" text="Waiter" />
+            <Button fx:id="chefChoose" layoutX="47.0" layoutY="208.0" mnemonicParsing="false" onAction="#ChefChooseOnAction" prefHeight="90.0" prefWidth="134.0" text="Chef" />
          </children>
       </AnchorPane>
    </center>
    <right>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="37.0" layoutY="107.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="142.0" text="Driver" />
+            <Button fx:id="driverChoose" layoutX="37.0" layoutY="107.0" mnemonicParsing="false" onAction="#DriverChooseOnAction" prefHeight="90.0" prefWidth="142.0" text="Driver" />
          </children>
       </AnchorPane>
    </right>
