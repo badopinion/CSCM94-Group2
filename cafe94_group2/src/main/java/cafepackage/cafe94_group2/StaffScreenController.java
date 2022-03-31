@@ -24,7 +24,7 @@ public class StaffScreenController {
         Stage managerScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("ManagerScreen.fxml"));
         managerScreen.setTitle("ManagerInterface");
-        managerScreen.setScene(new Scene(root, 750, 550));
+        managerScreen.setScene(new Scene(root, 730, 530));
         managerScreen.setX(600);
         managerScreen.setY(250);
         managerScreen.initModality(Modality.APPLICATION_MODAL);
@@ -35,7 +35,7 @@ public class StaffScreenController {
         Stage driverScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("DriverScreen.fxml"));
         driverScreen.setTitle("DriverInterface");
-        driverScreen.setScene(new Scene(root, 750, 550));
+        driverScreen.setScene(new Scene(root, 730, 530));
         driverScreen.setX(600);
         driverScreen.setY(250);
         driverScreen.initModality(Modality.APPLICATION_MODAL);
@@ -46,7 +46,7 @@ public class StaffScreenController {
         Stage waiterScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("WaiterScreen.fxml"));
         waiterScreen.setTitle("WaiterInterface");
-        waiterScreen.setScene(new Scene(root, 750, 550));
+        waiterScreen.setScene(new Scene(root, 730, 530));
         waiterScreen.setX(600);
         waiterScreen.setY(250);
         waiterScreen.initModality(Modality.APPLICATION_MODAL);
@@ -57,7 +57,7 @@ public class StaffScreenController {
         Stage chefScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("ChefScreen.fxml"));
         chefScreen.setTitle("ChefInterface");
-        chefScreen.setScene(new Scene(root, 750, 550));
+        chefScreen.setScene(new Scene(root, 730, 530));
         chefScreen.setX(600);
         chefScreen.setY(250);
         chefScreen.initModality(Modality.APPLICATION_MODAL);
