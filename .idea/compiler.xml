@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="cafe94_group2" target="1.5" />
+      <module name="cafe94_group2" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
