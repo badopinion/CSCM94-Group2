@@ -11,7 +11,7 @@ import java.io.*;
  */
 
 public class CafeMenu implements Serializable {
-	private ArrayList<MenuItem> menuItems = new ArrayList<MenuItem>();
+	private ArrayList<CafeMenuItem> menuItems = new ArrayList<CafeMenuItem>();
 	
 	// Constructor
 	public CafeMenu(){
@@ -67,7 +67,7 @@ public class CafeMenu implements Serializable {
 
 	public String returnMenuItems(){
 		String listMenuItems = "";
-		for(MenuItem item : menuItems){
+		for(CafeMenuItem item : menuItems){
 			listMenuItems = listMenuItems + item.getName();
 		}
 		return listMenuItems;
@@ -150,10 +150,10 @@ public class CafeMenu implements Serializable {
 	//this method uses varags to accept any number of order items beyond the 1st one
 	//takes orderNotes argument, if no notes enter empty string
 //
-//	public void placeEatInOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, MenuItem menuItem1, MenuItem... menuItems){
-//		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
+//	public void placeEatInOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, CafeMenuItem menuItem1, CafeMenuItem... menuItems){
+//		ArrayList<CafeMenuItem> orderedMenuItems = new ArrayList<CafeMenuItem>();
 //		orderedMenuItems.add(menuItem1);
-//		for (MenuItem menuItem : menuItems){
+//		for (CafeMenuItem menuItem : menuItems){
 //			orderedMenuItems.add(menuItem);
 //		}
 //		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
@@ -162,10 +162,10 @@ public class CafeMenu implements Serializable {
 //	}
 //
 //	//Method to place takeaway order - OJ
-//	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, String pickUpTime, MenuItem menuItem1, MenuItem... menuItems){
-//		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
+//	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, String pickUpTime, CafeMenuItem menuItem1, CafeMenuItem... menuItems){
+//		ArrayList<CafeMenuItem> orderedMenuItems = new ArrayList<CafeMenuItem>();
 //		orderedMenuItems.add(menuItem1);
-//		for (MenuItem menuItem : menuItems){
+//		for (CafeMenuItem menuItem : menuItems){
 //			orderedMenuItems.add(menuItem);
 //		}
 //		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
@@ -173,10 +173,10 @@ public class CafeMenu implements Serializable {
 //		restaurant.addOrder(takeawayOrder);
 //	}
 //
-//	public void placeDeliveryOrder(Restaurant restaurant, Customer customer, String orderNotes, String deliveryAddress, MenuItem menuItem1, MenuItem... menuItems){
-//		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
+//	public void placeDeliveryOrder(Restaurant restaurant, Customer customer, String orderNotes, String deliveryAddress, CafeMenuItem menuItem1, CafeMenuItem... menuItems){
+//		ArrayList<CafeMenuItem> orderedMenuItems = new ArrayList<CafeMenuItem>();
 //		orderedMenuItems.add(menuItem1);
-//		for (MenuItem menuItem : menuItems){
+//		for (CafeMenuItem menuItem : menuItems){
 //			orderedMenuItems.add(menuItem);
 //		}
 //		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);

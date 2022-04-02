@@ -21,18 +21,18 @@ public class Order implements Serializable{
     private String orderNotes;
     private boolean orderCompleted;
     private boolean orderCancelled;
-    private ArrayList<MenuItem> orderedMenuItems;
+    private ArrayList<CafeMenuItem> orderedCafeMenuItems;
     private LocalDateTime orderDateTime;
 
 
     //Constructor with ordernotes - OJ
-    public Order(int orderID, Customer customer, String orderNotes, ArrayList<MenuItem> orderedMenuItems) {
+    public Order(int orderID, Customer customer, String orderNotes, ArrayList<CafeMenuItem> orderedCafeMenuItems) {
         this.orderID = orderID;
         this.customer = customer;
         this.orderNotes = orderNotes;
         this.orderCompleted = false;
         this.orderCancelled = false;
-        this.orderedMenuItems = orderedMenuItems;
+        this.orderedCafeMenuItems = orderedCafeMenuItems;
         orderDateTime = LocalDateTime.now();
     }
 
@@ -57,8 +57,8 @@ public class Order implements Serializable{
         return orderCancelled;
     }
 
-    public ArrayList<MenuItem> getOrderedMenuItems() {
-        return orderedMenuItems;
+    public ArrayList<CafeMenuItem> getOrderedMenuItems() {
+        return orderedCafeMenuItems;
     }
 
     //Setters
@@ -77,8 +77,8 @@ public class Order implements Serializable{
     //method to calculate sum of price of order - OJ
     public float getOrderPrice(){
         float sum = 0;
-        for (MenuItem menuItem : orderedMenuItems){
-            sum += menuItem.getPrice();
+        for (CafeMenuItem cafeMenuItem : orderedCafeMenuItems){
+            sum += cafeMenuItem.getPrice();
         }
         return sum;
     }
@@ -106,7 +106,7 @@ public class Order implements Serializable{
                 ", orderNotes= '" + orderNotes + '\'' +
                 ", orderCompleted= " + orderCompleted +
                 ", orderCancelled= " + orderCancelled +
-                ", orderedMenuItems= " + orderedMenuItems +
+                ", orderedCafeMenuItems= " + orderedCafeMenuItems +
                 ", orderDateTime= " + dateTime +
                 ", orderType = " + this.typeOfOrder() +
                 '}';

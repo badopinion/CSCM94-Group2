@@ -54,7 +54,7 @@
                                           </HBox>
                                           <HBox prefHeight="74.0" prefWidth="330.0">
                                              <children>
-                                                <Label prefHeight="73.0" prefWidth="86.0" text="  MenuItem" />
+                                                <Label prefHeight="73.0" prefWidth="86.0" text="  CafeMenuItem" />
                                                 <ComboBox prefHeight="65.0" prefWidth="170.0" />
                                                 <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="79.0" text="ADD" />
                                              </children>

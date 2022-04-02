@@ -13,8 +13,8 @@ public class Takeaway extends Order {
     private LocalTime pickUpTime;
 
     //Constructor with order notes - OJ
-    public Takeaway(int orderID, Customer customer, String orderNotes, ArrayList<MenuItem> menuItems, String pickUpTime) {
-        super(orderID, customer, orderNotes, menuItems);
+    public Takeaway(int orderID, Customer customer, String orderNotes, ArrayList<CafeMenuItem> cafeMenuItems, String pickUpTime) {
+        super(orderID, customer, orderNotes, cafeMenuItems);
         this.pickUpTime = LocalTime.parse(pickUpTime);
     }
 

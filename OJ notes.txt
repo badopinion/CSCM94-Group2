@@ -2,7 +2,7 @@
 
 How are orders going to be managed / processed by the program?
 
-order contains an arraylist of orderedMenuItems
+order contains an arraylist of orderedCafeMenuItems
 
 pass arrayList of menuItemsOrdered to the constructor
 

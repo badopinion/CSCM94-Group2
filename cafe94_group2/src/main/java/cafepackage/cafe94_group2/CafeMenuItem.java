@@ -1,5 +1,3 @@
-package cafepackage.cafe94_group2;
-
 import java.io.*;
 
 /**
@@ -9,7 +7,7 @@ import java.io.*;
  * @version 1
  */
 
-public class MenuItem implements Serializable {
+public class CafeMenuItem implements Serializable {
 	private String name;
     private String description;
 	private float price;
@@ -19,7 +17,7 @@ public class MenuItem implements Serializable {
 	private MenuItemType menuItemType;
 	
 	// Constructor
-	public MenuItem(String name, String description, float price, boolean onMenu, boolean isSpecial, MenuItemType menuItemType){
+	public CafeMenuItem(String name, String description, float price, boolean onMenu, boolean isSpecial, MenuItemType menuItemType){
 		this.name = name;
 		this.description = description;
 		this.price = price;
