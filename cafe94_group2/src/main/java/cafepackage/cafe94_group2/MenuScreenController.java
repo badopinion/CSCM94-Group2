@@ -44,49 +44,9 @@ public class MenuScreenController {
         res.saveRestaurant();
     }
 
-//
-//    public void displayFood(ActionEvent event)throws IOException{
-//        Restaurant res = new Load().getRestaurantFromFile();
-//        if(res.menu.getAllItems().size() == 0) {
-//            res.menu.populateMenu();
-//        }
-//        StringBuilder food = new StringBuilder();
-//        for(MenuItem menuItem: res.menu.returnMenuItemsByType(res.menu.getCurrentItems(), MenuItemType.FOOD)){
-//            food.append(menuItem.getName() + "\n" );
-//        }
-//        display.setText(String.valueOf(food));
-//
-//    }
-//
-//    public void displayCoffee(ActionEvent event)throws IOException{
-//        Restaurant res = new Load().getRestaurantFromFile();
-//        if(res.menu.getAllItems().size() == 0) {
-//            res.menu.populateMenu();
-//        }
-//        StringBuilder food = new StringBuilder();
-//        for(MenuItem menuItem: res.menu.returnMenuItemsByType(res.menu.getCurrentItems(), MenuItemType.COFFEE)){
-//            food.append(menuItem.getName() + "\n" );
-//        }
-//        display.setText(String.valueOf(food));
-//
-//    }
-//
-//    public void displayDrink(ActionEvent event)throws IOException{
-//        Restaurant res = new Load().getRestaurantFromFile();
-//        if(res.menu.getAllItems().size() == 0) {
-//            res.menu.populateMenu();
-//        }
-//        StringBuilder food = new StringBuilder();
-//        for(MenuItem menuItem: res.menu.returnMenuItemsByType(res.menu.getCurrentItems(), MenuItemType.DRINK)){
-//            food.append(menuItem.getName() + "\n" );
-//        }
-//        display.setText(String.valueOf(food));
-//
-//    }
 
     public void displayFood(ActionEvent event)throws IOException{
-        Load load = new Load();
-        Restaurant res = load.loadRestaurant();
+        Restaurant res = new Load().getRestaurantFromFile();
         if(res.menu.getAllItems().size() == 0) {
             res.menu.populateMenu();
         }
@@ -99,8 +59,7 @@ public class MenuScreenController {
     }
 
     public void displayCoffee(ActionEvent event)throws IOException{
-        Load load = new Load();
-        Restaurant res = load.loadRestaurant();
+        Restaurant res = new Load().getRestaurantFromFile();
         if(res.menu.getAllItems().size() == 0) {
             res.menu.populateMenu();
         }
@@ -113,8 +72,7 @@ public class MenuScreenController {
     }
 
     public void displayDrink(ActionEvent event)throws IOException{
-        Load load = new Load();
-        Restaurant res = load.loadRestaurant();
+        Restaurant res = new Load().getRestaurantFromFile();
         if(res.menu.getAllItems().size() == 0) {
             res.menu.populateMenu();
         }
@@ -125,6 +83,48 @@ public class MenuScreenController {
         display.setText(String.valueOf(food));
 
     }
+
+//    public void displayFood(ActionEvent event)throws IOException{
+//        Load load = new Load();
+//        Restaurant res = load.loadRestaurant();
+//        if(res.menu.getAllItems().size() == 0) {
+//            res.menu.populateMenu();
+//        }
+//        StringBuilder food = new StringBuilder();
+//        for(MenuItem menuItem: res.menu.returnMenuItemsByType(res.menu.getCurrentItems(), MenuItemType.FOOD)){
+//            food.append(menuItem.getName() + "\n" );
+//        }
+//        display.setText(String.valueOf(food));
+//
+//    }
+//
+//    public void displayCoffee(ActionEvent event)throws IOException{
+//        Load load = new Load();
+//        Restaurant res = load.loadRestaurant();
+//        if(res.menu.getAllItems().size() == 0) {
+//            res.menu.populateMenu();
+//        }
+//        StringBuilder food = new StringBuilder();
+//        for(MenuItem menuItem: res.menu.returnMenuItemsByType(res.menu.getCurrentItems(), MenuItemType.COFFEE)){
+//            food.append(menuItem.getName() + "\n" );
+//        }
+//        display.setText(String.valueOf(food));
+//
+//    }
+//
+//    public void displayDrink(ActionEvent event)throws IOException{
+//        Load load = new Load();
+//        Restaurant res = load.loadRestaurant();
+//        if(res.menu.getAllItems().size() == 0) {
+//            res.menu.populateMenu();
+//        }
+//        StringBuilder food = new StringBuilder();
+//        for(MenuItem menuItem: res.menu.returnMenuItemsByType(res.menu.getCurrentItems(), MenuItemType.DRINK)){
+//            food.append(menuItem.getName() + "\n" );
+//        }
+//        display.setText(String.valueOf(food));
+//
+//    }
 
 
 }
