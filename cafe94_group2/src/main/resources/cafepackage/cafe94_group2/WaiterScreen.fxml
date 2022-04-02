@@ -17,7 +17,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="534.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.WaiterScreenController">
    <children>
       <TabPane layoutY="-1.0" prefHeight="534.0" prefWidth="732.0" tabClosingPolicy="UNAVAILABLE">
@@ -119,7 +118,7 @@
                                                                   </VBox>
                                                                   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                                      <children>
-                                                                        <Label prefHeight="15.0" prefWidth="95.0" text="8-SeatsTable">
+                                                                        <Label prefHeight="15.0" prefWidth="95.0" text="10-SeatsTable">
                                                                            <font>
                                                                               <Font size="14.0" />
                                                                            </font>
