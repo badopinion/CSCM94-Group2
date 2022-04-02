@@ -5,7 +5,7 @@ import java.util.Date;
 import java.io.*;
 
 /**
- * A menu class that aggrigates menuItems and provides functionality for ordering food / drink.
+ * A menu class that aggregates menuItems and provides functionality for ordering food / drink.
  * @author Oliver Jackson, Jo Butler
  * @version 2
  */
@@ -20,15 +20,15 @@ public class CafeMenu implements Serializable {
 
 
 	
-	public ArrayList<MenuItem> getAllItems(){
+	public ArrayList<CafeMenuItem> getAllItems(){
 		return menuItems;
 	}
 	
 	// Returns only those items that are currently being served (onMenu is true) - JB
 	// This also returns current specials (all items that are onMenu)
-	public ArrayList<MenuItem> getCurrentItems(){
-		ArrayList<MenuItem> currentItems = new ArrayList<MenuItem>();
-		for(MenuItem item : menuItems){
+	public ArrayList<CafeMenuItem> getCurrentItems(){
+		ArrayList<CafeMenuItem> currentItems = new ArrayList<MenuItem>();
+		for(CafeMenuItem item : menuItems){
 			if(item.isOnMenu()){
 				currentItems.add(item);
 			}
@@ -37,9 +37,9 @@ public class CafeMenu implements Serializable {
 	}
 
 	// Returns only those items that are currently being served, and are not specials - OJ
-	public ArrayList<MenuItem> getCurrentNonSpecials(){
-		ArrayList <MenuItem> currentNonSpecs = getCurrentItems();
-		for(MenuItem item : currentNonSpecs){
+	public ArrayList<CafeMenuItem> getCurrentNonSpecials(){
+		ArrayList <CafeMenuItem> currentNonSpecs = getCurrentItems();
+		for(CafeMenuItem item : currentNonSpecs){
 			if(!(item.isSpecial())){
 				currentNonSpecs.add(item);
 			}
@@ -48,9 +48,9 @@ public class CafeMenu implements Serializable {
 	}
 	
 	// Returns only those items that are currently being served, and are specials. - JB
-	public ArrayList<MenuItem> getCurrentSpecials(){
-		ArrayList <MenuItem> currentSpecs = getCurrentItems();
-		for(MenuItem item : currentSpecs){
+	public ArrayList<CafeMenuItem> getCurrentSpecials(){
+		ArrayList <CafeMenuItem> currentSpecs = getCurrentItems();
+		for(CafeMenuItem item : currentSpecs){
 			if(item.isSpecial()){
 				currentSpecs.add(item);
 			}
@@ -60,7 +60,7 @@ public class CafeMenu implements Serializable {
 
 	//Prints all menuItems - OJ
 	public void printMenuItems(){
-		for(MenuItem item : menuItems){
+		for(CafeMenuItem item : menuItems){
 			System.out.println(item);
 		}
 	}
@@ -74,21 +74,21 @@ public class CafeMenu implements Serializable {
 	}
 
 	// Method to add a new item to menu - JB
-	public void addItem(MenuItem newItem){
+	public void addItem(CafeMenuItem newItem){
 		menuItems.add(newItem);
 	}
 
 	//Creates a menuItem object and adds to arrayList of menu items - OJ
 	public void createAndAddMenuItem(String name, String description, float price, boolean onMenu, boolean isSpecial, MenuItemType menuItemType){
-		MenuItem newItem = new MenuItem(name, description, price, onMenu, isSpecial, menuItemType);
+		CafeMenuItem newItem = new CafeMenuItem(name, description, price, onMenu, isSpecial, menuItemType);
 		addItem(newItem);
 	}
 
 	//Method to return menuItem by name - returns null if no matching item exists - OJ
 	//Any method using this must handle a potential null return
 	//IF EVER CONFLICT RESOLVING THIS IN GIT, use .equals() and not == . With ==, stuff breaks after save/load - JB
-	public MenuItem returnMenuItemByName (String desiredMenuItemName){
-		for (MenuItem menuItem : menuItems){
+	public CafeMenuItem returnMenuItemByName (String desiredMenuItemName){
+		for (CafeMenuItem menuItem : menuItems){
 			if (menuItem.getName().toLowerCase().equals(desiredMenuItemName.toLowerCase())){
 				return menuItem;
 			}
@@ -101,9 +101,9 @@ public class CafeMenu implements Serializable {
 	//Use above methods to generate ArrayList e.g. getCurrentItems()
 	//Returns an ArrayList
 	//OJ
-	public ArrayList<MenuItem> returnMenuItemsByType(ArrayList<MenuItem> menuItems, MenuItemType menuItemType){
-		ArrayList<MenuItem> menuItemsOfType = new ArrayList<MenuItem>();
-		for (MenuItem menuItem : menuItems){
+	public ArrayList<CafeMenuItem> returnMenuItemsByType(ArrayList<CafeMenuItem> menuItems, MenuItemType menuItemType){
+		ArrayList<CafeMenuItem> menuItemsOfType = new ArrayList<CafeMenuItem>();
+		for (CafeMenuItem menuItem : menuItems){
 			if (menuItem.getMenuItemType() == menuItemType) {
 				menuItemsOfType.add(menuItem);
 			}
@@ -113,7 +113,7 @@ public class CafeMenu implements Serializable {
 
 	//Method to set menu item as special or not (true = special) - OJ
 	public void setMenuItemSpecialOrNot(String menuItemName, boolean isSpecial){
-		MenuItem menuItem = returnMenuItemByName(menuItemName);
+		CafeMenuItem menuItem = returnMenuItemByName(menuItemName);
 		if (menuItem == null){
 			System.out.println("Menu item not found.");
 		} else {
@@ -123,7 +123,7 @@ public class CafeMenu implements Serializable {
 
 	//Method to set menu item as on or off (true = on) - OJ
 	public void setMenuItemIsOnOrOff(String menuItemName, boolean isOn){
-		MenuItem menuItem = returnMenuItemByName(menuItemName);
+		CafeMenuItem menuItem = returnMenuItemByName(menuItemName);
 		if (menuItem == null){
 			System.out.println("Menu item not found.");
 		} else {
