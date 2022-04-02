@@ -62,7 +62,7 @@ public class Menu implements Serializable {
 			System.out.println(item);
 		}
 	}
-
+    // returns string of all menuitems - useful for testing
 	public String returnMenuItems(){
 		String listMenuItems = "";
 		for(MenuItem item : menuItems){
