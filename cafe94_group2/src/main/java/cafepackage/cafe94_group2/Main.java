@@ -17,7 +17,7 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 		// Load Restaurant from file if possible, or create new Restaurant object if not. - JB
 		Restaurant restaurant = null;
         File restaurantFile = new File("restaurant.ser");
