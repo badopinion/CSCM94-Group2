@@ -1,3 +1,5 @@
+import cafepackage.cafe94_group2.CafeMenu;
+
 import java.util.ArrayList;
 import java.io.*;
 
@@ -20,14 +22,14 @@ public class Restaurant implements Serializable {
 
     // References to other aggregator methods - JB
     public Login login;
-    public Menu menu;
+    public CafeMenu menu;
 
     // Constructor - OJ
     public Restaurant() {
         this.orders = new ArrayList<Order>();
         this.orderCounter = 0;
         this.login = new Login();
-        this.menu = new Menu();
+        this.menu = new CafeMenu();
         this.menu.populateMenu();
         this.tables = new Table[] {
                 new Table(1,2), new Table(2,2), new Table(3,2), new Table(4,2),
