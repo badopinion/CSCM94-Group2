@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.io.*;
 
 public class Main extends Application {
     @Override
@@ -23,8 +24,8 @@ public class Main extends Application {
         File restaurantFile = new File("restaurant.ser");
         if(restaurantFile.isFile()){
             restaurant = loadRestaurant();
-			if(restaurant.menu.returnMenuItemByName("Pasta Carbonara") == null) {
-				restaurant.menu.createAndAddMenuItem("Pasta Carbonara", "An italian classic", 12.5f, true, false, MenuItemType.FOOD);
+			if(restaurant.menu.returnMenuItemByName("Pizza Margharita") == null) {
+				restaurant.menu.createAndAddMenuItem("Pizza Margharita", "Another italian classic", 12.5f, true, false, MenuItemType.FOOD);
 			}
         } else {
             //System.out.println("No restaurant file found. Creating new Restaurant data.");
