@@ -51,7 +51,7 @@ public class Main{
         System.out.println(restaurant.menu.returnMenuItemByName("Cheese Burger"));
         restaurant.menu.printMenuItems();
         if(restaurant.menu.returnMenuItemByName("Pasta Carbonara") == null) {
-            restaurant.menu.createAndAddMenuItem("Pasta Carbonara", "An italian classic", 12.5f, true, false);
+            restaurant.menu.createAndAddMenuItem("Pasta Carbonara", "An italian classic", 12.5f, true, false, MenuItemType.FOOD);
         }
         restaurant.menu.printMenuItems();
         System.out.println(restaurant.menu.returnMenuItemByName("Pasta Carbonara"));

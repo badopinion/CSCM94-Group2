@@ -1,3 +1,5 @@
+package cafepackage.cafe94_group2;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.io.*;
@@ -8,11 +10,11 @@ import java.io.*;
  * @version 2
  */
 
-public class Menu implements Serializable {
+public class CafeMenu implements Serializable {
 	private ArrayList<MenuItem> menuItems = new ArrayList<MenuItem>();
 	
 	// Constructor
-	public Menu(){
+	public CafeMenu(){
 		
 	}
 
@@ -147,41 +149,41 @@ public class Menu implements Serializable {
 	//and sends it to customer order history)
 	//this method uses varags to accept any number of order items beyond the 1st one
 	//takes orderNotes argument, if no notes enter empty string
-
-	public void placeEatInOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, MenuItem menuItem1, MenuItem... menuItems){
-		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
-		orderedMenuItems.add(menuItem1);
-		for (MenuItem menuItem : menuItems){
-			orderedMenuItems.add(menuItem);
-		}
-		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
-		EatIn eatinOrder = new EatIn(table, restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems);
-		restaurant.addOrder(eatinOrder);
-	}
-
-	//Method to place takeaway order - OJ
-	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, String pickUpTime, MenuItem menuItem1, MenuItem... menuItems){
-		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
-		orderedMenuItems.add(menuItem1);
-		for (MenuItem menuItem : menuItems){
-			orderedMenuItems.add(menuItem);
-		}
-		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
-		Takeaway takeawayOrder = new Takeaway(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, pickUpTime);
-		restaurant.addOrder(takeawayOrder);
-	}
-
-	public void placeDeliveryOrder(Restaurant restaurant, Customer customer, String orderNotes, String deliveryAddress, MenuItem menuItem1, MenuItem... menuItems){
-		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
-		orderedMenuItems.add(menuItem1);
-		for (MenuItem menuItem : menuItems){
-			orderedMenuItems.add(menuItem);
-		}
-		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
-		Delivery deliveryOrder = new Delivery(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, deliveryAddress);
-		restaurant.addOrder(deliveryOrder);
-	}
-
+//
+//	public void placeEatInOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, MenuItem menuItem1, MenuItem... menuItems){
+//		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
+//		orderedMenuItems.add(menuItem1);
+//		for (MenuItem menuItem : menuItems){
+//			orderedMenuItems.add(menuItem);
+//		}
+//		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
+//		EatIn eatinOrder = new EatIn(table, restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems);
+//		restaurant.addOrder(eatinOrder);
+//	}
+//
+//	//Method to place takeaway order - OJ
+//	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, String pickUpTime, MenuItem menuItem1, MenuItem... menuItems){
+//		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
+//		orderedMenuItems.add(menuItem1);
+//		for (MenuItem menuItem : menuItems){
+//			orderedMenuItems.add(menuItem);
+//		}
+//		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
+//		Takeaway takeawayOrder = new Takeaway(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, pickUpTime);
+//		restaurant.addOrder(takeawayOrder);
+//	}
+//
+//	public void placeDeliveryOrder(Restaurant restaurant, Customer customer, String orderNotes, String deliveryAddress, MenuItem menuItem1, MenuItem... menuItems){
+//		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
+//		orderedMenuItems.add(menuItem1);
+//		for (MenuItem menuItem : menuItems){
+//			orderedMenuItems.add(menuItem);
+//		}
+//		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
+//		Delivery deliveryOrder = new Delivery(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, deliveryAddress);
+//		restaurant.addOrder(deliveryOrder);
+//	}
+//
 
 
 
