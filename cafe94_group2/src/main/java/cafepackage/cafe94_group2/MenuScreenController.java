@@ -25,10 +25,18 @@ public class MenuScreenController {
     }
 
     public void sayGoodbye(ActionEvent event) throws IOException {
-        CafeMenu newMenu = new CafeMenu();
-        newMenu.populateMenu();
-        String hello = newMenu.returnMenuItems();
+        // Get the restaurant from the file. This should work fine verbatim no matter where you call it.
+        Restaurant res = new Load().getRestaurantFromFile();
+
+        // Do stuff.
+        if(res.menu.getAllItems().size() == 0) {
+            res.menu.populateMenu();
+        }
+        String hello = res.menu.returnMenuItems();
         display.setText(hello);
+
+        // Save the restaurant to file, so you don't lose your changes.
+        res.saveRestaurant();
     }
 
 

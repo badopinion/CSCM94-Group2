@@ -1,0 +1,37 @@
+Each scene needs to remember to load and save
+
+load ld = new Load();
+Restaurant res = ld.load();
+
+this gets the restaurant from the file and puts it into a variable called res
+
+res.saveRestaurant() to save it 
+
+
+
+example:
+
+ public void sayGoodbye(ActionEvent event) throws IOException {
+        // Get the restaurant from the file. This should work fine verbatim no matter where you call it.
+        Restaurant res = new Load().getRestaurantFromFile();
+
+        // Do stuff.
+        if(res.menu.getAllItems().size() == 0) {
+            res.menu.populateMenu();
+        }
+        String hello = res.menu.returnMenuItems();
+        display.setText(hello);
+
+        // Save the restaurant to file, so you don't lose your changes.
+        res.saveRestaurant();
+    }
+
+
+
+}
+
+
+
+
+
+
