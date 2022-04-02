@@ -150,6 +150,8 @@ public class Menu implements Serializable {
 	//this method uses varags to accept any number of order items beyond the 1st one
 	//takes orderNotes argument, if no notes enter empty string
 
+
+
 	public void placeEatInOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, MenuItem menuItem1, MenuItem... menuItems){
 		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
 		orderedMenuItems.add(menuItem1);
