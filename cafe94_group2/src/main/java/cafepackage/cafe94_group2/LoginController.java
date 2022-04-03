@@ -51,6 +51,7 @@ public void loginButtonOnAction(ActionEvent event) throws IOException {
         if(res.login.loginWithCredentials(enterUsernameField.getText(), enterPasswordField.getText())){
             String userType = res.login.checkLoggedInUserType();
             Parent root = null;
+            res.saveRestaurant();
             switch(userType){
                 case "Manager":
                     Stage managerScreen = new Stage();
