@@ -10,7 +10,12 @@ import java.util.ArrayList;
  */
 
 public class Customer extends User{
-    private ArrayList<Order> orderHistory = new ArrayList<Order>();
+
+
+//orders are aggregated by restaurant - dont believe we need this here. delete if so
+
+
+//    private ArrayList<Order> orderHistory = new ArrayList<Order>();
 
 
     public Customer(String username, String password, String firstName, String lastName, String homeAddress){
@@ -18,14 +23,16 @@ public class Customer extends User{
     }
 
     //Getters - OJ
+//
+//    public ArrayList<Order> getOrderHistory() {
+//        return orderHistory;
+//    }
+//
+//    //Method to add order object to arrayList orderHistory - OJ
+//    public void addOrderToOrderHistory(Order order){
+//        orderHistory.add(order);
+//    }
+//
 
-    public ArrayList<Order> getOrderHistory() {
-        return orderHistory;
-    }
-
-    //Method to add order object to arrayList orderHistory - OJ
-    public void addOrderToOrderHistory(Order order){
-        orderHistory.add(order);
-    }
 
 }

@@ -51,6 +51,10 @@ public class Restaurant implements Serializable {
         return tables[tableNumber-1]; // I assume the restaurant itself doesn't use java's 0-based indexing - JB
     }
 
+    public Table[] getAllTables(){
+        return tables;
+    }
+
     //Setters
     public void setOrderCounter(int orderCounter) {
         this.orderCounter = orderCounter;
