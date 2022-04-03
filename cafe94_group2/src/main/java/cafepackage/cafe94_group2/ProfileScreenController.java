@@ -62,6 +62,7 @@ public class ProfileScreenController implements Initializable {
         Restaurant res = new Load().getRestaurantFromFile();
         User u = res.login.getLoggedIn();
         System.out.println(res.login.checkUserType(u));
+        System.out.println(res.login.checkLoggedInUserType());
         System.out.println("order counter = " + res.getOrderCounter());
         if(res.getOrderCounter() == 0){
             res.menu.populateOrderHistory();
@@ -71,9 +72,8 @@ public class ProfileScreenController implements Initializable {
             System.out.println(c);
             return FXCollections.observableList(res.returnCustomerOrderHistory(c));
         }
-        return FXCollections.observableList(res.returnCustomerOrderHistory((Customer) u));
-//        System.out.println("get orders null");
-//        return null;
+        System.out.println("get orders null");
+        return null;
     }
 
 
