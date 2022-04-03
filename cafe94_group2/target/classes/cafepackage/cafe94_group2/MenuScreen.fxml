@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.MenuScreenController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.MenuScreenController">
    <top>
       <AnchorPane prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -37,7 +37,7 @@
                </font>
             </Label>
             <Button fx:id="addButton" layoutX="276.0" layoutY="95.0" mnemonicParsing="false" onAction="#AddButtonOnAction" text="Add" />
-            <Button fx:id="removeButton" layoutX="266.0" layoutY="165.0" mnemonicParsing="false" text="Remove" />
+            <Button fx:id="removeButton" layoutX="266.0" layoutY="165.0" mnemonicParsing="false" onAction="#RemoveButtonOnAction" text="Remove" />
             <ComboBox fx:id="chooseMenu" layoutX="38.0" layoutY="21.0" onAction="#processChooseMenu" prefHeight="28.0" prefWidth="193.0" promptText="choose food/drink/coffee" />
             <ComboBox fx:id="chooseType" layoutX="396.0" layoutY="24.0" prefHeight="27.0" prefWidth="171.0" promptText="choose type" />
          </children>
