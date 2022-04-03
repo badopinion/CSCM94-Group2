@@ -14,9 +14,10 @@ public class Login implements Serializable {
 	User loggedIn = null; // User that is currently logged in. JB
 	ArrayList<User> userList = new ArrayList<User>(); // All user profiles. JB
 
-	// Constructor takes no argument. At system start up no user should be logged in. JB
+	// Constructor - JB
     public Login() {
 		populateUsers();
+
     }
 
 	// Replaces currently logged in user with the user specified as argument. JB
@@ -87,6 +88,11 @@ public class Login implements Serializable {
 	public void populateUsers(){
 		newCustomer("jamestaylor", "pass", "james", "taylor", "1 swansea lane, swansea");
 		newCustomer("sophie.frank", "pass", "sophie", "frank", "54 manchester drive, manchester");
+		newManager("manager", "test", "John", "Bossman", "10 Downing Street");
+		newChef("chef", "test", "Jane", "Cook", "12 Dracaena Avenue");
+		newCustomer("customer", "test", "Remi", "Crimson", "Flat 6, 21 High Street");
+		newWaiter("waiter", "test", "Dave", "Davies", "1 Graham Place");
+		newDriver("driver", "test", "Max", "Verstappen", "A van");
 	}
 
 	

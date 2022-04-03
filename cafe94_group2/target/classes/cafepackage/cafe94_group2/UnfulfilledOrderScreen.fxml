@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.UnfulfilledOrderScreenController">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0">
+         <top>
+            <Label alignment="CENTER" prefHeight="37.0" prefWidth="480.0" text="Unfulfilled Order" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+         </top>
+         <center>
+            <TableView prefHeight="283.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="145.33325707912445" text="Order Type" />
+                <TableColumn minWidth="5.99993896484375" prefWidth="219.33335876464844" text="Customer" />
+                  <TableColumn minWidth="5.99993896484375" prefWidth="234.66671752929688" text="Order Time" />
+              </columns>
+            </TableView>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="68.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="427.0" layoutY="14.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="148.0" text="Complete" />
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

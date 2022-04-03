@@ -6,10 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
@@ -18,15 +15,21 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class CustomerBookingScreenController  implements Initializable {
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
+
+public class CustomerBookingScreenController implements Initializable{
     @FXML
     DatePicker bookingDate;
     @FXML
     ComboBox<String> bookingTime;
     @FXML
     ComboBox<Integer> bookingNumberOfGuests;
-    @FXML
-    TableView<Booking> customerBookings;
+
+    @FXML Label dateLabel;
+    @FXML Label timeLabel;
+    @FXML Label guestLabel;
+    @FXML TableView<Booking> customerBookings;
     @FXML
     TableColumn<Booking, LocalDate> dateColumn;
     @FXML
@@ -45,15 +48,66 @@ public class CustomerBookingScreenController  implements Initializable {
     private ResultSet rs = null;
     private PreparedStatement pst = null;
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+
+    @Override public void initialize(URL url, ResourceBundle rb) {
         bookingTime.setItems(timeList);
         bookingNumberOfGuests.setItems(numberOfGuestsList);
-        try {
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
     }
+//
+//    public void createBooking(ActionEvent event) throws IOException {
+//
+//        if (bookingDate.getValue() == null) {
+//            dateLabel.setText("Please enter booking date");
+//            dateLabel.setVisible(true);
+//        } else {
+//            dateLabel.setVisible(false);
+//        }
+//        if (bookingTime.getValue() == null) {
+//            timeLabel.setVisible(true);
+//        } else {
+//            timeLabel.setVisible(false);
+//        }
+//
+//        if (bookingDate.getValue() != null
+//                && bookingTime.getValue() != null
+//                && bookingNumberOfGuests != null) {
+//            try {
+//
+//                LocalDate date = bookingDate.getValue();
+//                pst.setObject(1, date);
+//                pst.setString(2, bookingTime.getValue());
+//                pst.setInt(3, (Integer) bookingNumberOfGuests.getValue());
+//
+//                if(bookingDate.getValue().isBefore(LocalDate.now())){
+//                    dateLabel.setText("Date must be for future booking");
+//                    dateLabel.setVisible(true);
+//                }
+//                else {
+//                    pst.executeUpdate();
+//                    pst.close();
+//                }
+//            } catch (Exception ex) {
+//                ex.printStackTrace();
+//            }
+//            finally {
+//
+//            }
+//        }
+//    }
+
+//    private ObservableList<Booking> getBookingList(ResultSet rsBooking) throws SQLException {
+//        ObservableList<Booking> tempBookingList = FXCollections.observableArrayList();
+//        while(rsBooking.next()){
+//            Booking temp = new Booking();
+//            temp.setDate(rsBooking.getString("date"));
+//            temp.getGuestCount(rsBooking.getInt("numberOfGuests"));
+//            temp.setApproved(rsBooking.getBoolean("approved"));
+//            temp.setBookingID(rsBooking.getInt("bookingID"));
+//            tempBookingList.add(temp);
+//        }
+//        return tempBookingList;
+//    }
 }
 
 
