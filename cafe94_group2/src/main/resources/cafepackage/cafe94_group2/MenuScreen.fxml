@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.MenuScreenController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.MenuScreenController">
    <top>
       <AnchorPane prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -26,22 +24,22 @@
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="drinksbtn" layoutX="113.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayDrink" text="drinks" />
             <Button layoutX="524.0" layoutY="253.0" mnemonicParsing="false" text="Next" />
             <ListView fx:id="displayTwo" layoutX="339.0" layoutY="67.0" prefHeight="171.0" prefWidth="247.0" />
-            <TextField layoutX="207.0" layoutY="253.0" />
-            <Label layoutX="283.0" layoutY="217.0" text="total" />
+            <TextField fx:id="priceDisplay" layoutX="211.0" layoutY="265.0" prefHeight="36.0" prefWidth="163.0" />
+            <Label alignment="CENTER" layoutX="252.0" layoutY="239.0" prefHeight="27.0" prefWidth="82.0" text="Total Price" textFill="#0c9810" />
 <!--            <Button fx:id="add" layoutX="280.0" layoutY="90.0" mnemonicParsing="false" onAction="#AddToOrder" text="&gt;&gt;" />-->
 <!--            <Button fx:id="remove" layoutX="278.0" layoutY="137.0" mnemonicParsing="false" onAction="#RemoveOrder" text="&lt;&lt;" />-->
             <ListView fx:id="display" layoutX="9.0" layoutY="67.0" prefHeight="171.0" prefWidth="247.0" />
-            <Button fx:id="foodbtn" layoutX="33.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayFood" text="food" />
-            <Button fx:id="coffeebtn" layoutX="195.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayCoffee" text="coffee" />
-            <ChoiceBox fx:id="choicebox" layoutX="412.0" layoutY="23.0" prefWidth="150.0" />
-            <Label fx:id="mylabel" layoutX="442.0" layoutY="-10.0" text="order options">
+            <Label layoutX="442.0" layoutY="-10.0" text="order options">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
+            <Button fx:id="add" layoutX="276.0" layoutY="95.0" mnemonicParsing="false" text="Add" />
+            <Button fx:id="remove" layoutX="266.0" layoutY="165.0" mnemonicParsing="false" text="Remove" />
+            <ComboBox fx:id="chooseMenu" layoutX="38.0" layoutY="21.0" prefHeight="28.0" prefWidth="193.0" promptText="choose food/drink/coffee" />
+            <ComboBox fx:id="chooseType" layoutX="396.0" layoutY="24.0" prefHeight="27.0" prefWidth="171.0" promptText="choose type" />
          </children>
       </AnchorPane>
    </left>
