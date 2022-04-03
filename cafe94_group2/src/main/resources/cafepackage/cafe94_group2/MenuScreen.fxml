@@ -15,7 +15,7 @@
    <top>
       <AnchorPane prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="153.0" layoutY="29.0" text="Cafe 94- Menu">
+            <Label layoutX="116.0" layoutY="29.0" text="Cafe 94- Menu">
                <font>
                   <Font size="45.0" />
                </font>
@@ -23,14 +23,26 @@
          </children>
       </AnchorPane>
    </top>
-   <center>
+   <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TextArea fx:id="display" layoutY="7.0" prefHeight="171.0" prefWidth="265.0" />
-            <Button fx:id="food" layoutX="430.0" layoutY="30.0" mnemonicParsing="false" onAction="#displayFood" text="food" />
-            <Button fx:id="coffebtn" layoutX="424.0" layoutY="77.0" mnemonicParsing="false" onAction="#displayCoffee" text="coffee" />
-            <Button fx:id="drinksbtn" layoutX="424.0" layoutY="130.0" mnemonicParsing="false" onAction="#displayDrink" text="drinks" />
+            <Button fx:id="drinksbtn" layoutX="113.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayDrink" text="drinks" />
+            <Button layoutX="524.0" layoutY="253.0" mnemonicParsing="false" text="Next" />
+            <ListView fx:id="displayTwo" layoutX="339.0" layoutY="67.0" prefHeight="171.0" prefWidth="247.0" />
+            <TextField layoutX="207.0" layoutY="253.0" />
+            <Label layoutX="283.0" layoutY="217.0" text="total" />
+<!--            <Button fx:id="add" layoutX="280.0" layoutY="90.0" mnemonicParsing="false" onAction="#AddToOrder" text="&gt;&gt;" />-->
+<!--            <Button fx:id="remove" layoutX="278.0" layoutY="137.0" mnemonicParsing="false" onAction="#RemoveOrder" text="&lt;&lt;" />-->
+            <ListView fx:id="display" layoutX="9.0" layoutY="67.0" prefHeight="171.0" prefWidth="247.0" />
+            <Button fx:id="foodbtn" layoutX="33.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayFood" text="food" />
+            <Button fx:id="coffeebtn" layoutX="195.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayCoffee" text="coffee" />
+            <ChoiceBox fx:id="choicebox" layoutX="412.0" layoutY="23.0" prefWidth="150.0" />
+            <Label fx:id="mylabel" layoutX="442.0" layoutY="-10.0" text="order options">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-   </center>
+   </left>
 </BorderPane>
