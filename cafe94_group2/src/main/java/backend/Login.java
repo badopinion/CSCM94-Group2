@@ -16,7 +16,7 @@ public class Login implements Serializable {
 
 	// Constructor takes no argument. At system start up no user should be logged in. JB
     public Login() {
-		
+		populateUsers();
     }
 
 	// Replaces currently logged in user with the user specified as argument. JB
@@ -82,6 +82,13 @@ public class Login implements Serializable {
 		userList.add(new Customer(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
+
+	// a method to create some users. OJ
+	public void populateUsers(){
+		newCustomer("jamestaylor", "pass", "james", "taylor", "1 swansea lane, swansea");
+		newCustomer("sophie.frank", "pass", "sophie", "frank", "54 manchester drive, manchester");
+	}
+
 	
 	// Checks what type of user is logged in and returns as string. JB
 	public String checkLoggedInUserType(){
@@ -123,6 +130,16 @@ public class Login implements Serializable {
     		}
 		}
     	return null;
+	}
+
+	//gets Customer from username. OJ
+	public Customer getCustomerFromUsername(String username){
+		User u = getUserFromUsername(username);
+		if(u instanceof Customer){
+			Customer c = (Customer) u;
+			return c;
+		}
+		return null;
 	}
 
 	// Gets user that is logged in. JB

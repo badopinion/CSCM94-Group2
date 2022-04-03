@@ -145,12 +145,23 @@ public class Menu implements Serializable {
 		createAndAddMenuItem("Filter coffee", "Filtered coffee", 3.5f,true, false, MenuItemType.COFFEE);
 	}
 
-	//TODO - method to place order (creates order with constructor and sends it to restaraunt arraylist of orders
-	//and sends it to customer order history)
+
+	//method used to populate order history if none exist
+	public void populateOrderHistory(){
+
+		Restaurant res = new Load().getRestaurantFromFile();
+		if(res.menu.getAllItems().size() == 0) {
+			res.menu.populateMenu();
+		}
+		placeEatInOrder(res, res.login.getCustomerFromUsername("jamestaylor"), "", res.getTable(1), res.menu.returnMenuItemByName("Cheese burger"), res.menu.returnMenuItemByName("Mushroom soup"));
+		placeEatInOrder(res, res.login.getCustomerFromUsername("sophie.frank"), "", res.getTable(5), res.menu.returnMenuItemByName("Pasta Carbonara"), res.menu.returnMenuItemByName("Rioja red wine"));
+		res.saveRestaurant();
+
+	}
+
+	//method to place orders (creates order with constructor and sends it to restaraunt arraylist of orders)
 	//this method uses varags to accept any number of order items beyond the 1st one
 	//takes orderNotes argument, if no notes enter empty string
-
-
 
 	public void placeEatInOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, MenuItem menuItem1, MenuItem... menuItems){
 		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();

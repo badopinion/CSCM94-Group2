@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.ProfileScreenController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.ProfileScreenController">
    <children>
       <BorderPane prefHeight="404.0" prefWidth="600.0">
          <top>
@@ -20,8 +20,8 @@
          <center>
             <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn prefWidth="159.3333181142807" text="ItemName" />
-                <TableColumn minWidth="1.33331298828125" prefWidth="197.99998474121094" text="Number" />
+                <TableColumn prefWidth="159.3333181142807" text="Item Name" />
+                <TableColumn minWidth="1.33331298828125" prefWidth="197.99998474121094" text="Price" />
                   <TableColumn minWidth="1.33331298828125" prefWidth="241.33340454101562" text="Date" />
               </columns>
             </TableView>
