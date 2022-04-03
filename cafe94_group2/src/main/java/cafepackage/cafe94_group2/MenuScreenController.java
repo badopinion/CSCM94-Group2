@@ -30,7 +30,7 @@ public class MenuScreenController implements Initializable {
     @FXML
     private TextField priceDisplay;
     @FXML
-    private ComboBox <String> chooseMenu, chooseType;
+    private ComboBox<String> chooseMenu, chooseType;
     private ArrayList<String> orderList = new ArrayList<String>();
     private MenuItem Order;
     @FXML
@@ -39,13 +39,14 @@ public class MenuScreenController implements Initializable {
     Button removeButton;
 
     private static final DecimalFormat DECIMAL_FORMATTER = new DecimalFormat("###,##0.00");
+
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> chooseMenuList = FXCollections.observableArrayList("Food", "Drinks",
                 "Coffee");
         chooseMenu.setItems(chooseMenuList);
         chooseMenu.getSelectionModel().select(0);
         ObservableList<String> foodList = FXCollections.observableArrayList("Cheese Burger", "Ham and cheese toastie",
-                "Mushroom soup","American hot pizza","Pasta Carbonara");
+                "Mushroom soup", "American hot pizza", "Pasta Carbonara");
         display.getItems().clear();
         display.setItems(foodList);
 
@@ -61,28 +62,26 @@ public class MenuScreenController implements Initializable {
         if (selectedItem.equals("Food")) {
             ArrayList<MenuItem> menuItems = new ArrayList<>(res.menu.returnMenuItemsByType(res.menu.getCurrentItems(), MenuItemType.FOOD));
             ArrayList<String> menuItemNames = new ArrayList<>();
-            for(MenuItem menuItem : menuItems){
+            for (MenuItem menuItem : menuItems) {
                 menuItemNames.add(menuItem.getName());
             }
             ObservableList<String> orderList = FXCollections.observableArrayList(menuItemNames);
             display.getItems().clear();
             display.setItems(orderList);
 
-        }
-        else if (selectedItem.equals("Drinks")) {
+        } else if (selectedItem.equals("Drinks")) {
             ArrayList<MenuItem> menuItems = new ArrayList<>(res.menu.returnMenuItemsByType(res.menu.getCurrentItems(), MenuItemType.DRINK));
             ArrayList<String> menuItemNames = new ArrayList<>();
-            for(MenuItem menuItem : menuItems){
+            for (MenuItem menuItem : menuItems) {
                 menuItemNames.add(menuItem.getName());
             }
             ObservableList<String> orderList = FXCollections.observableArrayList(menuItemNames);
             display.getItems().clear();
             display.setItems(orderList);
-        }
-        else if (selectedItem.equals("Coffee")) {
+        } else if (selectedItem.equals("Coffee")) {
             ArrayList<MenuItem> menuItems = new ArrayList<>(res.menu.returnMenuItemsByType(res.menu.getCurrentItems(), MenuItemType.COFFEE));
             ArrayList<String> menuItemNames = new ArrayList<>();
-            for(MenuItem menuItem : menuItems){
+            for (MenuItem menuItem : menuItems) {
                 menuItemNames.add(menuItem.getName());
             }
             ObservableList<String> orderList = FXCollections.observableArrayList(menuItemNames);
@@ -97,7 +96,7 @@ public class MenuScreenController implements Initializable {
 
         ObservableList<String> newOrderList;
         newOrderList = display.getSelectionModel().getSelectedItems();
-        for (String orderItem : newOrderList){
+        for (String orderItem : newOrderList) {
             orderList.add(orderItem);
         }
         String priceString = DECIMAL_FORMATTER.format(res.menu.calculatePriceOfItemNames(orderList));
@@ -109,7 +108,47 @@ public class MenuScreenController implements Initializable {
 
     }
 
+    @FXML
+    private void RemoveButtonOnAction(ActionEvent actionEvent) {
+        Restaurant res = new Load().getRestaurantFromFile();
+
+        ObservableList<String> removeOrderList;
+
+        removeOrderList = displayTwo.getSelectionModel().getSelectedItems();
+        ArrayList<String> deleteCandidates = new ArrayList<>();
+        for (String orderItem : orderList) {
+            if (removeOrderList.contains(orderItem)) {
+                    deleteCandidates.add(orderItem);
+           }
+        }
+        for (String deleteCandidate : deleteCandidates){
+            orderList.remove(deleteCandidate);
+        }
+
+
+
+
+//        for (String orderItem : orderList) {
+//            if (removeOrderList.contains(orderItem)) {
+//                    orderList.remove(orderItem);
+//            }
+//        }
+//        for (String removeOrderItem : removeOrderList){
+//            for(String orderItem : orderList)
+//                if (orderItem.equals(removeOrderItem)){
+//                    orderList.remove(orderItem);
+//                }
+//        }
+            String priceString = DECIMAL_FORMATTER.format(res.menu.calculatePriceOfItemNames(orderList));
+            priceDisplay.setText("￡" + priceString);
+            displayTwo.getItems().clear();
+            displayTwo.setItems(FXCollections.observableArrayList(orderList));
+            display.getSelectionModel().clearSelection();
+            res.saveRestaurant();
+
+        }
 
 
     }
+
 
