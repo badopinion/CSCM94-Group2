@@ -14,7 +14,7 @@ public class Login implements Serializable {
 	User loggedIn = null; // User that is currently logged in. JB
 	ArrayList<User> userList = new ArrayList<User>(); // All user profiles. JB
 
-	// Constructor takes no argument. At system start up no user should be logged in. JB
+	// Constructor - JB
     public Login() {
 		newManager("manager", "test", "John", "Bossman", "10 Downing Street");
 		newChef("chef", "test", "Jane", "Cook", "12 Dracaena Avenue");
