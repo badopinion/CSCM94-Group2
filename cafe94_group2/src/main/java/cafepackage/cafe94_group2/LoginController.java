@@ -18,8 +18,8 @@ import java.sql.SQLException;
 
 /**
 this is login Controller
-@author Yingfan Zhang
-@version1
+@author Yingfan Zhang, Jo Butler
+@version 2
  */
 
 
@@ -43,16 +43,6 @@ public class LoginController {
     }
 
 public void loginButtonOnAction(ActionEvent event) throws IOException {
-/*
-    Stage customerScreen = new Stage();
-    Parent root = FXMLLoader.load(getClass().getResource("CustomerScreen.fxml"));
-    customerScreen.setTitle("CustomerInterface");
-    customerScreen.setScene(new Scene(root, 600, 400));
-    customerScreen.setX(600);
-    customerScreen.setY(250);
-    customerScreen.initModality(Modality.APPLICATION_MODAL);
-    customerScreen.show();
-*/
 
     if(enterUsernameField.getText().isBlank() || enterPasswordField.getText().isBlank()){
         loginMessageLabel.setText("Please enter username and password");

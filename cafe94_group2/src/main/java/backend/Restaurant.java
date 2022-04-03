@@ -2,6 +2,8 @@ package backend;
 
 import java.util.ArrayList;
 import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * A Restaurant class that aggregates orders and holds methods to show outstanding orders. Also aggregates Tables.
@@ -123,6 +125,16 @@ public class Restaurant implements Serializable {
             }
         }
         return deliveryOrders;
+    }
+
+    //Make a booking on the smallest available table. Return the table number or 0 if impossible.
+    public int findTableAndBook(int guestCount, LocalDateTime bookingTime, long bookingDuration, Customer customer){
+        for(int i = 1; i < tables.length; i++){
+            if(tables[i].addBooking(guestCount, bookingTime, bookingDuration, customer)){
+                return i;
+            }
+        }
+        return 0;
     }
 
     //Saves the restaurant object (and all aggregated or referenced objects with it - full system state save) - JB

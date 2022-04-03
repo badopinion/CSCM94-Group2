@@ -81,7 +81,6 @@ public class MenuScreenController {
             food.append(menuItem.getName() + "\n" );
         }
         display.setText(String.valueOf(food));
-
     }
 
 //    public void displayFood(ActionEvent event)throws IOException{

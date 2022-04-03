@@ -13,10 +13,17 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
+
+/**
+ * This is the controller for the screen that customers will use to request bookings.
+ * @author Yingfan Zhang, Jo Butler
+ * @version 2
+ */
 
 public class CustomerBookingScreenController implements Initializable{
     @FXML
@@ -24,11 +31,15 @@ public class CustomerBookingScreenController implements Initializable{
     @FXML
     ComboBox<String> bookingTime;
     @FXML
+    ComboBox<Integer> bookingDuration;
+    @FXML
     ComboBox<Integer> bookingNumberOfGuests;
 
     @FXML Label dateLabel;
     @FXML Label timeLabel;
+    @FXML Label durationLabel;
     @FXML Label guestLabel;
+    @FXML Label resultsLabel;
     @FXML TableView<Booking> customerBookings;
     @FXML
     TableColumn<Booking, LocalDate> dateColumn;
@@ -40,10 +51,13 @@ public class CustomerBookingScreenController implements Initializable{
     TableColumn<Booking, Boolean> approvedColumn;
 
     private ObservableList<String> timeList = FXCollections.observableArrayList(
-            "10:00", "11:00", "12:00", "13:00", "14:00",
-            "15:00", "16:00", "17:00", "18:00", "19:00", "20:00",
-            "21:00");
+            "10:00", "10:30", "11:00", "11:30", "12:00",
+            "12:30", "13:00", "13:30", "14:00", "14:30",
+            "15:00", "15:30", "16:00", "16:30", "17:00",
+            "17:30", "18:00", "18:30", "19:00", "19:30",
+            "20:00", "20:30", "21:00", "21:30", "22:00");
     private ObservableList<Integer> numberOfGuestsList = FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    private ObservableList<Integer> durationList = FXCollections.observableArrayList(60, 75, 90, 105, 120, 135, 150);
     private Connection connection = null;
     private ResultSet rs = null;
     private PreparedStatement pst = null;
@@ -52,9 +66,69 @@ public class CustomerBookingScreenController implements Initializable{
     @Override public void initialize(URL url, ResourceBundle rb) {
         bookingTime.setItems(timeList);
         bookingNumberOfGuests.setItems(numberOfGuestsList);
-
+        bookingDuration.setItems(durationList);
     }
-//
+
+    public void bookingButtonOnAction(ActionEvent event) throws IOException{
+        Restaurant res = new Load().loadRestaurant();
+
+        if(bookingDate.getValue() == null){
+            dateLabel.setVisible(true);
+            dateLabel.setText("Please choose a booking date.");
+        } else {
+            dateLabel.setVisible(false);
+        }
+
+        if(bookingTime.getValue() == null){
+            timeLabel.setVisible(true);
+            timeLabel.setText("Please choose a booking time.");
+        } else {
+            timeLabel.setVisible(false);
+        }
+
+        if(bookingDuration.getValue() == null){
+            durationLabel.setVisible(true);
+            durationLabel.setText("Please choose a booking length.");
+        } else {
+            durationLabel.setVisible(false);
+        }
+
+        if(bookingNumberOfGuests.getValue() == null){
+            guestLabel.setVisible(true);
+            guestLabel.setText("Please enter guest count.");
+        } else {
+            guestLabel.setVisible(false);
+        }
+
+        if(bookingDate.getValue() != null
+                && bookingTime.getValue() != null
+                && bookingDuration.getValue() != null
+                && bookingNumberOfGuests.getValue() != null
+                && bookingDate.getValue() != null
+        ){
+            resultsLabel.setText("Thank you. Attempting to book you in...");
+            resultsLabel.setVisible(true);
+            String[] timeStrings = bookingTime.getValue().split(":");
+            int[] timeInts = {Integer.parseInt(timeStrings[0]), Integer.parseInt(timeStrings[1])};
+            int[] dateInts = {
+                    bookingDate.getValue().getDayOfMonth(),
+                    bookingDate.getValue().getMonthValue(),
+                    bookingDate.getValue().getYear()
+            };
+            LocalDateTime bookDT = LocalDateTime.of(dateInts[2], dateInts[1], dateInts[0], timeInts[0], timeInts[1], 0);
+            int tableNumberOut =
+                    res.findTableAndBook(bookingNumberOfGuests.getValue(),
+                            bookDT, bookingDuration.getValue(), (Customer) res.login.getLoggedIn());
+            if(tableNumberOut == 0){
+                resultsLabel.setText("Sorry, but we do not have a free table at that time for a group that size.");
+            } else {
+                resultsLabel.setText("You are booked in on table number " + tableNumberOut + "!");
+                res.saveRestaurant();
+            }
+        }
+    }
+
+    //
 //    public void createBooking(ActionEvent event) throws IOException {
 //
 //        if (bookingDate.getValue() == null) {

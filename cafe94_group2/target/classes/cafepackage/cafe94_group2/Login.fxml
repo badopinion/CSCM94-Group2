@@ -41,7 +41,7 @@
             </Label>
             <TextField fx:id="enterUsernameField" layoutX="121.0" layoutY="114.0" prefHeight="31.0" prefWidth="187.0" promptText="Username" />
             <TextField fx:id="enterPasswordField" layoutX="121.0" layoutY="171.0" prefHeight="31.0" prefWidth="188.0" promptText="Password" />
-            <Button fx:id="unifiedLoginButton" layoutX="51.0" layoutY="294.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="45.0" prefWidth="238.0" text="Login">
+            <Button fx:id="loginButton" layoutX="51.0" layoutY="294.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="45.0" prefWidth="238.0" text="Login">
                <font>
                   <Font size="22.0" />
                </font>
