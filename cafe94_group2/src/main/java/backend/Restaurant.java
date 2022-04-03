@@ -36,7 +36,7 @@ public class Restaurant implements Serializable {
                 new Table(5,4), new Table(6,4), new Table(7,4), new Table(8,4),
                 new Table(9,8), new Table(10,8), new Table(11,10)
         };
-        this.menu.populateOrderHistory();
+        this.menu.populateOrderHistory(this);
     }
 
     //Getters
@@ -133,6 +133,7 @@ public class Restaurant implements Serializable {
     //Saves the restaurant object (and all aggregated or referenced objects with it - full system state save) - JB
     //Please note the load function is in Main. Need to be able to load without previous instance existing - JB
     public void saveRestaurant(){
+        System.out.println("SAVING.");
         try {
             File restaurantFile = new File("restaurant.ser");
             if(restaurantFile.isFile()){

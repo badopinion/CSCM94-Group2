@@ -136,6 +136,7 @@ public class Menu implements Serializable {
 
 	//This method populates the menu - OJ
 	public void populateMenu(){
+		System.out.println("Populate menu begins.");
 		createAndAddMenuItem("Cheese burger", "150g Beef patty with cheddar cheese on a brioche bun", 12.5f, true, false, MenuItemType.FOOD);
 		createAndAddMenuItem("Ham and cheese toastie", "locally sourced ham with cheddar, as a toastie", 8.0f, true, false, MenuItemType.FOOD);
 		createAndAddMenuItem("Mushroom soup", "Mushrooms in a soup served with fresh baguette", 8.0f, true, false, MenuItemType.FOOD);
@@ -149,16 +150,11 @@ public class Menu implements Serializable {
 
 
 	//method used to populate order history if none exist
-	public void populateOrderHistory(){
-
-		Restaurant res = new Load().getRestaurantFromFile();
-		if(res.menu.getAllItems().size() == 0) {
-			res.menu.populateMenu();
-		}
-		placeEatInOrder(res, res.login.getCustomerFromUsername("jamestaylor"), "", res.getTable(1), res.menu.returnMenuItemByName("Cheese burger"), res.menu.returnMenuItemByName("Mushroom soup"));
-		placeEatInOrder(res, res.login.getCustomerFromUsername("sophie.frank"), "", res.getTable(5), res.menu.returnMenuItemByName("Pasta Carbonara"), res.menu.returnMenuItemByName("Rioja red wine"));
+	public void populateOrderHistory(Restaurant res){
+		System.out.println("Populate order history begins.");
+		placeEatInOrder(res, res.login.getCustomerFromUsername("jamestaylor"), "", res.getTable(1), returnMenuItemByName("Cheese burger"), returnMenuItemByName("Mushroom soup"));
+		placeEatInOrder(res, res.login.getCustomerFromUsername("sophie.frank"), "", res.getTable(5), returnMenuItemByName("Pasta Carbonara"), returnMenuItemByName("Rioja red wine"));
 		res.saveRestaurant();
-
 	}
 
 	//method to place orders (creates order with constructor and sends it to restaraunt arraylist of orders)

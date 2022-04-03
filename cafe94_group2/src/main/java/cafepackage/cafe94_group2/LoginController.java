@@ -46,9 +46,12 @@ public void loginButtonOnAction(ActionEvent event) throws IOException {
     if(enterUsernameField.getText().isBlank() || enterPasswordField.getText().isBlank()){
         loginMessageLabel.setText("Please enter username and password");
     } else {
+        System.out.println("Entering load block.");
         Restaurant res = new Load().getRestaurantFromFile();
+        System.out.println("Loaded.");
         if(res.login.loginWithCredentials(enterUsernameField.getText(), enterPasswordField.getText())){
             String userType = res.login.checkLoggedInUserType();
+            res.saveRestaurant();
             Parent root = null;
             switch(userType){
                 case "Manager":

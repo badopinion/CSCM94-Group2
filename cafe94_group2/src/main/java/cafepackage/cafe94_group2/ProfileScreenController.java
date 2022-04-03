@@ -61,11 +61,12 @@ public class ProfileScreenController implements Initializable {
     public ObservableList<Order> getOrders() {
         Restaurant res = new Load().getRestaurantFromFile();
         User u = res.login.getLoggedIn();
+        System.out.println(u.getClass());
         System.out.println(res.login.checkUserType(u));
         System.out.println(res.login.checkLoggedInUserType());
         System.out.println("order counter = " + res.getOrderCounter());
         if(res.getOrderCounter() == 0){
-            res.menu.populateOrderHistory();
+            res.menu.populateOrderHistory(res);
         }
         if (u instanceof Customer){
             Customer c = (Customer) u;
