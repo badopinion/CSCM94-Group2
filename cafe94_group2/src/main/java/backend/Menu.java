@@ -111,6 +111,17 @@ public class Menu implements Serializable {
 		return menuItemsOfType;
 	}
 
+	//Method to calculate price of an order from names of menuItems
+	//taking ArrayList<String> as an argument. OJ
+	public float calculatePriceOfItemNames(ArrayList<String> stringList){
+		float sum = 0f;
+		for (String item : stringList){
+			MenuItem menuItem = returnMenuItemByName(item);
+			sum += menuItem.getPrice();
+		}
+		return sum;
+	}
+
 	//Method to set menu item as special or not (true = special) - OJ
 	public void setMenuItemSpecialOrNot(String menuItemName, boolean isSpecial){
 		MenuItem menuItem = returnMenuItemByName(menuItemName);
