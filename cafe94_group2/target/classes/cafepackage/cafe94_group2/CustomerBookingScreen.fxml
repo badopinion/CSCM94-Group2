@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="477.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.CustomerBookingScreenController">
+   <children>
+      <Pane layoutY="32.0" prefHeight="367.0" prefWidth="132.0">
+         <children>
+            <Text layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make a booking" wrappingWidth="111.57360458374023">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="81.57354354858398">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival Time" wrappingWidth="81.57354354858398">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Text layoutX="15.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest Number" wrappingWidth="102.90685653686523">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="106.0" layoutY="41.0" prefHeight="349.0" prefWidth="234.0">
+         <children>
+            <DatePicker fx:id="bookingDate" layoutX="18.0" layoutY="53.0" prefHeight="31.0" prefWidth="187.0" />
+            <ComboBox fx:id="bookingTime" layoutX="18.0" layoutY="122.0" prefHeight="31.0" prefWidth="187.0" />
+            <ComboBox fx:id="bookingNumberOfGuests" layoutX="18.0" layoutY="194.0" prefHeight="31.0" prefWidth="187.0" />
+            <Label fx:id="dateLabel" layoutX="18.0" layoutY="91.0" prefHeight="31.0" prefWidth="179.0" />
+            <Label fx:id="timeLabel" layoutX="18.0" layoutY="159.0" prefHeight="31.0" prefWidth="179.0" />
+            <Label fx:id="guestLable" layoutX="18.0" layoutY="232.0" prefHeight="31.0" prefWidth="179.0" />
+         </children>
+      </Pane>
+      <TableView fx:id="customerBookings" layoutX="328.0" layoutY="53.0" prefHeight="341.0" prefWidth="372.0">
+        <columns>
+          <TableColumn fx:id="dateColumn" prefWidth="54.66668701171875" text="Date" />
+          <TableColumn fx:id="timeColumn" prefWidth="61.33331298828125" text="Time" />
+            <TableColumn fx:id="guestsColumn" prefWidth="109.99996948242188" text="Guest number" />
+            <TableColumn fx:id="approvedColumn" prefWidth="140.6666259765625" text="Approved" />
+        </columns>
+      </TableView>
+      <Label layoutX="328.0" layoutY="22.0" prefHeight="15.0" prefWidth="121.0" text="Bookings">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="bookingButton" layoutX="90.0" layoutY="390.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="140.0" text="Book" />
+      <Button fx:id="cancelButton" layoutX="554.0" layoutY="407.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="132.0" text="Cancel Booking" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,21 @@
+Author OJ
+
+General to do:
+
+
+make screens:
+
+unfulfilled order screen
+takeaway screen
+eatin screen
+delivery screen
+
+make screens work with backend:
+    order screen
+
+
+
+IN ORDER TO make order history screen work:
+
+create some orders
+
