@@ -16,6 +16,7 @@ public class Restaurant implements Serializable {
     private ArrayList<Order> orders;
     //order counter is the number of orders ever ordered, and is used for orderID - OJ
     private int orderCounter;
+    private ArrayList<MenuItem> temporaryOrderList = new ArrayList<MenuItem>;
 
     // Restaurant aggregates tables. JB
     private Table[] tables;
@@ -51,6 +52,10 @@ public class Restaurant implements Serializable {
         return tables[tableNumber-1]; // I assume the restaurant itself doesn't use java's 0-based indexing - JB
     }
 
+    public ArrayList<MenuItem> getTemporaryOrderList() {
+        return temporaryOrderList;
+    }
+
     //Setters
     public void setOrderCounter(int orderCounter) {
         this.orderCounter = orderCounter;
@@ -75,6 +80,9 @@ public class Restaurant implements Serializable {
         return unfulfilledOrders;
     }
 
+    public void setTemporaryOrderList(ArrayList<MenuItem> temporaryOrderList) {
+        this.temporaryOrderList = temporaryOrderList;
+    }
 
     //Method that takes a Customer object and returns a customer order history arraylist - OJ
     //returns an empty arraylist if no orders match

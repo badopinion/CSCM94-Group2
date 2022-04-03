@@ -124,27 +124,13 @@ public class MenuScreenController implements Initializable {
         for (String deleteCandidate : deleteCandidates){
             orderList.remove(deleteCandidate);
         }
-
-
-
-
-//        for (String orderItem : orderList) {
-//            if (removeOrderList.contains(orderItem)) {
-//                    orderList.remove(orderItem);
-//            }
-//        }
-//        for (String removeOrderItem : removeOrderList){
-//            for(String orderItem : orderList)
-//                if (orderItem.equals(removeOrderItem)){
-//                    orderList.remove(orderItem);
-//                }
-//        }
-            String priceString = DECIMAL_FORMATTER.format(res.menu.calculatePriceOfItemNames(orderList));
-            priceDisplay.setText("￡" + priceString);
-            displayTwo.getItems().clear();
-            displayTwo.setItems(FXCollections.observableArrayList(orderList));
-            display.getSelectionModel().clearSelection();
-            res.saveRestaurant();
+        
+        String priceString = DECIMAL_FORMATTER.format(res.menu.calculatePriceOfItemNames(orderList));
+        priceDisplay.setText("￡" + priceString);
+        displayTwo.getItems().clear();
+        displayTwo.setItems(FXCollections.observableArrayList(orderList));
+        display.getSelectionModel().clearSelection();
+        res.saveRestaurant();
 
         }
 
