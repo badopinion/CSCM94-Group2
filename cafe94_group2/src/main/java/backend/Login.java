@@ -16,7 +16,11 @@ public class Login implements Serializable {
 
 	// Constructor takes no argument. At system start up no user should be logged in. JB
     public Login() {
-		
+		newManager("manager", "test", "John", "Bossman", "10 Downing Street");
+		newChef("chef", "test", "Jane", "Cook", "12 Dracaena Avenue");
+		newCustomer("customer", "test", "Remi", "Crimson", "Flat 6, 21 High Street");
+		newWaiter("waiter", "test", "Dave", "Davies", "1 Graham Place");
+		newDriver("driver", "test", "Max", "Verstappen", "A van");
     }
 
 	// Replaces currently logged in user with the user specified as argument. JB
