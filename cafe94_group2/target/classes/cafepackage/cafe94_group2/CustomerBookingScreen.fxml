@@ -52,7 +52,7 @@
             <Label fx:id="guestLabel" layoutX="22.0" layoutY="224.0" prefHeight="31.0" prefWidth="179.0" />
             <ComboBox fx:id="bookingDuration" layoutX="18.0" layoutY="190.0" prefHeight="31.0" prefWidth="187.0" />
             <Label fx:id="durationLabel" layoutX="22.0" layoutY="159.0" prefHeight="31.0" prefWidth="179.0" />
-            <Label fx:id="resultsLabel" layoutX="-82.0" layoutY="317.0" prefHeight="31.0" prefWidth="284.0" />
+            <Label fx:id="resultsLabel" layoutX="-82.0" layoutY="295.0" prefHeight="53.0" prefWidth="284.0" />
          </children>
       </Pane>
       <TableView fx:id="customerBookings" layoutX="328.0" layoutY="53.0" prefHeight="341.0" prefWidth="372.0">

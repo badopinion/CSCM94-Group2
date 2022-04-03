@@ -120,7 +120,7 @@ public class CustomerBookingScreenController implements Initializable{
                     res.findTableAndBook(bookingNumberOfGuests.getValue(),
                             bookDT, bookingDuration.getValue(), (Customer) res.login.getLoggedIn());
             if(tableNumberOut == 0){
-                resultsLabel.setText("Sorry, but we do not have a free table at that time for a group that size.");
+                resultsLabel.setText("Sorry, we do not have space for your group at " + bookingTime.getValue() + ".");
             } else {
                 resultsLabel.setText("You are booked in on table number " + tableNumberOut + "!");
                 res.saveRestaurant();
