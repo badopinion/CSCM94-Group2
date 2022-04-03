@@ -36,6 +36,7 @@ public class Restaurant implements Serializable {
                 new Table(5,4), new Table(6,4), new Table(7,4), new Table(8,4),
                 new Table(9,8), new Table(10,8), new Table(11,10)
         };
+        this.menu.populateOrderHistory();
     }
 
     //Getters

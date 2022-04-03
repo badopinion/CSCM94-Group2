@@ -34,9 +34,7 @@ public class ProfileScreenController implements Initializable {
 
     public void showCustomerOrderHistory(){
         Restaurant res = new Load().getRestaurantFromFile();
-        if(res.getOrderCounter() == 0){
-            res.menu.populateOrderHistory();
-        }
+
 
 
         res.saveRestaurant();
@@ -50,7 +48,11 @@ public class ProfileScreenController implements Initializable {
 //        priceColumn.setCellValueFactory(new PropertyValueFactory<MenuItem, Float>("price"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<Order, LocalDateTime>("orderDateTime"));
 
-        tableView.setItems(getOrders());
+        if (getOrders() != null) {
+            System.out.println("get orders not null");
+            tableView.setItems(getOrders());
+        }
+
     }
 
     /**
@@ -59,13 +61,19 @@ public class ProfileScreenController implements Initializable {
     public ObservableList<Order> getOrders() {
         Restaurant res = new Load().getRestaurantFromFile();
         User u = res.login.getLoggedIn();
-        Customer c;
+        System.out.println(res.login.checkUserType(u));
+        System.out.println("order counter = " + res.getOrderCounter());
+        if(res.getOrderCounter() == 0){
+            res.menu.populateOrderHistory();
+        }
         if (u instanceof Customer){
-            c = (Customer) u;
-
+            Customer c = (Customer) u;
+            System.out.println(c);
             return FXCollections.observableList(res.returnCustomerOrderHistory(c));
         }
-        return null;
+        return FXCollections.observableList(res.returnCustomerOrderHistory((Customer) u));
+//        System.out.println("get orders null");
+//        return null;
     }
 
 

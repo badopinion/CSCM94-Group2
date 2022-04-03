@@ -96,6 +96,8 @@ public class Menu implements Serializable {
 		return null;
 	}
 
+
+
 	//Method to return all menuItems by type
 	//Takes two arguments: a menuItem ArrayList and a MenuItemType enum
 	//Use above methods to generate ArrayList e.g. getCurrentItems()
