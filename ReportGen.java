@@ -1,7 +1,7 @@
 /**
  * GUI Controller java file report generation
  * @author AS & SR
- * @version 2
+ * @version 3
  */
 
 package com.example.report3;
@@ -47,7 +47,7 @@ public class ReportGen {
         stage.show();
         //checkpop_itm();
     }
-/*    private void checkpop_itm() throws IOException {
+    private void checkpop_itm() throws IOException {
         Main m = new Main();
         m.changeScene("popular_Item.fxml");
     }
@@ -78,8 +78,5 @@ public class ReportGen {
         Main m = new Main();
         m.changeScene("mostWork.fxml");
     }
-    */
-
-
 }
 
