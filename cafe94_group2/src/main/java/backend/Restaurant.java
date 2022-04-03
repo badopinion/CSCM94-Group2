@@ -50,7 +50,12 @@ public class Restaurant implements Serializable {
     }
 
     public Table getTable(int tableNumber){
-        return tables[tableNumber-1]; // I assume the restaurant itself doesn't use java's 0-based indexing - JB
+        return tables[tableNumber-1]; // The restaurant itself doesn't use java's 0-based indexing - JB
+    }
+
+    // Remember that customers expect 1 based indexing when calling this one! - JB
+    public Table[] getAllTables(){
+        return tables;
     }
 
     //Setters
@@ -77,7 +82,6 @@ public class Restaurant implements Serializable {
         return unfulfilledOrders;
     }
 
-
     //Method that takes a Customer object and returns a customer order history arraylist - OJ
     //returns an empty arraylist if no orders match
     public ArrayList<Order> returnCustomerOrderHistory(Customer customer) {
@@ -89,7 +93,6 @@ public class Restaurant implements Serializable {
         }
         return customerOrders;
     }
-
 
     //Returns arraylist of all eatins - OJ
     //Empty arraylist if no match

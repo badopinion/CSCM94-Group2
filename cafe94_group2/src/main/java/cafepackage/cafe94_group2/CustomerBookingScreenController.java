@@ -15,6 +15,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ResourceBundle;
+import java.util.ArrayList;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
@@ -61,6 +62,7 @@ public class CustomerBookingScreenController implements Initializable{
     private Connection connection = null;
     private ResultSet rs = null;
     private PreparedStatement pst = null;
+    private ArrayList<BookingTable> currentCustomerBookings = null;
 
 
     @Override public void initialize(URL url, ResourceBundle rb) {
@@ -128,6 +130,27 @@ public class CustomerBookingScreenController implements Initializable{
         }
     }
 
+    // Display information on the customer's bookings into the list. - JB
+    public void displayCustomerBookings(){
+        //TODO: THIS AND THEN MAKE IT CLICKABLE
+    }
+
+    // Utility function to help display the customer's existing bookings. - JB
+    // Get all of the current customer's bookings and their associated table. Uses a custom tuple class. - JB
+    public ArrayList<BookingTable> fetchCurrentCustomerBookings(){
+        ArrayList<BookingTable> ans = new ArrayList<BookingTable>();
+        Restaurant res = new Load().loadRestaurant();
+        Customer customer = (Customer) res.login.getLoggedIn();
+        for(Table t : res.getAllTables()){
+            for(Booking b : t.getBookings()){
+                if(b.getCustomer() == customer){
+                    ans.add(new BookingTable(b, t));
+                }
+            }
+        }
+        return ans;
+    }
+
     //
 //    public void createBooking(ActionEvent event) throws IOException {
 //
@@ -184,7 +207,14 @@ public class CustomerBookingScreenController implements Initializable{
 //    }
 }
 
+// Custom tuple class to link bookings to tables. - JB
+class BookingTable{
+    public Table table;
+    public Booking booking;
 
-
-
-
+    // Constructor
+    public BookingTable(Booking b, Table t){
+        this.table = t;
+        this.booking = b;
+    }
+}
