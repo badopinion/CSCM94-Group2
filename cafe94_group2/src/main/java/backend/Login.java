@@ -40,7 +40,7 @@ public class Login implements Serializable {
 				return false;
 			}
 		}
-		userList.add(new Manager(username, password, firstName, lastName, homeAddress));
+		//userList.add(new Manager(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 	
@@ -50,7 +50,7 @@ public class Login implements Serializable {
 				return false;
 			}
 		}
-		userList.add(new Waiter(username, password, firstName, lastName, homeAddress));
+		//userList.add(new Waiter(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 	
@@ -60,7 +60,7 @@ public class Login implements Serializable {
 				return false;
 			}
 		}
-		userList.add(new Chef(username, password, firstName, lastName, homeAddress));
+		//userList.add(new Chef(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 	
@@ -70,7 +70,7 @@ public class Login implements Serializable {
 				return false;
 			}
 		}
-		userList.add(new Driver(username, password, firstName, lastName, homeAddress));
+		//userList.add(new Driver(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 	
