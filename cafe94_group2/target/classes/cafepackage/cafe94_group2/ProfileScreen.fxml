@@ -18,11 +18,11 @@
             </Label>
          </top>
          <center>
-            <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="tableview" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn prefWidth="159.3333181142807" text="Item Name" />
-                <TableColumn minWidth="1.33331298828125" prefWidth="197.99998474121094" text="Price" />
-                  <TableColumn minWidth="1.33331298828125" prefWidth="241.33340454101562" text="Date" />
+                <TableColumn fx:id="itemNameColumn" prefWidth="159.3333181142807" text="Item Name" />
+                <TableColumn fx:id="priceColumn" minWidth="1.33331298828125" prefWidth="197.99998474121094" text="Price" />
+                  <TableColumn fx:id="dateColumn" minWidth="1.33331298828125" prefWidth="241.33340454101562" text="Date" />
               </columns>
             </TableView>
          </center>

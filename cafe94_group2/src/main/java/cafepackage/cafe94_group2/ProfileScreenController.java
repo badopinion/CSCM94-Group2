@@ -24,9 +24,9 @@ public class ProfileScreenController implements Initializable {
 
     @FXML
     private TableView<Order> tableView;
-    @FXML
+//    @FXML
 //    private TableColumn<MenuItem, String> itemNameColumn;
-    @FXML
+//    @FXML
 //    private TableColumn<MenuItem, Float> priceColumn;
     @FXML
     private TableColumn<Order, LocalDateTime> dateColumn;
