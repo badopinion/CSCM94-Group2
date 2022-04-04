@@ -1,8 +1,7 @@
 package com.example.cw2;
-//import backend.*;
 
-//fxcontroller="cafepackage.cafe94_group2.WaiterScreenController"
 
+import backend.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
