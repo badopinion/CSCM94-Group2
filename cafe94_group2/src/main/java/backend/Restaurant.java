@@ -53,12 +53,16 @@ public class Restaurant implements Serializable {
         return tables[tableNumber-1]; // I assume the restaurant itself doesn't use java's 0-based indexing - JB
     }
 
+
     public ArrayList<MenuItem> getTemporaryOrderList() {
         return temporaryOrderList;
     }
 
     public ArrayList<String> getTemporaryOrderStringList() {
         return temporaryOrderStringList;
+
+    public Table[] getAllTables(){
+        return tables;
     }
 
     //Setters
