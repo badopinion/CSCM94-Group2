@@ -57,6 +57,7 @@ Initializes the screen, loading the restaurant, setting up the time drop down bo
      * provides the functionality for the place order button
      * if the customer is ordering it uses the customer's info for the order
      * if the waiter is ordering the customer is set to takeawaycustomer
+     * (enabling a customer to order over the phone)
      * @param actionEvent clicking the place orderbutton
      */
     @FXML
@@ -73,9 +74,7 @@ Initializes the screen, loading the restaurant, setting up the time drop down bo
             User user = res.login.getLoggedIn();
             if (user instanceof Customer) {
                 Customer customer = (Customer) user;
-                System.out.println(res.getOrderCounter());
                 res.menu.placeTakeawayOrder(res, customer, orderNotesString, pickupTime, res.getTemporaryOrderList());
-                System.out.println(res.getOrderCounter());
                 orderCompleteAlert();
             } else if (user instanceof Waiter) {
                 Customer customer = res.login.getCustomerFromUsername("takeawaycustomer");
