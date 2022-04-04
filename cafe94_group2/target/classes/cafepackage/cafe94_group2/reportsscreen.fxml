@@ -15,7 +15,6 @@
       <columns>
          <TableColumn fx:id="Item" prefWidth="75.0" text="Item" />
          <TableColumn fx:id="AmountSold" prefWidth="75.0" text="Amount Sold" />
-
       </columns>
       <columnResizePolicy>
          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

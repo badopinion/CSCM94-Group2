@@ -2,6 +2,8 @@ package backend;
 
 import java.util.*;
 
+import static java.util.stream.Collectors.groupingBy;
+
 
 public class GenerateReport {
     private ArrayList<Order> orderHist;
@@ -63,6 +65,20 @@ public class GenerateReport {
 
         }
         return staffWhoHasWorkedTheMost.getUsername();
+    }
+
+    public String mostActiveCustomer(ArrayList<Order> allOrders){
+        Customer customer = allOrders.get(0).getCustomer();
+        Integer orderSize = 0;
+        Map<Customer,List<Order>> mappedList = allOrders.stream().collect((groupingBy(order->order.getCustomer())));
+        for(Map.Entry<Customer,List<Order>> orderHis:mappedList.entrySet()){
+            if (orderHis.getValue().size() <orderSize){
+                customer = orderHis.getValue().get(0).getCustomer();
+                orderSize = orderHis.getValue().size();
+            }
+        }
+        return customer.getUsername();
+
     }
 
 
