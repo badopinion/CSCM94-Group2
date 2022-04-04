@@ -14,7 +14,8 @@ import java.io.IOException;
 
 public class ManagerScreenController {
     @FXML
-    private Button unfulfilledOrderButton;
+    private Button unfulfilledOrderButton,addStuffButton,addHoursButton;
+
 
     public void UnfulfilledOrderOnAction(ActionEvent event) throws IOException {
         Stage unfulfilledScreen = new Stage();
@@ -27,4 +28,27 @@ public class ManagerScreenController {
         unfulfilledScreen.show();
 
     }
+    public void AddStuffOnAction(ActionEvent event) throws IOException {
+        Stage addStuffScreen = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("ManagerAddScreen.fxml"));
+        addStuffScreen.setTitle("Add Stuff Interface");
+        addStuffScreen.setScene(new Scene(root, 730, 530));
+        addStuffScreen.setX(600);
+        addStuffScreen.setY(250);
+        addStuffScreen.initModality(Modality.APPLICATION_MODAL);
+        addStuffScreen.show();
+
+    }
+    public void AddHoursOnAction(ActionEvent event) throws IOException {
+        Stage addHoursScreen = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("ManagerAddHoursScreen.fxml"));
+        addHoursScreen.setTitle("Add Hours Interface");
+        addHoursScreen.setScene(new Scene(root, 730, 530));
+        addHoursScreen.setX(600);
+        addHoursScreen.setY(250);
+        addHoursScreen.initModality(Modality.APPLICATION_MODAL);
+        addHoursScreen.show();
+
+    }
+
 }
