@@ -5,25 +5,25 @@ import java.util.Date;
 import java.io.*;
 
 /**
- * A menu class that aggregates menuItems and provides functionality for ordering food / drink.
+ * A menu class that aggrigates menuItems and provides functionality for ordering food / drink.
  * @author Oliver Jackson, Jo Butler
  * @version 2
  */
 
 public class Menu implements Serializable {
 	private ArrayList<MenuItem> menuItems = new ArrayList<MenuItem>();
-	
+
 	// Constructor
 	public Menu(){
-		
+
 	}
 
 
-	
+
 	public ArrayList<MenuItem> getAllItems(){
 		return menuItems;
 	}
-	
+
 	// Returns only those items that are currently being served (onMenu is true) - JB
 	// This also returns current specials (all items that are onMenu)
 	public ArrayList<MenuItem> getCurrentItems(){
@@ -46,7 +46,7 @@ public class Menu implements Serializable {
 		}
 		return currentNonSpecs;
 	}
-	
+
 	// Returns only those items that are currently being served, and are specials. - JB
 	public ArrayList<MenuItem> getCurrentSpecials(){
 		ArrayList <MenuItem> currentSpecs = getCurrentItems();
@@ -64,7 +64,7 @@ public class Menu implements Serializable {
 			System.out.println(item);
 		}
 	}
-    // returns string of all menuitems - useful for testing
+	// returns string of all menuitems - useful for testing
 	public String returnMenuItems(){
 		String listMenuItems = "";
 		for(MenuItem item : menuItems){
@@ -111,6 +111,17 @@ public class Menu implements Serializable {
 		return menuItemsOfType;
 	}
 
+	//Method to calculate price of an order from names of menuItems
+	//taking ArrayList<String> as an argument. OJ
+	public float calculatePriceOfItemNames(ArrayList<String> stringList){
+		float sum = 0f;
+		for (String item : stringList){
+			MenuItem menuItem = returnMenuItemByName(item);
+			sum += menuItem.getPrice();
+		}
+		return sum;
+	}
+
 	//Method to set menu item as special or not (true = special) - OJ
 	public void setMenuItemSpecialOrNot(String menuItemName, boolean isSpecial){
 		MenuItem menuItem = returnMenuItemByName(menuItemName);
@@ -146,50 +157,28 @@ public class Menu implements Serializable {
 		createAndAddMenuItem("Filter coffee", "Filtered coffee", 3.5f,true, false, MenuItemType.COFFEE);
 	}
 
-
-//methods to place orders (creates order with constructor and sends it to restaurant arraylist of orders)
-  //takes orderNotes argument, if no notes enter empty string
-  
+//methods to place orders (creates order with constructor and sends it to restaraunt arraylist of orders)
+	//takes orderNotes argument, if no notes enter empty string
 
 
-
-
-	public void placeEatInOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, MenuItem menuItem1, MenuItem... menuItems){
-		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
-		orderedMenuItems.add(menuItem1);
-		for (MenuItem menuItem : menuItems){
-			orderedMenuItems.add(menuItem);
-		}
+	public void placeEatInOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, ArrayList<MenuItem> orderedMenuItems){
 		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
 		EatIn eatinOrder = new EatIn(table, restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems);
 		restaurant.addOrder(eatinOrder);
 	}
 
 	//Method to place takeaway order - OJ
-	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, String pickUpTime, MenuItem menuItem1, MenuItem... menuItems){
-		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
-		orderedMenuItems.add(menuItem1);
-		for (MenuItem menuItem : menuItems){
-			orderedMenuItems.add(menuItem);
-		}
+	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, String pickUpTime, ArrayList<MenuItem> orderedMenuItems){
 		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
 		Takeaway takeawayOrder = new Takeaway(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, pickUpTime);
 		restaurant.addOrder(takeawayOrder);
 	}
 
-	public void placeDeliveryOrder(Restaurant restaurant, Customer customer, String orderNotes, String deliveryAddress, MenuItem menuItem1, MenuItem... menuItems){
-		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
-		orderedMenuItems.add(menuItem1);
-		for (MenuItem menuItem : menuItems){
-			orderedMenuItems.add(menuItem);
-		}
+	public void placeDeliveryOrder(Restaurant restaurant, Customer customer, String orderNotes, String deliveryAddress, ArrayList<MenuItem> orderedMenuItems){
 		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
 		Delivery deliveryOrder = new Delivery(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, deliveryAddress);
 		restaurant.addOrder(deliveryOrder);
 	}
-
-
-
 
 
 }

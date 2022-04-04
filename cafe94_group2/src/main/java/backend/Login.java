@@ -15,19 +15,16 @@ public class Login implements Serializable {
 	ArrayList<User> userList = new ArrayList<User>(); // All user profiles. JB
 
 	// Constructor - JB
-    public Login() {
-		newManager("manager", "test", "John", "Bossman", "10 Downing Street");
-		newChef("chef", "test", "Jane", "Cook", "12 Dracaena Avenue");
-		newCustomer("customer", "test", "Remi", "Crimson", "Flat 6, 21 High Street");
-		newWaiter("waiter", "test", "Dave", "Davies", "1 Graham Place");
-		newDriver("driver", "test", "Max", "Verstappen", "A van");
-    }
+	public Login() {
+		populateUsers();
+
+	}
 
 	// Replaces currently logged in user with the user specified as argument. JB
-    public void login(User userIn) {
-        this.loggedIn = userIn;
-    }
-	
+	public void login(User userIn) {
+		this.loggedIn = userIn;
+	}
+
 	// Logs user out (replaces currently logged in user with null). JB
 	public void logout(){
 		this.loggedIn = null;
@@ -46,7 +43,7 @@ public class Login implements Serializable {
 		userList.add(new Manager(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
-	
+
 	public boolean newWaiter(String username, String password, String firstName, String lastName, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
@@ -56,7 +53,7 @@ public class Login implements Serializable {
 		userList.add(new Waiter(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
-	
+
 	public boolean newChef(String username, String password, String firstName, String lastName, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
@@ -66,7 +63,7 @@ public class Login implements Serializable {
 		userList.add(new Chef(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
-	
+
 	public boolean newDriver(String username, String password, String firstName, String lastName, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
@@ -76,7 +73,7 @@ public class Login implements Serializable {
 		userList.add(new Driver(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
-	
+
 	public boolean newCustomer(String username, String password, String firstName, String lastName, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
@@ -86,7 +83,23 @@ public class Login implements Serializable {
 		userList.add(new Customer(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
-	
+
+	// a method to create some users. OJ
+	public void populateUsers(){
+		newCustomer("eatincustomer", "pass", "eatin", "customer", "cafe94");
+		newCustomer("takeawaycustomer", "pass", "takeaway", "customer", "cafe94");
+		newCustomer("deliverycustomer", "pass", "delivery", "customer", "cafe94");
+		newCustomer("jamestaylor", "pass", "james", "taylor", "1 swansea lane, swansea");
+		newCustomer("sophie.frank", "pass", "sophie", "frank", "54 manchester drive, manchester");
+		newManager("manager", "test", "John", "Bossman", "10 Downing Street");
+		newChef("chef", "test", "Jane", "Cook", "12 Dracaena Avenue");
+		newCustomer("customer", "test", "Remi", "Crimson", "Flat 6, 21 High Street");
+		newWaiter("waiter", "test", "Dave", "Davies", "1 Graham Place");
+		newWaiter("waiterben", "pass", "Ben", "Davies", "10 Vindaloo Road");
+		newDriver("driver", "test", "Max", "Verstappen", "A van");
+	}
+
+
 	// Checks what type of user is logged in and returns as string. JB
 	public String checkLoggedInUserType(){
 		if(loggedIn instanceof Manager) return "Manager";
@@ -96,7 +109,7 @@ public class Login implements Serializable {
 		if(loggedIn instanceof Customer) return "Customer";
 		return "Invalid subclass";
 	}
-	
+
 	// Checks what type of user was passed as argument to this method and returns as string. JB
 	public String checkUserType(User userIn){
 		if(userIn instanceof Manager) return "Manager";
@@ -106,7 +119,7 @@ public class Login implements Serializable {
 		if(userIn instanceof Customer) return "Customer";
 		return "Invalid subclass";
 	}
-	
+
 	// Checks username and password for matching user. If found log user in.
 	// Returns true if a user was logged in and false if invalid (for the sake of output). JB
 	public boolean loginWithCredentials(String username, String password){
@@ -121,16 +134,26 @@ public class Login implements Serializable {
 
 	// Gets user from username. JB
 	public User getUserFromUsername(String username){
-    	for(User u : userList){
-    		if(u.getUsername().equals(username)){
-    			return u;
-    		}
+		for(User u : userList){
+			if(u.getUsername().equals(username)){
+				return u;
+			}
 		}
-    	return null;
+		return null;
+	}
+
+	//gets Customer from username. OJ
+	public Customer getCustomerFromUsername(String username){
+		User u = getUserFromUsername(username);
+		if(u instanceof Customer){
+			Customer c = (Customer) u;
+			return c;
+		}
+		return null;
 	}
 
 	// Gets user that is logged in. JB
 	public User getLoggedIn(){
-    	return this.loggedIn;
+		return this.loggedIn;
 	}
 }
