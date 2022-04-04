@@ -15,14 +15,12 @@ import java.io.IOException;
 /**
  The Waiter screen Controller
  @author Oliver Jackson
- @version 2
+ @version2
  */
 
 public class WaiterScreenController {
     @FXML
-    Button createOrderButton;
-    @FXML
-    Button outstandingOrdersButton;
+    Button createOrderButton, outstandingOrdersButton, approveBookingsButton;
 
 
     @FXML
@@ -42,6 +40,18 @@ public class WaiterScreenController {
         Stage outstandingOrderScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("UnfulfilledOrderScreen.fxml"));
         outstandingOrderScreen.setTitle("Outstanding Orders Interface");
+        outstandingOrderScreen.setScene(new Scene(root, 730, 530));
+        outstandingOrderScreen.setX(600);
+        outstandingOrderScreen.setY(250);
+        outstandingOrderScreen.initModality(Modality.APPLICATION_MODAL);
+        outstandingOrderScreen.show();
+    }
+
+    @FXML
+    private void approveBookingsButtonOnAction(ActionEvent actionEvent) throws IOException {
+        Stage outstandingOrderScreen = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("ApproveBookingsScreen.fxml"));
+        outstandingOrderScreen.setTitle("Approve Bookings Interface");
         outstandingOrderScreen.setScene(new Scene(root, 730, 530));
         outstandingOrderScreen.setX(600);
         outstandingOrderScreen.setY(250);
