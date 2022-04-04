@@ -15,12 +15,14 @@ import java.io.IOException;
 /**
  The Waiter screen Controller
  @author Oliver Jackson
- @version2
+ @version 2
  */
 
 public class WaiterScreenController {
     @FXML
-    Button createOrderButton, outstandingOrdersButton;
+    Button createOrderButton;
+    @FXML
+    Button outstandingOrdersButton;
 
 
     @FXML

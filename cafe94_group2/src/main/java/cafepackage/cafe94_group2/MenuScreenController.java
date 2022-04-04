@@ -31,7 +31,7 @@ import static java.lang.Double.sum;
 /**
  The Menu screen Controller
  @author Hristiana Davidova, Yingfan Zhang, Oliver Jackson
- @version4
+ @version 4
  */
 
 public class MenuScreenController implements Initializable {
