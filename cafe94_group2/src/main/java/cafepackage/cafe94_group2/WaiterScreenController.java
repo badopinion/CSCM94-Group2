@@ -20,7 +20,7 @@ import java.io.IOException;
 
 public class WaiterScreenController {
     @FXML
-    Button createOrderButton, outstandingOrdersButton;
+    Button createOrderButton, outstandingOrdersButton, approveBookingsButton;
 
 
     @FXML
@@ -40,6 +40,18 @@ public class WaiterScreenController {
         Stage outstandingOrderScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("UnfulfilledOrderScreen.fxml"));
         outstandingOrderScreen.setTitle("Outstanding Orders Interface");
+        outstandingOrderScreen.setScene(new Scene(root, 730, 530));
+        outstandingOrderScreen.setX(600);
+        outstandingOrderScreen.setY(250);
+        outstandingOrderScreen.initModality(Modality.APPLICATION_MODAL);
+        outstandingOrderScreen.show();
+    }
+
+    @FXML
+    private void approveBookingsButtonOnAction(ActionEvent actionEvent) throws IOException {
+        Stage outstandingOrderScreen = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("ApproveBookingsScreen.fxml"));
+        outstandingOrderScreen.setTitle("Approve Bookings Interface");
         outstandingOrderScreen.setScene(new Scene(root, 730, 530));
         outstandingOrderScreen.setX(600);
         outstandingOrderScreen.setY(250);
