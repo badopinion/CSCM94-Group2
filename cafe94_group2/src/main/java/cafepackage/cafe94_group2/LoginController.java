@@ -17,13 +17,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 /**
-this is login Controller
-@author Yingfan Zhang, Jo Butler
-@version 2
+ * A class that used to navigate the login screen.
+ * E.g. if the user is Manager, it leads to manager screen.
+ @author Yingfan Zhang, Jo Butler
+ @version 2.0
  */
-
-
-
 public class LoginController {
     @FXML
     private Button cancelButton;
@@ -36,17 +34,25 @@ public class LoginController {
     @FXML
     private TextField enterPasswordField;
 
-
+    /**
+     * Close the window.
+     * @param event is used to close the screen.
+     */
     public void cancelButtonOnAction(ActionEvent event){
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
-public void loginButtonOnAction(ActionEvent event) throws IOException {
-
-    if(enterUsernameField.getText().isBlank() || enterPasswordField.getText().isBlank()){
+    /**
+     * Checks the users identity.
+     * That identity can be: Manager, Customer, Chef, Waiter or Driver.
+     * @param event is used to get information in current scene.
+     * @throws IOException if input fails.
+     */
+    public void loginButtonOnAction(ActionEvent event) throws IOException {
+        if(enterUsernameField.getText().isBlank() || enterPasswordField.getText().isBlank()){
         loginMessageLabel.setText("Please enter username and password");
-    } else {
+        } else {
         Restaurant res = new Load().getRestaurantFromFile();
         if(res.login.loginWithCredentials(enterUsernameField.getText(), enterPasswordField.getText())){
             String userType = res.login.checkLoggedInUserType();
@@ -112,15 +118,5 @@ public void loginButtonOnAction(ActionEvent event) throws IOException {
     }
 
 }
-    public void StaffChooseOnAction(ActionEvent event) throws IOException {
-        Stage staffScreen = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("StaffScreen.fxml"));
-        staffScreen.setTitle("StaffInterface");
-        staffScreen.setScene(new Scene(root, 600, 400));
-        staffScreen.setX(600);
-        staffScreen.setY(250);
-        staffScreen.initModality(Modality.APPLICATION_MODAL);
-        staffScreen.show();
 
-    }
 }
