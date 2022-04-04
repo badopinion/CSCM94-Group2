@@ -12,6 +12,7 @@ module cafepackage.cafe94_group2 {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
-    opens cafepackage.cafe94_group2 to javafx.fxml;
+    opens cafepackage.cafe94_group2 to javafx.fxml, javafx.base;
+    opens backend to javafx.fxml, javafx.base;
     exports cafepackage.cafe94_group2;
 }

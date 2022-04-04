@@ -16,8 +16,11 @@ public class Login implements Serializable {
 
 	// Constructor - JB
     public Login() {
-		populateUsers();
-
+		newManager("manager", "test", "John", "Bossman", "10 Downing Street");
+		newChef("chef", "test", "Jane", "Cook", "12 Dracaena Avenue");
+		newCustomer("customer", "test", "Remi", "Crimson", "Flat 6, 21 High Street");
+		newWaiter("waiter", "test", "Dave", "Davies", "1 Graham Place");
+		newDriver("driver", "test", "Max", "Verstappen", "A van");
     }
 
 	// Replaces currently logged in user with the user specified as argument. JB
@@ -83,22 +86,6 @@ public class Login implements Serializable {
 		userList.add(new Customer(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
-
-	// a method to create some users. OJ
-	public void populateUsers(){
-		newCustomer("eatincustomer", "pass", "eatin", "customer", "cafe94");
-		newCustomer("takeawaycustomer", "pass", "takeaway", "customer", "cafe94");
-		newCustomer("deliverycustomer", "pass", "delivery", "customer", "cafe94");
-		newCustomer("jamestaylor", "pass", "james", "taylor", "1 swansea lane, swansea");
-		newCustomer("sophie.frank", "pass", "sophie", "frank", "54 manchester drive, manchester");
-		newManager("manager", "test", "John", "Bossman", "10 Downing Street");
-		newChef("chef", "test", "Jane", "Cook", "12 Dracaena Avenue");
-		newCustomer("customer", "test", "Remi", "Crimson", "Flat 6, 21 High Street");
-		newWaiter("waiter", "test", "Dave", "Davies", "1 Graham Place");
-		newWaiter("waiterben", "pass", "Ben", "Davies", "10 Vindaloo Road");
-		newDriver("driver", "test", "Max", "Verstappen", "A van");
-	}
-
 	
 	// Checks what type of user is logged in and returns as string. JB
 	public String checkLoggedInUserType(){
@@ -140,16 +127,6 @@ public class Login implements Serializable {
     		}
 		}
     	return null;
-	}
-
-	//gets Customer from username. OJ
-	public Customer getCustomerFromUsername(String username){
-		User u = getUserFromUsername(username);
-		if(u instanceof Customer){
-			Customer c = (Customer) u;
-			return c;
-		}
-		return null;
 	}
 
 	// Gets user that is logged in. JB
