@@ -1,8 +1,6 @@
 package cafepackage.cafe94_group2;
 
-import backend.Load;
-import backend.Restaurant;
-import backend.Table;
+import backend.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -67,7 +65,12 @@ public class EatInScreenController implements Initializable {
             int tableNumber = returnTableNumber(tableSelection.getSelectionModel().getSelectedItem());
             Table table = res.getTable(tableNumber);
             String orderNotesString = orderNotes.getText();
-            res.menu.placeEatInOrder(res, res.login.getLoggedIn(), orderNotesString, table, );
+            if (res.login.getLoggedIn() instanceof Customer){
+                System.out.println("its a customer");
+            } else {
+                System.out.println("not a customer");
+            }
+//            res.menu.placeEatInOrder(res, res.login.getLoggedIn(), orderNotesString, table, res.getTemporaryOrderList());
         }
     }
 
