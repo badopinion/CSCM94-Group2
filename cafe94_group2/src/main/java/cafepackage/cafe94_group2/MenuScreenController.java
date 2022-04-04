@@ -37,19 +37,25 @@ import static java.lang.Double.sum;
 
 public class MenuScreenController implements Initializable {
     @FXML
-    private ListView<String> display, displayTwo;
-    @FXML
-    private TextField priceDisplay;
-    @FXML
-    private ComboBox<String> chooseMenu, chooseType;
-    private ArrayList<String> orderList = new ArrayList<String>();
-//    private MenuItem Order;
-    @FXML
     Button addButton;
     @FXML
     Button removeButton;
     @FXML
     Button nextButton;
+    @FXML
+    private ListView<String> display;
+    @FXML
+    private ListView<String> displayTwo;
+    @FXML
+    private TextField priceDisplay;
+    @FXML
+    private ComboBox<String> chooseMenu;
+    @FXML
+    private ComboBox<String> chooseType;
+
+    private ArrayList<String> orderList = new ArrayList<String>();
+//    private MenuItem Order;
+
 
     private static final DecimalFormat DECIMAL_FORMATTER = new DecimalFormat("###,##0.00");
 
