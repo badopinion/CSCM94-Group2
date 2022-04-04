@@ -17,6 +17,8 @@ public class Customer extends User{
 		super(username, password, firstName, lastName, homeAddress);
     }
 
+
+
     //Getters - OJ
 
     public ArrayList<Order> getOrderHistory() {

@@ -13,7 +13,8 @@ public class GenerateReport {
     }
 
     public ArrayList<FoodFeq> getPopularDish(ArrayList<Order> orderHist){
-       ArrayList<MenuItem> allItems = new ArrayList();
+        //System.out.println(orderHist.size());
+        ArrayList<MenuItem> allItems = new ArrayList();
         for (Order order:orderHist){
             for (MenuItem item: order.getOrderedMenuItems()){
                 allItems.add(item);
@@ -31,7 +32,7 @@ public class GenerateReport {
         return feq;
     }
 
-    private float convertShiftsIntoInt(ArrayList<Shift> shiftList,Date currentDate){
+    private float convertShiftsIntoInt(ArrayList<Shift> shiftList){
         float shiftTime = 0;
         for (Shift shift : shiftList){
             String dateToString = shift.getStart().toString();
@@ -54,18 +55,18 @@ public class GenerateReport {
         return shiftTime;
 
     }
-    public String whichStaffHasWorkedTheMostReport(ArrayList<Staff> staffList,Date currentDate){
+    public String whichStaffHasWorkedTheMostReport(ArrayList<Staff> staffList){
         Staff staffWhoHasWorkedTheMost = staffList.get(0);
         float highestShift = 0;
         for (Staff staff : staffList){
-            float staffWorkedFor = convertShiftsIntoInt(staff.getShifts(),currentDate);
+            float staffWorkedFor = convertShiftsIntoInt(staff.getShifts());
             if( staffWorkedFor > highestShift){
                 highestShift = staffWorkedFor;
                 staffWhoHasWorkedTheMost = staff;
             }
 
         }
-        return staffWhoHasWorkedTheMost.getUsername();
+        return staffWhoHasWorkedTheMost.getFirstName() + " " + staffWhoHasWorkedTheMost.getLastName();
     }
 
     public String mostActiveCustomer(ArrayList<Order> allOrders){
@@ -81,7 +82,7 @@ public class GenerateReport {
                 orderSize = orderHis.getValue().size();
             }
         }
-        return customer.getUsername();
+        return customer.getFirstName()+ " "+ customer.getLastName();
 
     }
 

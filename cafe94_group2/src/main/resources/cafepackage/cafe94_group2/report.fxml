@@ -11,7 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="1000.0" prefWidth="2000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="cafepackage.cafe94_group2.ReportController" >
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+<VBox prefHeight="1000.0" prefWidth="2000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.ReportController" >
   <children>
     <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
       <padding>
@@ -40,20 +42,16 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TabPane prefHeight="188.0" prefWidth="446.0" tabClosingPolicy="UNAVAILABLE">
-                    <tabs>
-                      <Tab  fx:id="foodItem" text="Food Item">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                        </content>
-                      </Tab>
-                      <Tab fx:id="amountBought" text="Amount bought">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="130.0" prefWidth="369.0" />
-                        </content>
-                      </Tab>
-                    </tabs>
-                  </TabPane>
+                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                       <children>
+                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                               <children>
+                                   <ListView fx:id = "item" prefHeight="200.0" prefWidth="200.0" />
+                                   <ListView fx:id = "feq" layoutX="200.0" prefHeight="200.0" prefWidth="200.0" />
+                               </children>
+                           </AnchorPane>
+                       </children>
+                   </AnchorPane>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -83,11 +81,12 @@
                            <Font size="16.0" />
                        </font>
                    </Text>
-                   <Text layoutX="223.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUIEST_HOURS" wrappingWidth="155.58306312561035">
+                   <Text  fx:id="BUIEST_HOURS"  layoutX="223.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUIEST_HOURS" wrappingWidth="155.58306312561035">
                        <font>
                            <Font size="16.0" />
                        </font>
                    </Text>
+                   <Button  fx:id="closeButton" onAction="#closeButtonAction" layoutX="353.0" layoutY="342.0" mnemonicParsing="false" text="Back" />
                </children>
             </AnchorPane>
         </items>

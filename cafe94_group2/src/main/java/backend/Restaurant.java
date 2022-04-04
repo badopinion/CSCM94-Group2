@@ -33,6 +33,7 @@ public class Restaurant implements Serializable {
         this.login = new Login();
         this.menu = new Menu();
         this.menu.populateMenu();
+        //addOrders();
         this.tables = new Table[] {
                 new Table(1,2), new Table(2,2), new Table(3,2), new Table(4,2),
                 new Table(5,4), new Table(6,4), new Table(7,4), new Table(8,4),
@@ -139,6 +140,18 @@ public class Restaurant implements Serializable {
         }
         return 0;
     }
+
+//    public void addStaff(){
+//        login.newChef("name","hello","Chef","food","road");
+//
+//    }
+//    public void addOrders(){
+//        Order order = new Order(1,new Customer("hello","sda","Sam","Raine","Swansea"), "", menu.getAllItems());
+//        orders.add(order);
+//       // System.out.println(getAllOrders().size());
+//
+//    }
+
 
     //Saves the restaurant object (and all aggregated or referenced objects with it - full system state save) - JB
     //Please note the load function is in Main. Need to be able to load without previous instance existing - JB

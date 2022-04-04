@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -43,13 +44,13 @@ public class ManagerScreenController {
     }
       @FXML
     private void reportGeneratorAction3(ActionEvent actionEvent) throws IOException {
-        Stage reportGeneratorScreen = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("ReportController.fxml"));
-        reportGeneratorScreen.setTitle("Report Generator Interface");
-        reportGeneratorScreen.setScene(new Scene(root, 730, 530));
-        reportGeneratorScreen.setX(600);
-        reportGeneratorScreen.setY(250);
-        reportGeneratorScreen.initModality(Modality.APPLICATION_MODAL);
-        reportGeneratorScreen.show();
+          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("report.fxml"));
+          Parent root1 = (Parent) fxmlLoader.load();
+          Stage stage = new Stage();
+          stage.initModality(Modality.APPLICATION_MODAL);
+          stage.initStyle(StageStyle.UNDECORATED);
+          stage.setTitle("ABC");
+          stage.setScene(new Scene(root1));
+          stage.show();
     }
 }
