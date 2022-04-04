@@ -5,7 +5,7 @@ import java.util.Date;
 import java.io.*;
 
 /**
- * A menu class that aggrigates menuItems and provides functionality for ordering food / drink.
+ * A menu class that aggregates menuItems and provides functionality for ordering food / drink.
  * @author Oliver Jackson, Jo Butler
  * @version 2
  */
@@ -137,7 +137,8 @@ public class Menu implements Serializable {
 		createAndAddMenuItem("Cheese burger", "150g Beef patty with cheddar cheese on a brioche bun", 12.5f, true, false, MenuItemType.FOOD);
 		createAndAddMenuItem("Ham and cheese toastie", "locally sourced ham with cheddar, as a toastie", 8.0f, true, false, MenuItemType.FOOD);
 		createAndAddMenuItem("Mushroom soup", "Mushrooms in a soup served with fresh baguette", 8.0f, true, false, MenuItemType.FOOD);
-		createAndAddMenuItem("American hot pizza", "The classic, cooked in our new pizza oven", 12.0f, true, true, MenuItemType.FOOD);
+		createAndAddMenuItem("American hot pizza", "The classic, cooked in our new pizza oven", 12.0f, true, false, MenuItemType.FOOD);
+		createAndAddMenuItem("Pan fried sea bass", "Catch of the day", 15.0f, true, true, MenuItemType.FOOD);
 		createAndAddMenuItem("Pasta Carbonara", "An italian classic", 12.5f, true, false, MenuItemType.FOOD);
 		createAndAddMenuItem("Heineken beer", "One pint 5%", 4.0f, true, false, MenuItemType.DRINK);
 		createAndAddMenuItem("Rioja red wine", "175ml glass 13%", 4.0f, true, false, MenuItemType.DRINK);
@@ -145,10 +146,11 @@ public class Menu implements Serializable {
 		createAndAddMenuItem("Filter coffee", "Filtered coffee", 3.5f,true, false, MenuItemType.COFFEE);
 	}
 
-	//TODO - method to place order (creates order with constructor and sends it to restaraunt arraylist of orders
-	//and sends it to customer order history)
-	//this method uses varags to accept any number of order items beyond the 1st one
-	//takes orderNotes argument, if no notes enter empty string
+
+//methods to place orders (creates order with constructor and sends it to restaurant arraylist of orders)
+  //takes orderNotes argument, if no notes enter empty string
+  
+
 
 
 
@@ -185,7 +187,6 @@ public class Menu implements Serializable {
 		Delivery deliveryOrder = new Delivery(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, deliveryAddress);
 		restaurant.addOrder(deliveryOrder);
 	}
-
 
 
 
