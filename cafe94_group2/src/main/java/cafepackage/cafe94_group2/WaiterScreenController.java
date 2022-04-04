@@ -9,20 +9,24 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 /**
- The Waiter screen Controller
- @author Oliver Jackson
- @version2
+ * The Waiter screen Controller
+ * @author Oliver Jackson
+ * @version 2
  */
 
 public class WaiterScreenController {
     @FXML
     Button createOrderButton, outstandingOrdersButton, approveBookingsButton;
 
-
+    /**
+     * To show the order screen.
+     * Takes user to new screen.
+     * @param actionEvent Button click
+     * @throws IOException Throws if input fails
+     */
     @FXML
     private void createOrderbuttonOnAction(ActionEvent actionEvent) throws IOException {
         Stage menuScreen = new Stage();
@@ -35,6 +39,12 @@ public class WaiterScreenController {
         menuScreen.show();
     }
 
+    /**
+     * To show the outstanding orders.
+     * Takes user to new screen.
+     * @param actionEvent Button click
+     * @throws IOException Throws if input fails
+     */
     @FXML
     private void outstandingOrdersOnAction(ActionEvent actionEvent) throws IOException {
         Stage outstandingOrderScreen = new Stage();
@@ -47,6 +57,12 @@ public class WaiterScreenController {
         outstandingOrderScreen.show();
     }
 
+    /**
+     * To show approve booking screen.
+     * Takes user to new screen.
+     * @param actionEvent Button click
+     * @throws IOException Throws if input fails
+     */
     @FXML
     private void approveBookingsButtonOnAction(ActionEvent actionEvent) throws IOException {
         Stage outstandingOrderScreen = new Stage();
