@@ -1,6 +1,6 @@
-package cafepackage.cafe94_group2;
-
-import backend.FoodFeq;
+package com.example.cw2;
+//package cafepackage.cafe94_group2;
+//import backend.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,36 +12,64 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ The Report screen Controller
+ @author Adam & Sam
+ @version3
+ */
+
 public class ReportsScreenController {
-    @FXML
-    private TableView<FoodFeq> tbData;
-    @FXML
-    public TableColumn<StudentsModel, Integer> studentId;
-
-    @FXML
-    public TableColumn<StudentsModel, String> firstName;
-
-    @FXML
-    public TableColumn<StudentsModel, String> lastName;
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
-        studentId.setCellValueFactory(new PropertyValueFactory<>("StudentId"));
-        firstName.setCellValueFactory(new PropertyValueFactory<>("FirstName"));
-        lastName.setCellValueFactory(new PropertyValueFactory<>("LastName"));
-        //add your data to the table here.
-        tbData.setItems(studentsModels);
-    }
 
     public ReportsScreenController() {
     }
 
-
     @FXML
-    protected void generateTable(ActionEvent event) {
+    private Button itemButton;
+    @FXML
+    private Button busyButton;
+    @FXML
+    private Button customerButton;
+    @FXML
+    private Button workButton;
+
+
+    // Generate Most Popular Item report
+    public void generateItem(ActionEvent event) throws IOException {
+        Stage popularScreen = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("popularItem.fxml"));
+        popularScreen.setTitle("Popular Item Report");
+        popularScreen.setScene(new Scene(root, 650, 400));
+        popularScreen.initModality(Modality.APPLICATION_MODAL);
+        popularScreen.show();
     }
 
+    // Generate Busiest Period report
+    public void generateBusy(ActionEvent event) throws IOException {
+        Stage busySchedule = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("busySchedule.fxml"));
+        busySchedule.setTitle("Busiest Period Report");
+        busySchedule.setScene(new Scene(root, 650, 400));
+        busySchedule.initModality(Modality.APPLICATION_MODAL);
+        busySchedule.show();
+    }
 
+    // Generate Most Active Customer report
+    public void generateCustomer(ActionEvent event) throws IOException {
+        Stage activeCustomer = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("activeCustomer.fxml"));
+        activeCustomer.setTitle("Most Active Customer Report");
+        activeCustomer.setScene(new Scene(root, 650, 400));
+        activeCustomer.initModality(Modality.APPLICATION_MODAL);
+        activeCustomer.show();
+    }
+
+    // Generate Most staff hours worked report
+    public void generateSchedule(ActionEvent event) throws IOException {
+        Stage mostWorked = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("mostWorked.fxml"));
+        mostWorked.setTitle("Busiest Schedule Report");
+        mostWorked.setScene(new Scene(root, 650, 400));
+        mostWorked.initModality(Modality.APPLICATION_MODAL);
+        mostWorked.show();
+    }
 }
