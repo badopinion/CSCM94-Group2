@@ -19,9 +19,7 @@ import java.io.IOException;
  */
 public class WaiterScreenController {
     @FXML
-    Button createOrderButton;
-    @FXML
-    Button outstandingOrdersButton;
+    Button createOrderButton,outstandingOrdersButton;
 
     /**
      * To show the order screen.
