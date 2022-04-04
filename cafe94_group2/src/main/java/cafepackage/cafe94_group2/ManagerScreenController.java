@@ -45,11 +45,11 @@ public class ManagerScreenController {
     private void reportGeneratorAction3(ActionEvent actionEvent) throws IOException {
         Stage reportGeneratorScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("ReportController.fxml"));
-        outstandingOrderScreen.setTitle("Report Generator Interface");
-        outstandingOrderScreen.setScene(new Scene(root, 730, 530));
-        outstandingOrderScreen.setX(600);
-        outstandingOrderScreen.setY(250);
-        outstandingOrderScreen.initModality(Modality.APPLICATION_MODAL);
-        outstandingOrderScreen.show();
+        reportGeneratorScreen.setTitle("Report Generator Interface");
+        reportGeneratorScreen.setScene(new Scene(root, 730, 530));
+        reportGeneratorScreen.setX(600);
+        reportGeneratorScreen.setY(250);
+        reportGeneratorScreen.initModality(Modality.APPLICATION_MODAL);
+        reportGeneratorScreen.show();
     }
 }
