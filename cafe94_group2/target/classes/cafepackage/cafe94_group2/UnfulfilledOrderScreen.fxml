@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.UnfulfilledOrderScreenController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.UnfulfilledOrderScreenController">
    <children>
       <BorderPane prefHeight="400.0" prefWidth="600.0">
          <top>
@@ -21,9 +21,11 @@
          <center>
             <TableView prefHeight="283.0" prefWidth="600.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn prefWidth="145.33325707912445" text="Order Type" />
-                <TableColumn minWidth="5.99993896484375" prefWidth="219.33335876464844" text="Customer" />
-                  <TableColumn minWidth="5.99993896484375" prefWidth="234.66671752929688" text="Order Time" />
+                <TableColumn prefWidth="112.66662347316742" text="Order Type" />
+                <TableColumn minWidth="5.99993896484375" prefWidth="117.33338165283203" text="Customer" />
+                  <TableColumn minWidth="5.99993896484375" prefWidth="121.99998474121094" text="Order Time" />
+                  <TableColumn minWidth="5.99993896484375" prefWidth="126.0" text="Item Name" />
+                  <TableColumn minWidth="5.99993896484375" prefWidth="122.00003051757812" text="Table Number" />
               </columns>
             </TableView>
          </center>
