@@ -136,6 +136,7 @@ public class Login implements Serializable {
 	}
 
 	// Gets the full staff list - JB
+	// Made it return a staff list as I need access to dates - SR
 	public ArrayList<Staff> getStaffList() {
 		ArrayList<Staff> out = new ArrayList<Staff>();
 		for(User u : userList){
