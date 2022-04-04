@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="534.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.WaiterScreenController">
+<AnchorPane prefHeight="534.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.WaiterScreenController">
    <children>
       <TabPane layoutY="-1.0" prefHeight="534.0" prefWidth="732.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -25,11 +25,12 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="CENTER" layoutX="175.0" layoutY="164.0" prefHeight="133.0" prefWidth="381.0" text="Welcome!">
+                        <Label alignment="CENTER" layoutX="175.0" layoutY="27.0" prefHeight="133.0" prefWidth="381.0" text="Welcome!">
                            <font>
                               <Font size="58.0" />
                            </font>
                         </Label>
+                        <Button fx:id="createOrderButton" layoutX="56.0" layoutY="240.0" mnemonicParsing="false" onAction="#createOrderbuttonOnAction" prefHeight="65.0" prefWidth="124.0" text="Create order" />
                      </children>
                   </AnchorPane>
             </content>

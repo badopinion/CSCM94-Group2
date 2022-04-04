@@ -3,7 +3,7 @@ package cafepackage.cafe94_group2;
 
 import backend.*;
 
-import backend.Menu;
+
 import backend.MenuItem;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -28,6 +28,12 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import static java.lang.Double.sum;
+
+/**
+ The Menu screen Controller
+ @author Hristiana Davidova, Yingfan Zhang, Oliver Jackson
+ @version3
+ */
 
 public class MenuScreenController implements Initializable {
     @FXML
@@ -163,6 +169,7 @@ public class MenuScreenController implements Initializable {
         }
     }
 
+    @FXML
     private void loadEatInScreen(Restaurant res) throws IOException{
         Stage eatInScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("EatInScreen.fxml"));
@@ -174,6 +181,7 @@ public class MenuScreenController implements Initializable {
         eatInScreen.show();
     }
 
+    @FXML
     private void loadTakeawayScreen(Restaurant res) throws IOException{
         Stage takeawayScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("TakeawayOrderScreen.fxml"));
@@ -185,6 +193,7 @@ public class MenuScreenController implements Initializable {
         takeawayScreen.show();
     }
 
+    @FXML
     private void loadDeliveryScreen(Restaurant res) throws IOException{
         Stage deliveryScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("DeliveryOrderScreen.fxml"));
