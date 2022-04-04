@@ -60,6 +60,7 @@ public class Restaurant implements Serializable {
 
     public ArrayList<String> getTemporaryOrderStringList() {
         return temporaryOrderStringList;
+    }
 
     public Table[] getAllTables(){
         return tables;

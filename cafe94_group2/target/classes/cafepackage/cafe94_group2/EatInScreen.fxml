@@ -25,9 +25,7 @@
                      </font>
                   </Label>
                   <ComboBox fx:id="tableSelection" layoutX="207.0" layoutY="80.0" prefHeight="36.0" prefWidth="207.0" />
-
                   <TextField fx:id="orderNotes" layoutX="207.0" layoutY="127.0" prefHeight="36.0" prefWidth="291.0" />
-
                   <Label alignment="CENTER" layoutX="14.0" layoutY="121.0" prefHeight="47.0" prefWidth="153.0" text="Order Notes">
                      <font>
                         <Font size="19.0" />
@@ -37,10 +35,8 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="597.0">
                <children>
-
                   <Button fx:id="placeOrderButton" layoutX="415.0" layoutY="98.0" mnemonicParsing="false" onAction="#PlaceOrderButtonOnAction" prefHeight="47.0" prefWidth="143.0" text="Place Order" />
                   <TextField fx:id="orderPrice" layoutX="414.0" layoutY="33.0" prefHeight="47.0" prefWidth="143.0" promptText="Order Price" />
-
                   <Label layoutX="335.0" layoutY="39.0" prefHeight="36.0" prefWidth="56.0" text="Price">
                      <font>
                         <Font size="19.0" />
