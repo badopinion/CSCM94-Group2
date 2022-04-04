@@ -133,7 +133,7 @@ public class Restaurant implements Serializable {
     //Make a booking on the smallest available table. Return the table number or 0 if impossible.
     public int findTableAndBook(int guestCount, LocalDateTime bookingTime, long bookingDuration, Customer customer){
         for(int i = 1; i < tables.length; i++){
-            if(tables[i].addBooking(guestCount, bookingTime, bookingDuration, customer)){
+            if(tables[i-1].addBooking(guestCount, bookingTime, bookingDuration, customer)){
                 return i;
             }
         }

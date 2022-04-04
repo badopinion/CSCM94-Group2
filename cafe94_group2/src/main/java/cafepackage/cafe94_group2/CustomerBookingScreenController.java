@@ -1,6 +1,8 @@
 package cafepackage.cafe94_group2;
 
 import backend.*;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -41,17 +43,7 @@ public class CustomerBookingScreenController implements Initializable{
     @FXML Label durationLabel;
     @FXML Label guestLabel;
     @FXML Label resultsLabel;
-    @FXML TableView<BookingTable> customerBookings;
-    @FXML
-    TableColumn<BookingTable, LocalDate> dateColumn;
-    @FXML
-    TableColumn<BookingTable, String> timeColumn;
-    @FXML
-    TableColumn<BookingTable, Integer> guestsColumn;
-    @FXML
-    TableColumn<BookingTable, Boolean> approvedColumn;
-    @FXML
-    TableColumn<BookingTable, Integer> tableNumberColumn;
+    @FXML ListView<String> customerBookings;
 
     private ObservableList<String> timeList = FXCollections.observableArrayList(
             "10:00", "10:30", "11:00", "11:30", "12:00",
@@ -65,6 +57,7 @@ public class CustomerBookingScreenController implements Initializable{
     private ResultSet rs = null;
     private PreparedStatement pst = null;
     private ArrayList<BookingTable> currentCustomerBookings = null;
+    private String selected = null;
 
 
     @Override public void initialize(URL url, ResourceBundle rb) {
@@ -72,17 +65,16 @@ public class CustomerBookingScreenController implements Initializable{
         bookingNumberOfGuests.setItems(numberOfGuestsList);
         bookingDuration.setItems(durationList);
 
-        dateColumn = new TableColumn<>("Date");
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-        timeColumn = new TableColumn<>("Time");
-        timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
-        guestsColumn = new TableColumn<>("Guests");
-        guestsColumn.setCellValueFactory(new PropertyValueFactory<>("guests"));
-        approvedColumn = new TableColumn<>("Approved");
-        approvedColumn.setCellValueFactory(new PropertyValueFactory<>("approved"));
+        displayCustomerBookings();
 
-        customerBookings.setItems(fetchCurrentCustomerBookings());
-        customerBookings.getColumns().addAll(dateColumn, timeColumn, guestsColumn, approvedColumn);
+        customerBookings.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                selected = customerBookings.getSelectionModel().getSelectedItem();
+            }
+        });
+
+
     }
 
     public void bookingButtonOnAction(ActionEvent event) throws IOException{
@@ -140,25 +132,68 @@ public class CustomerBookingScreenController implements Initializable{
             } else {
                 resultsLabel.setText("You are booked in on table number " + tableNumberOut + "!");
                 res.saveRestaurant();
+                displayCustomerBookings();
             }
         }
     }
 
+    public void cancelButtonOnAction(ActionEvent event) throws IOException{
+        if(selected == null){
+
+        } else {
+            Restaurant res = new Load().loadRestaurant();
+            ArrayList<BookingTable> bt = fetchCurrentCustomerBookings();
+            int bookingID = Integer.parseInt(selected.split(":")[0]);
+            int tableID = bt.get(bookingID).getTableNumber();
+            Booking bookingToCancel = bt.get(bookingID).getBooking();
+            for(Booking b : res.getTable(tableID).getBookings()){
+                System.out.println("Booking found:");
+                System.out.println(b.getCustomer().getUsername() == res.login.getLoggedIn().getUsername());
+                System.out.println(bookingToCancel.getBookingStart().toString());
+                System.out.println(b.getBookingStart().toString());
+                System.out.println(bookingToCancel.getBookingStart().toString().equals(b.getBookingStart().toString()));
+                if(
+                        b.getCustomer().getUsername() == res.login.getLoggedIn().getUsername()
+                                && bookingToCancel.getBookingStart().toString().equals(b.getBookingStart().toString())
+                ){
+                    b.cancel();
+                }
+            }
+            res.saveRestaurant();
+            selected = null;
+            displayCustomerBookings();
+        }
+
+    }
+
     // Display information on the customer's bookings into the list. - JB
     public void displayCustomerBookings(){
-
+        customerBookings.getItems().clear();
+        ArrayList<BookingTable> ccb = fetchCurrentCustomerBookings();
+        ArrayList<String> output = new ArrayList<String>();
+        for(BookingTable bt : ccb){
+            output.add(output.size() + ": "
+                    +  bt.getDate().toString() + " " + bt.getTime().toString().split("T")[1]
+                    + ". Table " + bt.getTable().getTableNumber() + ". "
+                    + bt.getGuests() + " guests."
+                    + (bt.isApproved() ? " Approved." : " Awaiting approval.")
+            );
+        }
+        customerBookings.getItems().addAll(output);
     }
 
     // Utility function to help display the customer's existing bookings. - JB
     // Get all of the current customer's bookings and their associated table. Uses a custom class. - JB
-    public ObservableList<BookingTable> fetchCurrentCustomerBookings(){
-        ObservableList<BookingTable> ans = FXCollections.observableArrayList();
+    public ArrayList<BookingTable> fetchCurrentCustomerBookings(){
+        ArrayList<BookingTable> ans = new ArrayList<BookingTable>();
         Restaurant res = new Load().loadRestaurant();
         Customer customer = (Customer) res.login.getLoggedIn();
         for(Table t : res.getAllTables()){
             for(Booking b : t.getBookings()){
                 if(b.getCustomer() == customer){
-                    ans.add(new BookingTable(b, t));
+                    if(!b.isCancelled()) {
+                        ans.add(new BookingTable(b, t));
+                    }
                 }
             }
         }
@@ -221,52 +256,3 @@ public class CustomerBookingScreenController implements Initializable{
 //    }
 }
 
-// Custom class to aggregate information relating to tables for use in the output. - JB
-class BookingTable{
-    public Table table;
-    public Booking booking;
-    public LocalDate date;
-    public String time;
-    public Integer guests;
-    public boolean approved;
-    public Integer tableNumber;
-
-    // Constructor
-    public BookingTable(Booking b, Table t){
-        this.table = t;
-        this.booking = b;
-        this.date = b.getBookingStart().toLocalDate();
-        this.time = b.getBookingStart().toString();
-        this.guests = b.getGuestCount();
-        this.approved = b.isApproved();
-        this.tableNumber = t.getTableNumber();
-    }
-
-    public Table getTable() {
-        return table;
-    }
-
-    public Booking getBooking() {
-        return booking;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public Integer getGuests() {
-        return guests;
-    }
-
-    public boolean isApproved() {
-        return approved;
-    }
-
-    public Integer getTableNumber() {
-        return tableNumber;
-    }
-}

@@ -4,8 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -55,20 +54,13 @@
             <Label fx:id="resultsLabel" layoutX="-82.0" layoutY="295.0" prefHeight="53.0" prefWidth="284.0" />
          </children>
       </Pane>
-      <TableView fx:id="customerBookings" layoutX="328.0" layoutY="53.0" prefHeight="341.0" prefWidth="372.0">
-        <columns>
-          <TableColumn fx:id="dateColumn" prefWidth="54.66668701171875" text="Date" />
-          <TableColumn fx:id="timeColumn" prefWidth="61.33331298828125" text="Time" />
-            <TableColumn fx:id="guestsColumn" prefWidth="109.99996948242188" text="Guest number" />
-            <TableColumn fx:id="approvedColumn" prefWidth="140.6666259765625" text="Approved" />
-        </columns>
-      </TableView>
       <Label layoutX="328.0" layoutY="22.0" prefHeight="15.0" prefWidth="121.0" text="Bookings">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
       <Button fx:id="bookingButton" layoutX="90.0" layoutY="390.0" mnemonicParsing="false" onAction="#bookingButtonOnAction" prefHeight="47.0" prefWidth="140.0" text="Book" />
-      <Button fx:id="cancelButton" layoutX="554.0" layoutY="407.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="132.0" text="Cancel Booking" />
+      <Button fx:id="cancelButton" layoutX="554.0" layoutY="407.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="41.0" prefWidth="132.0" text="Cancel Booking" />
+      <ListView fx:id="customerBookings" layoutX="328.0" layoutY="54.0" prefHeight="326.0" prefWidth="367.0" />
    </children>
 </AnchorPane>
