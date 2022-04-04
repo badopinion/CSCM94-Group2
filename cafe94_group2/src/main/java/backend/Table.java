@@ -50,13 +50,13 @@ public class Table implements Serializable{
     public boolean addBooking(int guestCount, LocalDateTime bookingTime, long bookingDuration, Customer customer){
         boolean res = true;
         if(guestCount > capacity){
-            System.out.println("Booking doesn't fit on this table.");
+            System.out.println("Booking doesn't fit on table " + tableNumber);
             res = false;
         }
         Booking newBooking = new Booking(guestCount, bookingTime, bookingDuration, customer);
         for(Booking b : bookings){
             if(newBooking.intersects(b)){
-                System.out.println("New booking rejected because it clashes with an existing booking.");
+                System.out.println("Booking rejected. Clashes with an existing booking, table " + tableNumber);
                 res = false;
             }
         }
