@@ -1,4 +1,3 @@
-//OJ is adding a test comment
 package cafepackage.cafe94_group2;
 
 import backend.*;
@@ -44,7 +43,7 @@ public class MenuScreenController implements Initializable {
     private ComboBox<String> chooseMenu, chooseType;
     private ArrayList<String> orderList = new ArrayList<String>();
     private final String specialString = " (Today's special)";
-//    private MenuItem Order;
+    //    private MenuItem Order;
     @FXML
     Button addButton;
     @FXML

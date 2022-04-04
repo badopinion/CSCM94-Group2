@@ -15,7 +15,7 @@ import java.io.IOException;
 
 /**
  this is Customer screen Controller
- @author Yingfan Zhang,
+ @author Yingfan Zhang
  @version1
  */
 public class CustomerScreenController {
@@ -31,8 +31,8 @@ public class CustomerScreenController {
         profileScreen.setY(250);
         profileScreen.initModality(Modality.APPLICATION_MODAL);
         profileScreen.show();
-    }
 
+    }
     public void bookingOnAction(ActionEvent event) throws IOException {
         Stage bookingScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("CustomerBookingScreen.fxml"));
@@ -42,8 +42,8 @@ public class CustomerScreenController {
         bookingScreen.setY(250);
         bookingScreen.initModality(Modality.APPLICATION_MODAL);
         bookingScreen.show();
-    }
 
+    }
     public void menuOnAction(ActionEvent event) throws IOException {
         Stage menuScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("MenuScreen.fxml"));

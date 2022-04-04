@@ -59,6 +59,7 @@ public class Booking implements Serializable {
 	}
 	
 	public void cancel(){
+		System.out.println("Cancelling booking.");
 		this.cancelled = true;
 	}
 
