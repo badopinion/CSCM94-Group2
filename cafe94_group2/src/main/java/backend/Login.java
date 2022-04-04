@@ -13,11 +13,11 @@ import java.io.*;
 public class Login implements Serializable {
 	User loggedIn = null; // User that is currently logged in. JB
 	ArrayList<User> userList = new ArrayList<User>(); // All user profiles. JB
+	int customerCount = 0; // Used to assign customer IDs.
 
 	// Constructor - JB
     public Login() {
 		populateUsers();
-
     }
 
 	// Replaces currently logged in user with the user specified as argument. JB
@@ -80,7 +80,8 @@ public class Login implements Serializable {
 				return false;
 			}
 		}
-		userList.add(new Customer(username, password, firstName, lastName, homeAddress));
+		customerCount++;
+		userList.add(new Customer(username, password, firstName, lastName, homeAddress, customerCount));
 		return true;
 	}
 
