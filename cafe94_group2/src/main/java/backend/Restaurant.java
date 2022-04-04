@@ -1,9 +1,8 @@
 package backend;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.io.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 /**
  * A Restaurant class that aggregates orders and holds methods to show outstanding orders. Also aggregates Tables.
@@ -18,6 +17,8 @@ public class Restaurant implements Serializable {
     private ArrayList<Order> orders;
     //order counter is the number of orders ever ordered, and is used for orderID - OJ
     private int orderCounter;
+    private ArrayList<String> temporaryOrderStringList = new ArrayList<>();
+    private ArrayList<MenuItem> temporaryOrderList = new ArrayList<MenuItem>();
 
     // Restaurant aggregates tables. JB
     private Table[] tables;
@@ -50,10 +51,18 @@ public class Restaurant implements Serializable {
     }
 
     public Table getTable(int tableNumber){
-        return tables[tableNumber-1]; // The restaurant itself doesn't use java's 0-based indexing - JB
+        return tables[tableNumber-1]; // I assume the restaurant itself doesn't use java's 0-based indexing - JB
     }
 
-    // Remember that customers expect 1 based indexing when calling this one! - JB
+
+    public ArrayList<MenuItem> getTemporaryOrderList() {
+        return temporaryOrderList;
+    }
+
+    public ArrayList<String> getTemporaryOrderStringList() {
+        return temporaryOrderStringList;
+    }
+
     public Table[] getAllTables(){
         return tables;
     }
@@ -63,9 +72,29 @@ public class Restaurant implements Serializable {
         this.orderCounter = orderCounter;
     }
 
+    public void setTemporaryOrderList(ArrayList<MenuItem> temporaryOrderList) {
+        this.temporaryOrderList = temporaryOrderList;
+    }
+
+    public void setTemporaryOrderStringList(ArrayList<String> temporaryOrderStringList) {
+        this.temporaryOrderStringList = temporaryOrderStringList;
+    }
+
     //method to add order to orders - OJ
     public void addOrder(Order order){
         orders.add(order);
+    }
+
+    //method to convert an arraylist of strings to an arraylist of menuitems. OJ
+    public ArrayList<MenuItem> convStringListToMIList(ArrayList<String> stringList, Menu menu) {
+        ArrayList<MenuItem> menuItemList = new ArrayList<MenuItem>();
+        for (String itemString : stringList) {
+            MenuItem newMenuItem = menu.returnMenuItemByName(itemString);
+            if (newMenuItem != null) {
+                menuItemList.add(newMenuItem);
+            }
+        }
+        return menuItemList;
     }
 
     //method to show all orders that have not been fulfilled and have not been cancelled - OJ
@@ -82,6 +111,8 @@ public class Restaurant implements Serializable {
         return unfulfilledOrders;
     }
 
+
+
     //Method that takes a Customer object and returns a customer order history arraylist - OJ
     //returns an empty arraylist if no orders match
     public ArrayList<Order> returnCustomerOrderHistory(Customer customer) {
@@ -93,6 +124,7 @@ public class Restaurant implements Serializable {
         }
         return customerOrders;
     }
+
 
     //Returns arraylist of all eatins - OJ
     //Empty arraylist if no match
