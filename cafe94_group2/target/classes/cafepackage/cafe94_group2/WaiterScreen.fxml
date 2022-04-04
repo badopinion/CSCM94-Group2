@@ -2,11 +2,18 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="534.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.WaiterScreenController">
    <children>
+
       <Label alignment="CENTER" layoutX="175.0" layoutY="113.0" prefHeight="133.0" prefWidth="381.0" text="Welcome!">
          <font>
             <Font size="58.0" />
@@ -14,5 +21,6 @@
       </Label>
       <Button fx:id="createOrderButton" layoutX="109.0" layoutY="312.0" mnemonicParsing="false" onAction="#createOrderbuttonOnAction" prefHeight="100.0" prefWidth="200.0" text="Create order" />
       <Button fx:id="outstandingOrdersButton" layoutX="428.0" layoutY="312.0" mnemonicParsing="false" onAction="#outstandingOrdersOnAction" prefHeight="100.0" prefWidth="200.0" text="Outstanding orders" />
+
    </children>
 </AnchorPane>

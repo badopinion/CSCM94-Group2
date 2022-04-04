@@ -18,6 +18,8 @@ import java.util.ResourceBundle;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
+
+
 public class CustomerBookingScreenController implements Initializable{
     @FXML
     DatePicker bookingDate;

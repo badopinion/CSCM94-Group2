@@ -12,6 +12,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ The Waiter screen Controller
+ @author Oliver Jackson
+ @version2
+ */
+
 public class WaiterScreenController {
     @FXML
     Button createOrderButton, outstandingOrdersButton;
