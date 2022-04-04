@@ -1,4 +1,4 @@
-package com.example.reportlst;
+package cafepackage.cafe94_group2;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,8 +13,7 @@ public class HelloController implements Initializable {
     @FXML
     private Label myLabel;
 
-    @FXML
-    private ChoiceBox<String> myChoiceBox;
+
 
     private String[] choice = {"Most Valued Customer","Busiest Period",
             "Most Hours Worked", "Most Popular Item"};
@@ -22,15 +21,7 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 
-        myChoiceBox.getItems().addAll(choice);
-        myChoiceBox.setOnAction(this::getReport);
-
     }
 
-    public void getReport(ActionEvent event) {
-
-        String myReport = myChoiceBox.getValue();
-        myLabel.setText(myReport);
-    }
 
 }
