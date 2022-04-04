@@ -9,14 +9,26 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
 import java.io.IOException;
+
+/**
+ * This is Manager screen Controller
+ * @author Yingfan Zhang
+ * @version 1
+ */
 
 public class ManagerScreenController {
     @FXML
     private Button addStaffButton;
     @FXML
-    private Button outstandingOrderButton2;
+    private Button outstandingOrderButton;
+
+    /**
+     * To show the staff add orders.
+     * Takes user to new screen.
+     * @param actionEvent Button click
+     * @throws IOException Throws if input fails
+     */
     @FXML
     private void addStaffOnAction(ActionEvent actionEvent) throws IOException {
         Stage addStaffScreen = new Stage();
@@ -28,8 +40,15 @@ public class ManagerScreenController {
         addStaffScreen.initModality(Modality.APPLICATION_MODAL);
         addStaffScreen.show();
     }
+
+    /**
+     * To show the outstanding orders.
+     * Takes user to new screen.
+     * @param actionEvent Button click
+     * @throws IOException Throws if input fails
+     */
     @FXML
-    private void outstandingOrderOnAction2(ActionEvent actionEvent) throws IOException {
+    private void outstandingOrderOnAction(ActionEvent actionEvent) throws IOException {
         Stage outstandingOrderScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("UnfulfilledOrderScreen.fxml"));
         outstandingOrderScreen.setTitle("Outstanding Order Interface");

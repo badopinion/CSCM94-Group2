@@ -16,9 +16,9 @@ import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 /**
- The Menu screen Controller
- @author Oliver Jackson
- @version2
+ * The Menu screen Controller
+ * @author Oliver Jackson
+ * @version 2
  */
 
 public class EatInScreenController implements Initializable {
@@ -49,8 +49,8 @@ public class EatInScreenController implements Initializable {
             );
 
     /**
-     Initializes the screen, loading the restaurant, setting up the table drop down box,
-     and setting the price box to equal the order price
+     * Initializes the screen, loading the restaurant, setting up the table drop down box,
+     * And setting the price box to equal the order price.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -64,9 +64,9 @@ public class EatInScreenController implements Initializable {
 
 
     /**
-     * provides the functionality for the place order button
-     * if the customer is ordering it uses the customer's info for the order
-     * if the waiter is ordering the customer is set to eatincustomer
+     * Provides the functionality for the place order button
+     * If the customer is ordering it uses the customer's info for the order
+     * If the waiter is ordering the customer is set to eatincustomer
      * @param actionEvent clicking the placeorder button
      */
     @FXML
@@ -148,7 +148,7 @@ public class EatInScreenController implements Initializable {
     }
 
     /**
-     * if the order is completed an alert is displayed
+     * If the order is completed an alert is displayed
      */
     private void orderCompleteAlert() {
         Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);

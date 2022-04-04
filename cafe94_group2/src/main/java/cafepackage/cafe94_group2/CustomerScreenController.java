@@ -14,14 +14,20 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- this is Customer screen Controller
- @author Yingfan Zhang
- @version1
+ * This is Customer screen Controller
+ * @author Yingfan Zhang
+ * @version 1
  */
 public class CustomerScreenController {
     @FXML
     private Button viewProfile, makeBooking, viewMenu;
 
+    /**
+     * To show the profile screen.
+     * Takes user to new screen.
+     * @param event Button click
+     * @throws IOException Throws if input fails
+     */
     public void profileOnAction(ActionEvent event) throws IOException {
         Stage profileScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("ProfileScreen.fxml"));
@@ -33,6 +39,13 @@ public class CustomerScreenController {
         profileScreen.show();
 
     }
+
+    /**
+     * To show the booking screen.
+     * Takes user to new screen.
+     * @param event Button click
+     * @throws IOException Throws if input fails
+     */
     public void bookingOnAction(ActionEvent event) throws IOException {
         Stage bookingScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("CustomerBookingScreen.fxml"));
@@ -44,6 +57,13 @@ public class CustomerScreenController {
         bookingScreen.show();
 
     }
+
+    /**
+     * To show the menu screen.
+     * Takes user to new screen.
+     * @param event Button click
+     * @throws IOException Throws if input fails
+     */
     public void menuOnAction(ActionEvent event) throws IOException {
         Stage menuScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("MenuScreen.fxml"));

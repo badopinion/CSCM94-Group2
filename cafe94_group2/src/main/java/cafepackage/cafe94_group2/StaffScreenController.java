@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  this is Staff screen Controller
  @author Yingfan Zhang
- @version1
+ @version 1
  */
 public class StaffScreenController {
     @FXML

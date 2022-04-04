@@ -9,12 +9,24 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
 import java.io.IOException;
+
+/**
+ * This is Driver screen Controller
+ * @author Yingfan Zhang
+ * @version 1
+ */
 
 public class DriverScreenController {
     @FXML
     private Button outstandingOrderButton;
+
+    /**
+     * To show the outstanding orders.
+     * Takes user to new screen.
+     * @param actionEvent Button click
+     * @throws IOException Throws if input fails
+     */
     @FXML
     private void outstandingOrderOnAction(ActionEvent actionEvent) throws IOException {
         Stage outstandingOrderScreen = new Stage();

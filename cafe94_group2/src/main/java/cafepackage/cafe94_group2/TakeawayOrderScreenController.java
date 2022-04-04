@@ -16,9 +16,9 @@ import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 /**
- The Takeaway screen Controller
- @author Oliver Jackson
- @version2
+ * The Takeaway screen Controller
+ * @author Oliver Jackson
+ * @version 2
  */
 
 public class TakeawayOrderScreenController implements Initializable {
@@ -40,8 +40,8 @@ public class TakeawayOrderScreenController implements Initializable {
     private static final DecimalFormat DECIMAL_FORMATTER = new DecimalFormat("###,##0.00");
 
 /**
-Initializes the screen, loading the restaurant, setting up the time drop down box,
- and setting the price box to equal the order price
+ * Initializes the screen, loading the restaurant, setting up the time drop down box,
+ * And setting the price box to equal the order price
  */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -54,9 +54,9 @@ Initializes the screen, loading the restaurant, setting up the time drop down bo
     }
 
     /**
-     * provides the functionality for the place order button
-     * if the customer is ordering it uses the customer's info for the order
-     * if the waiter is ordering the customer is set to takeawaycustomer
+     * Provides the functionality for the place order button
+     * If the customer is ordering it uses the customer's info for the order
+     * If the waiter is ordering the customer is set to takeawaycustomer
      * (enabling a customer to order over the phone)
      * @param actionEvent clicking the place orderbutton
      */
@@ -88,7 +88,7 @@ Initializes the screen, loading the restaurant, setting up the time drop down bo
     }
 
     /**
-     * if the order is completed an alert is displayed
+     * If the order is completed an alert is displayed
      */
     private void orderCompleteAlert() {
         Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
