@@ -14,9 +14,9 @@ import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 /**
- The Delivery screen Controller
- @author Oliver Jackson
- @version2
+ * The Delivery screen Controller.
+ * @author Oliver Jackson
+ * @version 2
  */
 
 public class DeliveryOrderScreenController implements Initializable {

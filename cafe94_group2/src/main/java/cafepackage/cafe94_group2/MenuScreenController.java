@@ -70,8 +70,8 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * enables user to choose between food, drink, and coffee options
-     * if user selects a new option different item options appear
+     * Enables user to choose between food, drink, and coffee options
+     * If user selects a new option different item options appear
      * @param actionEvent clicking the dropdown box
      */
     @FXML
@@ -88,8 +88,8 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * displays food menu items in display box
-     * if menu item is special displays (Today's Special)
+     * Displays food menu items in display box
+     * If menu item is special displays (Today's Special)
      */
     private void displayFood(){
         Restaurant res = new Load().getRestaurantFromFile();
@@ -108,7 +108,7 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * displays drink menu items in display box
+     * Displays drink menu items in display box
      */
     private void displayDrink(){
         Restaurant res = new Load().getRestaurantFromFile();
@@ -123,7 +123,7 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * displays coffee menuItems in display box
+     * Displays coffee menuItems in display box
      */
     private void displayCoffee(){
         Restaurant res = new Load().getRestaurantFromFile();
@@ -139,9 +139,9 @@ public class MenuScreenController implements Initializable {
 
     /**
      * User can select an option from the display box and if they click the add button
-     * the item is added to an arrayList called orderList, held by the menuScreenController.
-     * displayTwo is then updated to reflect the change in orderList
-     * @param actionEvent clicking the add button
+     * The item is added to an arrayList called orderList, held by the menuScreenController.
+     * DisplayTwo is then updated to reflect the change in orderList
+     * @param actionEvent Clicking the add button
      */
     @FXML
     private void AddButtonOnAction(ActionEvent actionEvent) {
@@ -167,8 +167,8 @@ public class MenuScreenController implements Initializable {
 
     /**
      * User can select an option from the display box and if they click the remove button
-     * the item is removed from the arrayList orderList, held by the menuScreenController.
-     * displayTwo is then updated to reflect the change in orderList
+     * The item is removed from the arrayList orderList, held by the menuScreenController.
+     * DisplayTwo is then updated to reflect the change in orderList
      * @param actionEvent clicking the remove button
      */
     @FXML
@@ -227,7 +227,7 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * loads the eat in screen
+     * Loads the eat in screen
      * @param res the restaurant object
      * @throws IOException
      */
@@ -244,7 +244,7 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * loads the takeaway screen
+     * Loads the takeaway screen
      * @param res the restaurant object
      * @throws IOException
      */
@@ -261,7 +261,7 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * loads the delivery screen
+     * Loads the delivery screen
      * @param res the restaurant object
      * @throws IOException
      */
