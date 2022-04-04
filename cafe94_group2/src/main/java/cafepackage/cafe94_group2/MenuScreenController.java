@@ -29,9 +29,11 @@ public class MenuScreenController {
 
     public void sayGoodbye(ActionEvent event) throws IOException {
         // Get the restaurant from the file. This should work fine verbatim no matter where you call it.
-//        Restaurant res = new Load().getRestaurantFromFile();
         Load load = new Load();
         Restaurant res = load.loadRestaurant();
+
+        // Achieves the same and is more concise.
+        // Restaurant res = new Load().getRestaurantFromFile();
 
         // Do stuff.
         if(res.menu.getAllItems().size() == 0) {

@@ -41,15 +41,17 @@ public class CustomerBookingScreenController implements Initializable{
     @FXML Label durationLabel;
     @FXML Label guestLabel;
     @FXML Label resultsLabel;
-    @FXML TableView<Booking> customerBookings;
+    @FXML TableView<BookingTable> customerBookings;
     @FXML
-    TableColumn<Booking, LocalDate> dateColumn;
+    TableColumn<BookingTable, LocalDate> dateColumn;
     @FXML
-    TableColumn<Booking, String> timeColumn;
+    TableColumn<BookingTable, String> timeColumn;
     @FXML
-    TableColumn<Booking, Integer> guestsColumn;
+    TableColumn<BookingTable, Integer> guestsColumn;
     @FXML
-    TableColumn<Booking, Boolean> approvedColumn;
+    TableColumn<BookingTable, Boolean> approvedColumn;
+    @FXML
+    TableColumn<BookingTable, Integer> tableNumberColumn;
 
     private ObservableList<String> timeList = FXCollections.observableArrayList(
             "10:00", "10:30", "11:00", "11:30", "12:00",
@@ -69,6 +71,18 @@ public class CustomerBookingScreenController implements Initializable{
         bookingTime.setItems(timeList);
         bookingNumberOfGuests.setItems(numberOfGuestsList);
         bookingDuration.setItems(durationList);
+
+        dateColumn = new TableColumn<>("Date");
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        timeColumn = new TableColumn<>("Time");
+        timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
+        guestsColumn = new TableColumn<>("Guests");
+        guestsColumn.setCellValueFactory(new PropertyValueFactory<>("guests"));
+        approvedColumn = new TableColumn<>("Approved");
+        approvedColumn.setCellValueFactory(new PropertyValueFactory<>("approved"));
+
+        customerBookings.setItems(fetchCurrentCustomerBookings());
+        customerBookings.getColumns().addAll(dateColumn, timeColumn, guestsColumn, approvedColumn);
     }
 
     public void bookingButtonOnAction(ActionEvent event) throws IOException{
@@ -132,13 +146,13 @@ public class CustomerBookingScreenController implements Initializable{
 
     // Display information on the customer's bookings into the list. - JB
     public void displayCustomerBookings(){
-        //TODO: THIS AND THEN MAKE IT CLICKABLE
+
     }
 
     // Utility function to help display the customer's existing bookings. - JB
-    // Get all of the current customer's bookings and their associated table. Uses a custom tuple class. - JB
-    public ArrayList<BookingTable> fetchCurrentCustomerBookings(){
-        ArrayList<BookingTable> ans = new ArrayList<BookingTable>();
+    // Get all of the current customer's bookings and their associated table. Uses a custom class. - JB
+    public ObservableList<BookingTable> fetchCurrentCustomerBookings(){
+        ObservableList<BookingTable> ans = FXCollections.observableArrayList();
         Restaurant res = new Load().loadRestaurant();
         Customer customer = (Customer) res.login.getLoggedIn();
         for(Table t : res.getAllTables()){
@@ -207,14 +221,52 @@ public class CustomerBookingScreenController implements Initializable{
 //    }
 }
 
-// Custom tuple class to link bookings to tables. - JB
+// Custom class to aggregate information relating to tables for use in the output. - JB
 class BookingTable{
     public Table table;
     public Booking booking;
+    public LocalDate date;
+    public String time;
+    public Integer guests;
+    public boolean approved;
+    public Integer tableNumber;
 
     // Constructor
     public BookingTable(Booking b, Table t){
         this.table = t;
         this.booking = b;
+        this.date = b.getBookingStart().toLocalDate();
+        this.time = b.getBookingStart().toString();
+        this.guests = b.getGuestCount();
+        this.approved = b.isApproved();
+        this.tableNumber = t.getTableNumber();
+    }
+
+    public Table getTable() {
+        return table;
+    }
+
+    public Booking getBooking() {
+        return booking;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public Integer getGuests() {
+        return guests;
+    }
+
+    public boolean isApproved() {
+        return approved;
+    }
+
+    public Integer getTableNumber() {
+        return tableNumber;
     }
 }
