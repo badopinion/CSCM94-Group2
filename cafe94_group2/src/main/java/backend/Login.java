@@ -134,4 +134,15 @@ public class Login implements Serializable {
 	public User getLoggedIn(){
     	return this.loggedIn;
 	}
+
+	// Gets the full staff list - JB
+	public ArrayList<User> getStaffList() {
+		ArrayList<User> out = new ArrayList<User>();
+		for(User u : userList){
+			if(u instanceof Staff){
+				out.add(u);
+			}
+		}
+		return out;
+	}
 }
