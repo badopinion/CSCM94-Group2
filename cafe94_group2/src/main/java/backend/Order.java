@@ -62,6 +62,10 @@ public class Order implements Serializable{
         return orderedMenuItems;
     }
 
+    public LocalDateTime getOrderDateTime(){
+        return orderDateTime;
+    }
+
     //Setters
     public void setOrderNotes(String orderNotes) {
         this.orderNotes = orderNotes;

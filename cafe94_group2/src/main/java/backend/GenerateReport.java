@@ -85,6 +85,27 @@ public class GenerateReport {
 
     }
 
+    public String mostActivePeriodReport(){
+        Restaurant res = new Load().loadRestaurant();
+        ArrayList<Order> allOrders = res.getAllOrders();
+        // Array of 24 ints, representing the number of orders placed during the respective hour of the day.
+        int[] hours = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        for(Order o : allOrders){
+            int hour = o.getOrderDateTime().getHour();
+            hours[hour]++;
+        }
+        int highestCount = -1;
+        int highestIndex = -1;
+        for(int i = 0; i < 24; i++){
+            if(hours[i] > highestCount){
+                highestIndex = i;
+                highestCount = hours[i];
+            }
+        }
+        return "The busiest hour of the day is " + highestIndex + ":00 until " + highestIndex
+                + ":59, where " + highestCount + " orders have been placed.";
+    }
+
 
 
 
