@@ -37,11 +37,12 @@ public class TakeawayOrderScreenController implements Initializable {
             "20:30", "21:00");
 
 
-
     private static final DecimalFormat DECIMAL_FORMATTER = new DecimalFormat("###,##0.00");
 
-
-
+/**
+Initializes the screen, loading the restaurant, setting up the time drop down box,
+ and setting the price box to equal the order price
+ */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Restaurant res = new Load().getRestaurantFromFile();
@@ -52,6 +53,12 @@ public class TakeawayOrderScreenController implements Initializable {
 
     }
 
+    /**
+     * provides the functionality for the place order button
+     * if the customer is ordering it uses the customer's info for the order
+     * if the waiter is ordering the customer is set to takeawaycustomer
+     * @param actionEvent clicking the place orderbutton
+     */
     @FXML
     private void PlaceOrderButtonOnAction(ActionEvent actionEvent) {
         boolean isMyComboBoxEmpty = pickUpTimeSelection.getSelectionModel().isEmpty();
@@ -81,6 +88,9 @@ public class TakeawayOrderScreenController implements Initializable {
         }
     }
 
+    /**
+     * if the order is completed an alert is displayed
+     */
     private void orderCompleteAlert() {
         Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
         infoAlert.setHeaderText("Takeaway order complete");

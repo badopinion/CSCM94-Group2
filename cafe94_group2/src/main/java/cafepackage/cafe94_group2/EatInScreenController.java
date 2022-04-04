@@ -47,8 +47,11 @@ public class EatInScreenController implements Initializable {
                     "Table 10",
                     "Table 11"
             );
-//    final ComboBox comboBox = new ComboBox(table);
 
+    /**
+     Initializes the screen, loading the restaurant, setting up the table drop down box,
+     and setting the price box to equal the order price
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Restaurant res = new Load().getRestaurantFromFile();
@@ -59,6 +62,13 @@ public class EatInScreenController implements Initializable {
 
     }
 
+
+    /**
+     * provides the functionality for the place order button
+     * if the customer is ordering it uses the customer's info for the order
+     * if the waiter is ordering the customer is set to eatincustomer
+     * @param actionEvent clicking the placeorder button
+     */
     @FXML
     private void PlaceOrderButtonOnAction(ActionEvent actionEvent) {
         boolean isMyComboBoxEmpty = tableSelection.getSelectionModel().isEmpty();
@@ -89,7 +99,11 @@ public class EatInScreenController implements Initializable {
         }
     }
 
-
+    /**
+     * Takes a string and searches for a corresponding table number
+     * @param tableString
+     * @return an int corresponding to a table number
+     */
     private int returnTableNumber(String tableString) {
         int tableNum;
         switch (tableString) {
@@ -135,7 +149,9 @@ public class EatInScreenController implements Initializable {
         return tableNum;
     }
 
-
+    /**
+     * if the order is completed an alert is displayed
+     */
     private void orderCompleteAlert() {
         Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
         infoAlert.setHeaderText("Eat-in order complete");
