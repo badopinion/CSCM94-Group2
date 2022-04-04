@@ -1,7 +1,8 @@
 package backend;
 
-import java.time.LocalDateTime;
 import java.io.*;
+import java.time.LocalDateTime;
+
 
 /**
  * A booking class. A booking is a period of time for which a table has been booked by customers who wish to eat in.
