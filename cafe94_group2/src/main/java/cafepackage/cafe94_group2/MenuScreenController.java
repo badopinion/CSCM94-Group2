@@ -30,7 +30,7 @@ import static java.lang.Double.sum;
 
 /**
  The Menu screen Controller
- @author Hristiana Davidova, Yingfan Zhang, Oliver Jackson
+ @author Hristiana Davidova, Yingfan Zhang , Oliver Jackson
  @version4
  */
 

@@ -22,7 +22,11 @@ public class WaiterScreenController {
     @FXML
     Button createOrderButton, outstandingOrdersButton;
 
-
+    /**
+     *
+     * @param actionEvent createOrder Button click on Create Order
+     * @throws IOException if output fails
+     */
     @FXML
     private void createOrderbuttonOnAction(ActionEvent actionEvent) throws IOException {
         Stage menuScreen = new Stage();
@@ -34,6 +38,12 @@ public class WaiterScreenController {
         menuScreen.initModality(Modality.APPLICATION_MODAL);
         menuScreen.show();
     }
+
+    /**
+     *
+     * @param actionEvent outstandingOrder Button click on Unfulfilled Orders
+     * @throws IOException if output fails
+     */
 
     @FXML
     private void outstandingOrdersOnAction(ActionEvent actionEvent) throws IOException {

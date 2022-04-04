@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 /**
  * A table class. Aggregates bookings.
- * @author Jo Butler
+ * @author Jo Butler , Hristiana Davidova
  * @version 1
  */
 
@@ -16,14 +16,21 @@ public class Table implements Serializable{
     private int capacity;
     private ArrayList<Booking> bookings;
 
-    // Constructor - JB
+    /**Constructor
+     *
+     * @param tableNumber the table number
+     * @param capacity the capacity of the table
+     */
     public Table(int tableNumber, int capacity) {
         this.tableNumber = tableNumber;
         this.capacity = capacity;
         this.bookings = new ArrayList<Booking>();
     }
 
-    // Getters - JB
+    /**
+     * Getters -
+     * @return returns table number and capacity
+     */
     public int getTableNumber() {
         return this.tableNumber;
     }
@@ -36,7 +43,10 @@ public class Table implements Serializable{
         return this.bookings;
     }
 
-    // Setters - JB
+    /**
+     * Setters -
+     * @param tableNumber the table number
+     */
     public void setTableNumber(int tableNumber) {
         this.tableNumber = tableNumber;
     }
@@ -45,8 +55,15 @@ public class Table implements Serializable{
         this.capacity = capacity;
     }
 
-    // Tries to add a booking with the entered parameters. - JB
-    // Returns false instead if already booked at the time or above table's capacity. - JB
+    /**
+     *Tries to add a booking with the entered parameters.
+     * Returns false instead if already booked at the time or above table's capacity.
+     * @param guestCount the count for the guests
+     * @param bookingTime the time of the booking
+     * @param bookingDuration the duration of the booking
+     * @param customer the customer
+     * @return returning if booked or rejected
+     */
     public boolean addBooking(int guestCount, LocalDateTime bookingTime, long bookingDuration, Customer customer){
         boolean res = true;
         if(guestCount > capacity){

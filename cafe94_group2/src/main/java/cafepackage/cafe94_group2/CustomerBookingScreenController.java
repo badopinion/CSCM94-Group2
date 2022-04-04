@@ -45,6 +45,11 @@ public class CustomerBookingScreenController implements Initializable{
     @FXML Label resultsLabel;
     @FXML ListView<String> customerBookings;
 
+    /**display times in display box
+     * number of guests and duration of the booking
+     * creates a list of string and integer types followed by the creation of an observable list to track changes
+     *
+     */
     private ObservableList<String> timeList = FXCollections.observableArrayList(
             "10:00", "10:30", "11:00", "11:30", "12:00",
             "12:30", "13:00", "13:30", "14:00", "14:30",
@@ -59,7 +64,12 @@ public class CustomerBookingScreenController implements Initializable{
     private ArrayList<BookingTable> currentCustomerBookings = null;
     private String selected = null;
 
-
+    /**
+     * initializes the screen ,setting up the time drop down box,
+     *and getting the number of guests and the duration
+     * @param url
+     * @param rb
+     */
     @Override public void initialize(URL url, ResourceBundle rb) {
         bookingTime.setItems(timeList);
         bookingNumberOfGuests.setItems(numberOfGuestsList);
@@ -77,6 +87,13 @@ public class CustomerBookingScreenController implements Initializable{
 
     }
 
+    /**
+     * selecting booking date,time,lenght,guest number,
+     * checking if what entered by customer is correct
+     * if all values are correct poceeding to approval for booking
+     * @param event ButtonOnAction clicking button date
+     * @throws IOException if tableNum output fails
+     */
     public void bookingButtonOnAction(ActionEvent event) throws IOException{
         Restaurant res = new Load().loadRestaurant();
 
@@ -137,6 +154,11 @@ public class CustomerBookingScreenController implements Initializable{
         }
     }
 
+    /**
+     *
+     * @param event CancelButton cancel booking
+     * @throws IOException if input is cancelled
+     */
     public void cancelButtonOnAction(ActionEvent event) throws IOException{
         if(selected == null){
 
@@ -166,7 +188,9 @@ public class CustomerBookingScreenController implements Initializable{
 
     }
 
-    // Display information on the customer's bookings into the list. - JB
+    /** Display information on the customer's bookings into the list.
+     * processing customers booking approved/awaiting approval
+     */
     public void displayCustomerBookings(){
         customerBookings.getItems().clear();
         ArrayList<BookingTable> ccb = fetchCurrentCustomerBookings();
@@ -182,8 +206,9 @@ public class CustomerBookingScreenController implements Initializable{
         customerBookings.getItems().addAll(output);
     }
 
-    // Utility function to help display the customer's existing bookings. - JB
-    // Get all of the current customer's bookings and their associated table. Uses a custom class. - JB
+    /** Utility function to help display the customer's existing bookings.
+     *Get all of the current customer's bookings and their associated table. Uses a custom class.
+     */
     public ArrayList<BookingTable> fetchCurrentCustomerBookings(){
         ArrayList<BookingTable> ans = new ArrayList<BookingTable>();
         Restaurant res = new Load().loadRestaurant();

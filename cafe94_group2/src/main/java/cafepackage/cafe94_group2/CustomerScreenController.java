@@ -22,6 +22,10 @@ public class CustomerScreenController {
     @FXML
     private Button viewProfile, makeBooking, viewMenu;
 
+    /**
+     * @param event profileOn Button click on View Profile
+     * @throws IOException
+     */
     public void profileOnAction(ActionEvent event) throws IOException {
         Stage profileScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("ProfileScreen.fxml"));
@@ -33,6 +37,11 @@ public class CustomerScreenController {
         profileScreen.show();
 
     }
+
+    /**
+     * @param event boookingOn Button click on Make Booking
+     * @throws IOException
+     */
     public void bookingOnAction(ActionEvent event) throws IOException {
         Stage bookingScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("CustomerBookingScreen.fxml"));
@@ -44,6 +53,11 @@ public class CustomerScreenController {
         bookingScreen.show();
 
     }
+
+    /**
+     * @param event menuOn Button click on View Menu
+     * @throws IOException
+     */
     public void menuOnAction(ActionEvent event) throws IOException {
         Stage menuScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("MenuScreen.fxml"));

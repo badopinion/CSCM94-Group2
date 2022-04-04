@@ -9,13 +9,19 @@ import java.io.*;
  */
 
 public class Load {
-    // Due to confusion both these methods now do the same thing, unifying the previous two methods. - JB
+    /**
+     * Due to confusion both these methods now do the same thing, unifying the previous two methods.
+     * @return returining the restaurant
+     */
     public Restaurant loadRestaurant() {
         return getRestaurantFromFile();
     }
 
-    // Loads a Restaurant object from the file "restaurant.ser". This file contains all program state. - JB
-    // If no such file exists a new restaurant.ser containing a fresh Restaurant object will be made. - JB
+    /**
+     *  Loads a Restaurant object from the file "restaurant.ser". This file contains all program state.
+     *   If no such file exists a new restaurant.ser containing a fresh Restaurant object will be made.
+     * @return returning restaurant
+     */
     public Restaurant getRestaurantFromFile(){
         Restaurant res = null;
         File restaurantFile = new File("restaurant.ser");

@@ -20,14 +20,20 @@ public class Restaurant implements Serializable {
     private ArrayList<String> temporaryOrderStringList = new ArrayList<>();
     private ArrayList<MenuItem> temporaryOrderList = new ArrayList<MenuItem>();
 
-    // Restaurant aggregates tables. JB
+    /**
+     * Restaurant aggregates tables
+     */
     private Table[] tables;
 
-    // References to other aggregator methods - JB
+    /**
+     * // References to other aggregator methods
+     */
     public Login login;
     public Menu menu;
 
-    // Constructor - OJ
+    /**
+     *  Constructor
+     */
     public Restaurant() {
         this.orders = new ArrayList<Order>();
         this.orderCounter = 0;
@@ -41,7 +47,9 @@ public class Restaurant implements Serializable {
         };
     }
 
-    //Getters
+    /**
+     * Getters
+     */
     public int getOrderCounter() {
         return orderCounter;
     }
@@ -67,7 +75,10 @@ public class Restaurant implements Serializable {
         return tables;
     }
 
-    //Setters
+    /**
+     * Setters
+     * @param orderCounter the order counter
+     */
     public void setOrderCounter(int orderCounter) {
         this.orderCounter = orderCounter;
     }
@@ -80,12 +91,18 @@ public class Restaurant implements Serializable {
         this.temporaryOrderStringList = temporaryOrderStringList;
     }
 
-    //method to add order to orders - OJ
+    /**
+     * @param order method to add order to orders
+     */
     public void addOrder(Order order){
         orders.add(order);
     }
 
-    //method to convert an arraylist of strings to an arraylist of menuitems. OJ
+    /**
+     * @param stringList convert an arraylist of strings
+     * @param menu to an arraylist of menuitems
+     * @return returns menu list
+     */
     public ArrayList<MenuItem> convStringListToMIList(ArrayList<String> stringList, Menu menu) {
         ArrayList<MenuItem> menuItemList = new ArrayList<MenuItem>();
         for (String itemString : stringList) {
@@ -97,8 +114,10 @@ public class Restaurant implements Serializable {
         return menuItemList;
     }
 
-    //method to show all orders that have not been fulfilled and have not been cancelled - OJ
-    //returns an ArrayList
+    /**
+     *method to show all orders that have not been fulfilled and have not been cancelled
+     * @return returns an ArrayList of orders not done
+     */
     public ArrayList<Order> unfulfilledOrders(){
         ArrayList<Order> unfulfilledOrders = new ArrayList<Order>();
         for(Order order : orders){
@@ -112,9 +131,10 @@ public class Restaurant implements Serializable {
     }
 
 
-
-    //Method that takes a Customer object and returns a customer order history arraylist - OJ
-    //returns an empty arraylist if no orders match
+    /**
+     * @param customer Method that takes a Customer object and returns a customer order history arraylist
+     * @return returns an empty arraylist if no orders match
+     */
     public ArrayList<Order> returnCustomerOrderHistory(Customer customer) {
         ArrayList<Order> customerOrders = new ArrayList<Order>();
         for (Order order : orders) {
@@ -126,8 +146,9 @@ public class Restaurant implements Serializable {
     }
 
 
-    //Returns arraylist of all eatins - OJ
-    //Empty arraylist if no match
+    /**
+     * @return Returns arraylist of all eatins , Empty arraylist if no match
+     */
     public ArrayList<Order> returnEatInOrders(){
         ArrayList<Order> eatinOrders = new ArrayList<Order>();
         for (Order order : orders){
@@ -138,8 +159,9 @@ public class Restaurant implements Serializable {
         return eatinOrders;
     }
 
-    //Returns arraylist of all takeaways - OJ
-    //Empty arraylist if no match
+    /**
+     * @return Returns arraylist of all takeaways ,Empty arraylist if no match
+     */
     public ArrayList<Order> returnTakeawayOrders(){
         ArrayList<Order> takeawayOrders = new ArrayList<Order>();
         for (Order order : orders){
@@ -150,8 +172,9 @@ public class Restaurant implements Serializable {
         return takeawayOrders;
     }
 
-    //Returns arraylist of all deliveries - OJ
-    //Empty arraylist if no match
+    /**
+     * @return Returns arraylist of all deliveries , Empty arraylist if no match
+     */
     public ArrayList<Order> returnDeliveryOrders(){
         ArrayList<Order> deliveryOrders = new ArrayList<Order>();
         for (Order order : orders){
@@ -162,7 +185,14 @@ public class Restaurant implements Serializable {
         return deliveryOrders;
     }
 
-    //Make a booking on the smallest available table. Return the table number or 0 if impossible.
+    /**
+     * Make a booking on the smallest available table.
+     * @param guestCount the guest count
+     * @param bookingTime the booking time
+     * @param bookingDuration the duration of the booking
+     * @param customer the customer
+     * @return Return the table number or 0 if impossible.
+     */
     public int findTableAndBook(int guestCount, LocalDateTime bookingTime, long bookingDuration, Customer customer){
         for(int i = 1; i < tables.length; i++){
             if(tables[i-1].addBooking(guestCount, bookingTime, bookingDuration, customer)){
@@ -172,8 +202,10 @@ public class Restaurant implements Serializable {
         return 0;
     }
 
-    //Saves the restaurant object (and all aggregated or referenced objects with it - full system state save) - JB
-    //Please note the load function is in Main. Need to be able to load without previous instance existing - JB
+    /**
+     *Saves the restaurant object (and all aggregated or referenced objects with it - full system state save) - JB
+     * Please note the load function is in Main. Need to be able to load without previous instance existing - JB
+     */
     public void saveRestaurant(){
         try {
             File restaurantFile = new File("restaurant.ser");
