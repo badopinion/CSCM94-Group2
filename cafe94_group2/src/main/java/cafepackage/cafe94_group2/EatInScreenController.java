@@ -65,12 +65,19 @@ public class EatInScreenController implements Initializable {
             int tableNumber = returnTableNumber(tableSelection.getSelectionModel().getSelectedItem());
             Table table = res.getTable(tableNumber);
             String orderNotesString = orderNotes.getText();
-            if (res.login.getLoggedIn() instanceof Customer){
-                System.out.println("its a customer");
+            User user = res.login.getLoggedIn();
+            if (user instanceof Customer){
+                Customer customer = (Customer) user;
+                System.out.println("order counter:");
+                System.out.println(res.getOrderCounter());
+                res.menu.placeEatInOrder(res, customer, orderNotesString, table, res.getTemporaryOrderList());
+                System.out.println("order placed");
+                System.out.println("order counter:");
+                System.out.println(res.getOrderCounter());
             } else {
-                System.out.println("not a customer");
+                System.out.println("Only customers may order here");
             }
-//            res.menu.placeEatInOrder(res, res.login.getLoggedIn(), orderNotesString, table, res.getTemporaryOrderList());
+            res.saveRestaurant();
         }
     }
 
