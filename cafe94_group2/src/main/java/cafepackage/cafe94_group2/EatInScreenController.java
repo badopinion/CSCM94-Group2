@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 /**
  The Menu screen Controller
  @author Oliver Jackson
- @version2
+ @version 2
  */
 
 public class EatInScreenController implements Initializable {
@@ -32,7 +32,6 @@ public class EatInScreenController implements Initializable {
     private Button placeOrderButton;
 
     private static final DecimalFormat DECIMAL_FORMATTER = new DecimalFormat("###,##0.00");
-
     ObservableList<String> table =
             FXCollections.observableArrayList(
                     "Table 1",
