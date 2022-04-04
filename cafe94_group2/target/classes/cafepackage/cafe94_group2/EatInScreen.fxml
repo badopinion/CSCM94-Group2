@@ -8,34 +8,44 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.EatInScreenController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.EatInScreenController">
    <children>
       <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="228.0" prefWidth="597.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="291.0" prefWidth="597.0">
                <children>
                   <Label alignment="CENTER" layoutX="131.0" layoutY="14.0" prefHeight="57.0" prefWidth="335.0" text="Eat In Order">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="68.0" layoutY="128.0" prefHeight="36.0" prefWidth="153.0" text="Table Selection">
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="80.0" prefHeight="36.0" prefWidth="153.0" text="Table Selection">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="tableSelection" layoutX="237.0" layoutY="128.0" prefHeight="36.0" prefWidth="207.0" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="146.0" prefWidth="597.0">
-               <children>
-                  <Label alignment="CENTER" layoutX="65.0" layoutY="41.0" prefHeight="36.0" prefWidth="171.0" text="Order Notes">
+                  <ComboBox fx:id="tableSelection" layoutX="207.0" layoutY="80.0" prefHeight="36.0" prefWidth="207.0" />
+
+                  <TextField fx:id="orderNotes" layoutX="207.0" layoutY="127.0" prefHeight="36.0" prefWidth="291.0" />
+
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="121.0" prefHeight="47.0" prefWidth="153.0" text="Order Notes">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="19.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="236.0" layoutY="41.0" prefHeight="36.0" prefWidth="291.0" />
-                  <Button layoutX="416.0" layoutY="113.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="143.0" text="Place Order" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="597.0">
+               <children>
+
+                  <Button fx:id="placeOrderButton" layoutX="415.0" layoutY="98.0" mnemonicParsing="false" onAction="#PlaceOrderButtonOnAction" prefHeight="47.0" prefWidth="143.0" text="Place Order" />
+                  <TextField fx:id="orderPrice" layoutX="414.0" layoutY="33.0" prefHeight="47.0" prefWidth="143.0" promptText="Order Price" />
+
+                  <Label layoutX="335.0" layoutY="39.0" prefHeight="36.0" prefWidth="56.0" text="Price">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
         </items>

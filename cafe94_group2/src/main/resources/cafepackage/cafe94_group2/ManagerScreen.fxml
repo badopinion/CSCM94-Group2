@@ -47,9 +47,8 @@
                            <bottom>
                               <Pane prefHeight="71.0" prefWidth="680.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <Button layoutX="485.0" layoutY="11.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="134.0" text="Add Hours" />
-                                    <Button layoutX="66.0" layoutY="11.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Add Staff" />
-                                    <Button layoutX="264.0" layoutY="11.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="135.0" text="Update" />
+                                    <Button fx:id="addHoursButton" layoutX="534.0" layoutY="11.0" mnemonicParsing="false" onAction="#AddHoursOnAction" prefHeight="50.0" prefWidth="124.0" text="Add Hours" />
+                                    <Button fx:id="addStuffButton" layoutX="340.0" layoutY="11.0" mnemonicParsing="false" onAction="#AddStuffOnAction" prefHeight="50.0" prefWidth="120.0" text="Add Staff" />
                                  </children>
                               </Pane>
                            </bottom>
