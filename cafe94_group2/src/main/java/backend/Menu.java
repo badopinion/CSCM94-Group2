@@ -111,6 +111,17 @@ public class Menu implements Serializable {
 		return menuItemsOfType;
 	}
 
+	//Method to calculate price of an order from names of menuItems
+	//taking ArrayList<String> as an argument. OJ
+	public float calculatePriceOfItemNames(ArrayList<String> stringList){
+		float sum = 0f;
+		for (String item : stringList){
+			MenuItem menuItem = returnMenuItemByName(item);
+			sum += menuItem.getPrice();
+		}
+		return sum;
+	}
+
 	//Method to set menu item as special or not (true = special) - OJ
 	public void setMenuItemSpecialOrNot(String menuItemName, boolean isSpecial){
 		MenuItem menuItem = returnMenuItemByName(menuItemName);
@@ -145,46 +156,68 @@ public class Menu implements Serializable {
 		createAndAddMenuItem("Filter coffee", "Filtered coffee", 3.5f,true, false, MenuItemType.COFFEE);
 	}
 
-	//TODO - method to place order (creates order with constructor and sends it to restaraunt arraylist of orders
-	//and sends it to customer order history)
-	//this method uses varags to accept any number of order items beyond the 1st one
-	//takes orderNotes argument, if no notes enter empty string
+//method to place orders (creates order with constructor and sends it to restaraunt arraylist of orders)
+  //takes orderNotes argument, if no notes enter empty string
+  
 
-
-
-	public void placeEatInOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, MenuItem menuItem1, MenuItem... menuItems){
-		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
-		orderedMenuItems.add(menuItem1);
-		for (MenuItem menuItem : menuItems){
-			orderedMenuItems.add(menuItem);
-		}
+	public void placeEatInOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, ArrayList<MenuItem> orderedMenuItems){
 		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
 		EatIn eatinOrder = new EatIn(table, restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems);
 		restaurant.addOrder(eatinOrder);
 	}
 
 	//Method to place takeaway order - OJ
-	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, String pickUpTime, MenuItem menuItem1, MenuItem... menuItems){
-		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
-		orderedMenuItems.add(menuItem1);
-		for (MenuItem menuItem : menuItems){
-			orderedMenuItems.add(menuItem);
-		}
+	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, String pickUpTime, ArrayList<MenuItem> orderedMenuItems){
 		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
 		Takeaway takeawayOrder = new Takeaway(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, pickUpTime);
 		restaurant.addOrder(takeawayOrder);
 	}
 
-	public void placeDeliveryOrder(Restaurant restaurant, Customer customer, String orderNotes, String deliveryAddress, MenuItem menuItem1, MenuItem... menuItems){
-		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
-		orderedMenuItems.add(menuItem1);
-		for (MenuItem menuItem : menuItems){
-			orderedMenuItems.add(menuItem);
-		}
+	public void placeDeliveryOrder(Restaurant restaurant, Customer customer, String orderNotes, String deliveryAddress, ArrayList<MenuItem> orderedMenuItems){
 		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
 		Delivery deliveryOrder = new Delivery(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, deliveryAddress);
 		restaurant.addOrder(deliveryOrder);
 	}
+
+
+//old methods to place orders (creates order with constructor and sends it to restaraunt arraylist of orders)
+  //takes orderNotes argument, if no notes enter empty string
+	//this method uses varags to accept any number of order items beyond the 1st one
+	
+  
+//	public void placeEatInOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, MenuItem menuItem1, MenuItem... menuItems){
+//		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
+//		orderedMenuItems.add(menuItem1);
+//		for (MenuItem menuItem : menuItems){
+//			orderedMenuItems.add(menuItem);
+//		}
+//		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
+//		EatIn eatinOrder = new EatIn(table, restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems);
+//		restaurant.addOrder(eatinOrder);
+//	}
+//
+//	//Method to place takeaway order - OJ
+//	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, String pickUpTime, MenuItem menuItem1, MenuItem... menuItems){
+//		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
+//		orderedMenuItems.add(menuItem1);
+//		for (MenuItem menuItem : menuItems){
+//			orderedMenuItems.add(menuItem);
+//		}
+//		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
+//		Takeaway takeawayOrder = new Takeaway(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, pickUpTime);
+//		restaurant.addOrder(takeawayOrder);
+//	}
+//
+//	public void placeDeliveryOrder(Restaurant restaurant, Customer customer, String orderNotes, String deliveryAddress, MenuItem menuItem1, MenuItem... menuItems){
+//		ArrayList<MenuItem> orderedMenuItems = new ArrayList<MenuItem>();
+//		orderedMenuItems.add(menuItem1);
+//		for (MenuItem menuItem : menuItems){
+//			orderedMenuItems.add(menuItem);
+//		}
+//		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
+//		Delivery deliveryOrder = new Delivery(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, deliveryAddress);
+//		restaurant.addOrder(deliveryOrder);
+//	}
 
 
 
