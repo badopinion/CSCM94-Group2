@@ -15,6 +15,12 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
+/**
+ The Menu screen Controller
+ @author Oliver Jackson
+ @version2
+ */
+
 public class EatInScreenController implements Initializable {
     @FXML
     ComboBox<String> tableSelection;
@@ -56,7 +62,7 @@ public class EatInScreenController implements Initializable {
     @FXML
     private void PlaceOrderButtonOnAction(ActionEvent actionEvent) {
         boolean isMyComboBoxEmpty = tableSelection.getSelectionModel().isEmpty();
-        if(isMyComboBoxEmpty){
+        if (isMyComboBoxEmpty) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setHeaderText("You must select a table number!");
             errorAlert.showAndWait();
@@ -66,25 +72,27 @@ public class EatInScreenController implements Initializable {
             Table table = res.getTable(tableNumber);
             String orderNotesString = orderNotes.getText();
             User user = res.login.getLoggedIn();
-            if (user instanceof Customer){
+            if (user instanceof Customer) {
                 Customer customer = (Customer) user;
-                System.out.println("order counter:");
                 System.out.println(res.getOrderCounter());
                 res.menu.placeEatInOrder(res, customer, orderNotesString, table, res.getTemporaryOrderList());
-                System.out.println("order placed");
-                System.out.println("order counter:");
                 System.out.println(res.getOrderCounter());
+                orderCompleteAlert();
+            } else if (user instanceof Waiter) {
+                Customer customer = res.login.getCustomerFromUsername("eatincustomer");
+                res.menu.placeEatInOrder(res, customer, orderNotesString, table, res.getTemporaryOrderList());
+                orderCompleteAlert();
             } else {
-                System.out.println("Only customers may order here");
+                System.out.println("Only customers and waiters may order here");
             }
             res.saveRestaurant();
         }
     }
 
 
-    private int returnTableNumber(String tableString){
+    private int returnTableNumber(String tableString) {
         int tableNum;
-        switch (tableString){
+        switch (tableString) {
             case "Table 1":
                 tableNum = 1;
                 break;
@@ -127,4 +135,10 @@ public class EatInScreenController implements Initializable {
         return tableNum;
     }
 
+
+    private void orderCompleteAlert() {
+        Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
+        infoAlert.setHeaderText("Order complete");
+        infoAlert.show();
+    }
 }
