@@ -6,9 +6,10 @@ import static java.util.stream.Collectors.groupingBy;
 
 
 public class GenerateReport {
-    private ArrayList<Order> orderHist;
-    public GenerateReport(ArrayList<Order> orderHist){
-        this.orderHist = orderHist;
+
+
+    public GenerateReport() {
+
     }
 
     public ArrayList<FoodFeq> getPopularDish(ArrayList<Order> orderHist){
@@ -68,6 +69,9 @@ public class GenerateReport {
     }
 
     public String mostActiveCustomer(ArrayList<Order> allOrders){
+        if(allOrders.size() == 0){
+            return "NONE";
+        }
         Customer customer = allOrders.get(0).getCustomer();
         Integer orderSize = 0;
         Map<Customer,List<Order>> mappedList = allOrders.stream().collect((groupingBy(order->order.getCustomer())));

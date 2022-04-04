@@ -11,8 +11,9 @@ import java.io.*;
  */
 
 public class Login implements Serializable {
+
 	User loggedIn = null; // User that is currently logged in. JB
-	ArrayList<User> userList = new ArrayList<User>(); // All user profiles. JB
+	public ArrayList<User> userList = new ArrayList<User>(); // All user profiles. JB
 
 	// Constructor - JB
     public Login() {
