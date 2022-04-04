@@ -1,6 +1,6 @@
-package com.example.cw2;
-//package cafepackage.cafe94_group2;
-//import backend.*;
+package cafepackage.cafe94_group2;
+
+import backend.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
