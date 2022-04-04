@@ -1,68 +1,47 @@
-package com.example.cw2;
+package cafepackage.cafe94_group2;
 
-
-import backend.*;
+import backend.FoodFeq;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class ReportsScreenController {
+    @FXML
+    private TableView<FoodFeq> tbData;
+    @FXML
+    public TableColumn<StudentsModel, Integer> studentId;
+
+    @FXML
+    public TableColumn<StudentsModel, String> firstName;
+
+    @FXML
+    public TableColumn<StudentsModel, String> lastName;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
+        studentId.setCellValueFactory(new PropertyValueFactory<>("StudentId"));
+        firstName.setCellValueFactory(new PropertyValueFactory<>("FirstName"));
+        lastName.setCellValueFactory(new PropertyValueFactory<>("LastName"));
+        //add your data to the table here.
+        tbData.setItems(studentsModels);
+    }
 
     public ReportsScreenController() {
     }
 
+
     @FXML
-    private Button itemButton;
-    @FXML
-    private Button busyButton;
-    @FXML
-    private Button customerButton;
-    @FXML
-    private Button workButton;
-
-    // Generate Most Popular Item report
-    public void generateItem(ActionEvent event) throws IOException {
-        checkItem();
+    protected void generateTable(ActionEvent event) {
     }
 
-    private void checkItem() throws IOException {
-        Main m = new Main();
-
-    }
-
-
-    // Generate Busiest Period report
-    public void generateBusy(ActionEvent event) throws IOException {
-        checkBusy();
-    }
-
-    private void checkBusy() throws IOException {
-        Main m = new Main();
-
-    }
-
-
-    // Generate Most Active Customer report
-    public void generateCustomer(ActionEvent event) throws IOException {
-        checkCustomer();
-    }
-
-    private void checkCustomer() throws IOException {
-        Main m = new Main();
-
-    }
-
-
-    // Generate Most staff hours worked report
-    public void generateWorked(ActionEvent event) throws IOException {
-        checkWorked();
-    }
-
-    private void checkWorked() throws IOException {
-        Main m = new Main();
-
-    }
 
 }

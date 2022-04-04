@@ -1,22 +1,15 @@
 package backend;
 
 import java.util.*;
-class foodFeq{
-    String foodName;
-    int feq;
 
-    public foodFeq(String foodName, int feq) {
-        this.foodName = foodName;
-        this.feq = feq;
-    }
-}
+
 public class GenerateReport {
     private ArrayList<Order> orderHist;
     public GenerateReport(ArrayList<Order> orderHist){
         this.orderHist = orderHist;
     }
 
-    public ArrayList<foodFeq> getPopularDish(ArrayList<Order> orderHist){
+    public ArrayList<FoodFeq> getPopularDish(ArrayList<Order> orderHist){
        ArrayList<MenuItem> allItems = new ArrayList();
         for (Order order:orderHist){
             for (MenuItem item: order.getOrderedMenuItems()){
@@ -24,13 +17,13 @@ public class GenerateReport {
             }
        }
         ArrayList<String> itemString = new ArrayList();
-        ArrayList<foodFeq> feq = new ArrayList();
+        ArrayList<FoodFeq> feq = new ArrayList();
         for (MenuItem item : allItems){
             itemString.add(item.getName());
         }
         Set<String> uniqueSet = new HashSet<String>(itemString);
         for (String i : uniqueSet) {
-            feq.add(new foodFeq(i,Collections.frequency(itemString, i)));
+            feq.add(new FoodFeq(i,Collections.frequency(itemString, i)));
         }
         return feq;
     }

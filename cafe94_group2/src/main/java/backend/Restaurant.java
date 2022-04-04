@@ -165,7 +165,7 @@ public class Restaurant implements Serializable {
     //Please note the load function is in Main. Need to be able to load without previous instance existing - JB
     public void saveRestaurant(){
         try {
-            File restaurantFile = new File("restaurant.ser");
+            File restaurantFile = new File("src/main/restaurant.ser");
             if(restaurantFile.isFile()){
                 System.out.println("Attempting to overwrite old Restaurant data:");
                 if(restaurantFile.delete()){
@@ -175,7 +175,7 @@ public class Restaurant implements Serializable {
                 }
             }
             restaurantFile.createNewFile();
-            FileOutputStream fos = new FileOutputStream("restaurant.ser");
+            FileOutputStream fos = new FileOutputStream("src/main/restaurant.ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(this);
             oos.close();

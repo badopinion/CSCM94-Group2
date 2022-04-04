@@ -18,10 +18,10 @@ public class Load {
     // If no such file exists a new restaurant.ser containing a fresh Restaurant object will be made. - JB
     public Restaurant getRestaurantFromFile(){
         Restaurant res = null;
-        File restaurantFile = new File("restaurant.ser");
+        File restaurantFile = new File("src/main/restaurant.ser");
         if (restaurantFile.isFile()) {
             try {
-                FileInputStream fIn = new FileInputStream("restaurant.ser");
+                FileInputStream fIn = new FileInputStream("src/main/restaurant.ser");
                 ObjectInputStream oIn = new ObjectInputStream(fIn);
                 res = (Restaurant) oIn.readObject();
                 oIn.close();
