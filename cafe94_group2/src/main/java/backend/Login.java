@@ -87,12 +87,15 @@ public class Login implements Serializable {
 	// a method to create some users. OJ
 	public void populateUsers(){
 		newCustomer("eatincustomer", "pass", "eatin", "customer", "cafe94");
+		newCustomer("takeawaycustomer", "pass", "takeaway", "customer", "cafe94");
+		newCustomer("deliverycustomer", "pass", "delivery", "customer", "cafe94");
 		newCustomer("jamestaylor", "pass", "james", "taylor", "1 swansea lane, swansea");
 		newCustomer("sophie.frank", "pass", "sophie", "frank", "54 manchester drive, manchester");
 		newManager("manager", "test", "John", "Bossman", "10 Downing Street");
 		newChef("chef", "test", "Jane", "Cook", "12 Dracaena Avenue");
 		newCustomer("customer", "test", "Remi", "Crimson", "Flat 6, 21 High Street");
 		newWaiter("waiter", "test", "Dave", "Davies", "1 Graham Place");
+		newWaiter("waiterben", "pass", "Ben", "Davies", "10 Vindaloo Road");
 		newDriver("driver", "test", "Max", "Verstappen", "A van");
 	}
 

@@ -47,7 +47,7 @@ public class EatInScreenController implements Initializable {
                     "Table 10",
                     "Table 11"
             );
-    final ComboBox comboBox = new ComboBox(table);
+//    final ComboBox comboBox = new ComboBox(table);
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -138,7 +138,7 @@ public class EatInScreenController implements Initializable {
 
     private void orderCompleteAlert() {
         Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
-        infoAlert.setHeaderText("Order complete");
+        infoAlert.setHeaderText("Eat-in order complete");
         infoAlert.show();
     }
 }
