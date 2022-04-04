@@ -34,9 +34,9 @@ public class ProfileScreenController implements Initializable {
 
     public void showCustomerOrderHistory(){
         Restaurant res = new Load().getRestaurantFromFile();
-        if(res.getOrderCounter() == 0){
-            res.menu.populateOrderHistory();
-        }
+//        if(res.getOrderCounter() == 0){
+//            res.menu.populateOrderHistory();
+//        }
 
 
         res.saveRestaurant();
