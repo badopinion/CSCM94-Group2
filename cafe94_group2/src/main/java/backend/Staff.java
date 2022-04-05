@@ -28,10 +28,9 @@ public class Staff extends User{
 
     //Constructor - OJ
     //Added StaffTypeEnum to tell the difference between the staff (look at driver,chef,waiter they are same class not need to have 3) SR
-    public Staff(String username, String password, String firstName, String lastName, int staffId, String homeAddress){
+    public Staff(String username, String password, String firstName, String lastName, String homeAddress){
         super(username, password, firstName, lastName, homeAddress);
 
-        this.staffId = staffId;
     }
 
 

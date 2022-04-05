@@ -55,7 +55,7 @@ public class Login implements Serializable {
 				return false;
 			}
 		}
-		userList.add(new Manager(username, password, firstName, lastName, 01, homeAddress));
+		userList.add(new Manager(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 
@@ -66,7 +66,7 @@ public class Login implements Serializable {
 				return false;
 			}
 		}
-		userList.add(new Waiter(username, password, firstName, lastName, 01, homeAddress));
+		userList.add(new Waiter(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 
@@ -76,7 +76,7 @@ public class Login implements Serializable {
 				return false;
 			}
 		}
-		userList.add(new Chef(username, password, firstName, lastName, 01, homeAddress));
+		userList.add(new Chef(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 
@@ -86,7 +86,7 @@ public class Login implements Serializable {
 				return false;
 			}
 		}
-		userList.add(new Driver(username, password, firstName, lastName, 01, homeAddress));
+		userList.add(new Driver(username, password, firstName, lastName, homeAddress));
 		return true;
 	}
 
@@ -198,16 +198,16 @@ public class Login implements Serializable {
 		return this.loggedIn;
 	}
 
-	// Gets the full staff list - JB
-	public ArrayList<User> getStaffList() {
-		ArrayList<User> out = new ArrayList<User>();
-		for(User u : userList){
-			if(u instanceof Staff){
-				out.add(u);
-			}
-		}
-		return out;
-	}
+//	// Gets the full staff list - JB
+//	public ArrayList<User> getStaffList() {
+//		ArrayList<User> out = new ArrayList<User>();
+//		for(User u : userList){
+//			if(u instanceof Staff){
+//				out.add(u);
+//			}
+//		}
+//		return out;
+//	}
 
 	// Gets the full staff list - JB
 	// Made it return a staff list as I need access to dates - SR
