@@ -93,6 +93,10 @@ public class Order implements Serializable{
         }
     }
 
+    public LocalDateTime getOrderDateTime() {
+        return orderDateTime;
+    }
+
     @java.lang.Override
     public java.lang.String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");

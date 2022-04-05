@@ -1,6 +1,7 @@
 package backend;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.io.*;
 
@@ -170,6 +171,36 @@ public class Restaurant implements Serializable {
             }
         }
         return 0;
+    }
+
+    /**
+     * turns an arraylist of order objects into orderstring objects for displaying in tableview
+     * @param ordersArrayList
+     * @return
+     */
+    public ArrayList<OrderString> convertOrdersToStringArray(ArrayList<Order> ordersArrayList){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd : HH mm ss");
+        ArrayList<OrderString> orderStringArrayList = new ArrayList<>();
+        for (Order order: ordersArrayList){
+            String orderedString = "";
+            String customerUserName = order.getCustomer().getUsername();
+            String tableNumber = "";
+            String orderType = order.typeOfOrder();
+            String orderDateTime = "";
+            for (MenuItem menuItem : order.getOrderedMenuItems()){
+                orderedString = orderedString + menuItem.getName() + ", ";
+            }
+            if (orderType.equals("Eat In")){
+                EatIn eatin = (EatIn) order;
+                tableNumber = String.valueOf(eatin.getTable().getTableNumber());
+            } else {
+                tableNumber = "NA";
+            }
+            orderDateTime = order.getOrderDateTime().format(formatter);
+            OrderString newOrderString = new OrderString(orderedString, customerUserName, tableNumber, orderType, orderDateTime);
+            orderStringArrayList.add(newOrderString);
+        }
+        return orderStringArrayList;
     }
 
     //Saves the restaurant object (and all aggregated or referenced objects with it - full system state save) - JB

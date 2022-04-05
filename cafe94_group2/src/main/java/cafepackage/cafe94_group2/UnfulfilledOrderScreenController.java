@@ -22,57 +22,69 @@ import java.util.ResourceBundle;
 /**
  The Unfulfilled order screen Controller
  @author Oliver Jackson
- @version1
+ @version2
  */
 
 public class UnfulfilledOrderScreenController implements Initializable {
 
-//    @FXML
-//    TableColumn<Order, Customer> customer = new TableColumn<>("customer");
-
-
 
     @FXML
-    private TableView<Order> orderTbv;
-    //    @FXML
-//    TableColumn<Order, ArrayList<MenuItem>> items = new TableColumn<>("Items");
-//    @FXML
-//    TableColumn<Order, Table> table = new TableColumn<>("Table");
-//    @FXML
-//    TableColumn<Order, String> orderType = new TableColumn<>("Order Type");
+    private TableView<OrderString> orderTbv;
     @FXML
-    TableColumn<Order, String> customer = new TableColumn<>("customer");
-//    @FXML
-//    TableColumn<Order, String> customer = new TableColumn<>("Customer");
-//    @FXML
-//    TableColumn<Order, LocalDateTime> orderTime = new TableColumn<>("Order Time");
+    TableColumn<OrderString, String> items = new TableColumn<>("items");
+    @FXML
+    TableColumn<OrderString, String> table = new TableColumn<>("table");
+    @FXML
+    TableColumn<OrderString, String> orderType = new TableColumn<>("orderType");
+    @FXML
+    TableColumn<OrderString, String> customer = new TableColumn<>("customer");
+    @FXML
+    TableColumn<OrderString, String> orderTime = new TableColumn<>("orderTime");
 
-    private ObservableList<Order> orderList;
-
+    private ObservableList<OrderString> orderStringList;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Restaurant res = new Load().getRestaurantFromFile();
+        orderStringList = FXCollections.observableArrayList(res.convertOrdersToStringArray(res.unfulfilledOrders()));
 
-//        customer.setCellValueFactory(new PropertyValueFactory<Order, Customer>("customer"));
-
-
-
-
-//        items.setCellValueFactory(new PropertyValueFactory<Order, ArrayList<MenuItem>>("orderedMenuItems"));
-        customer.setCellValueFactory(new PropertyValueFactory<Order, String>("customer"));
+        customer.setCellValueFactory(new PropertyValueFactory<OrderString, String>("customerUserName"));
 
 
+        items.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderedString"));
+        table.setCellValueFactory(new PropertyValueFactory<OrderString, String>("tableNumber"));
+        orderType.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderType"));
+        orderTime.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderDateTime"));
 
-//        orderTime.setCellValueFactory(new PropertyValueFactory<LocalDateTime, String>("orderDateTime"));
         System.out.println("mid initialising");
-        orderList = FXCollections.observableArrayList(res.unfulfilledOrders());
-        System.out.println("size = " + orderList.size());
+        System.out.println("size = " + orderStringList.size());
 
-        orderTbv.setItems(orderList);
+        orderTbv.setItems(orderStringList);
 
 
     }
+
+
+    // an old version that was sort of working
+//    @FXML
+//    private TableView<Order> orderTbv;
+//    @FXML
+//    TableColumn<Order, String> customer = new TableColumn<>("customer");
+//    private ObservableList<Order> orderList;
+//
+//    @Override
+//    public void initialize(URL url, ResourceBundle rb) {
+//        Restaurant res = new Load().getRestaurantFromFile();
+//        customer.setCellValueFactory(new PropertyValueFactory<Order, String>("customer"));
+//        System.out.println("mid initialising");
+//        orderList = FXCollections.observableArrayList(res.unfulfilledOrders());
+//        System.out.println("size = " + orderList.size());
+//
+//        orderTbv.setItems(orderList);
+//
+//
+//    }
+
 
 
 }
