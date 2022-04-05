@@ -19,6 +19,12 @@ import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 import java.util.ArrayList;
 
+
+/**
+ * Class which shows the approve Booking Screen Controller .
+ *  * @author  Jo Butler , Sam Raine
+ *  * @version 1.0
+ */
 public class ApproveBookingsScreenController implements Initializable {
     @FXML
     Label bookingApprovalLabel;
@@ -27,6 +33,10 @@ public class ApproveBookingsScreenController implements Initializable {
 
     String selected = null;
 
+    /**
+     * Initializing the unapproved bookings screen
+     *
+     */
     @Override public void initialize(URL url, ResourceBundle rb) {
         System.out.println("Initializing");
         unapprovedBookings.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
@@ -38,6 +48,11 @@ public class ApproveBookingsScreenController implements Initializable {
         displayUnapprovedBookings();
     }
 
+    /**
+     * Approving booking
+     * @param event button clicked to approve booking
+     * @throws IOException if unapproved
+     */
     public void approveBookingsButtonOnAction(ActionEvent event) throws IOException{
         Restaurant res = new Load().loadRestaurant();
         ArrayList<BookingTable> uab = fetchUnapprovedBookings();
@@ -63,6 +78,9 @@ public class ApproveBookingsScreenController implements Initializable {
         displayUnapprovedBookings();
     }
 
+    /**
+     * For unapproved bookings
+     */
     public void displayUnapprovedBookings(){
         System.out.println("DUB running");
         unapprovedBookings.getItems().clear();
@@ -78,6 +96,11 @@ public class ApproveBookingsScreenController implements Initializable {
         unapprovedBookings.getItems().addAll(output);
     }
 
+
+    /**
+     * fetching unapporved bookings
+     * @return booking that is not approved
+     */
     public ArrayList<BookingTable> fetchUnapprovedBookings(){
         Restaurant res = new Load().loadRestaurant();
         Table[] tables = res.getAllTables();

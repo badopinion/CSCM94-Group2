@@ -2,7 +2,7 @@ package backend;
 
 /**
  * an OrderString class used for displaying orders in tableview
- * @author Oliver Jackson
+ * @author Oliver Jackson ,
  * version 1
  */
 

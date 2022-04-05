@@ -9,7 +9,7 @@ import java.io.*;
  * A Restaurant class that aggregates orders and holds methods to show outstanding orders. Also aggregates Tables.
  * One instance. Restaurant also holds reference to other single-instance aggregator objects.
  * Restaurant can be saved to disk, which saves the entire program state due to the references it holds.
- * @author Oliver Jackson, Jo Butler
+ * @author Oliver Jackson, Jo Butler , Sam Raine
  * @version 2
  */
 

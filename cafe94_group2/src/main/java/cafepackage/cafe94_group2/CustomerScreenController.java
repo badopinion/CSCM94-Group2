@@ -15,7 +15,7 @@ import java.io.IOException;
 
 /**
  * This is Customer screen Controller
- * @author Yingfan Zhang
+ * @author Yingfan Zhang , Oliver Jackson
  * @version 1
  */
 public class CustomerScreenController {

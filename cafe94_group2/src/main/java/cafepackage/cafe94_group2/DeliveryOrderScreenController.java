@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 
 /**
  * The Delivery screen Controller.
- * @author Oliver Jackson
+ * @author Oliver Jackson , Hristiana Davidova
  * @version 2
  */
 

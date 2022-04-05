@@ -13,7 +13,7 @@ import java.io.IOException;
 
 /**
  * The Waiter screen Controller
- * @author Oliver Jackson
+ * @author Oliver Jackson , Hristiana Davidova
  *  @version 2
  */
 

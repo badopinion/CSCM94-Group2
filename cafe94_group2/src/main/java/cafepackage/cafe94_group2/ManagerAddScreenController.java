@@ -22,7 +22,7 @@ import java.util.ArrayList;
 /**
  * This is is the controller for a screen that allows the Manager to add staff to the system.
  * Given information in several fields, calls the appropriate method of the Login object to generate a new staff member.
- * @author Yingfan Zhang, Jo Butler
+ * @author  Jo Butler , Hristiana Davidova , Sam Raine
  * @version 1
  */
 

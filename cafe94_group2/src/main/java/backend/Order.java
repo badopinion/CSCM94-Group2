@@ -7,7 +7,7 @@ import java.io.*;
 
 /**
  * An order class (child: Eatin, Takeaway, Delivery)
- * @author Oliver Jackson
+ * @author Oliver Jackson ,  Yingfan Zhang
  * @version 1
  */
 

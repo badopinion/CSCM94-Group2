@@ -19,7 +19,7 @@ import java.sql.SQLException;
 /**
  * A class that used to navigate the login screen.
  * E.g. if the user is Manager, it leads to manager screen.
- @author Yingfan Zhang, Jo Butler
+ @author Yingfan Zhang, Jo Butler , Oliver Jackson
  @version 2.0
  */
 public class LoginController {

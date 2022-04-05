@@ -2,7 +2,7 @@ package backend;
 
 /**
  * This is Constructor
- * @author Jo Butler
+ * @author Hristiana Davidova
  * @version 1.0
  */
 public class Waiter extends Staff{

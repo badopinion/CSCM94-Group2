@@ -6,7 +6,7 @@ import java.io.*;
 /**
  * Login holds all user profiles and keeps track of which user is currently logged in.
  * To get user information or log users in or out, other classes reference Login.
- * @author Jo Butler
+ * @author Jo Butler , Sam Raine
  * @version 3
  */
 

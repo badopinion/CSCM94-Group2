@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * A takeaway class (child of order)
- * @author Oliver Jackson
+ * @author Hristiana Davidova
  * @version 1
  */
 

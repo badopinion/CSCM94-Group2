@@ -3,7 +3,7 @@ package backend;
 import java.util.ArrayList;
 /**
  * A delivery class (child of order)
- * @author Oliver Jackson
+ * @author Oliver Jackson , Yingfan Zhang
  * @version 1
  */
 

@@ -4,7 +4,7 @@ import java.io.*;
 
 /**
  * Load class is used to get the Restaurant object out of a file or to create a new one if no such file exists.
- * @author Jo Butler
+ * @author Jo Butler , Yingfan Zhang
  * @version 1
  */
 

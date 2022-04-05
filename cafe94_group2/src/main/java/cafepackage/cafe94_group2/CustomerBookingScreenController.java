@@ -24,7 +24,7 @@ import static java.lang.Boolean.TRUE;
 
 /**
  * This is the controller for the screen that customers will use to request bookings.
- * @author Yingfan Zhang, Jo Butler
+ * @author  Jo Butler, Hristiana Davidova
  * @version 2
  */
 

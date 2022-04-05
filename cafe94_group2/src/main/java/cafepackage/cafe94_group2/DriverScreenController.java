@@ -13,7 +13,7 @@ import java.io.IOException;
 
 /**
  * This is Driver screen Controller
- * @author Yingfan Zhang
+ * @author Yingfan Zhang , Jo Butler
  * @version 1
  */
 

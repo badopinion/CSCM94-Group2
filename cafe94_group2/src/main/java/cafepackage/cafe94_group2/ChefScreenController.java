@@ -13,7 +13,7 @@ import java.io.IOException;
 
 /**
  * Class which show the chef main screen.
- * @author Yingfan Zhang.
+ * @author Yingfan Zhang , Jo Butler , Adam Schmidht
  * @version 1.0
  */
 public class ChefScreenController {

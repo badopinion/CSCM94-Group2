@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * A customer class (child of User)
- * @author Oliver Jackson
+ * @author Oliver Jackson , Hristiana Davidova
  * @version 1
  */
 

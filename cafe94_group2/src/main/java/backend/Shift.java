@@ -6,7 +6,7 @@ import java.io.*;
 
 /**
  * A shift class.
- * @author Oliver Jackson
+ * @author Oliver Jackson , Adam Schmidt
  * @version 1
  */
 
