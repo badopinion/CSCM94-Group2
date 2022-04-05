@@ -5,7 +5,7 @@ import java.time.LocalDate;
 /**
  * BookingTable class.BookingTable
  * Custom class to aggregate information relating to tables for use in the output
- * @author Jo Butler
+ * @author Jo Butler, Yingfan Zhang
  * @version 1
  */
 

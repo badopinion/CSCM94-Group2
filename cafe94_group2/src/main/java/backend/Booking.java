@@ -7,7 +7,7 @@ import java.io.*;
 /**
  * A booking class. A booking is a period of time for which a table has been booked by customers who wish to eat in.
  * Bookings must be approved - a booking that has not yet been approved is a booking request.
- * @author Jo Butler
+ * @author Jo Butler , Oliver Jackson
  * @version 2
  */
 

@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 /**
  The Staff Schedule screen Controller
- @author Adam & Sam
+ @author Adam Schmidt , Samuel Raine
  @version3
  */
 

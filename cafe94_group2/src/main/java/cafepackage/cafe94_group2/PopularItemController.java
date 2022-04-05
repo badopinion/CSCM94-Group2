@@ -11,7 +11,7 @@ import java.io.IOException;
 
 /**
  The Popular Item screen Controller
- @author Adam & Sam
+ @author Adam Schmidt , Samuel Raine
  @version3
  */
 

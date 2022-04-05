@@ -28,11 +28,10 @@ Cafe 94
   -The system generates reports
   -The project is programmed in Java using JavaFX
 
-#Install
+#How to RUn
+- The programe is fully portable
 
-#How to run
-**To launch** - click on cafe94GUI.jar
-**To run from IDE** - ( we worked on InteliJ) src/main/java/com/group2/cafe94gui/main.java
+**To run from IDE** - ( we worked on InteliJ) src/main/java/
 
 #Usage
 
@@ -45,8 +44,7 @@ Cafe 94
    5.Waiter can select order optios ( eat-in, delivery,and takeaway).
    5.1. If eat-in delivery , waiter is promted to table selection , order notes and total price , waiter can then place order.
    5.2.If takeaway is selected the waiter is promted to select pick up time , order notes and total price , waiter can then place order.
-   5.3.if delivery order is selected waiter is promted to select enter address , order notes and total price, waiter can then place order.
-6. If waiter clicks on outstandig order , the waiter is prompted to the screen for unfulfilled orders : sceen for order type , customer , ordertime , item name and table number. Waiter can mark order completed.
+   5.3.if delivery order is selected waiter is promted to select enter address , order notes and total price, waiter can then place order..
    7.Approve bookings - waiter is promted to anoter sceen where bookings awaiting approval. Waiter can then click approve booking.
 
 #Staff - chef
@@ -59,15 +57,15 @@ Cafe 94
 
 #Staff - manager
 1.When prompted to Login screen for username: manager ; password: test -> click login
-2.Once manager is logged in the screen gives two options: outstanding orders and  addstaff.
-2.1. When clicked on outstanding orders the manager is able to see unfulifilled orders ( sceen with sceen for order type , customer , ordertime , item name and table number). Manager can then mark orders completed.
-2.2. When clicked on add staff option the manager can see the staff's name types , total hrs worked.
-2.3.The manager can add staff . When clicked on that option , the manager can add the staff's names and type.The manager can cancel adding staff.
-2.4. The manager can add hrs to staff.
+2.Once manager is logged in the screen  says Hello Manager and gives three  options: outstanding orders and  addstaff and generate reports.
+2.1. When clicked on outstanding orders the manager is able to see unfulifilled orders ( sceen with sceen for order type , customer , ordertime , item name and table number).
+2.2. When clicked on add staff option the manager can see the staff's first name, last name, address , type , username and password. The manager can remove excisiting staff types
+2.3.When clicked on generatee reports the manager is prompted to Reports screen , where he can see , most valued customer , most hrs worked, busiest hrs.
+
 
 #Customer
 1.When prompted to Login screen for username: customer ; password: test -> click login
-2.When logged in the customer can see the platform options: view profile, make bookings, view menu:
+2.When logged in the customer can see the platform options: make bookings, view menu:
 2.1. When clicked on view menu customer is prompted to menu sceen where can choose food,drinks or coffee items. Customer can add or remove items from menu clicking the buttons.
 2.2.Once items are selected total price is accumulated.
 3.Customer can select order optios ( eat-in, delivery,and takeaway).
@@ -78,7 +76,7 @@ Cafe 94
    5.When clicked on View profile , the customer is promted to screen that shows order history.
 
 
-#Exit 
+#Exit
 -At the login page press cancel to exit
 
 #Credits:
@@ -90,11 +88,3 @@ Group 2 , Swansea University , Computer Science Masters Students
 
 #Upgrade
 If we had more time we would add more pictures and make the menu more interactive 
-
-
-
-
-
-
-
-

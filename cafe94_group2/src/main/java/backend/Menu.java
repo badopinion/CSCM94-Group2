@@ -6,7 +6,7 @@ import java.io.*;
 
 /**
  * A menu class that aggrigates menuItems and provides functionality for ordering food / drink.
- * @author Oliver Jackson, Jo Butler
+ * @author Oliver Jackson, Jo Butler , Yingfan Zhang
  * @version 2
  */
 
