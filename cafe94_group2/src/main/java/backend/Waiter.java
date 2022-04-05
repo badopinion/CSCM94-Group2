@@ -3,7 +3,7 @@ package backend;
 /**
  * Waiter is a subclass of Staff used to store information on employees in the role of waiter.
  * It has no unique properties, but is used with instanceof to determine which interface to show the user after login.
- * @author Jo Butler
+ * @author Jo Butler, Yingfan Zhang
  * @version 1.0
  */
 public class Waiter extends Staff{
