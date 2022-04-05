@@ -50,7 +50,7 @@ public class ManagerScreenController {
     @FXML
     private void outstandingOrderOnAction(ActionEvent actionEvent) throws IOException {
         Stage outstandingOrderScreen = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("UnfulfilledOrderScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("NonChefUnfulfilledOrderScreen.fxml"));
         outstandingOrderScreen.setTitle("Outstanding Order Interface");
         outstandingOrderScreen.setScene(new Scene(root, 730, 530));
         outstandingOrderScreen.setX(600);
