@@ -1,12 +1,11 @@
 package backend;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.io.*;
+import java.io.Serializable;
 
 /**
- * A menu class that aggrigates menuItems and provides functionality for ordering food / drink.
- * @author Oliver Jackson, Jo Butler , Yingfan Zhang
+ * A menu class that aggregates menuItems and provides functionality for ordering food / drink.
+ * @author Oliver Jackson, Jo Butler
  * @version 2
  */
 
@@ -31,8 +30,8 @@ public class Menu implements Serializable {
 	 */
 	public ArrayList<MenuItem> getCurrentItems(){
 		ArrayList<MenuItem> currentItems = new ArrayList<MenuItem>();
-		for(MenuItem item : menuItems){
-			if(item.isOnMenu()){
+		for (MenuItem item : menuItems){
+			if (item.isOnMenu()){
 				currentItems.add(item);
 			}
 		}
@@ -44,9 +43,9 @@ public class Menu implements Serializable {
 	 * @return non specials  currents
 	 */
 	public ArrayList<MenuItem> getCurrentNonSpecials(){
-		ArrayList <MenuItem> currentNonSpecs = getCurrentItems();
-		for(MenuItem item : currentNonSpecs){
-			if(!(item.isSpecial())){
+		ArrayList<MenuItem> currentNonSpecs = getCurrentItems();
+		for (MenuItem item : currentNonSpecs){
+			if (!(item.isSpecial())){
 				currentNonSpecs.add(item);
 			}
 		}
@@ -58,9 +57,9 @@ public class Menu implements Serializable {
 	 * @return Returns the current specials
 	 */
 	public ArrayList<MenuItem> getCurrentSpecials(){
-		ArrayList <MenuItem> currentSpecs = getCurrentItems();
-		for(MenuItem item : currentSpecs){
-			if(item.isSpecial()){
+		ArrayList<MenuItem> currentSpecs = getCurrentItems();
+		for (MenuItem item : currentSpecs){
+			if (item.isSpecial()){
 				currentSpecs.add(item);
 			}
 		}
@@ -71,7 +70,7 @@ public class Menu implements Serializable {
 	 *Prints all menuItems
 	 */
 	public void printMenuItems(){
-		for(MenuItem item : menuItems){
+		for (MenuItem item : menuItems){
 			System.out.println(item);
 		}
 	}
@@ -82,7 +81,7 @@ public class Menu implements Serializable {
 	 */
 	public String returnMenuItems(){
 		String listMenuItems = "";
-		for(MenuItem item : menuItems){
+		for (MenuItem item : menuItems){
 			listMenuItems = listMenuItems + item.getName();
 		}
 		return listMenuItems;
@@ -105,18 +104,19 @@ public class Menu implements Serializable {
 	 * @param isSpecial Specials on Menu
 	 * @param menuItemType Type of Menu
 	 */
-	public void createAndAddMenuItem(String name, String description, float price, boolean onMenu, boolean isSpecial, MenuItemType menuItemType){
+	public void createAndAddMenuItem(
+			String name, String description, float price, boolean onMenu, boolean isSpecial, MenuItemType menuItemType
+	){
 		MenuItem newItem = new MenuItem(name, description, price, onMenu, isSpecial, menuItemType);
 		addItem(newItem);
 	}
 
 	/**
 	 * 	Any method using this must handle a potential null return
-	 * 	IF EVER CONFLICT RESOLVING THIS IN GIT, use .equals() and not == . With ==, stuff breaks after save/load
 	 * @param desiredMenuItemName Desired items on the menu
 	 * @return Returns menu items by name or returns null if no matching item exists
 	 */
-	public MenuItem returnMenuItemByName (String desiredMenuItemName){
+	public MenuItem returnMenuItemByName(String desiredMenuItemName){
 		for (MenuItem menuItem : menuItems){
 			if (menuItem.getName().toLowerCase().equals(desiredMenuItemName.toLowerCase())){
 				return menuItem;
@@ -191,16 +191,26 @@ public class Menu implements Serializable {
 	 * This method populates the menu
 	 */
 	public void populateMenu(){
-		createAndAddMenuItem("Cheese burger", "150g Beef patty with cheddar cheese on a brioche bun", 12.5f, true, false, MenuItemType.FOOD);
-		createAndAddMenuItem("Ham and cheese toastie", "locally sourced ham with cheddar, as a toastie", 8.0f, true, false, MenuItemType.FOOD);
-		createAndAddMenuItem("Mushroom soup", "Mushrooms in a soup served with fresh baguette", 8.0f, true, false, MenuItemType.FOOD);
-		createAndAddMenuItem("American hot pizza", "The classic, cooked in our new pizza oven", 12.0f, true, false, MenuItemType.FOOD);
-		createAndAddMenuItem("Pan fried sea bass", "Catch of the day", 15.0f, true, true, MenuItemType.FOOD);
-		createAndAddMenuItem("Pasta Carbonara", "An italian classic", 12.5f, true, false, MenuItemType.FOOD);
-		createAndAddMenuItem("Heineken beer", "One pint 5%", 4.0f, true, false, MenuItemType.DRINK);
-		createAndAddMenuItem("Rioja red wine", "175ml glass 13%", 4.0f, true, false, MenuItemType.DRINK);
-		createAndAddMenuItem("Flat white coffee", "Two shots of espresso and hot frothy milk", 3.5f,true, false, MenuItemType.COFFEE);
-		createAndAddMenuItem("Filter coffee", "Filtered coffee", 3.5f,true, false, MenuItemType.COFFEE);
+		createAndAddMenuItem("Cheese burger", "150g Beef patty with cheddar cheese on a brioche bun",
+				12.5f, true, false, MenuItemType.FOOD);
+		createAndAddMenuItem("Ham and cheese toastie", "locally sourced ham with cheddar, as a toastie",
+				8.0f, true, false, MenuItemType.FOOD);
+		createAndAddMenuItem("Mushroom soup", "Mushrooms in a soup served with fresh baguette",
+				8.0f, true, false, MenuItemType.FOOD);
+		createAndAddMenuItem("American hot pizza", "The classic, cooked in our new pizza oven",
+				12.0f, true, false, MenuItemType.FOOD);
+		createAndAddMenuItem("Pan fried sea bass", "Catch of the day",
+				15.0f, true, true, MenuItemType.FOOD);
+		createAndAddMenuItem("Pasta Carbonara", "An italian classic",
+				12.5f, true, false, MenuItemType.FOOD);
+		createAndAddMenuItem("Heineken beer", "One pint 5%",
+				4.0f, true, false, MenuItemType.DRINK);
+		createAndAddMenuItem("Rioja red wine", "175ml glass 13%",
+				4.0f, true, false, MenuItemType.DRINK);
+		createAndAddMenuItem("Flat white coffee", "Two shots of espresso and hot frothy milk",
+				3.5f, true, false, MenuItemType.COFFEE);
+		createAndAddMenuItem("Filter coffee", "Filtered coffee",
+				3.5f, true, false, MenuItemType.COFFEE);
 	}
 
 
@@ -213,7 +223,10 @@ public class Menu implements Serializable {
 	 * @param table The table of the restaurant
 	 * @param orderedMenuItems The ordered items on the menu
 	 */
-	public void placeEatInOrder(Restaurant restaurant, Customer customer, String orderNotes, Table table, ArrayList<MenuItem> orderedMenuItems){
+	public void placeEatInOrder(
+			Restaurant restaurant, Customer customer, String orderNotes,
+			Table table, ArrayList<MenuItem> orderedMenuItems
+	){
 		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
 		EatIn eatinOrder = new EatIn(table, restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems);
 		restaurant.addOrder(eatinOrder);
@@ -227,17 +240,22 @@ public class Menu implements Serializable {
 	 * @param pickUpTime The pickup time for delivery
 	 * @param orderedMenuItems The ordered items on the menu
 	 */
-	public void placeTakeawayOrder(Restaurant restaurant, Customer customer, String orderNotes, String pickUpTime, ArrayList<MenuItem> orderedMenuItems){
+	public void placeTakeawayOrder(
+			Restaurant restaurant, Customer customer, String orderNotes,
+			String pickUpTime, ArrayList<MenuItem> orderedMenuItems
+	){
 		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
 		Takeaway takeawayOrder = new Takeaway(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, pickUpTime);
 		restaurant.addOrder(takeawayOrder);
 	}
 
-	public void placeDeliveryOrder(Restaurant restaurant, Customer customer, String orderNotes, String deliveryAddress, ArrayList<MenuItem> orderedMenuItems){
+	public void placeDeliveryOrder(
+			Restaurant restaurant, Customer customer, String orderNotes,
+			String deliveryAddress, ArrayList<MenuItem> orderedMenuItems
+	){
 		restaurant.setOrderCounter(restaurant.getOrderCounter() + 1);
-		Delivery deliveryOrder = new Delivery(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, deliveryAddress);
+		Delivery deliveryOrder =
+				new Delivery(restaurant.getOrderCounter(), customer, orderNotes, orderedMenuItems, deliveryAddress);
 		restaurant.addOrder(deliveryOrder);
 	}
-
-
 }

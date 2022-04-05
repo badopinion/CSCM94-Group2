@@ -1,14 +1,15 @@
 package backend;
 
 /**
- * This is Constructor
- * @author Yingfan Zhang
+ * Waiter is a subclass of Staff used to store information on employees in the role of waiter.
+ * It has no unique properties, but is used with instanceof to determine which interface to show the user after login.
+ * @author Jo Butler
  * @version 1.0
  */
 public class Waiter extends Staff{
 
     /**
-     * This is waiter information
+     * Constructor. Inherits heavily from superclass Staff.
      * @param username The username of waiter
      * @param password The password of waiter
      * @param firstName First name of waiter

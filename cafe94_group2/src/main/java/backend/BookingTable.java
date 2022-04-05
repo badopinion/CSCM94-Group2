@@ -4,20 +4,20 @@ import java.time.LocalDate;
 
 /**
  * BookingTable class.BookingTable
- * Custom class to aggregate information relating to tables for use in the output
- * @author Jo Butler, Yingfan Zhang
+ * Custom class to aggregate information relating to bookings and tables for use in the output
+ * @author Jo Butler
  * @version 1
  */
 
 public class BookingTable{
-    public Table table;
-    public Booking booking;
-    public LocalDate date;
-    public String time;
-    public Integer guests;
-    public boolean approved;
-    public Integer tableNumber;
-    public long duration;
+    private Table table;
+    private Booking booking;
+    private LocalDate date;
+    private String time;
+    private Integer guests;
+    private boolean approved;
+    private Integer tableNumber;
+    private long duration;
 
     /**
      * Constructor of booking table
