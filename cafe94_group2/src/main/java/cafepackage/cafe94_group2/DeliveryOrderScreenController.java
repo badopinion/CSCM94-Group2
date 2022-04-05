@@ -40,7 +40,7 @@ public class DeliveryOrderScreenController implements Initializable {
         address.setText("");
         orderNotes.setText("");
         String priceString = DECIMAL_FORMATTER.format(res.menu.calculatePriceOfItemNames(res.getTemporaryOrderStringList()));
-        orderPrice.setText("￡" + priceString);
+        orderPrice.setText("£" + priceString);
     }
 
     /**
