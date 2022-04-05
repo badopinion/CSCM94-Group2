@@ -49,8 +49,15 @@ public class UnfulfilledOrderScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        populateTable();
-
+//        populateTable();
+        Restaurant res = new Load().getRestaurantFromFile();
+        orderStringList = FXCollections.observableArrayList(res.convertOrdersToStringArray(res.unfulfilledOrders()));
+        customer.setCellValueFactory(new PropertyValueFactory<OrderString, String>("customerUserName"));
+        items.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderedString"));
+        table.setCellValueFactory(new PropertyValueFactory<OrderString, String>("tableNumber"));
+        orderType.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderType"));
+        orderTime.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderDateTime"));
+        orderTbv.setItems(orderStringList);
     }
 
     @FXML
@@ -61,20 +68,22 @@ public class UnfulfilledOrderScreenController implements Initializable {
         Order order = res.returnOrderByOrderTimeString(time);
         res.setOrderComplete(order);
         res.saveRestaurant();
-        populateTable();
-
-    }
-
-    private void populateTable(){
-        Restaurant res = new Load().getRestaurantFromFile();
         orderStringList = FXCollections.observableArrayList(res.convertOrdersToStringArray(res.unfulfilledOrders()));
-        customer.setCellValueFactory(new PropertyValueFactory<OrderString, String>("customerUserName"));
-        items.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderedString"));
-        table.setCellValueFactory(new PropertyValueFactory<OrderString, String>("tableNumber"));
-        orderType.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderType"));
-        orderTime.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderDateTime"));
         orderTbv.setItems(orderStringList);
+//        populateTable();
+
     }
+
+//    private void populateTable(){
+//        Restaurant res = new Load().getRestaurantFromFile();
+//        orderStringList = FXCollections.observableArrayList(res.convertOrdersToStringArray(res.unfulfilledOrders()));
+//        customer.setCellValueFactory(new PropertyValueFactory<OrderString, String>("customerUserName"));
+//        items.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderedString"));
+//        table.setCellValueFactory(new PropertyValueFactory<OrderString, String>("tableNumber"));
+//        orderType.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderType"));
+//        orderTime.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderDateTime"));
+//        orderTbv.setItems(orderStringList);
+//    }
 
 
 

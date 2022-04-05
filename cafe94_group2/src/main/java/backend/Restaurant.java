@@ -180,28 +180,47 @@ public class Restaurant implements Serializable {
      */
     public void setOrderComplete(Order completedOrder){
         for (Order order : orders) {
+            System.out.println(order.getOrderDateTime());
             if (order.equals(completedOrder)){
+                System.out.println("SETTING ORDER COMPLETE");
                 order.setOrderCompleted(true);
             }
         }
     }
 
 
-    /**
-     * method to take a string representing date time and return an order with a corresponding time
-     * @param dateTimeString the time that the order was placed
-     * @return
-     */
     public Order returnOrderByOrderTimeString(String dateTimeString){
+        System.out.println(dateTimeString);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd : HH mm ss");
-        LocalDateTime orderDateTime = LocalDateTime.parse(dateTimeString, formatter);
         for (Order order : orders){
-            if (order.getOrderDateTime().isEqual(orderDateTime)){
+            String orderTime = order.getOrderDateTime().format(formatter);
+            if (orderTime.equals(dateTimeString)){
+                System.out.println("FOUND A MATCHING DATE TIME");
                 return order;
             }
         }
         return null;
     }
+
+
+// deprecated
+    /**
+     * method to take a string representing date time and return an order with a corresponding time
+     * @param dateTimeString the time that the order was placed
+     * @return
+     */
+//    public Order returnOrderByOrderTimeString(String dateTimeString){
+//        System.out.println(dateTimeString);
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd : HH mm ss");
+//        LocalDateTime orderDateTime = LocalDateTime.parse(dateTimeString, formatter);
+//        for (Order order : orders){
+//            if (order.getOrderDateTime().isEqual(orderDateTime)){
+//                System.out.println("FOUND A MATCHING DATE TIME");
+//                return order;
+//            }
+//        }
+//        return null;
+//    }
 
 
     /**

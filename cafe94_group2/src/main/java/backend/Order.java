@@ -99,7 +99,7 @@ public class Order implements Serializable{
 
     @java.lang.Override
     public java.lang.String toString() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String dateTime = orderDateTime.format(formatter);
         return "Order{" +
                 "orderID= " + orderID +
