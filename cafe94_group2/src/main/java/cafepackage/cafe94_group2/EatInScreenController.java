@@ -99,7 +99,7 @@ public class EatInScreenController implements Initializable {
 
     /**
      * Takes a string and searches for a corresponding table number
-     * @param tableString
+     * @param tableString String value of table
      * @return an int corresponding to a table number
      */
     private int returnTableNumber(String tableString) {
