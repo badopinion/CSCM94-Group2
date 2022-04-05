@@ -10,8 +10,13 @@ import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.io.IOException;
+
+/**
+ * Class which show the chef main screen.
+ * @author 
+ * @version
+ */
 
 public class ManagerScreenController {
     @FXML
@@ -20,6 +25,12 @@ public class ManagerScreenController {
     private Button outstandingOrderButton2;
     @FXML
     private Button reportGeneratorButton3;
+      
+    /**
+    * Opens staff management interface.
+    * Takes user to new screen.
+    * @param actionEvent Button click
+    */
     @FXML
     private void addStaffOnAction(ActionEvent actionEvent) throws IOException {
         Stage addStaffScreen = new Stage();
@@ -31,6 +42,12 @@ public class ManagerScreenController {
         addStaffScreen.initModality(Modality.APPLICATION_MODAL);
         addStaffScreen.show();
     }
+        
+    /**
+    * Opens Unfulfilled Orders interface.
+    * Takes user to new screen.
+    * @param actionEvent Button click
+    */
     @FXML
     private void outstandingOrderOnAction2(ActionEvent actionEvent) throws IOException {
         Stage outstandingOrderScreen = new Stage();
@@ -41,8 +58,14 @@ public class ManagerScreenController {
         outstandingOrderScreen.setY(250);
         outstandingOrderScreen.initModality(Modality.APPLICATION_MODAL);
         outstandingOrderScreen.show();
-    }
-      @FXML
+    } 
+    
+    /**
+    * Opens Report Generation Interface.
+    * Takes user to new screen.
+    * @param actionEvent Button click
+    */
+    @FXML
     private void reportGeneratorAction3(ActionEvent actionEvent) throws IOException {
           FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("report.fxml"));
           Parent root1 = (Parent) fxmlLoader.load();
