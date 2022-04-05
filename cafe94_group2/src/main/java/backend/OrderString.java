@@ -1,5 +1,11 @@
 package backend;
 
+/**
+ * an OrderString class used for displaying orders in tableview
+ * @author Oliver Jackson
+ * version 1
+ */
+
 public class OrderString {
 
     private String orderedString;
@@ -8,6 +14,14 @@ public class OrderString {
     private String orderType;
     private String orderDateTime;
 
+    /**
+     * Constructor
+     * @param orderString
+     * @param customerUserName
+     * @param tableNumber
+     * @param orderType
+     * @param orderDateTime
+     */
     public OrderString(String orderString, String customerUserName, String tableNumber, String orderType, String orderDateTime) {
         this.orderedString = orderString;
         this.customerUserName = customerUserName;
@@ -16,10 +30,13 @@ public class OrderString {
         this.orderDateTime = orderDateTime;
     }
 
+    /**
+     * getters and setters
+     * @return
+     */
     public String getOrderedString() {
         return orderedString;
     }
-
 
 
     public void setOrderString(String orderString) {
@@ -50,6 +67,10 @@ public class OrderString {
         this.orderType = orderType;
     }
 
+    /**
+     * method to return the datetime order was placed
+     * @return the order datetime
+     */
     public String getOrderDateTime() {
         return orderDateTime;
     }
