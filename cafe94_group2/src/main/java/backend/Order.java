@@ -22,7 +22,13 @@ public class Order implements Serializable{
     private LocalDateTime orderDateTime;
 
 
-    //Constructor with ordernotes - OJ
+    /**
+     * Constructor with ordernotes
+     * @param orderID the order id
+     * @param customer the customer
+     * @param orderNotes the  order notes
+     * @param orderedMenuItems the items ordered from the menu
+     */
     public Order(int orderID, Customer customer, String orderNotes, ArrayList<MenuItem> orderedMenuItems) {
         this.orderID = orderID;
         this.customer = customer;
@@ -32,12 +38,11 @@ public class Order implements Serializable{
         this.orderedMenuItems = orderedMenuItems;
         orderDateTime = LocalDateTime.now();
     }
-    public Order( int orderID, Customer customer, String orderNotes){
-        this.orderID = orderID;
-        this.customer = customer;
-        this.orderNotes = orderNotes;
-    }
-    //Getters
+
+    /**
+     * Getters
+     * @return returns the orderid, customer, the order notes, if the order is completed or cancelled and the items on the menu
+     */
     public int getOrderID() {
         return orderID;
     }
@@ -62,11 +67,10 @@ public class Order implements Serializable{
         return orderedMenuItems;
     }
 
-    public LocalDateTime getOrderDateTime(){
-        return orderDateTime;
-    }
-
-    //Setters
+    /**
+     *  Setters
+     * @param orderNotes the order notes
+     */
     public void setOrderNotes(String orderNotes) {
         this.orderNotes = orderNotes;
     }
@@ -88,7 +92,9 @@ public class Order implements Serializable{
         return sum;
     }
 
-    //method to return type of order - OJ
+    /**
+     * @return  method to return type of order
+     */
     public String typeOfOrder(){
         if (this instanceof EatIn){
             return "Eat In";
@@ -101,6 +107,11 @@ public class Order implements Serializable{
         }
     }
 
+
+    /**
+     * date and time formating
+     * @return returns order details
+     */
     @java.lang.Override
     public java.lang.String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");

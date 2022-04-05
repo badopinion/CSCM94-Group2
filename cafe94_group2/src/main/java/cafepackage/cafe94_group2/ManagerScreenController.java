@@ -9,28 +9,26 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import java.io.IOException;
 
 /**
- * Class which show the chef main screen.
- * @author 
- * @version
+ * This is Manager screen Controller
+ * @author Yingfan Zhang
+ * @version 1
  */
 
 public class ManagerScreenController {
     @FXML
     private Button addStaffButton;
     @FXML
-    private Button outstandingOrderButton2;
-    @FXML
-    private Button reportGeneratorButton3;
-      
+    private Button outstandingOrderButton;
+
     /**
-    * Opens staff management interface.
-    * Takes user to new screen.
-    * @param actionEvent Button click
-    */
+     * To show the staff add orders.
+     * Takes user to new screen.
+     * @param actionEvent Button click
+     * @throws IOException Throws if input fails
+     */
     @FXML
     private void addStaffOnAction(ActionEvent actionEvent) throws IOException {
         Stage addStaffScreen = new Stage();
@@ -42,14 +40,15 @@ public class ManagerScreenController {
         addStaffScreen.initModality(Modality.APPLICATION_MODAL);
         addStaffScreen.show();
     }
-        
+
     /**
-    * Opens Unfulfilled Orders interface.
-    * Takes user to new screen.
-    * @param actionEvent Button click
-    */
+     * To show the outstanding orders.
+     * Takes user to new screen.
+     * @param actionEvent Button click
+     * @throws IOException Throws if input fails
+     */
     @FXML
-    private void outstandingOrderOnAction2(ActionEvent actionEvent) throws IOException {
+    private void outstandingOrderOnAction(ActionEvent actionEvent) throws IOException {
         Stage outstandingOrderScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("UnfulfilledOrderScreen.fxml"));
         outstandingOrderScreen.setTitle("Outstanding Order Interface");
@@ -58,22 +57,5 @@ public class ManagerScreenController {
         outstandingOrderScreen.setY(250);
         outstandingOrderScreen.initModality(Modality.APPLICATION_MODAL);
         outstandingOrderScreen.show();
-    } 
-    
-    /**
-    * Opens Report Generation Interface.
-    * Takes user to new screen.
-    * @param actionEvent Button click
-    */
-    @FXML
-    private void reportGeneratorAction3(ActionEvent actionEvent) throws IOException {
-          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("report.fxml"));
-          Parent root1 = (Parent) fxmlLoader.load();
-          Stage stage = new Stage();
-          stage.initModality(Modality.APPLICATION_MODAL);
-          stage.initStyle(StageStyle.UNDECORATED);
-          stage.setTitle("ABC");
-          stage.setScene(new Scene(root1));
-          stage.show();
     }
 }

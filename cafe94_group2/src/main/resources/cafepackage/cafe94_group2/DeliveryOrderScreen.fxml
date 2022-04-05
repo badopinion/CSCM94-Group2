@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.DeliveryOrderScreenController">
+   <children>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="291.0" prefWidth="597.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="131.0" layoutY="14.0" prefHeight="57.0" prefWidth="335.0" text="Delivery Order">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="80.0" prefHeight="36.0" prefWidth="143.0" text="Address">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="orderNotes" layoutX="207.0" layoutY="127.0" prefHeight="36.0" prefWidth="291.0" />
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="121.0" prefHeight="47.0" prefWidth="143.0" text="Order Notes">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="address" layoutX="207.0" layoutY="80.0" prefHeight="36.0" prefWidth="291.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="597.0">
+               <children>
+                  <Button fx:id="placeOrderButton" layoutX="415.0" layoutY="98.0" mnemonicParsing="false" onAction="#PlaceOrderButtonOnAction" prefHeight="47.0" prefWidth="143.0" text="Place Order" />
+                  <TextField fx:id="orderPrice" layoutX="414.0" layoutY="33.0" prefHeight="47.0" prefWidth="143.0" promptText="Order Price" />
+                  <Label layoutX="335.0" layoutY="39.0" prefHeight="36.0" prefWidth="56.0" text="Price">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
