@@ -14,17 +14,19 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- this is Customer screen Controller
- @author Yingfan Zhang
- @version1
+ * This is Customer screen Controller
+ * @author Yingfan Zhang
+ * @version 1
  */
 public class CustomerScreenController {
     @FXML
     private Button viewProfile, makeBooking, viewMenu;
 
     /**
-     * @param event profileOn Button click on View Profile
-     * @throws IOException
+     * To show the profile screen.
+     * Takes user to new screen.
+     * @param event Button click
+     * @throws IOException Throws if input fails
      */
     public void profileOnAction(ActionEvent event) throws IOException {
         Stage profileScreen = new Stage();
@@ -39,8 +41,10 @@ public class CustomerScreenController {
     }
 
     /**
-     * @param event boookingOn Button click on Make Booking
-     * @throws IOException
+     * To show the booking screen.
+     * Takes user to new screen.
+     * @param event Button click
+     * @throws IOException Throws if input fails
      */
     public void bookingOnAction(ActionEvent event) throws IOException {
         Stage bookingScreen = new Stage();
@@ -55,8 +59,10 @@ public class CustomerScreenController {
     }
 
     /**
-     * @param event menuOn Button click on View Menu
-     * @throws IOException
+     * To show the menu screen.
+     * Takes user to new screen.
+     * @param event Button click
+     * @throws IOException Throws if input fails
      */
     public void menuOnAction(ActionEvent event) throws IOException {
         Stage menuScreen = new Stage();
