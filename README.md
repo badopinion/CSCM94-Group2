@@ -78,7 +78,7 @@ Cafe 94
    5.When clicked on View profile , the customer is promted to screen that shows order history.
 
 
-#Exit 
+#Exit
 -At the login page press cancel to exit
 
 #Credits:
@@ -89,12 +89,4 @@ https://www.youtube.com/playlist?list=PLZPZq0r_RZOM-8vJA3NQFZB7JroDcMwev
 Group 2 , Swansea University , Computer Science Masters Students
 
 #Upgrade
-If we had more time we would add more pictures and make the menu more interactive 
-
-
-
-
-
-
-
-
+If we had more time we would add more pictures and make the menu more interactive
