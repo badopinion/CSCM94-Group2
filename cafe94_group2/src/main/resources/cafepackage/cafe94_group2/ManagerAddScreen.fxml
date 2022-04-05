@@ -3,50 +3,63 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.ManagerAddScreenController">
    <children>
-      <Label layoutX="69.0" layoutY="46.0" prefHeight="31.0" prefWidth="99.0" text="First name">
+      <Label layoutX="21.0" layoutY="46.0" prefHeight="31.0" prefWidth="99.0" text="First name">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="93.0" prefHeight="31.0" prefWidth="99.0" text="Last name">
+      <Label layoutX="21.0" layoutY="93.0" prefHeight="31.0" prefWidth="99.0" text="Last name">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="69.0" layoutY="184.0" prefHeight="31.0" prefWidth="99.0" text="Type">
+      <Label layoutX="21.0" layoutY="184.0" prefHeight="31.0" prefWidth="99.0" text="Type">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="firstNameField" layoutX="219.0" layoutY="46.0" prefHeight="31.0" prefWidth="227.0" />
-      <TextField fx:id="lastNameField" layoutX="219.0" layoutY="93.0" prefHeight="31.0" prefWidth="227.0" />
-      <ComboBox fx:id="staffTypeField" layoutX="219.0" layoutY="184.0" prefHeight="31.0" prefWidth="227.0" promptText="Please choose staff type." />
+      <TextField fx:id="firstNameField" layoutX="120.0" layoutY="46.0" prefHeight="31.0" prefWidth="227.0" />
+      <TextField fx:id="lastNameField" layoutX="120.0" layoutY="93.0" prefHeight="31.0" prefWidth="227.0" />
+      <ComboBox fx:id="staffTypeField" layoutX="120.0" layoutY="184.0" prefHeight="31.0" prefWidth="227.0" />
       <Button layoutX="120.0" layoutY="332.0" mnemonicParsing="false" onAction="#addStaffButtonOnAction" prefHeight="45.0" prefWidth="130.0" text="Add Staff" />
-      <Button layoutX="316.0" layoutY="332.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="130.0" text="Cancel" />
-      <Label layoutX="70.0" layoutY="137.0" prefHeight="31.0" prefWidth="99.0" text="Address">
+      <Button layoutX="406.0" layoutY="332.0" mnemonicParsing="false" onAction="#removeButtonOnAction" prefHeight="45.0" prefWidth="130.0" text="Remove" />
+      <Label layoutX="21.0" layoutY="137.0" prefHeight="31.0" prefWidth="99.0" text="Address">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="addressField" layoutX="219.0" layoutY="137.0" prefHeight="31.0" prefWidth="227.0" />
-      <Label layoutX="70.0" layoutY="227.0" prefHeight="31.0" prefWidth="99.0" text="Username">
+      <TextField fx:id="addressField" layoutX="120.0" layoutY="137.0" prefHeight="31.0" prefWidth="227.0" />
+      <Label layoutX="21.0" layoutY="227.0" prefHeight="31.0" prefWidth="99.0" text="Username">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="usernameField" layoutX="219.0" layoutY="227.0" prefHeight="31.0" prefWidth="227.0" />
-      <Label layoutX="70.0" layoutY="272.0" prefHeight="31.0" prefWidth="99.0" text="Password">
+      <TextField fx:id="usernameField" layoutX="120.0" layoutY="227.0" prefHeight="31.0" prefWidth="227.0" />
+      <Label layoutX="21.0" layoutY="272.0" prefHeight="31.0" prefWidth="99.0" text="Password">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="passwordField" layoutX="219.0" layoutY="272.0" prefHeight="31.0" prefWidth="227.0" />
+      <TextField fx:id="passwordField" layoutX="120.0" layoutY="272.0" prefHeight="31.0" prefWidth="227.0" />
       <Label fx:id="errorLabel" alignment="CENTER" layoutX="-2.0" layoutY="309.0" prefHeight="17.0" prefWidth="600.0" text="Error Label" visible="false" />
+      <ListView fx:id="existingStaffListView" layoutX="371.0" layoutY="53.0" prefHeight="189.0" prefWidth="200.0" />
+      <Label layoutX="376.0" layoutY="14.0" text="Remove Existing Staff">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="121.0" layoutY="14.0" text="Add New Staff">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="selectedStaffLabel" alignment="CENTER" layoutX="364.0" layoutY="272.0" prefHeight="17.0" prefWidth="227.0" text="No staff member selected." />
    </children>
 </AnchorPane>
