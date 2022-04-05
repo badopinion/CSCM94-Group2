@@ -58,8 +58,6 @@ public class ManagerAddScreenController implements Initializable {
 
     /**
      * Method called automatically when the scene is initialized. Allows data initialization.
-     * @param url
-     * @param rb
      */
     @Override public void initialize(URL url, ResourceBundle rb) {
         staffTypeField.setItems(staffTypeList);

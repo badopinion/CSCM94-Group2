@@ -44,8 +44,6 @@ public class NonChefUnfulfilledOrderScreenController implements Initializable {
 
     /**
      * Initial the screen.
-     * @param url
-     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {

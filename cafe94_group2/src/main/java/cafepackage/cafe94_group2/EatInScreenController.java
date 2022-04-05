@@ -57,7 +57,7 @@ public class EatInScreenController implements Initializable {
         Restaurant res = new Load().getRestaurantFromFile();
         tableSelection.setItems(table);
         String priceString = DECIMAL_FORMATTER.format(res.menu.calculatePriceOfItemNames(res.getTemporaryOrderStringList()));
-        orderPrice.setText("￡" + priceString);
+        orderPrice.setText("£" + priceString);
         orderNotes.setText("");
 
     }
@@ -99,7 +99,7 @@ public class EatInScreenController implements Initializable {
 
     /**
      * Takes a string and searches for a corresponding table number
-     * @param tableString
+     * @param tableString String value of table
      * @return an int corresponding to a table number
      */
     private int returnTableNumber(String tableString) {

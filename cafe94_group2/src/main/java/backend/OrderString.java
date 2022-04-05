@@ -16,11 +16,11 @@ public class OrderString {
 
     /**
      * Constructor
-     * @param orderString
-     * @param customerUserName
-     * @param tableNumber
-     * @param orderType
-     * @param orderDateTime
+     * @param orderString Order string
+     * @param customerUserName Username of customer
+     * @param tableNumber Number of table
+     * @param orderType Type of order
+     * @param orderDateTime Date time of order
      */
     public OrderString(String orderString, String customerUserName, String tableNumber, String orderType, String orderDateTime) {
         this.orderedString = orderString;
@@ -32,7 +32,7 @@ public class OrderString {
 
     /**
      * getters and setters
-     * @return
+     * @return String value of oder
      */
     public String getOrderedString() {
         return orderedString;

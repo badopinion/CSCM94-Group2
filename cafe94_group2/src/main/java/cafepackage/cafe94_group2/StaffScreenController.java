@@ -23,8 +23,8 @@ public class StaffScreenController {
     private Button managerChoose, driverChoose, waiterChoose,chefChoose;
 
     /**
-     * @param event
-     * @throws IOException
+     * @param event Button click
+     * @throws IOException Throws if it fails
      */
     public void ManagerChooseOnAction(ActionEvent event) throws IOException {
         Stage managerScreen = new Stage();

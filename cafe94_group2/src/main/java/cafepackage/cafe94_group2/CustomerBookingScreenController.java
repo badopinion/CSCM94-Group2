@@ -59,8 +59,6 @@ public class CustomerBookingScreenController implements Initializable{
 
     /**
      * Initialize method
-     * @param url
-     * @param rb
      */
     @Override public void initialize(URL url, ResourceBundle rb) {
         bookingTime.setItems(timeList);

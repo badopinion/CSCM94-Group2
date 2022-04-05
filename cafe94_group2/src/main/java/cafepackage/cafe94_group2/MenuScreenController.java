@@ -157,7 +157,7 @@ public class MenuScreenController implements Initializable {
             }
         }
         String priceString = DECIMAL_FORMATTER.format(res.menu.calculatePriceOfItemNames(orderList));
-        priceDisplay.setText("￡" + priceString);
+        priceDisplay.setText("£" + priceString);
         displayTwo.getItems().clear();
         displayTwo.setItems(FXCollections.observableArrayList(orderList));
         display.getSelectionModel().clearSelection();
@@ -189,7 +189,7 @@ public class MenuScreenController implements Initializable {
         }
 
         String priceString = DECIMAL_FORMATTER.format(res.menu.calculatePriceOfItemNames(orderList));
-        priceDisplay.setText("￡" + priceString);
+        priceDisplay.setText("£" + priceString);
         displayTwo.getItems().clear();
         displayTwo.setItems(FXCollections.observableArrayList(orderList));
         display.getSelectionModel().clearSelection();
@@ -202,8 +202,8 @@ public class MenuScreenController implements Initializable {
      * If a selection has been made, orderList is sent to restaurant object.
      * Res is saved. Enabling next screen to access up to date orderList.
      * Depending on user selection nextButton Action then eatin, takeaway, or order screen.
-     * @param actionEvent
-     * @throws IOException
+     * @param actionEvent Button click
+     * @throws IOException Throws if it fails
      */
     @FXML
     private void NextButtonAction(ActionEvent actionEvent) throws IOException {
@@ -229,7 +229,7 @@ public class MenuScreenController implements Initializable {
     /**
      * Loads the eat in screen
      * @param res the restaurant object
-     * @throws IOException
+     * @throws IOException Throws if it fails
      */
     @FXML
     private void loadEatInScreen(Restaurant res) throws IOException{
@@ -246,7 +246,7 @@ public class MenuScreenController implements Initializable {
     /**
      * Loads the takeaway screen
      * @param res the restaurant object
-     * @throws IOException
+     * @throws IOException Throws if it fails
      */
     @FXML
     private void loadTakeawayScreen(Restaurant res) throws IOException{
@@ -263,7 +263,7 @@ public class MenuScreenController implements Initializable {
     /**
      * Loads the delivery screen
      * @param res the restaurant object
-     * @throws IOException
+     * @throws IOException Throws if it fails
      */
     @FXML
     private void loadDeliveryScreen(Restaurant res) throws IOException{

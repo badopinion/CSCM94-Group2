@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 /**
  * A class that used to approve booking
- * @auther Jo Butler , Hristiana Davidova
+ * @author  Jo Butler , Hristiana Davidova
  * @version 1.0
  */
 public class ApproveBookingsScreenController implements Initializable {
@@ -33,8 +33,6 @@ public class ApproveBookingsScreenController implements Initializable {
 
     /**
      * Initialize the screen
-     * @param url
-     * @param rb
      */
 
     @Override public void initialize(URL url, ResourceBundle rb) {

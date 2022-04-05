@@ -13,9 +13,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- The Report screen Controller
- @author Adam Schmidt , Samuel Raine
- @version3
+ * The Report screen Controller
+ * @author Adam Schmidt , Samuel Raine
+ * @version 3
  */
 
 public class ReportsScreenController {

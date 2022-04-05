@@ -49,7 +49,7 @@ public class TakeawayOrderScreenController implements Initializable {
         pickUpTimeSelection.setItems(timeList);
         orderNotes.setText("");
         String priceString = DECIMAL_FORMATTER.format(res.menu.calculatePriceOfItemNames(res.getTemporaryOrderStringList()));
-        orderPrice.setText("￡" + priceString);
+        orderPrice.setText("£" + priceString);
 
     }
 

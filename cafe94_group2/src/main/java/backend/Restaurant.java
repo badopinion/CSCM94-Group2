@@ -58,6 +58,7 @@ public class Restaurant implements Serializable {
 
     /**
      * Getters
+     * @return Int value of order counter
      */
     public int getOrderCounter() {
         return orderCounter;
@@ -227,7 +228,7 @@ public class Restaurant implements Serializable {
     /**
      * method to take a string representing date time and return an order with a corresponding time
      * @param dateTimeString the time that the order was placed
-     * @return
+     * @return return null
      */
     public Order returnOrderByOrderTimeString(String dateTimeString){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd : HH mm ss");
@@ -245,7 +246,7 @@ public class Restaurant implements Serializable {
 
     /**
      * turns an arraylist of order objects into orderstring objects for displaying in tableview
-     * @param ordersArrayList
+     * @param ordersArrayList Order list
      * @return Order list
      */
     public ArrayList<OrderString> convertOrdersToStringArray(ArrayList<Order> ordersArrayList){

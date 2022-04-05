@@ -11,7 +11,7 @@ public class Delivery extends Order {
     private String deliveryAddress;
 
     /**
-     * Constructor with order notes & delivery is a new address
+     * Constructor with order notes, delivery is a new address
      * @param orderID the order id
      * @param customer the customer
      * @param orderNotes the order notes

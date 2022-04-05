@@ -47,8 +47,6 @@ public class UnfulfilledOrderScreenController implements Initializable {
 
     /**
      * Initializes the unfulfilled order screen including the orders table
-     * @param url
-     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
