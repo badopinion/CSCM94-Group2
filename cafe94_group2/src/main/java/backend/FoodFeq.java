@@ -1,8 +1,8 @@
 package backend;
 
 public class FoodFeq {
-    String foodName;
-    int feq;
+    private String foodName;
+    private int feq;
     public FoodFeq(String foodName, int feq) {
         this.foodName = foodName;
         this.feq = feq;
@@ -22,6 +22,4 @@ public class FoodFeq {
     public void setFeq(int feq) {
         this.feq = feq;
     }
-
-
 }
