@@ -49,7 +49,6 @@ public class UnfulfilledOrderScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        populateTable();
         Restaurant res = new Load().getRestaurantFromFile();
         orderStringList = FXCollections.observableArrayList(res.convertOrdersToStringArray(res.unfulfilledOrders()));
         customer.setCellValueFactory(new PropertyValueFactory<OrderString, String>("customerUserName"));
@@ -70,44 +69,7 @@ public class UnfulfilledOrderScreenController implements Initializable {
         res.saveRestaurant();
         orderStringList = FXCollections.observableArrayList(res.convertOrdersToStringArray(res.unfulfilledOrders()));
         orderTbv.setItems(orderStringList);
-//        populateTable();
 
     }
-
-//    private void populateTable(){
-//        Restaurant res = new Load().getRestaurantFromFile();
-//        orderStringList = FXCollections.observableArrayList(res.convertOrdersToStringArray(res.unfulfilledOrders()));
-//        customer.setCellValueFactory(new PropertyValueFactory<OrderString, String>("customerUserName"));
-//        items.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderedString"));
-//        table.setCellValueFactory(new PropertyValueFactory<OrderString, String>("tableNumber"));
-//        orderType.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderType"));
-//        orderTime.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderDateTime"));
-//        orderTbv.setItems(orderStringList);
-//    }
-
-
-
-
-    // an old version that was sort of working
-//    @FXML
-//    private TableView<Order> orderTbv;
-//    @FXML
-//    TableColumn<Order, String> customer = new TableColumn<>("customer");
-//    private ObservableList<Order> orderList;
-//
-//    @Override
-//    public void initialize(URL url, ResourceBundle rb) {
-//        Restaurant res = new Load().getRestaurantFromFile();
-//        customer.setCellValueFactory(new PropertyValueFactory<Order, String>("customer"));
-//        System.out.println("mid initialising");
-//        orderList = FXCollections.observableArrayList(res.unfulfilledOrders());
-//        System.out.println("size = " + orderList.size());
-//
-//        orderTbv.setItems(orderList);
-//
-//
-//    }
-
-
 
 }
