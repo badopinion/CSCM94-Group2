@@ -198,6 +198,7 @@ public class Login implements Serializable {
 		return this.loggedIn;
 	}
 
+
 //	// Gets the full staff list - JB
 //	public ArrayList<User> getStaffList() {
 //		ArrayList<User> out = new ArrayList<User>();
@@ -207,7 +208,19 @@ public class Login implements Serializable {
 //			}
 //		}
 //		return out;
-//	}
+//	}erm
+
+	/**
+	 * Given a username, removes a user from the list.
+	 * @param username Username of the person to delete.
+	 */
+	public void removeUser(String username){
+		for(int i = 0; i < userList.size(); i++){
+			if(username.equals(userList.get(i).getUsername())){
+				userList.remove(i);
+			}
+		}
+	}
 
 	// Gets the full staff list - JB
 	// Made it return a staff list as I need access to dates - SR
