@@ -57,7 +57,7 @@ public class EatInScreenController implements Initializable {
         Restaurant res = new Load().getRestaurantFromFile();
         tableSelection.setItems(table);
         String priceString = DECIMAL_FORMATTER.format(res.menu.calculatePriceOfItemNames(res.getTemporaryOrderStringList()));
-        orderPrice.setText("￡" + priceString);
+        orderPrice.setText("£" + priceString);
         orderNotes.setText("");
 
     }

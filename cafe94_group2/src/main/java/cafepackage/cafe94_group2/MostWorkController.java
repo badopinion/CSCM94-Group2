@@ -8,9 +8,9 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
- The Most Hours worked by staff scene Controller
- @author Adam Schmidt , Samuel Raine
- @version3
+ * The Most Hours worked by staff scene Controller
+ * @author Adam Schmidt , Samuel Raine
+ * @version 3
  */
 
 public class MostWorkController extends Application {

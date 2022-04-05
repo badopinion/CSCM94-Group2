@@ -8,9 +8,9 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
- The Staff Schedule screen Controller
- @author Adam Schmidt , Samuel Raine
- @version3
+ * The Staff Schedule screen Controller
+ * @author Adam Schmidt , Samuel Raine
+ * @version 3
  */
 
 public class BusyScheduleController extends Application {

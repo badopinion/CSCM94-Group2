@@ -11,11 +11,11 @@ public class Manager extends Staff{
 
     /**
      * Manager information
-     * @param username
-     * @param password
-     * @param firstName
-     * @param lastName
-     * @param homeAddress
+     * @param username Username of manager
+     * @param password Password of manager
+     * @param firstName First name of manager
+     * @param lastName Last name of manager
+     * @param homeAddress Home address of manager
      */
     public Manager(String username, String password, String firstName, String lastName, String homeAddress){
         super(username, password, firstName, lastName, homeAddress);

@@ -101,7 +101,7 @@ public class Booking implements Serializable {
 
 	/** Returns whether the Booking given as input clashes with this one.
 	 * @param in Store in booking
-	 * @return
+	 * @return Boolean value
 	 */
 	public boolean intersects(Booking in){
 		if (this.getBookingStart().isAfter(in.getBookingStart()) && this.getBookingStart().isBefore(in.getBookingEnd())){

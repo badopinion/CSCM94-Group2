@@ -8,9 +8,9 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
- The Most Active Customer screen Controller
- @author Adam Schmidt , Sam Raine
- @version3
+ * The Most Active Customer screen Controller
+ * @author  Adam Schmidt , Sam Raine
+ * @version 3
  */
 
 public class ActiveCustomerController extends Application {

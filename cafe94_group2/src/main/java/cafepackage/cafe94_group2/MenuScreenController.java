@@ -157,7 +157,7 @@ public class MenuScreenController implements Initializable {
             }
         }
         String priceString = DECIMAL_FORMATTER.format(res.menu.calculatePriceOfItemNames(orderList));
-        priceDisplay.setText("￡" + priceString);
+        priceDisplay.setText("£" + priceString);
         displayTwo.getItems().clear();
         displayTwo.setItems(FXCollections.observableArrayList(orderList));
         display.getSelectionModel().clearSelection();
@@ -189,7 +189,7 @@ public class MenuScreenController implements Initializable {
         }
 
         String priceString = DECIMAL_FORMATTER.format(res.menu.calculatePriceOfItemNames(orderList));
-        priceDisplay.setText("￡" + priceString);
+        priceDisplay.setText("£" + priceString);
         displayTwo.getItems().clear();
         displayTwo.setItems(FXCollections.observableArrayList(orderList));
         display.getSelectionModel().clearSelection();

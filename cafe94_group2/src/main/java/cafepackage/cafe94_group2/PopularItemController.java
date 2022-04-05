@@ -10,9 +10,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- The Popular Item screen Controller
- @author Adam Schmidt , Samuel Raine
- @version3
+ * The Popular Item screen Controller
+ * @author Adam Schmidt , Samuel Raine
+ * @version 3
  */
 
 public class PopularItemController extends Application {
