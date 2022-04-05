@@ -22,6 +22,8 @@ public class ManagerScreenController {
     private Button addStaffButton;
     @FXML
     private Button outstandingOrderButton;
+    @FXML
+    private Button reportGeneratorButton3;
 
     /**
      * To show the staff add orders.
@@ -57,5 +59,22 @@ public class ManagerScreenController {
         outstandingOrderScreen.setY(250);
         outstandingOrderScreen.initModality(Modality.APPLICATION_MODAL);
         outstandingOrderScreen.show();
+    }
+    
+    /**
+    * Opens Report Generation Interface.
+    * Takes user to new screen.
+    * @param actionEvent Button click
+    */
+    @FXML
+    private void reportGeneratorAction3(ActionEvent actionEvent) throws IOException {
+          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("report.fxml"));
+          Parent root1 = (Parent) fxmlLoader.load();
+          Stage stage = new Stage();
+          stage.initModality(Modality.APPLICATION_MODAL);
+          stage.initStyle(StageStyle.UNDECORATED);
+          stage.setTitle("Report Generation");
+          stage.setScene(new Scene(root1));
+          stage.show();
     }
 }
