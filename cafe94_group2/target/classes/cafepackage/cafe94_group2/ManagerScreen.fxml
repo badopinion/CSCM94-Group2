@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="467.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.ManagerScreenController">
+<AnchorPane prefHeight="467.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.ManagerScreenController">
 
    <children>
       <Label alignment="CENTER" layoutX="130.0" layoutY="152.0" prefHeight="93.0" prefWidth="433.0" text="Hello！Manager!">
@@ -13,8 +13,9 @@
             <Font size="51.0" />
          </font>
       </Label>
-      <Button fx:id="addStaffButton" layoutX="108.0" layoutY="298.0" mnemonicParsing="false" onAction="#addStaffOnAction" prefHeight="91.0" prefWidth="194.0" text="Add Staff" />
-      <Button fx:id="outstandingOrderButton" layoutX="419.0" layoutY="298.0" mnemonicParsing="false" onAction="#outstandingOrderOnAction" prefHeight="91.0" prefWidth="194.0" text="Outstanding orders" />
+      <Button fx:id="addStaffButton" layoutX="23.0" layoutY="297.0" mnemonicParsing="false" onAction="#addStaffOnAction" prefHeight="100.0" prefWidth="200.0" text="Add Staff" />
+      <Button fx:id="outstandingOrderButton" layoutX="464.0" layoutY="297.0" mnemonicParsing="false" onAction="#outstandingOrderOnAction" prefHeight="100.0" prefWidth="200.0" text="Outstanding orders" />
+      <Button fx:id="reportGeneratorButton3" layoutX="240.0" layoutY="297.0" mnemonicParsing="false" onAction="#reportGeneratorAction3" prefHeight="100.0" prefWidth="200.0" text="Generate Reports" />
    </children>
 
 </AnchorPane>

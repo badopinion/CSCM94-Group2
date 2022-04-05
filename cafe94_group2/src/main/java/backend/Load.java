@@ -24,10 +24,10 @@ public class Load {
      */
     public Restaurant getRestaurantFromFile(){
         Restaurant res = null;
-        File restaurantFile = new File("src/main/restaurant.ser");
+        File restaurantFile = new File("restaurant.ser");
         if (restaurantFile.isFile()) {
             try {
-                FileInputStream fIn = new FileInputStream("src/main/restaurant.ser");
+                FileInputStream fIn = new FileInputStream("restaurant.ser");
                 ObjectInputStream oIn = new ObjectInputStream(fIn);
                 res = (Restaurant) oIn.readObject();
                 oIn.close();

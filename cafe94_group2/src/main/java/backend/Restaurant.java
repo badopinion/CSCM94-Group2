@@ -275,7 +275,7 @@ public class Restaurant implements Serializable {
 
     public void saveRestaurant(){
         try {
-            File restaurantFile = new File("src/main/restaurant.ser");
+            File restaurantFile = new File("restaurant.ser");
             if(restaurantFile.isFile()){
                 System.out.println("Attempting to overwrite old Restaurant data:");
                 if(restaurantFile.delete()){
@@ -285,7 +285,7 @@ public class Restaurant implements Serializable {
                 }
             }
             restaurantFile.createNewFile();
-            FileOutputStream fos = new FileOutputStream("src/main/restaurant.ser");
+            FileOutputStream fos = new FileOutputStream("restaurant.ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(this);
             oos.close();
