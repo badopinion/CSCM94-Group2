@@ -1,26 +1,21 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
+
+import backend.MenuItem;
+import backend.Order;
+import backend.Restaurant;
+import backend.Staff;
+import backend.GenerateReport;
+import backend.FoodFeq;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -30,17 +25,17 @@ import java.util.ResourceBundle;
  */
 public class ReportController  implements Initializable {
     @FXML
-    Text CUSTOMER;
+    private Text customer;
     @FXML
-    Text HOURS_WORKED;
+    private Text hoursWorked;
     @FXML
-    Text BUIEST_HOURS;
+    private Text busiestHours;
     @FXML
-    ListView item;
+    private ListView item;
     @FXML
-    ListView feq;
+    private ListView feq;
     @FXML
-    Button closeButton;
+    private Button closeButton;
 
     /**
      * Initial the screen
@@ -55,7 +50,7 @@ public class ReportController  implements Initializable {
         ArrayList<MenuItem> menuItems = res.menu.getAllItems();
         GenerateReport gp = new GenerateReport();
         System.out.println(order.size());
-        CUSTOMER.setText(gp.mostActiveCustomer(order));
+        customer.setText(gp.mostActiveCustomer(order));
         ArrayList<FoodFeq> foodFeqs = new ArrayList<>();
         foodFeqs = gp.getPopularDish(res.getAllOrders());
         System.out.println(foodFeqs.size());
@@ -64,8 +59,8 @@ public class ReportController  implements Initializable {
             feq.getItems().add(feqFood.getFeq());
         }
         feq.getItems().add("1");
-        HOURS_WORKED.setText(gp.whichStaffHasWorkedTheMostReport(staffList));
-        BUIEST_HOURS.setText(gp.mostActivePeriodReport());
+        hoursWorked.setText(gp.whichStaffHasWorkedTheMostReport(staffList));
+        busiestHours.setText(gp.mostActivePeriodReport());
     }
 
     /**

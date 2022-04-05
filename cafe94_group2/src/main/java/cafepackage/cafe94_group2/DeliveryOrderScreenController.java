@@ -1,12 +1,15 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
+import backend.Restaurant;
+import backend.Load;
+import backend.User;
+import backend.Customer;
+import backend.Waiter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
@@ -51,7 +54,7 @@ public class DeliveryOrderScreenController implements Initializable {
      * @param actionEvent clicking the place orderbutton
      */
     @FXML
-    private void PlaceOrderButtonOnAction(ActionEvent actionEvent) {
+    private void placeOrderButtonOnAction(ActionEvent actionEvent) {
         boolean isMyTextFieldEmpty = address.getText().isEmpty();
         if (isMyTextFieldEmpty) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);

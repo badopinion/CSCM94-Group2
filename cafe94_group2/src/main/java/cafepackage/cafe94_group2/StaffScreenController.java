@@ -1,13 +1,9 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
-
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -19,14 +15,12 @@ import java.io.IOException;
  * @version 1
  */
 public class StaffScreenController {
-    @FXML
-    private Button managerChoose, driverChoose, waiterChoose,chefChoose;
 
     /**
      * @param event Button click
      * @throws IOException Throws if it fails
      */
-    public void ManagerChooseOnAction(ActionEvent event) throws IOException {
+    public void managerChooseOnAction(ActionEvent event) throws IOException {
         Stage managerScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("ManagerScreen.fxml"));
         managerScreen.setTitle("ManagerInterface");
@@ -37,7 +31,7 @@ public class StaffScreenController {
         managerScreen.show();
 
     }
-    public void DriverChooseOnAction(ActionEvent event) throws IOException {
+    public void driverChooseOnAction(ActionEvent event) throws IOException {
         Stage driverScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("DriverScreen.fxml"));
         driverScreen.setTitle("DriverInterface");
@@ -48,7 +42,7 @@ public class StaffScreenController {
         driverScreen.show();
 
     }
-    public void WaiterChooseOnAction(ActionEvent event) throws IOException {
+    public void waiterChooseOnAction(ActionEvent event) throws IOException {
         Stage waiterScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("WaiterScreen.fxml"));
         waiterScreen.setTitle("WaiterInterface");
@@ -59,7 +53,7 @@ public class StaffScreenController {
         waiterScreen.show();
 
     }
-    public void ChefChooseOnAction(ActionEvent event) throws IOException {
+    public void chefChooseOnAction(ActionEvent event) throws IOException {
         Stage chefScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("ChefScreen.fxml"));
         chefScreen.setTitle("ChefInterface");

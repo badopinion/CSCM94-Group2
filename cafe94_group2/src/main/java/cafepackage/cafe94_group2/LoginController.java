@@ -1,20 +1,19 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
+import backend.Load;
+import backend.Restaurant;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.io.IOException;
-import java.sql.SQLException;
 
 /**
  * A class that used to navigate the login screen.
@@ -50,11 +49,11 @@ public class LoginController {
      * @throws IOException if input fails.
      */
     public void loginButtonOnAction(ActionEvent event) throws IOException {
-        if(enterUsernameField.getText().isBlank() || enterPasswordField.getText().isBlank()){
+        if (enterUsernameField.getText().isBlank() || enterPasswordField.getText().isBlank()){
         loginMessageLabel.setText("Please enter username and password");
         } else {
         Restaurant res = new Load().getRestaurantFromFile();
-        if(res.login.loginWithCredentials(enterUsernameField.getText(), enterPasswordField.getText())){
+        if (res.login.loginWithCredentials(enterUsernameField.getText(), enterPasswordField.getText())){
             String userType = res.login.checkLoggedInUserType();
             Parent root = null;
             res.saveRestaurant();

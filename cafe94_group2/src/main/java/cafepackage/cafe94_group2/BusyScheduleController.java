@@ -1,6 +1,5 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +15,7 @@ import javafx.stage.Stage;
 public class BusyScheduleController extends Application {
 
     @FXML
-    public Button closeButton;
+    private Button closeButton;
     @FXML
     public void handleCloseButtonAction(ActionEvent event) {
         Stage stage = (Stage) closeButton.getScene().getWindow();

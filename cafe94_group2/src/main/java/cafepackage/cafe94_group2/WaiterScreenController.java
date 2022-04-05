@@ -1,6 +1,5 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +18,11 @@ import java.io.IOException;
 
 public class WaiterScreenController {
     @FXML
-    Button createOrderButton, outstandingOrdersButton, approveBookingsButton;
+    private Button createOrderButton;
+    @FXML
+    private Button outstandingOrdersButton;
+    @FXML
+    private Button approveBookingsButton;
 
     /**
      * To show the order screen.
