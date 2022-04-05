@@ -68,7 +68,7 @@ public class Order implements Serializable{
     }
 
     /**
-     *  Setters
+     * Setters
      * @param orderNotes the order notes
      */
     public void setOrderNotes(String orderNotes) {

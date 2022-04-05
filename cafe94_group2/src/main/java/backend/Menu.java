@@ -145,7 +145,7 @@ public class Menu implements Serializable {
 
 	/**
 	 * Method to calculate price of an order from names of menuItems
-	 * 	taking ArrayList<String> as an argument
+	 * Taking ArrayList<String> as an argument
 	 * @param stringList menuItems
 	 * @return Returns the calcuated sum of items
 	 */

@@ -8,7 +8,7 @@ package backend;
 
 public class Chef extends Staff{
     /**
-     *
+     * Chef information
      * @param username The chef's id
      * @param password The chef's password
      * @param firstName The chef's first name

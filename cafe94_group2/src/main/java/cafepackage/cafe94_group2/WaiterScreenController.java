@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * The Waiter screen Controller
  * @author Oliver Jackson
- *  @version 2
+ * @version 2
  */
 
 public class WaiterScreenController {

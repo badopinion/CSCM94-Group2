@@ -1,7 +1,6 @@
 package cafepackage.cafe94_group2;
 
 import backend.*;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

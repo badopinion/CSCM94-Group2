@@ -8,6 +8,7 @@ package backend;
 public class Driver extends Staff{
 
     /**
+     * Driver information
      * @param username the driver's username
      * @param password the driver's password
      * @param firstName the driver's first name

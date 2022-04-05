@@ -14,16 +14,15 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- this is Staff screen Controller
- @author Yingfan Zhang
- @version 1
+ * This is Staff screen Controller
+ * @author Yingfan Zhang
+ * @version 1
  */
 public class StaffScreenController {
     @FXML
     private Button managerChoose, driverChoose, waiterChoose,chefChoose;
 
     /**
-     *
      * @param event
      * @throws IOException
      */

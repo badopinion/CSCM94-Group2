@@ -19,7 +19,7 @@ public class MenuItem implements Serializable {
 	private MenuItemType menuItemType;
 
 	/**
-	 *  Constructor
+	 * Constructor
 	 * @param name the name of the item
 	 * @param description the description of the item
 	 * @param price the price of the item

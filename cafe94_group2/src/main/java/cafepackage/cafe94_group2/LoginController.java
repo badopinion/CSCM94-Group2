@@ -44,7 +44,7 @@ public class LoginController {
     }
 
     /**
-     * Checks the users identity.
+     * Checks the user identity.
      * That identity can be: Manager, Customer, Chef, Waiter or Driver.
      * @param event is used to get information in current scene.
      * @throws IOException if input fails.

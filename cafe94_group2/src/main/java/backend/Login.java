@@ -58,7 +58,6 @@ public class Login implements Serializable {
 		return true;
 	}
 
-
 	public boolean newWaiter(String username, String password, String firstName, String lastName, String homeAddress){
 		for(User u : userList){
 			if(u.checkUsername(username)){
