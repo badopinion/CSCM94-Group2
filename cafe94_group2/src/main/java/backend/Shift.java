@@ -2,7 +2,7 @@ package backend;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.io.*;
+import java.io.Serializable;
 
 /**
  * A shift class.
@@ -65,5 +65,4 @@ public class Shift implements Serializable{
     public void setShiftApproved(boolean yesOrNo){
         shiftApproved = yesOrNo;
     }
-
 }

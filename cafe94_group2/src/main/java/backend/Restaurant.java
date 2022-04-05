@@ -1,9 +1,13 @@
 package backend;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.io.*;
 
 /**
  * A Restaurant class that aggregates orders and holds methods to show outstanding orders. Also aggregates Tables.
@@ -45,9 +49,10 @@ public class Restaurant implements Serializable {
         this.menu.populateMenu();
         //addOrders();
         this.tables = new Table[] {
-                new Table(1,2), new Table(2,2), new Table(3,2), new Table(4,2),
-                new Table(5,4), new Table(6,4), new Table(7,4), new Table(8,4),
-                new Table(9,8), new Table(10,8), new Table(11,10)
+                new Table(1, 2), new Table(2, 2), new Table(3, 2),
+                new Table(4, 2), new Table(5, 4), new Table(6, 4),
+                new Table(7, 4), new Table(8, 4), new Table(9, 8),
+                new Table(10, 8), new Table(11, 10)
         };
     }
 
@@ -124,9 +129,9 @@ public class Restaurant implements Serializable {
      */
     public ArrayList<Order> unfulfilledOrders(){
         ArrayList<Order> unfulfilledOrders = new ArrayList<Order>();
-        for(Order order : orders){
-            if (order.isOrderCompleted() == false){
-                if (order.isOrderCancelled() == false) {
+        for (Order order : orders){
+            if (!order.isOrderCompleted()){
+                if (!order.isOrderCancelled()) {
                     unfulfilledOrders.add(order);
                 }
             }
@@ -198,8 +203,8 @@ public class Restaurant implements Serializable {
      * @return Return the table number or 0 if impossible.
      */
     public int findTableAndBook(int guestCount, LocalDateTime bookingTime, long bookingDuration, Customer customer){
-        for(int i = 1; i < tables.length; i++){
-            if(tables[i-1].addBooking(guestCount, bookingTime, bookingDuration, customer)){
+        for (int i = 1; i < tables.length; i++){
+            if (tables[i-1].addBooking(guestCount, bookingTime, bookingDuration, customer)){
                 return i;
             }
         }
@@ -276,9 +281,9 @@ public class Restaurant implements Serializable {
     public void saveRestaurant(){
         try {
             File restaurantFile = new File("restaurant.ser");
-            if(restaurantFile.isFile()){
+            if (restaurantFile.isFile()){
                 System.out.println("Attempting to overwrite old Restaurant data:");
-                if(restaurantFile.delete()){
+                if (restaurantFile.delete()){
                     System.out.println("Deleted old Restaurant data from file.");
                 } else {
                     System.out.println("Attempted to delete old Restaurant data from file, but failed.");
