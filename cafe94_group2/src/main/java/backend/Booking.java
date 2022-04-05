@@ -1,8 +1,8 @@
 package backend;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.io.*;
+
 
 /**
  * A booking class. A booking is a period of time for which a table has been booked by customers who wish to eat in.
@@ -104,32 +104,32 @@ public class Booking implements Serializable {
 	 * @return
 	 */
 	public boolean intersects(Booking in){
-		if(this.getBookingStart().isAfter(in.getBookingStart()) && this.getBookingStart().isBefore(in.getBookingEnd())){
+		if (this.getBookingStart().isAfter(in.getBookingStart()) && this.getBookingStart().isBefore(in.getBookingEnd())){
 			// This booking starts in the middle of the input booking
 			System.out.println("Booking clash.");
 			return true;
 		}
-		if(this.getBookingEnd().isAfter(in.getBookingStart()) && this.getBookingEnd().isBefore(in.getBookingEnd())){
+		if (this.getBookingEnd().isAfter(in.getBookingStart()) && this.getBookingEnd().isBefore(in.getBookingEnd())){
 			// This booking ends in the middle of the input booking
 			System.out.println("Booking clash.");
 			return true;
 		}
-		if(in.getBookingStart().isAfter(this.getBookingStart()) && in.getBookingStart().isBefore(this.getBookingEnd())){
+		if (in.getBookingStart().isAfter(this.getBookingStart()) && in.getBookingStart().isBefore(this.getBookingEnd())){
 			// Input booking starts in the middle of this booking
 			System.out.println("Booking clash.");
 			return true;
 		}
-		if(in.getBookingEnd().isAfter(this.getBookingStart()) && in.getBookingEnd().isBefore(this.getBookingEnd())){
+		if (in.getBookingEnd().isAfter(this.getBookingStart()) && in.getBookingEnd().isBefore(this.getBookingEnd())){
 			// Input booking ends in the middle of this booking
 			System.out.println("Booking clash.");
 			return true;
 		}
-		if(!this.getBookingStart().isAfter(in.getBookingStart()) && !this.getBookingStart().isBefore(in.getBookingStart())){
+		if (!this.getBookingStart().isAfter(in.getBookingStart()) && !this.getBookingStart().isBefore(in.getBookingStart())){
 			// Both bookings begin at the same time.
 			System.out.println("Booking clash - this booking starts at the same time as an existing booking.");
 			return true;
 		}
-		if(!this.getBookingEnd().isAfter(in.getBookingEnd()) && !this.getBookingEnd().isBefore(in.getBookingEnd())){
+		if (!this.getBookingEnd().isAfter(in.getBookingEnd()) && !this.getBookingEnd().isBefore(in.getBookingEnd())){
 			// Both bookings end at the same time.
 			System.out.println("Booking clash - this booking ends at the same time as an existing booking.");
 			return true;

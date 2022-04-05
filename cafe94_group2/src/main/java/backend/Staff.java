@@ -48,11 +48,4 @@ public class Staff extends User{
         return shifts;
     }
 
-
-    //Setters - OJ
-    public void setStaffId(int staffId) {
-        this.staffId = staffId;
-    }
-
-
 }
