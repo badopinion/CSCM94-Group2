@@ -236,15 +236,9 @@ public class Login implements Serializable {
 	 */
 	public ArrayList<Staff> getStaffList() {
 		ArrayList<Staff> out = new ArrayList<Staff>();
-		for(User u : userList){
-			if(u instanceof Staff){
+		for(User u : userList) {
+			if (u instanceof Staff) {
 				out.add((Staff) u);
-
-	public ArrayList<User> getStaffList() {
-		ArrayList<User> out = new ArrayList<User>();
-		for (User u : userList){
-			if (u instanceof Staff){
-				out.add(u);
 			}
 		}
 		return out;
