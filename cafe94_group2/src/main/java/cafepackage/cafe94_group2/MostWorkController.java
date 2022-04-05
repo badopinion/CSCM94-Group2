@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 /**
  The Most Hours worked by staff scene Controller
- @author Adam & Sam
+ @author Adam Schmidt , Samuel Raine
  @version3
  */
 

@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 /**
  The Most Active Customer screen Controller
- @author Adam & Sam
+ @author Adam Schmidt , Sam Raine
  @version3
  */
 

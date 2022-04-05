@@ -14,7 +14,7 @@ import java.io.IOException;
 
 /**
  The Report screen Controller
- @author Adam & Sam
+ @author Adam Schmidt , Samuel Raine
  @version3
  */
 

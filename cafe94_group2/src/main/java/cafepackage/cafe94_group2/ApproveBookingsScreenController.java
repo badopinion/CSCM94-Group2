@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 /**
  * A class that used to approve booking
- * @auther Jo Butler
+ * @auther Jo Butler , Hristiana Davidova
  * @version 1.0
  */
 public class ApproveBookingsScreenController implements Initializable {

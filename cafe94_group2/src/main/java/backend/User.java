@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Superclass of all user types. Contains information and methods relevant to all users
  * (child: Customer, Staff, Manager, Waiter, Driver, Chef)
- * @author Jo Butler
+ * @author Jo Butler , Hristiana Davidova
  * @version 2
  */
 

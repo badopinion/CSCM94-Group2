@@ -2,7 +2,7 @@ package backend;
 
 /**
  * An enum to differentiate between menuItems
- * @author Oliver Kackson
+ * @author Oliver Jackson
  * @version 1
  */
 
