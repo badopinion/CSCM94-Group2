@@ -23,5 +23,7 @@ public class EatIn extends Order{
         this.table = table;
     }
 
-
+    public Table getTable() {
+        return table;
+    }
 }

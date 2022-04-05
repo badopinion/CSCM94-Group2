@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.UnfulfilledOrderScreenController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.UnfulfilledOrderScreenController">
     <children>
         <BorderPane prefHeight="400.0" prefWidth="600.0">
             <top>
@@ -19,20 +19,20 @@
                 </Label>
             </top>
             <center>
-                <TableView prefHeight="283.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                <TableView fx:id="orderTbv" prefHeight="283.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                     <columns>
-                        <TableColumn prefWidth="112.66662347316742" text="Order Type" />
-                        <TableColumn minWidth="5.99993896484375" prefWidth="117.33338165283203" text="Customer" />
-                        <TableColumn minWidth="5.99993896484375" prefWidth="121.99998474121094" text="Order Time" />
-                        <TableColumn minWidth="5.99993896484375" prefWidth="126.0" text="Item Name" />
-                        <TableColumn minWidth="5.99993896484375" prefWidth="122.00003051757812" text="Table Number" />
+                        <TableColumn fx:id="items" minWidth="5.99993896484375" prefWidth="126.0" text="Items" />
+                        <TableColumn fx:id="table" minWidth="5.99993896484375" prefWidth="122.00003051757812" text="Table" />
+                        <TableColumn fx:id="orderType" prefWidth="112.66662347316742" text="Order Type" />
+                        <TableColumn fx:id="customer" minWidth="5.99993896484375" prefWidth="117.33338165283203" text="Customer" />
+                        <TableColumn fx:id="orderTime" minWidth="5.99993896484375" prefWidth="121.99998474121094" text="Order Time" />
                     </columns>
                 </TableView>
             </center>
             <bottom>
                 <AnchorPane prefHeight="68.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Button layoutX="427.0" layoutY="14.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="148.0" text="Complete" />
+                        <Button fx:id="orderCompleteButton" layoutX="427.0" layoutY="14.0" mnemonicParsing="false" onAction="#markOrderComplete" prefHeight="43.0" prefWidth="148.0" text="Mark order completed" />
                     </children>
                 </AnchorPane>
             </bottom>

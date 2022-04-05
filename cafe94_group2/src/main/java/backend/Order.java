@@ -107,14 +107,24 @@ public class Order implements Serializable{
         }
     }
 
+    /**
+     * gets the orderDate
+     * @return datetime of order
+     */
+    public LocalDateTime getOrderDateTime() {
+        return orderDateTime;
+    }
+
+
 
     /**
      * date and time formating
      * @return returns order details
      */
+
     @java.lang.Override
     public java.lang.String toString() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String dateTime = orderDateTime.format(formatter);
         return "Order{" +
                 "orderID= " + orderID +

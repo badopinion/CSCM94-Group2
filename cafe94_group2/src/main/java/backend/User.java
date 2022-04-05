@@ -121,4 +121,6 @@ public class User implements Serializable {
 	public boolean checkCredentials(String userIn, String passIn){
 		return checkUsername(userIn) && checkPassword(passIn);
 	}
+
+
 }
