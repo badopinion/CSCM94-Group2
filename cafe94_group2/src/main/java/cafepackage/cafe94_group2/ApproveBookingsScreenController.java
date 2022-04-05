@@ -28,7 +28,6 @@ public class ApproveBookingsScreenController implements Initializable {
     String selected = null;
 
     @Override public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("Initializing");
         unapprovedBookings.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {

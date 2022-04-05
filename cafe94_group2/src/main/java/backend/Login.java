@@ -99,6 +99,15 @@ public class Login implements Serializable {
 		return true;
 	}
 
+	// Given a username, removes a user from the list.
+	public void removeUser(String username){
+		for(int i = 0; i < userList.size(); i++){
+			if(username.equals(userList.get(i).getUsername())){
+				userList.remove(i);
+			}
+		}
+	}
+
 	/**
 	 * a method to create some users details.
 	 */
