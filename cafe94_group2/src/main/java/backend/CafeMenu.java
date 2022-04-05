@@ -12,8 +12,10 @@ import java.io.*;
 
 public class CafeMenu implements Serializable {
 	private ArrayList<MenuItem> menuItems = new ArrayList<MenuItem>();
-	
-	// Constructor
+
+	/**
+	 * Constructor
+	 */
 	public CafeMenu(){
 		
 	}
@@ -23,9 +25,10 @@ public class CafeMenu implements Serializable {
 	public ArrayList<MenuItem> getAllItems(){
 		return menuItems;
 	}
-	
-	// Returns only those items that are currently being served (onMenu is true) - JB
-	// This also returns current specials (all items that are onMenu)
+
+	/**
+	 * @return // Returns only those items that are currently being served (onMenu is true).This also returns current specials (all items that are onMenu)
+	 */
 	public ArrayList<MenuItem> getCurrentItems(){
 		ArrayList<MenuItem> currentItems = new ArrayList<MenuItem>();
 		for(MenuItem item : menuItems){
@@ -36,7 +39,9 @@ public class CafeMenu implements Serializable {
 		return currentItems;
 	}
 
-	// Returns only those items that are currently being served, and are not specials - OJ
+	/**
+	 * @return Returns only those items that are currently being served, and are not specials
+	 */
 	public ArrayList<MenuItem> getCurrentNonSpecials(){
 		ArrayList <MenuItem> currentNonSpecs = getCurrentItems();
 		for(MenuItem item : currentNonSpecs){
@@ -46,8 +51,10 @@ public class CafeMenu implements Serializable {
 		}
 		return currentNonSpecs;
 	}
-	
-	// Returns only those items that are currently being served, and are specials. - JB
+
+	/**
+	 * @return Returns only those items that are currently being served, and are specials. -
+	 */
 	public ArrayList<MenuItem> getCurrentSpecials(){
 		ArrayList <MenuItem> currentSpecs = getCurrentItems();
 		for(MenuItem item : currentSpecs){
@@ -58,7 +65,9 @@ public class CafeMenu implements Serializable {
 		return currentSpecs;
 	}
 
-	//Prints all menuItems - OJ
+	/**
+	 * Prints all menuItems -
+	 */
 	public void printMenuItems(){
 		for(MenuItem item : menuItems){
 			System.out.println(item);
@@ -73,20 +82,31 @@ public class CafeMenu implements Serializable {
 		return listMenuItems;
 	}
 
-	// Method to add a new item to menu - JB
+	/**
+	 * @param newItem Method to add a new item to menu
+	 */
 	public void addItem(MenuItem newItem){
 		menuItems.add(newItem);
 	}
 
-	//Creates a menuItem object and adds to arrayList of menu items - OJ
+	/**
+	 * Creates a menuItem object and adds to arrayList of menu items
+	 * @param name name of the item
+	 * @param description description of the item
+	 * @param price the price of the item
+	 * @param onMenu is the item on the menu
+	 * @param isSpecial is the item special
+	 * @param menuItemType what is the type of the meny item
+	 */
 	public void createAndAddMenuItem(String name, String description, float price, boolean onMenu, boolean isSpecial, MenuItemType menuItemType){
 		MenuItem newItem = new MenuItem(name, description, price, onMenu, isSpecial, menuItemType);
 		addItem(newItem);
 	}
 
-	//Method to return menuItem by name - returns null if no matching item exists - OJ
-	//Any method using this must handle a potential null return
-	//IF EVER CONFLICT RESOLVING THIS IN GIT, use .equals() and not == . With ==, stuff breaks after save/load - JB
+	/**
+	 * @param desiredMenuItemName Method to return menuItem by name - returns null if no matching item exists
+	 * @return Any method using this must handle a potential null return
+	 */
 	public MenuItem returnMenuItemByName (String desiredMenuItemName){
 		for (MenuItem menuItem : menuItems){
 			if (menuItem.getName().toLowerCase().equals(desiredMenuItemName.toLowerCase())){
@@ -96,11 +116,13 @@ public class CafeMenu implements Serializable {
 		return null;
 	}
 
-	//Method to return all menuItems by type
-	//Takes two arguments: a menuItem ArrayList and a MenuItemType enum
-	//Use above methods to generate ArrayList e.g. getCurrentItems()
-	//Returns an ArrayList
-	//OJ
+	/**
+	 * 	Takes two arguments: a menuItem ArrayList and a MenuItemType enum
+	 * 	//Use above methods to generate ArrayList e.g. getCurrentItems()
+	 * @param menuItems Method to return all menuItems
+	 * @param menuItemType meny items by time
+	 * @return Returns an ArrayList
+	 */
 	public ArrayList<MenuItem> returnMenuItemsByType(ArrayList<MenuItem> menuItems, MenuItemType menuItemType){
 		ArrayList<MenuItem> menuItemsOfType = new ArrayList<MenuItem>();
 		for (MenuItem menuItem : menuItems){
@@ -111,7 +133,10 @@ public class CafeMenu implements Serializable {
 		return menuItemsOfType;
 	}
 
-	//Method to set menu item as special or not (true = special) - OJ
+	/**
+	 * @param menuItemName the name of the menu item
+	 * @param isSpecial  menu item as special or not (true = special)
+	 */
 	public void setMenuItemSpecialOrNot(String menuItemName, boolean isSpecial){
 		MenuItem menuItem = returnMenuItemByName(menuItemName);
 		if (menuItem == null){
@@ -121,7 +146,10 @@ public class CafeMenu implements Serializable {
 		}
 	}
 
-	//Method to set menu item as on or off (true = on) - OJ
+	/**
+	 * @param menuItemName the name of the menu item
+	 * @param isOn Method to set menu item as on or off (true = on)
+	 */
 	public void setMenuItemIsOnOrOff(String menuItemName, boolean isOn){
 		MenuItem menuItem = returnMenuItemByName(menuItemName);
 		if (menuItem == null){
@@ -132,7 +160,9 @@ public class CafeMenu implements Serializable {
 	}
 
 
-	//This method populates the menu - OJ
+	/**
+	 * This method populates the menu
+	 */
 	public void populateMenu(){
 		createAndAddMenuItem("Cheese burger", "150g Beef patty with cheddar cheese on a brioche bun", 12.5f, true, false, MenuItemType.FOOD);
 		createAndAddMenuItem("Ham and cheese toastie", "locally sourced ham with cheddar, as a toastie", 8.0f, true, false, MenuItemType.FOOD);

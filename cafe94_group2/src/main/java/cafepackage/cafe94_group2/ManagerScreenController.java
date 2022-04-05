@@ -9,17 +9,36 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
+
+
+/**
+ * This is Manager screen Controller
+ * @author Yingfan Zhang
+ * @version 1
+ */
+
+
 public class ManagerScreenController {
     @FXML
     private Button addStaffButton;
-    @FXML
-    private Button outstandingOrderButton2;
+
     @FXML
     private Button reportGeneratorButton3;
+    @FXML
+    private Button outstandingOrderButton;
+
+    /**
+     * To show the staff add orders.
+     * Takes user to new screen.
+     * @param actionEvent Button click
+     * @throws IOException Throws if input fails
+     */
+
     @FXML
     private void addStaffOnAction(ActionEvent actionEvent) throws IOException {
         Stage addStaffScreen = new Stage();
@@ -31,10 +50,18 @@ public class ManagerScreenController {
         addStaffScreen.initModality(Modality.APPLICATION_MODAL);
         addStaffScreen.show();
     }
+
+
+    /**
+     * To show the outstanding orders.
+     * Takes user to new screen.
+     * @param actionEvent Button click
+     * @throws IOException Throws if input fails
+     */
     @FXML
-    private void outstandingOrderOnAction2(ActionEvent actionEvent) throws IOException {
+    private void outstandingOrderOnAction(ActionEvent actionEvent) throws IOException {
         Stage outstandingOrderScreen = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("UnfulfilledOrderScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("NonChefUnfulfilledOrderScreen.fxml"));
         outstandingOrderScreen.setTitle("Outstanding Order Interface");
         outstandingOrderScreen.setScene(new Scene(root, 730, 530));
         outstandingOrderScreen.setX(600);
@@ -42,6 +69,7 @@ public class ManagerScreenController {
         outstandingOrderScreen.initModality(Modality.APPLICATION_MODAL);
         outstandingOrderScreen.show();
     }
+
       @FXML
     private void reportGeneratorAction3(ActionEvent actionEvent) throws IOException {
           FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("report.fxml"));
@@ -53,4 +81,5 @@ public class ManagerScreenController {
           stage.setScene(new Scene(root1));
           stage.show();
     }
+
 }

@@ -1,9 +1,9 @@
 package backend;
 
-import java.util.ArrayList;
-import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.io.*;
 
 /**
  * A Restaurant class that aggregates orders and holds methods to show outstanding orders. Also aggregates Tables.
@@ -18,15 +18,25 @@ public class Restaurant implements Serializable {
     private ArrayList<Order> orders;
     //order counter is the number of orders ever ordered, and is used for orderID - OJ
     private int orderCounter;
+    private ArrayList<String> temporaryOrderStringList = new ArrayList<>();
+    private ArrayList<MenuItem> temporaryOrderList = new ArrayList<MenuItem>();
 
-    // Restaurant aggregates tables. JB
+
+    /**
+     * Restaurant aggregates tables
+     */
+
     private Table[] tables;
 
-    // References to other aggregator methods - JB
+    /**
+     * // References to other aggregator methods
+     */
     public Login login;
     public Menu menu;
 
-    // Constructor - OJ
+    /**
+     *  Constructor
+     */
     public Restaurant() {
         this.orders = new ArrayList<Order>();
         this.orderCounter = 0;
@@ -41,7 +51,9 @@ public class Restaurant implements Serializable {
         };
     }
 
-    //Getters
+    /**
+     * Getters
+     */
     public int getOrderCounter() {
         return orderCounter;
     }
@@ -51,26 +63,65 @@ public class Restaurant implements Serializable {
     }
 
     public Table getTable(int tableNumber){
-        return tables[tableNumber-1]; // The restaurant itself doesn't use java's 0-based indexing - JB
+        return tables[tableNumber-1]; // I assume the restaurant itself doesn't use java's 0-based indexing - JB
     }
 
-    // Remember that customers expect 1 based indexing when calling this one! - JB
+
+    public ArrayList<MenuItem> getTemporaryOrderList() {
+        return temporaryOrderList;
+    }
+
+    public ArrayList<String> getTemporaryOrderStringList() {
+        return temporaryOrderStringList;
+    }
+
     public Table[] getAllTables(){
         return tables;
     }
 
-    //Setters
+    /**
+     * Setters
+     * @param orderCounter the order counter
+     */
     public void setOrderCounter(int orderCounter) {
         this.orderCounter = orderCounter;
     }
 
-    //method to add order to orders - OJ
+    public void setTemporaryOrderList(ArrayList<MenuItem> temporaryOrderList) {
+        this.temporaryOrderList = temporaryOrderList;
+    }
+
+    public void setTemporaryOrderStringList(ArrayList<String> temporaryOrderStringList) {
+        this.temporaryOrderStringList = temporaryOrderStringList;
+    }
+
+    /**
+     * @param order method to add order to orders
+     */
     public void addOrder(Order order){
         orders.add(order);
     }
 
-    //method to show all orders that have not been fulfilled and have not been cancelled - OJ
-    //returns an ArrayList
+    /**
+     * @param stringList convert an arraylist of strings
+     * @param menu to an arraylist of menuitems
+     * @return returns menu list
+     */
+    public ArrayList<MenuItem> convStringListToMIList(ArrayList<String> stringList, Menu menu) {
+        ArrayList<MenuItem> menuItemList = new ArrayList<MenuItem>();
+        for (String itemString : stringList) {
+            MenuItem newMenuItem = menu.returnMenuItemByName(itemString);
+            if (newMenuItem != null) {
+                menuItemList.add(newMenuItem);
+            }
+        }
+        return menuItemList;
+    }
+
+    /**
+     *method to show all orders that have not been fulfilled and have not been cancelled
+     * @return returns an ArrayList of orders not done
+     */
     public ArrayList<Order> unfulfilledOrders(){
         ArrayList<Order> unfulfilledOrders = new ArrayList<Order>();
         for(Order order : orders){
@@ -83,8 +134,11 @@ public class Restaurant implements Serializable {
         return unfulfilledOrders;
     }
 
-    //Method that takes a Customer object and returns a customer order history arraylist - OJ
-    //returns an empty arraylist if no orders match
+
+    /**
+     * @param customer Method that takes a Customer object and returns a customer order history arraylist
+     * @return returns an empty arraylist if no orders match
+     */
     public ArrayList<Order> returnCustomerOrderHistory(Customer customer) {
         ArrayList<Order> customerOrders = new ArrayList<Order>();
         for (Order order : orders) {
@@ -95,8 +149,10 @@ public class Restaurant implements Serializable {
         return customerOrders;
     }
 
-    //Returns arraylist of all eatins - OJ
-    //Empty arraylist if no match
+
+    /**
+     * @return Returns arraylist of all eatins , Empty arraylist if no match
+     */
     public ArrayList<Order> returnEatInOrders(){
         ArrayList<Order> eatinOrders = new ArrayList<Order>();
         for (Order order : orders){
@@ -107,8 +163,9 @@ public class Restaurant implements Serializable {
         return eatinOrders;
     }
 
-    //Returns arraylist of all takeaways - OJ
-    //Empty arraylist if no match
+    /**
+     * @return Returns arraylist of all takeaways ,Empty arraylist if no match
+     */
     public ArrayList<Order> returnTakeawayOrders(){
         ArrayList<Order> takeawayOrders = new ArrayList<Order>();
         for (Order order : orders){
@@ -119,8 +176,9 @@ public class Restaurant implements Serializable {
         return takeawayOrders;
     }
 
-    //Returns arraylist of all deliveries - OJ
-    //Empty arraylist if no match
+    /**
+     * @return Returns arraylist of all deliveries , Empty arraylist if no match
+     */
     public ArrayList<Order> returnDeliveryOrders(){
         ArrayList<Order> deliveryOrders = new ArrayList<Order>();
         for (Order order : orders){
@@ -131,7 +189,14 @@ public class Restaurant implements Serializable {
         return deliveryOrders;
     }
 
-    //Make a booking on the smallest available table. Return the table number or 0 if impossible.
+    /**
+     * Make a booking on the smallest available table.
+     * @param guestCount the guest count
+     * @param bookingTime the booking time
+     * @param bookingDuration the duration of the booking
+     * @param customer the customer
+     * @return Return the table number or 0 if impossible.
+     */
     public int findTableAndBook(int guestCount, LocalDateTime bookingTime, long bookingDuration, Customer customer){
         for(int i = 1; i < tables.length; i++){
             if(tables[i-1].addBooking(guestCount, bookingTime, bookingDuration, customer)){
@@ -141,20 +206,73 @@ public class Restaurant implements Serializable {
         return 0;
     }
 
-//    public void addStaff(){
-//        login.newChef("name","hello","Chef","food","road");
-//
-//    }
-//    public void addOrders(){
-//        Order order = new Order(1,new Customer("hello","sda","Sam","Raine","Swansea"), "", menu.getAllItems());
-//        orders.add(order);
-//       // System.out.println(getAllOrders().size());
-//
-//    }
+
+    /**
+     * Method sets an order in the order arraylist as complete
+     * @param completedOrder the order to mark complete
+     */
+    public void setOrderComplete(Order completedOrder){
+        for (Order order : orders) {
+            if (order.equals(completedOrder)){
+                order.setOrderCompleted(true);
+            }
+        }
+    }
+
+    /**
+     * method to take a string representing date time and return an order with a corresponding time
+     * @param dateTimeString the time that the order was placed
+     * @return
+     */
+    public Order returnOrderByOrderTimeString(String dateTimeString){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd : HH mm ss");
+        for (Order order : orders){
+            String orderTime = order.getOrderDateTime().format(formatter);
+            if (orderTime.equals(dateTimeString)){
+                return order;
+            }
+        }
+        return null;
+    }
 
 
-    //Saves the restaurant object (and all aggregated or referenced objects with it - full system state save) - JB
-    //Please note the load function is in Main. Need to be able to load without previous instance existing - JB
+
+
+    /**
+     * turns an arraylist of order objects into orderstring objects for displaying in tableview
+     * @param ordersArrayList
+     * @return
+     */
+    public ArrayList<OrderString> convertOrdersToStringArray(ArrayList<Order> ordersArrayList){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd : HH mm ss");
+        ArrayList<OrderString> orderStringArrayList = new ArrayList<>();
+        for (Order order: ordersArrayList){
+            String orderedString = "";
+            String customerUserName = order.getCustomer().getUsername();
+            String tableNumber = "";
+            String orderType = order.typeOfOrder();
+            String orderDateTime = "";
+            for (MenuItem menuItem : order.getOrderedMenuItems()){
+                orderedString = orderedString + menuItem.getName() + ", ";
+            }
+            if (orderType.equals("Eat In")){
+                EatIn eatin = (EatIn) order;
+                tableNumber = String.valueOf(eatin.getTable().getTableNumber());
+            } else {
+                tableNumber = "NA";
+            }
+            orderDateTime = order.getOrderDateTime().format(formatter);
+            OrderString newOrderString = new OrderString(orderedString, customerUserName, tableNumber, orderType, orderDateTime);
+            orderStringArrayList.add(newOrderString);
+        }
+        return orderStringArrayList;
+    }
+
+    /**
+     *Saves the restaurant object (and all aggregated or referenced objects with it - full system state save) - JB
+     * Please note the load function is in Main. Need to be able to load without previous instance existing - JB
+     */
+
     public void saveRestaurant(){
         try {
             File restaurantFile = new File("src/main/restaurant.ser");
