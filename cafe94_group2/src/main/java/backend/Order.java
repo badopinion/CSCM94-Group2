@@ -3,7 +3,7 @@ package backend;
 import java.util.ArrayList;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.io.*;
+import java.io.Serializable;
 
 /**
  * An order class (child: Eatin, Takeaway, Delivery)
@@ -129,15 +129,9 @@ public class Order implements Serializable{
     public java.lang.String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String dateTime = orderDateTime.format(formatter);
-        return "Order{" +
-                "orderID= " + orderID +
-                ", customer= " + customer.getUsername() +
-                ", orderNotes= '" + orderNotes + '\'' +
-                ", orderCompleted= " + orderCompleted +
-                ", orderCancelled= " + orderCancelled +
-                ", orderedMenuItems= " + orderedMenuItems +
-                ", orderDateTime= " + dateTime +
-                ", orderType = " + this.typeOfOrder() +
-                '}';
+        return "Order{"
+                + "orderID= " + orderID + ", customer= " + customer.getUsername() + ", orderNotes= '" + orderNotes + '\''
+                + ", orderCompleted= " + orderCompleted + ", orderCancelled= " + orderCancelled + ", orderedMenuItems= "
+                + orderedMenuItems + ", orderDateTime= " + dateTime + ", orderType = " + this.typeOfOrder() + '}';
     }
 }

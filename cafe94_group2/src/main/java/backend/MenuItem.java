@@ -1,6 +1,6 @@
 package backend;
 
-import java.io.*;
+import java.io.Serializable;
 
 /**
  * A menuItem class (food and drink that can be ordered).

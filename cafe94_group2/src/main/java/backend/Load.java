@@ -1,6 +1,9 @@
 package backend;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
 /**
  * Load class is used to get the Restaurant object out of a file or to create a new one if no such file exists.

@@ -40,8 +40,4 @@ public class Customer extends User{
     public void addOrderToOrderHistory(Order order){
         orderHistory.add(order);
     }
-
-
-
-
 }

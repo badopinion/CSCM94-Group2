@@ -1,7 +1,7 @@
 package backend;
 
 import java.util.ArrayList;
-import java.io.*;
+import java.io.Serializable;
 
 /**
  * Login holds all user profiles and keeps track of which user is currently logged in.
@@ -11,8 +11,8 @@ import java.io.*;
  */
 
 public class Login implements Serializable {
-	User loggedIn = null; // User that is currently logged in. JB
-	ArrayList<User> userList = new ArrayList<User>(); // All user profiles. JB
+	private User loggedIn = null; // User that is currently logged in. JB
+	private ArrayList<User> userList = new ArrayList<User>(); // All user profiles. JB
 
 	/**
 	 *  Constructor
@@ -49,8 +49,8 @@ public class Login implements Serializable {
 	 * @return  returns false if entered username was already taken
 	 */
 	public boolean newManager(String username, String password, String firstName, String lastName, String homeAddress){
-		for(User u : userList){
-			if(u.checkUsername(username)){
+		for (User u : userList){
+			if (u.checkUsername(username)){
 				return false;
 			}
 		}
@@ -59,8 +59,8 @@ public class Login implements Serializable {
 	}
 
 	public boolean newWaiter(String username, String password, String firstName, String lastName, String homeAddress){
-		for(User u : userList){
-			if(u.checkUsername(username)){
+		for (User u : userList){
+			if (u.checkUsername(username)){
 				return false;
 			}
 		}
@@ -69,8 +69,8 @@ public class Login implements Serializable {
 	}
 
 	public boolean newChef(String username, String password, String firstName, String lastName, String homeAddress){
-		for(User u : userList){
-			if(u.checkUsername(username)){
+		for (User u : userList){
+			if (u.checkUsername(username)){
 				return false;
 			}
 		}
@@ -79,8 +79,8 @@ public class Login implements Serializable {
 	}
 
 	public boolean newDriver(String username, String password, String firstName, String lastName, String homeAddress){
-		for(User u : userList){
-			if(u.checkUsername(username)){
+		for (User u : userList){
+			if (u.checkUsername(username)){
 				return false;
 			}
 		}
@@ -89,8 +89,8 @@ public class Login implements Serializable {
 	}
 
 	public boolean newCustomer(String username, String password, String firstName, String lastName, String homeAddress){
-		for(User u : userList){
-			if(u.checkUsername(username)){
+		for (User u : userList){
+			if (u.checkUsername(username)){
 				return false;
 			}
 		}
@@ -121,11 +121,21 @@ public class Login implements Serializable {
 	 * @return returns the type of user is logged
 	 */
 	public String checkLoggedInUserType(){
-		if(loggedIn instanceof Manager) return "Manager";
-		if(loggedIn instanceof Waiter) return "Waiter";
-		if(loggedIn instanceof Driver) return "Driver";
-		if(loggedIn instanceof Chef) return "Chef";
-		if(loggedIn instanceof Customer) return "Customer";
+		if (loggedIn instanceof Manager) {
+			return "Manager";
+		}
+		if (loggedIn instanceof Waiter) {
+			return "Waiter";
+		}
+		if (loggedIn instanceof Driver) {
+			return "Driver";
+		}
+		if (loggedIn instanceof Chef) {
+			return "Chef";
+		}
+		if (loggedIn instanceof Customer) {
+			return "Customer";
+		}
 		return "Invalid subclass";
 	}
 
@@ -135,11 +145,21 @@ public class Login implements Serializable {
 	 * @return returns what type of user is logged
 	 */
 	public String checkUserType(User userIn){
-		if(userIn instanceof Manager) return "Manager";
-		if(userIn instanceof Waiter) return "Waiter";
-		if(userIn instanceof Driver) return "Driver";
-		if(userIn instanceof Chef) return "Chef";
-		if(userIn instanceof Customer) return "Customer";
+		if (userIn instanceof Manager) {
+			return "Manager";
+		}
+		if (userIn instanceof Waiter) {
+			return "Waiter";
+		}
+		if (userIn instanceof Driver) {
+			return "Driver";
+		}
+		if (userIn instanceof Chef) {
+			return "Chef";
+		}
+		if (userIn instanceof Customer) {
+			return "Customer";
+		}
 		return "Invalid subclass";
 	}
 
@@ -151,8 +171,8 @@ public class Login implements Serializable {
 	 * @return returns login credentials
 	 */
 	public boolean loginWithCredentials(String username, String password){
-		for(User u : userList){
-			if(u.checkCredentials(username, password)){
+		for (User u : userList){
+			if (u.checkCredentials(username, password)){
 				this.loggedIn = u;
 				return true;
 			}
@@ -166,8 +186,8 @@ public class Login implements Serializable {
 	 * @return returns the user
 	 */
 	public User getUserFromUsername(String username){
-		for(User u : userList){
-			if(u.getUsername().equals(username)){
+		for (User u : userList){
+			if (u.getUsername().equals(username)){
 				return u;
 			}
 		}
@@ -181,7 +201,7 @@ public class Login implements Serializable {
 	 */
 	public Customer getCustomerFromUsername(String username){
 		User u = getUserFromUsername(username);
-		if(u instanceof Customer){
+		if (u instanceof Customer){
 			Customer c = (Customer) u;
 			return c;
 		}
@@ -201,8 +221,8 @@ public class Login implements Serializable {
 	 * @param username Username of the person to delete.
 	 */
 	public void removeUser(String username){
-		for(int i = 0; i < userList.size(); i++){
-			if(username.equals(userList.get(i).getUsername())){
+		for (int i = 0; i < userList.size(); i++){
+			if (username.equals(userList.get(i).getUsername())){
 				userList.remove(i);
 			}
 		}
@@ -211,8 +231,8 @@ public class Login implements Serializable {
 	// Gets the full staff list - JB
 	public ArrayList<User> getStaffList() {
 		ArrayList<User> out = new ArrayList<User>();
-		for(User u : userList){
-			if(u instanceof Staff){
+		for (User u : userList){
+			if (u instanceof Staff){
 				out.add(u);
 			}
 		}

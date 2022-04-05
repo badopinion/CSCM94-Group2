@@ -1,6 +1,6 @@
 package backend;
 
-import java.io.*;
+import java.io.Serializable;
 
 /**
  * Superclass of all user types. Contains information and methods relevant to all users
@@ -121,6 +121,4 @@ public class User implements Serializable {
 	public boolean checkCredentials(String userIn, String passIn){
 		return checkUsername(userIn) && checkPassword(passIn);
 	}
-
-
 }

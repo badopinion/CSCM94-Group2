@@ -35,7 +35,4 @@ public class Staff extends User{
     public ArrayList<Shift> getShifts() {
         return shifts;
     }
-
-
-
 }
