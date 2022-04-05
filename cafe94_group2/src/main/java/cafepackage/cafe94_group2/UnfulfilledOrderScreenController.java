@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
 /**
  The Unfulfilled order screen Controller
  @author Oliver Jackson
- @version2
+ @version3
  */
 
 public class UnfulfilledOrderScreenController implements Initializable {
@@ -47,6 +47,11 @@ public class UnfulfilledOrderScreenController implements Initializable {
 
     private ObservableList<OrderString> orderStringList;
 
+    /**
+     * Initializes the unfulfilled order screen including the orders table
+     * @param url
+     * @param rb
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Restaurant res = new Load().getRestaurantFromFile();
@@ -59,6 +64,10 @@ public class UnfulfilledOrderScreenController implements Initializable {
         orderTbv.setItems(orderStringList);
     }
 
+    /**
+     * Method selects an order from tableview and marks the order as complete
+     * @param actionEvent button click orderCompleteButton
+     */
     @FXML
     private void markOrderComplete(ActionEvent actionEvent) {
         Restaurant res = new Load().getRestaurantFromFile();
