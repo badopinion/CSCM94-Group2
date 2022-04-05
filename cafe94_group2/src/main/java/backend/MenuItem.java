@@ -17,16 +17,8 @@ public class MenuItem implements Serializable {
 	private boolean onMenu; // Is this item currently being served?
 	private boolean currentSpecial; // Is this item a special?
 	private MenuItemType menuItemType;
-
-	/**
-	 *  Constructor
-	 * @param name the name of the item
-	 * @param description the description of the item
-	 * @param price the price of the item
-	 * @param onMenu if item is on menu
-	 * @param isSpecial if item is special
-	 * @param menuItemType the menu item type
-	 */
+	
+	// Constructor
 	public MenuItem(String name, String description, float price, boolean onMenu, boolean isSpecial, MenuItemType menuItemType){
 		this.name = name;
 		this.description = description;
@@ -35,11 +27,8 @@ public class MenuItem implements Serializable {
 		this.currentSpecial = isSpecial;
 		this.menuItemType = menuItemType;
 	}
-
-	/**
-	 * Getters
-	 * @return returns the name , description , price , if its on the menu, if special and type
-	 */
+	
+	// Getters &
 	public String getName(){
 		return this.name;
 	}
@@ -64,10 +53,7 @@ public class MenuItem implements Serializable {
 		return menuItemType;
 	}
 
-	/**
-	 * Setters
-	 * @param newName the new item name
-	 */
+	//Setters
 
 	public void setName(String newName){
 		this.name = newName;
@@ -93,10 +79,7 @@ public class MenuItem implements Serializable {
 		this.menuItemType = menuItemType;
 	}
 
-	/**
-	 * toString Method
-	 * @return returns tostring
-	 */
+	//toString Method - OJ
 
 	public String toString(){
 		return name + ", " + description + ", " + price + ", " + "on menu: " + onMenu + ", " + "is special: " + currentSpecial;

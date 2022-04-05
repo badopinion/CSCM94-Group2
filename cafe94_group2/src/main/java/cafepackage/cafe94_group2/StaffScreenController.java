@@ -16,17 +16,12 @@ import java.io.IOException;
 /**
  this is Staff screen Controller
  @author Yingfan Zhang
- @version 1
+ @version1
  */
 public class StaffScreenController {
     @FXML
     private Button managerChoose, driverChoose, waiterChoose,chefChoose;
 
-    /**
-     *
-     * @param event
-     * @throws IOException
-     */
     public void ManagerChooseOnAction(ActionEvent event) throws IOException {
         Stage managerScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("ManagerScreen.fxml"));

@@ -31,7 +31,7 @@ import static java.lang.Double.sum;
 /**
  The Menu screen Controller
  @author Hristiana Davidova, Yingfan Zhang, Oliver Jackson
- @version 4
+ @version4
  */
 
 public class MenuScreenController implements Initializable {
@@ -70,8 +70,8 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * Enables user to choose between food, drink, and coffee options
-     * If user selects a new option different item options appear
+     * enables user to choose between food, drink, and coffee options
+     * if user selects a new option different item options appear
      * @param actionEvent clicking the dropdown box
      */
     @FXML
@@ -88,8 +88,8 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * Displays food menu items in display box
-     * If menu item is special displays (Today's Special)
+     * displays food menu items in display box
+     * if menu item is special displays (Today's Special)
      */
     private void displayFood(){
         Restaurant res = new Load().getRestaurantFromFile();
@@ -108,7 +108,7 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * Displays drink menu items in display box
+     * displays drink menu items in display box
      */
     private void displayDrink(){
         Restaurant res = new Load().getRestaurantFromFile();
@@ -123,7 +123,7 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * Displays coffee menuItems in display box
+     * displays coffee menuItems in display box
      */
     private void displayCoffee(){
         Restaurant res = new Load().getRestaurantFromFile();
@@ -139,9 +139,9 @@ public class MenuScreenController implements Initializable {
 
     /**
      * User can select an option from the display box and if they click the add button
-     * The item is added to an arrayList called orderList, held by the menuScreenController.
-     * DisplayTwo is then updated to reflect the change in orderList
-     * @param actionEvent Clicking the add button
+     * the item is added to an arrayList called orderList, held by the menuScreenController.
+     * displayTwo is then updated to reflect the change in orderList
+     * @param actionEvent clicking the add button
      */
     @FXML
     private void AddButtonOnAction(ActionEvent actionEvent) {
@@ -167,8 +167,8 @@ public class MenuScreenController implements Initializable {
 
     /**
      * User can select an option from the display box and if they click the remove button
-     * The item is removed from the arrayList orderList, held by the menuScreenController.
-     * DisplayTwo is then updated to reflect the change in orderList
+     * the item is removed from the arrayList orderList, held by the menuScreenController.
+     * displayTwo is then updated to reflect the change in orderList
      * @param actionEvent clicking the remove button
      */
     @FXML
@@ -227,7 +227,7 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * Loads the eat in screen
+     * loads the eat in screen
      * @param res the restaurant object
      * @throws IOException
      */
@@ -244,7 +244,7 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * Loads the takeaway screen
+     * loads the takeaway screen
      * @param res the restaurant object
      * @throws IOException
      */
@@ -261,7 +261,7 @@ public class MenuScreenController implements Initializable {
     }
 
     /**
-     * Loads the delivery screen
+     * loads the delivery screen
      * @param res the restaurant object
      * @throws IOException
      */
