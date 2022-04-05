@@ -7,28 +7,46 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.ManagerAddScreenController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.ManagerAddScreenController">
    <children>
-      <Label layoutX="69.0" layoutY="77.0" prefHeight="31.0" prefWidth="99.0" text="First name">
+      <Label layoutX="69.0" layoutY="46.0" prefHeight="31.0" prefWidth="99.0" text="First name">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="69.0" layoutY="131.0" prefHeight="31.0" prefWidth="99.0" text="Last name">
+      <Label layoutX="70.0" layoutY="93.0" prefHeight="31.0" prefWidth="99.0" text="Last name">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="69.0" layoutY="184.0" prefHeight="31.0" prefWidth="99.0" text="Type">
+      <Label layoutX="69.0" layoutY="184.0" prefHeight="31.0" prefWidth="99.0" text="Type">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <TextField layoutX="219.0" layoutY="77.0" prefHeight="31.0" prefWidth="227.0" />
-      <TextField layoutX="219.0" layoutY="131.0" prefHeight="31.0" prefWidth="227.0" />
-      <ComboBox layoutX="219.0" layoutY="184.0" prefHeight="31.0" prefWidth="227.0" promptText="Please choose staff type." />
-      <Button layoutX="119.0" layoutY="287.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="130.0" text="Add Staff" />
-      <Button layoutX="366.0" layoutY="287.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="130.0" text="Cancel" />
+      <TextField fx:id="firstNameField" layoutX="219.0" layoutY="46.0" prefHeight="31.0" prefWidth="227.0" />
+      <TextField fx:id="lastNameField" layoutX="219.0" layoutY="93.0" prefHeight="31.0" prefWidth="227.0" />
+      <ComboBox fx:id="staffTypeField" layoutX="219.0" layoutY="184.0" prefHeight="31.0" prefWidth="227.0" promptText="Please choose staff type." />
+      <Button layoutX="120.0" layoutY="332.0" mnemonicParsing="false" onAction="#addStaffButtonOnAction" prefHeight="45.0" prefWidth="130.0" text="Add Staff" />
+      <Button layoutX="316.0" layoutY="332.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="130.0" text="Cancel" />
+      <Label layoutX="70.0" layoutY="137.0" prefHeight="31.0" prefWidth="99.0" text="Address">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="addressField" layoutX="219.0" layoutY="137.0" prefHeight="31.0" prefWidth="227.0" />
+      <Label layoutX="70.0" layoutY="227.0" prefHeight="31.0" prefWidth="99.0" text="Username">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameField" layoutX="219.0" layoutY="227.0" prefHeight="31.0" prefWidth="227.0" />
+      <Label layoutX="70.0" layoutY="272.0" prefHeight="31.0" prefWidth="99.0" text="Password">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="passwordField" layoutX="219.0" layoutY="272.0" prefHeight="31.0" prefWidth="227.0" />
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="-2.0" layoutY="309.0" prefHeight="17.0" prefWidth="600.0" text="Error Label" visible="false" />
    </children>
 </AnchorPane>
