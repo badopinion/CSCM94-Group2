@@ -34,7 +34,7 @@
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="597.0">
                <children>
-                  <Button fx:id="placeOrderButton" layoutX="415.0" layoutY="98.0" mnemonicParsing="false" onAction="#PlaceOrderButtonOnAction" prefHeight="47.0" prefWidth="143.0" text="Place Order" />
+                  <Button fx:id="placeOrderButton" layoutX="415.0" layoutY="98.0" mnemonicParsing="false" onAction="#placeOrderButtonOnAction" prefHeight="47.0" prefWidth="143.0" text="Place Order" />
                   <TextField fx:id="orderPrice" layoutX="414.0" layoutY="33.0" prefHeight="47.0" prefWidth="143.0" promptText="Order Price" />
                   <Label layoutX="335.0" layoutY="39.0" prefHeight="36.0" prefWidth="56.0" text="Price">
                      <font>

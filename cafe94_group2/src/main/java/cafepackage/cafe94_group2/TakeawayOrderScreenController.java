@@ -1,6 +1,11 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
+
+import backend.Customer;
+import backend.Load;
+import backend.Restaurant;
+import backend.User;
+import backend.Waiter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,7 +28,7 @@ import java.util.ResourceBundle;
 
 public class TakeawayOrderScreenController implements Initializable {
     @FXML
-    ComboBox<String> pickUpTimeSelection;
+    private ComboBox<String> pickUpTimeSelection;
     @FXML
     private TextField orderNotes;
     @FXML
@@ -61,7 +66,7 @@ public class TakeawayOrderScreenController implements Initializable {
      * @param actionEvent clicking the place orderbutton
      */
     @FXML
-    private void PlaceOrderButtonOnAction(ActionEvent actionEvent) {
+    private void placeOrderButtonOnAction(ActionEvent actionEvent) {
         boolean isMyComboBoxEmpty = pickUpTimeSelection.getSelectionModel().isEmpty();
         if (isMyComboBoxEmpty) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
