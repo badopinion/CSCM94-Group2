@@ -55,8 +55,7 @@ public class Login implements Serializable {
 				return false;
 			}
 		}
-		userList.add(new Manager(username, password, firstName, lastName, 01, homeAddress));
-		return true;
+
 	}
 
 
@@ -66,8 +65,7 @@ public class Login implements Serializable {
 				return false;
 			}
 		}
-		userList.add(new Waiter(username, password, firstName, lastName, 01, homeAddress));
-		return true;
+
 	}
 
 	public boolean newChef(String username, String password, String firstName, String lastName, String homeAddress){
@@ -76,8 +74,7 @@ public class Login implements Serializable {
 				return false;
 			}
 		}
-		userList.add(new Chef(username, password, firstName, lastName, 01, homeAddress));
-		return true;
+
 	}
 
 	public boolean newDriver(String username, String password, String firstName, String lastName, String homeAddress){
@@ -86,8 +83,7 @@ public class Login implements Serializable {
 				return false;
 			}
 		}
-		userList.add(new Driver(username, password, firstName, lastName, 01, homeAddress));
-		return true;
+
 	}
 
 	public boolean newCustomer(String username, String password, String firstName, String lastName, String homeAddress){
@@ -211,7 +207,7 @@ public class Login implements Serializable {
 
 	// Gets the full staff list - JB
 	// Made it return a staff list as I need access to dates - SR
-	public ArrayList<Staff> getStaffList() {
+	 public ArrayList<Staff> getStaffList() {
 		ArrayList<Staff> out = new ArrayList<Staff>();
 		for(User u : userList){
 			if(u instanceof Staff){
