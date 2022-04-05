@@ -18,8 +18,15 @@ public class Booking implements Serializable {
 	private Customer customer;
 	private boolean approved;
 	private boolean cancelled;
-	
-	// Constructor
+
+	/**
+	 * This is booking Constructor.
+	 * @param guestCount The count of the guest
+	 * @param bookingStart The start time of booking
+	 * @param bookingDuration The duration time of booking
+	 * @param customer The customer of booking
+	 */
+
 	public Booking(int guestCount, LocalDateTime bookingStart, long bookingDuration, Customer customer){
 		this.guestCount = guestCount;
 		this.bookingStart = bookingStart;
@@ -28,44 +35,72 @@ public class Booking implements Serializable {
 		this.approved = false;
 		this.cancelled = false;
 	}
-	
-	// Getters & Setters
+
+	/**
+	 * Get the count of guest.
+	 * @return Int value of the guest count
+	 */
 	public int getGuestCount(){
 		return this.guestCount;
 	}
-	
+
+	/**
+	 * Get the start time of booking.
+	 * @return LocalDateTime value of start time
+	 */
 	public LocalDateTime getBookingStart(){
 		return this.bookingStart;
 	}
 
+	/**
+	 * Get the end time of booking.
+	 * @return LocalDateTime value of end time
+	 */
 	public LocalDateTime getBookingEnd(){
 		return this.bookingEnd;
 	}
-	
+
+	/**
+	 * Get the customer of booking.
+	 * @return Customer value of customer
+	 */
 	public Customer getCustomer(){
 		return this.customer;
 	}
-	
+
+	/**
+	 * Get boolean value about whether is approved
+	 * @return Boolean value of whether is approved
+	 */
 	public boolean isApproved(){
 		return this.approved;
 	}
-	
+
+	/**
+	 * Get boolean value about whether is cancelled
+	 * @return Boolean value of whether is cancelled
+	 */
 	public boolean isCancelled(){
 		return this.cancelled;
 	}
-	
+
+	/**
+	 * Set approve value
+	 */
 	public void approve(){
 		this.approved = true;
 	}
-	
+
+	/**
+	 * Set cancel value
+	 */
 	public void cancel(){
 		System.out.println("Cancelling booking.");
 		this.cancelled = true;
 	}
 
 	/** Returns whether the Booking given as input clashes with this one.
-	 *
-	 * @param in
+	 * @param in Store in booking
 	 * @return
 	 */
 	public boolean intersects(Booking in){

@@ -13,6 +13,7 @@ public class Customer extends User{
     private ArrayList<Order> orderHistory = new ArrayList<Order>();
 
     /**
+     * Customer information
      * @param username the customer's id
      * @param password the customer's password
      * @param firstName the customer's first name

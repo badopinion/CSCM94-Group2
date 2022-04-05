@@ -29,7 +29,7 @@ public class Restaurant implements Serializable {
     private Table[] tables;
 
     /**
-     * // References to other aggregator methods
+     * References to other aggregator methods
      */
     public Login login;
     public Menu menu;
@@ -119,7 +119,7 @@ public class Restaurant implements Serializable {
     }
 
     /**
-     *method to show all orders that have not been fulfilled and have not been cancelled
+     * method to show all orders that have not been fulfilled and have not been cancelled
      * @return returns an ArrayList of orders not done
      */
     public ArrayList<Order> unfulfilledOrders(){
@@ -241,7 +241,7 @@ public class Restaurant implements Serializable {
     /**
      * turns an arraylist of order objects into orderstring objects for displaying in tableview
      * @param ordersArrayList
-     * @return
+     * @return Order list
      */
     public ArrayList<OrderString> convertOrdersToStringArray(ArrayList<Order> ordersArrayList){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd : HH mm ss");
@@ -269,8 +269,8 @@ public class Restaurant implements Serializable {
     }
 
     /**
-     *Saves the restaurant object (and all aggregated or referenced objects with it - full system state save) - JB
-     * Please note the load function is in Main. Need to be able to load without previous instance existing - JB
+     * Saves the restaurant object (and all aggregated or referenced objects with it - full system state save)
+     * Please note the load function is in Main. Need to be able to load without previous instance existing
      */
 
     public void saveRestaurant(){

@@ -10,6 +10,7 @@ public class Manager extends Staff{
 
 
     /**
+     * Manager information
      * @param username
      * @param password
      * @param firstName

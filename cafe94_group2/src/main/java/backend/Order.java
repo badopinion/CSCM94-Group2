@@ -71,7 +71,7 @@ public class Order implements Serializable{
 
 
     /**
-     *  Setters
+     * Setters
      * @param orderNotes the order notes
      */
 

@@ -11,7 +11,7 @@ import java.io.*;
 public class Load {
     /**
      * Due to confusion both these methods now do the same thing, unifying the previous two methods.
-     * @return returining the restaurant
+     * @return return the restaurant
      */
     public Restaurant loadRestaurant() {
         return getRestaurantFromFile();
