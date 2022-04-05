@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 /**
  * A menu class that aggregates menuItems and provides functionality for ordering food / drink.
- * @author Oliver Jackson, Jo Butler
+ * @author Oliver Jackson, Jo Butler, Yingfan Zhang
  * @version 2
  */
 
