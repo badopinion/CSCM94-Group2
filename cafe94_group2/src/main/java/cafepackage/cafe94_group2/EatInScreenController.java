@@ -1,6 +1,11 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
+import backend.Restaurant;
+import backend.Load;
+import backend.Table;
+import backend.Customer;
+import backend.User;
+import backend.Waiter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,7 +28,7 @@ import java.util.ResourceBundle;
 
 public class EatInScreenController implements Initializable {
     @FXML
-    ComboBox<String> tableSelection;
+    private ComboBox<String> tableSelection;
     @FXML
     private TextField orderPrice;
     @FXML
@@ -33,7 +38,7 @@ public class EatInScreenController implements Initializable {
 
     private static final DecimalFormat DECIMAL_FORMATTER = new DecimalFormat("###,##0.00");
 
-    ObservableList<String> table =
+    private ObservableList<String> table =
             FXCollections.observableArrayList(
                     "Table 1",
                     "Table 2",
@@ -70,7 +75,7 @@ public class EatInScreenController implements Initializable {
      * @param actionEvent clicking the placeorder button
      */
     @FXML
-    private void PlaceOrderButtonOnAction(ActionEvent actionEvent) {
+    private void placeOrderButtonOnAction(ActionEvent actionEvent) {
         boolean isMyComboBoxEmpty = tableSelection.getSelectionModel().isEmpty();
         if (isMyComboBoxEmpty) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);

@@ -1,6 +1,11 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
+
+import backend.Load;
+import backend.Restaurant;
+import backend.Staff;
+import backend.User;
+import backend.Manager;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -8,16 +13,14 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ResourceBundle;
-import java.util.ArrayList;
 
 /**
  * This is is the controller for a screen that allows the Manager to add staff to the system.
@@ -29,23 +32,23 @@ import java.util.ArrayList;
 
 public class ManagerAddScreenController implements Initializable {
     @FXML
-    TextField firstNameField;
+    private TextField firstNameField;
     @FXML
-    TextField lastNameField;
+    private TextField lastNameField;
     @FXML
-    TextField addressField;
+    private TextField addressField;
     @FXML
-    ComboBox<String> staffTypeField;
+    private ComboBox<String> staffTypeField;
     @FXML
-    TextField usernameField;
+    private TextField usernameField;
     @FXML
-    TextField passwordField;
+    private TextField passwordField;
     @FXML
-    Label errorLabel;
+    private Label errorLabel;
     @FXML
-    ListView<String> existingStaffListView;
+    private ListView<String> existingStaffListView;
     @FXML
-    Label selectedStaffLabel;
+    private Label selectedStaffLabel;
 
     private String selected = null;
 
@@ -71,8 +74,8 @@ public class ManagerAddScreenController implements Initializable {
                 selected = existingStaffListView.getSelectionModel().getSelectedItem();
                 User selStaff = new Load().loadRestaurant().login.getUserFromUsername(selected);
                 selectedStaffLabel.setText(
-                        selStaff == null ? "No staff selected" :
-                        selStaff.getFirstName() + " " + selStaff.getLastName() + ", "
+                        selStaff == null ? "No staff selected"
+                                : selStaff.getFirstName() + " " + selStaff.getLastName() + ", "
                                 + selStaff.getClass().toString().split("\\.")[1]
                 );
             }
@@ -89,21 +92,21 @@ public class ManagerAddScreenController implements Initializable {
      */
     public void addStaffButtonOnAction(ActionEvent event) throws IOException{
         Restaurant res = new Load().loadRestaurant();
-        if(firstNameField.getText().equals("") || firstNameField.getText() == null){
+        if (firstNameField.getText().equals("") || firstNameField.getText() == null){
             errorLabel.setText("Please enter the employee's first name.");
-        } else if(lastNameField.getText().equals("") || lastNameField.getText() == null){
+        } else if (lastNameField.getText().equals("") || lastNameField.getText() == null){
             errorLabel.setText("Please enter the employee's last name.");
-        } else if(addressField.getText().equals("") || addressField.getText() == null){
+        } else if (addressField.getText().equals("") || addressField.getText() == null){
             errorLabel.setText("Please enter the employee's address.");
-        } else if(staffTypeField.getValue() == null){
+        } else if (staffTypeField.getValue() == null){
             errorLabel.setText("Please choose a staff type.");
-        }else if(usernameField.getText().equals("") || usernameField.getText() == null){
+        }else if (usernameField.getText().equals("") || usernameField.getText() == null){
             errorLabel.setText("Please enter the desired username.");
-        } else if(passwordField.getText().equals("") || passwordField.getText() == null){
+        } else if (passwordField.getText().equals("") || passwordField.getText() == null){
             errorLabel.setText("Please enter a password.");
         } else {
-            if(staffTypeField.getValue().equals("Waiter")){
-                if(res.login.newWaiter(
+            if (staffTypeField.getValue().equals("Waiter")){
+                if (res.login.newWaiter(
                         usernameField.getText(), passwordField.getText(), firstNameField.getText(),
                         lastNameField.getText(), addressField.getText()
                 )){
@@ -111,8 +114,8 @@ public class ManagerAddScreenController implements Initializable {
                 } else {
                     errorLabel.setText("Failed to create the user. Try a different username.");
                 }
-            } else if(staffTypeField.getValue().equals("Driver")){
-                if(res.login.newDriver(
+            } else if (staffTypeField.getValue().equals("Driver")){
+                if (res.login.newDriver(
                         usernameField.getText(), passwordField.getText(), firstNameField.getText(),
                         lastNameField.getText(), addressField.getText()
                 )){
@@ -120,8 +123,8 @@ public class ManagerAddScreenController implements Initializable {
                 } else {
                     errorLabel.setText("Failed to create the user. Try a different username.");
                 }
-            } else if(staffTypeField.getValue().equals("Chef")){
-                if(res.login.newChef(
+            } else if (staffTypeField.getValue().equals("Chef")){
+                if (res.login.newChef(
                         usernameField.getText(), passwordField.getText(), firstNameField.getText(),
                         lastNameField.getText(), addressField.getText()
                 )){
@@ -143,7 +146,7 @@ public class ManagerAddScreenController implements Initializable {
      * @throws IOException Throws if input fails.
      */
     public void removeButtonOnAction(ActionEvent event) throws IOException{
-        if(selected != null) {
+        if (selected != null) {
             Restaurant res = new Load().loadRestaurant();
             res.login.removeUser(selected);
             res.saveRestaurant();
@@ -152,14 +155,14 @@ public class ManagerAddScreenController implements Initializable {
     }
 
     /**
-     * Utility function that puts all staff members into the ListView.
+     * Utility function that puts all staff members other than the manager into the ListView.
      */
     public void displayStaffMembers(){
         Restaurant res = new Load().loadRestaurant();
         existingStaffListView.getItems().clear();
-        for(User u : res.login.getStaffList()){
-            if(u instanceof Staff){
-                if(!(u instanceof Manager)) {
+        for (User u : res.login.getStaffList()){
+            if (u instanceof Staff){
+                if (!(u instanceof Manager)) {
                     existingStaffListView.getItems().add(u.getUsername());
                 }
             }

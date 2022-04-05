@@ -1,13 +1,9 @@
-package com.example.cw2;
-//package cafepackage.cafe94_group2;
-//import backend.*;
+package cafepackage.cafe94_group2;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 /**
  The Popular Item screen Controller
@@ -18,7 +14,7 @@ import java.io.IOException;
 public class PopularItemController extends Application {
 
     @FXML
-    public Button closeButton;
+    private Button closeButton;
     @FXML
     public void handleCloseButtonAction(ActionEvent event) {
         Stage stage = (Stage) closeButton.getScene().getWindow();

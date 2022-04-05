@@ -1,8 +1,7 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
+import backend.OrderString;
 import backend.Load;
-import backend.MenuItem;
 import backend.Order;
 import backend.Restaurant;
 import javafx.collections.FXCollections;
@@ -15,8 +14,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
@@ -31,17 +28,17 @@ public class UnfulfilledOrderScreenController implements Initializable {
     @FXML
     private TableView<OrderString> orderTbv;
     @FXML
-    TableColumn<OrderString, String> items = new TableColumn<>("items");
+    private TableColumn<OrderString, String> items = new TableColumn<>("items");
     @FXML
-    TableColumn<OrderString, String> table = new TableColumn<>("table");
+    private TableColumn<OrderString, String> table = new TableColumn<>("table");
     @FXML
-    TableColumn<OrderString, String> orderType = new TableColumn<>("orderType");
+    private TableColumn<OrderString, String> orderType = new TableColumn<>("orderType");
     @FXML
-    TableColumn<OrderString, String> customer = new TableColumn<>("customer");
+    private TableColumn<OrderString, String> customer = new TableColumn<>("customer");
     @FXML
-    TableColumn<OrderString, String> orderTime = new TableColumn<>("orderTime");
+    private TableColumn<OrderString, String> orderTime = new TableColumn<>("orderTime");
     @FXML
-    Button orderCompleteButton;
+    private Button orderCompleteButton;
 
     private ObservableList<OrderString> orderStringList;
 

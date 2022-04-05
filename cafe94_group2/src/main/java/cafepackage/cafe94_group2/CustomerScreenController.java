@@ -1,7 +1,5 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +18,9 @@ import java.io.IOException;
  */
 public class CustomerScreenController {
     @FXML
-    private Button makeBooking, viewMenu;
+    private Button makeBooking;
+    @FXML
+    private Button viewMenu;
 
 
     /**

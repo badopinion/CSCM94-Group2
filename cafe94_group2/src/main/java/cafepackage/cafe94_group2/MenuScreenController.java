@@ -1,21 +1,23 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
 
-
+import backend.Load;
 import backend.MenuItem;
+import backend.MenuItemType;
+import backend.Restaurant;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Button;
+import javafx.scene.control.Alert;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.collections.ObservableList;
-import javafx.scene.control.SplitMenuButton;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -23,10 +25,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-
-import static java.lang.Double.sum;
 
 /**
  The Menu screen Controller
@@ -36,20 +35,24 @@ import static java.lang.Double.sum;
 
 public class MenuScreenController implements Initializable {
     @FXML
-    private ListView<String> display, displayTwo;
+    private ListView<String> display;
+    @FXML
+    private ListView<String> displayTwo;
     @FXML
     private TextField priceDisplay;
     @FXML
-    private ComboBox<String> chooseMenu, chooseType;
+    private ComboBox<String> chooseMenu;
+    @FXML
+    private ComboBox<String> chooseType;
     private ArrayList<String> orderList = new ArrayList<String>();
     private final String specialString = " (Today's special)";
     //    private MenuItem Order;
     @FXML
-    Button addButton;
+    private Button addButton;
     @FXML
-    Button removeButton;
+    private Button removeButton;
     @FXML
-    Button nextButton;
+    private Button nextButton;
 
 
     private static final DecimalFormat DECIMAL_FORMATTER = new DecimalFormat("###,##0.00");
@@ -144,7 +147,7 @@ public class MenuScreenController implements Initializable {
      * @param actionEvent Clicking the add button
      */
     @FXML
-    private void AddButtonOnAction(ActionEvent actionEvent) {
+    private void addButtonOnAction(ActionEvent actionEvent) {
         Restaurant res = new Load().getRestaurantFromFile();
         ObservableList<String> newOrderList;
         newOrderList = display.getSelectionModel().getSelectedItems();
@@ -172,7 +175,7 @@ public class MenuScreenController implements Initializable {
      * @param actionEvent clicking the remove button
      */
     @FXML
-    private void RemoveButtonOnAction(ActionEvent actionEvent) {
+    private void removeButtonOnAction(ActionEvent actionEvent) {
         Restaurant res = new Load().getRestaurantFromFile();
 
         ObservableList<String> removeOrderList;
@@ -206,7 +209,7 @@ public class MenuScreenController implements Initializable {
      * @throws IOException
      */
     @FXML
-    private void NextButtonAction(ActionEvent actionEvent) throws IOException {
+    private void nextButtonAction(ActionEvent actionEvent) throws IOException {
         Restaurant res = new Load().getRestaurantFromFile();
         if (orderList.size() == 0){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);

@@ -64,12 +64,12 @@
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <Text fx:id="CUSTOMER" layoutX="255.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CUSTOMER" wrappingWidth="111.58306312561035">
+                  <Text fx:id="customer" layoutX="255.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CUSTOMER" wrappingWidth="111.58306312561035">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <Text fx:id="HOURS_WORKED" layoutX="240.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOURS_WORKED" wrappingWidth="141.58306312561035">
+                  <Text fx:id="hoursWorked" layoutX="240.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOURS_WORKED" wrappingWidth="141.58306312561035">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -79,7 +79,7 @@
                            <Font size="18.0" />
                        </font>
                    </Text>
-                   <Text fx:id="BUIEST_HOURS" layoutX="240.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUIEST_HOURS" wrappingWidth="141.58306312561035">
+                   <Text fx:id="busiestHours" layoutX="240.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUIEST_HOURS" wrappingWidth="141.58306312561035">
                        <font>
                            <Font size="16.0" />
                        </font>

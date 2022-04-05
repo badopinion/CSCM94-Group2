@@ -1,12 +1,10 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.io.*;
 
 /**
  * This class serves as a driver class and launches the GUI display.
