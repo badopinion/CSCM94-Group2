@@ -3,7 +3,7 @@ package backend;
 import java.time.LocalDate;
 
 /**
- * BookingTable class.BookingTable
+ * Utility class for the benefit of CustomerBookingScreenController. Combines table and booking data into one object.
  * @author Jo Butler
  * @version 1
  */

@@ -14,7 +14,6 @@ import java.io.*;
  * @author Yingfan Zhang
  * @version 1.0
  */
-
 public class Main extends Application {
     /**
      * This method sets and displays the main stage/screen.

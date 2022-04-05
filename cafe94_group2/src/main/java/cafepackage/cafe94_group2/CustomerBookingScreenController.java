@@ -59,11 +59,7 @@ public class CustomerBookingScreenController implements Initializable{
     private ArrayList<BookingTable> currentCustomerBookings = null;
     private String selected = null;
 
-    /**
-     * Initialize method
-     * @param url
-     * @param rb
-     */
+
     @Override public void initialize(URL url, ResourceBundle rb) {
         bookingTime.setItems(timeList);
         bookingNumberOfGuests.setItems(numberOfGuestsList);
@@ -77,13 +73,10 @@ public class CustomerBookingScreenController implements Initializable{
                 selected = customerBookings.getSelectionModel().getSelectedItem();
             }
         });
+
+
     }
 
-    /**
-     * Button press to create a booking.
-     * @param event Used to get information in current scene.
-     * @throws IOException Throws if input fails.
-     */
     public void bookingButtonOnAction(ActionEvent event) throws IOException{
         Restaurant res = new Load().loadRestaurant();
 
@@ -144,11 +137,6 @@ public class CustomerBookingScreenController implements Initializable{
         }
     }
 
-    /**
-     * Button press to cancel the booking.
-     * @param event Used to get information in current scene
-     * @throws IOException Throws if input fails.
-     */
     public void cancelButtonOnAction(ActionEvent event) throws IOException{
         if(selected == null){
 
@@ -178,9 +166,7 @@ public class CustomerBookingScreenController implements Initializable{
 
     }
 
-    /**
-     * Display information on the customer's bookings into the list.
-     */
+    // Display information on the customer's bookings into the list. - JB
     public void displayCustomerBookings(){
         customerBookings.getItems().clear();
         ArrayList<BookingTable> ccb = fetchCurrentCustomerBookings();
@@ -196,11 +182,8 @@ public class CustomerBookingScreenController implements Initializable{
         customerBookings.getItems().addAll(output);
     }
 
-    /**
-     * Utility function to help display the customer's existing bookings.
-     * Get all of the current customer's bookings and their associated table. Uses a custom class.
-     * @return Reservation of customers' information
-     */
+    // Utility function to help display the customer's existing bookings. - JB
+    // Get all of the current customer's bookings and their associated table. Uses a custom class. - JB
     public ArrayList<BookingTable> fetchCurrentCustomerBookings(){
         ArrayList<BookingTable> ans = new ArrayList<BookingTable>();
         Restaurant res = new Load().loadRestaurant();

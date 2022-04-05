@@ -18,13 +18,7 @@ public class Shift implements Serializable{
     //manager can approve that this shift has been worked
     private boolean shiftApproved;
 
-    /**
-     * Constructor
-     * @param staffmember the staff member on shift
-     * @param date the date of the shift
-     * @param startTime the start time of the shift
-     * @param endTime the end time of the shift
-     */
+    //Constructor
     public Shift(Staff staffmember, String date, String startTime, String endTime){
         this.staffMember = staffmember;
         String startDateTime = date + " " + startTime;
@@ -35,10 +29,7 @@ public class Shift implements Serializable{
         this.shiftApproved = false;
     }
 
-    /**
-     * Getters
-     * @return returns start and end time of the staff memebr
-     */
+    //Getters
     public LocalDateTime getStart(){
         return this.start;
     }
@@ -51,9 +42,7 @@ public class Shift implements Serializable{
         return staffMember;
     }
 
-    /**
-     * @param yesOrNo  this method is used to approve whether or not the staff member worked the shift
-     */
+    //this method is used to approve whether or not the staff member worked the shift
     public void setShiftApproved(boolean yesOrNo){
         shiftApproved = yesOrNo;
     }

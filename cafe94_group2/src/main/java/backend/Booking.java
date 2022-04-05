@@ -63,11 +63,7 @@ public class Booking implements Serializable {
 		this.cancelled = true;
 	}
 
-	/** Returns whether the Booking given as input clashes with this one.
-	 *
-	 * @param in
-	 * @return
-	 */
+	// Returns whether the Booking given as input clashes with this one.
 	public boolean intersects(Booking in){
 		if(this.getBookingStart().isAfter(in.getBookingStart()) && this.getBookingStart().isBefore(in.getBookingEnd())){
 			// This booking starts in the middle of the input booking
