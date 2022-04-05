@@ -1,10 +1,8 @@
 package cafepackage.cafe94_group2;
 
-import backend.*;
-
 import backend.Load;
-import backend.MenuItem;
 import backend.Order;
+import backend.OrderString;
 import backend.Restaurant;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,17 +15,15 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
- The Unfulfilled order screen Controller
+ The Unfulfilled order screen Controller for non chefs
  @author Oliver Jackson
- @version3
+ @version2
  */
 
-public class UnfulfilledOrderScreenController implements Initializable {
+public class NonChefUnfulfilledOrderScreenController implements Initializable {
 
 
     @FXML
@@ -42,16 +38,10 @@ public class UnfulfilledOrderScreenController implements Initializable {
     TableColumn<OrderString, String> customer = new TableColumn<>("customer");
     @FXML
     TableColumn<OrderString, String> orderTime = new TableColumn<>("orderTime");
-    @FXML
-    Button orderCompleteButton;
+
 
     private ObservableList<OrderString> orderStringList;
 
-    /**
-     * Initializes the unfulfilled order screen including the orders table
-     * @param url
-     * @param rb
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Restaurant res = new Load().getRestaurantFromFile();
@@ -64,21 +54,5 @@ public class UnfulfilledOrderScreenController implements Initializable {
         orderTbv.setItems(orderStringList);
     }
 
-    /**
-     * Method selects an order from tableview and marks the order as complete
-     * @param actionEvent button click orderCompleteButton
-     */
-    @FXML
-    private void markOrderComplete(ActionEvent actionEvent) {
-        Restaurant res = new Load().getRestaurantFromFile();
-        OrderString orderString = orderTbv.getSelectionModel().getSelectedItem();
-        String time = orderString.getOrderDateTime();
-        Order order = res.returnOrderByOrderTimeString(time);
-        res.setOrderComplete(order);
-        res.saveRestaurant();
-        orderStringList = FXCollections.observableArrayList(res.convertOrdersToStringArray(res.unfulfilledOrders()));
-        orderTbv.setItems(orderStringList);
-
-    }
 
 }

@@ -83,7 +83,10 @@ public class Order implements Serializable{
         this.orderCancelled = orderCancelled;
     }
 
-    //method to calculate sum of price of order - OJ
+    /**
+     * method to get the price of the order
+     * @return the price of the order
+     */
     public float getOrderPrice(){
         float sum = 0;
         for (MenuItem menuItem : orderedMenuItems){
