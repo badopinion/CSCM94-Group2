@@ -21,7 +21,7 @@ public class ManagerScreenController {
     @FXML
     private Button addStaffButton;
     @FXML
-    private Button outstandingOrderButton;
+    private Button outstandingOrderButton2;
     @FXML
     private Button reportGeneratorButton3;
 
@@ -50,7 +50,7 @@ public class ManagerScreenController {
      * @throws IOException Throws if input fails
      */
     @FXML
-    private void outstandingOrderOnAction(ActionEvent actionEvent) throws IOException {
+    private void outstandingOrderOnAction2(ActionEvent actionEvent) throws IOException {
         Stage outstandingOrderScreen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("UnfulfilledOrderScreen.fxml"));
         outstandingOrderScreen.setTitle("Outstanding Order Interface");
