@@ -1,5 +1,9 @@
 package backend;
 
+/**
+ * Method to get the most poppular item ,
+ * @author  Sam Raine , Adam Schmidt
+ */
 public class FoodFeq {
     String foodName;
     int feq;

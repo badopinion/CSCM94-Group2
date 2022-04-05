@@ -6,7 +6,7 @@ import static java.util.stream.Collectors.groupingBy;
 /**
  * A report generating class. This class hold the methods to return the "most popular items",
  * "Most active customer", "Busiest periods in the restaurant", "Staff member with most hours worked".
- * @author Samuel Raine/Adam
+ * @author Sam Raine , Adam Schmidt
  * @version 2
  */
 

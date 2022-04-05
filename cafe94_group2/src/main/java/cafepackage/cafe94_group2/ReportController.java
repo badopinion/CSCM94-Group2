@@ -23,6 +23,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * The report controller
+ * @author Adam Schmidt , Samuel Raine
+ * @version 1
+ */
 public class ReportController  implements Initializable {
     @FXML
     Text CUSTOMER;
@@ -36,8 +41,13 @@ public class ReportController  implements Initializable {
     ListView feq;
     @FXML
     Button closeButton;
-    @Override
 
+    /**
+     * Initial the screen
+     * @param url
+     * @param rb
+     */
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
         Restaurant res = new Restaurant();
         //ArrayList<Staff> staffList = res.getAllStuff()
@@ -60,7 +70,9 @@ public class ReportController  implements Initializable {
         BUIEST_HOURS.setText(gp.mostActivePeriodReport());
     }
 
-    ;
+    /**
+     * Button press to close the screen
+     */
 
     @FXML
     private void closeButtonAction() {
