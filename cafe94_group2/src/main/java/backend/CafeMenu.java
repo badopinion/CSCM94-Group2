@@ -5,7 +5,7 @@ import java.util.Date;
 import java.io.*;
 
 /**
- * A menu class that aggrigates menuItems and provides functionality for ordering food / drink.
+ * A menu class that aggregates menuItems and provides functionality for ordering food / drink.
  * @author Oliver Jackson, Jo Butler
  * @version 2
  */
@@ -27,7 +27,8 @@ public class CafeMenu implements Serializable {
 	}
 
 	/**
-	 * @return // Returns only those items that are currently being served (onMenu is true).This also returns current specials (all items that are onMenu)
+	 * @return Returns only those items that are currently being served (onMenu is true).
+	 * This also returns current specials (all items that are onMenu)
 	 */
 	public ArrayList<MenuItem> getCurrentItems(){
 		ArrayList<MenuItem> currentItems = new ArrayList<MenuItem>();

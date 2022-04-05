@@ -1,7 +1,6 @@
 package cafepackage.cafe94_group2;
 
 import backend.*;
-
 import backend.Load;
 import backend.MenuItem;
 import backend.Order;
@@ -15,20 +14,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
- The Unfulfilled order screen Controller
- @author Oliver Jackson
- @version2
+ * The Unfulfilled order screen Controller
+ * @author Oliver Jackson
+ * @version 2
  */
 
 public class UnfulfilledOrderScreenController implements Initializable {
-
 
     @FXML
     private TableView<OrderString> orderTbv;
@@ -47,6 +44,12 @@ public class UnfulfilledOrderScreenController implements Initializable {
 
     private ObservableList<OrderString> orderStringList;
 
+    /**
+     * Initial the screen
+     * @param url
+     * @param rb
+     */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Restaurant res = new Load().getRestaurantFromFile();
@@ -58,6 +61,11 @@ public class UnfulfilledOrderScreenController implements Initializable {
         orderTime.setCellValueFactory(new PropertyValueFactory<OrderString, String>("orderDateTime"));
         orderTbv.setItems(orderStringList);
     }
+
+    /**
+     * Complete the mark order.
+     * @param actionEvent Button click to complete the order
+     */
 
     @FXML
     private void markOrderComplete(ActionEvent actionEvent) {

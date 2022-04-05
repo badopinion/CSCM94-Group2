@@ -37,16 +37,24 @@ public class Shift implements Serializable{
 
     /**
      * Getters
-     * @return returns start and end time of the staff memebr
+     * @return returns start time
      */
     public LocalDateTime getStart(){
         return this.start;
     }
 
+    /**
+     * Getters
+     * @return returns end time
+     */
     public LocalDateTime getEnd(){
         return this.end;
     }
 
+    /**
+     * Getters
+     * @return returns staff number
+     */
     public Staff getStaffMember() {
         return staffMember;
     }
@@ -57,6 +65,5 @@ public class Shift implements Serializable{
     public void setShiftApproved(boolean yesOrNo){
         shiftApproved = yesOrNo;
     }
-
 
 }

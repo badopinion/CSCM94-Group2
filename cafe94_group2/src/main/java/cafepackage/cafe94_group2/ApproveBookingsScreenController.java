@@ -10,7 +10,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -19,6 +18,11 @@ import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 import java.util.ArrayList;
 
+/**
+ * A class that used to approve booking
+ * @auther Jo Butler
+ * @version 1.0
+ */
 public class ApproveBookingsScreenController implements Initializable {
     @FXML
     Label bookingApprovalLabel;
@@ -26,6 +30,12 @@ public class ApproveBookingsScreenController implements Initializable {
     ListView<String> unapprovedBookings;
 
     String selected = null;
+
+    /**
+     * Initialize the screen
+     * @param url
+     * @param rb
+     */
 
     @Override public void initialize(URL url, ResourceBundle rb) {
         System.out.println("Initializing");
@@ -37,6 +47,12 @@ public class ApproveBookingsScreenController implements Initializable {
         });
         displayUnapprovedBookings();
     }
+
+    /**
+     * To approve the bookings.
+     * @param event Click the Approve Booking Button
+     * @throws IOException Throws if input fails
+     */
 
     public void approveBookingsButtonOnAction(ActionEvent event) throws IOException{
         Restaurant res = new Load().loadRestaurant();
@@ -63,6 +79,10 @@ public class ApproveBookingsScreenController implements Initializable {
         displayUnapprovedBookings();
     }
 
+    /**
+     * To show that have not been approved for the time being.
+     */
+
     public void displayUnapprovedBookings(){
         System.out.println("DUB running");
         unapprovedBookings.getItems().clear();
@@ -77,6 +97,11 @@ public class ApproveBookingsScreenController implements Initializable {
         }
         unapprovedBookings.getItems().addAll(output);
     }
+
+    /**
+     * Get information that have not been approved for the time being.
+     * @return The information that have not been approved
+     */
 
     public ArrayList<BookingTable> fetchUnapprovedBookings(){
         Restaurant res = new Load().loadRestaurant();

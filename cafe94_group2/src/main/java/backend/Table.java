@@ -16,8 +16,8 @@ public class Table implements Serializable{
     private int capacity;
     private ArrayList<Booking> bookings;
 
-    /**Constructor
-     *
+    /**
+     * Constructor
      * @param tableNumber the table number
      * @param capacity the capacity of the table
      */
@@ -28,23 +28,31 @@ public class Table implements Serializable{
     }
 
     /**
-     * Getters -
-     * @return returns table number and capacity
+     * Getters
+     * @return returns table number
      */
     public int getTableNumber() {
         return this.tableNumber;
     }
 
+    /**
+     * Getters
+     * @return returns capacity
+     */
     public int getCapacity() {
         return this.capacity;
     }
 
+    /**
+     * Getters
+     * @return returns arraylist of booking
+     */
     public ArrayList<Booking> getBookings(){
         return this.bookings;
     }
 
     /**
-     * Setters -
+     * Setters
      * @param tableNumber the table number
      */
     public void setTableNumber(int tableNumber) {

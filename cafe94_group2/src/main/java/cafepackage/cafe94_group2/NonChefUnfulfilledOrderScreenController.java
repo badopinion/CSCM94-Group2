@@ -18,9 +18,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- The Unfulfilled order screen Controller
- @author Oliver Jackson
- @version2
+ * The Unfulfilled order screen Controller
+ * @author Oliver Jackson
+ * @version 2
  */
 
 public class NonChefUnfulfilledOrderScreenController implements Initializable {
@@ -41,6 +41,12 @@ public class NonChefUnfulfilledOrderScreenController implements Initializable {
 
 
     private ObservableList<OrderString> orderStringList;
+
+    /**
+     * Initial the screen.
+     * @param url
+     * @param rb
+     */
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
