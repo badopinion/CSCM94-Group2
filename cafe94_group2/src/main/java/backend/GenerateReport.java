@@ -3,7 +3,12 @@ package backend;
 import java.util.*;
 
 import static java.util.stream.Collectors.groupingBy;
-
+/**
+ * A report generating class. This class hold the methods to return the "most popular items",
+ * "Most active customer", "Busiest periods in the restaurant", "Staff member with most hours worked".
+ * @author Samuel Raine/Adam
+ * @version 2
+ */
 
 public class GenerateReport {
 
@@ -12,14 +17,19 @@ public class GenerateReport {
 
     }
 
+
+    // Method to find the most popular dish - SR
+    // Generates New array list to hold all ordered menu items - SR
+    // Returns the frequency the item has been ordered and items name - SR
     public ArrayList<FoodFeq> getPopularDish(ArrayList<Order> orderHist){
-        //System.out.println(orderHist.size());
         ArrayList<MenuItem> allItems = new ArrayList();
         for (Order order:orderHist){
             for (MenuItem item: order.getOrderedMenuItems()){
                 allItems.add(item);
             }
        }
+
+        // Creates two new arraylists name and frequency of most ordered items -SR
         ArrayList<String> itemString = new ArrayList();
         ArrayList<FoodFeq> feq = new ArrayList();
         for (MenuItem item : allItems){
@@ -32,6 +42,8 @@ public class GenerateReport {
         return feq;
     }
 
+    // Method to convert the shift format into integers - SR
+    // Returns a float to represent shift time - SR
     private float convertShiftsIntoInt(ArrayList<Shift> shiftList){
         float shiftTime = 0;
         for (Shift shift : shiftList){
@@ -55,6 +67,9 @@ public class GenerateReport {
         return shiftTime;
 
     }
+
+    // Method to Find out which staff has the worked the most hours from shift time float - SR
+    // Returns the first and last name string of the staff with most hours worked -  SR
     public String whichStaffHasWorkedTheMostReport(ArrayList<Staff> staffList){
         Staff staffWhoHasWorkedTheMost = staffList.get(0);
         float highestShift = 0;
@@ -69,6 +84,8 @@ public class GenerateReport {
         return staffWhoHasWorkedTheMost.getFirstName() + " " + staffWhoHasWorkedTheMost.getLastName();
     }
 
+    // Method to find out which customer has placed the most orders to determine activity - SR
+    // Returns first and last name string of most active customer - SR
     public String mostActiveCustomer(ArrayList<Order> allOrders){
         if(allOrders.size() == 0){
             return "NONE";
@@ -86,6 +103,8 @@ public class GenerateReport {
 
     }
 
+    // Method to find out the period  in which  the most orders placed - SR/JB
+    // Returns a string holding busiest period and number of orders placed - SR/JB
     public String mostActivePeriodReport(){
         Restaurant res = new Load().loadRestaurant();
         ArrayList<Order> allOrders = res.getAllOrders();

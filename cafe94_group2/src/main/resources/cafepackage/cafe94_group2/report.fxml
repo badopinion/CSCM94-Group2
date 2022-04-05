@@ -13,7 +13,7 @@
 
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Button?>
-<VBox prefHeight="1000.0" prefWidth="2000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.ReportController" >
+<VBox prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.ReportController" >
   <children>
     <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
       <padding>
