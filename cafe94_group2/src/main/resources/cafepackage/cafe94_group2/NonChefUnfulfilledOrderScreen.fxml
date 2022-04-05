@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.UnfulfilledOrderScreenController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.UnfulfilledOrderScreenController">
     <children>
-        <BorderPane prefHeight="400.0" prefWidth="600.0">
+        <BorderPane prefHeight="440.0" prefWidth="720.0">
             <top>
                 <Label alignment="CENTER" prefHeight="37.0" prefWidth="480.0" text="Unfulfilled Orders" BorderPane.alignment="CENTER">
                     <font>
@@ -20,11 +20,11 @@
             <center>
                 <TableView fx:id="orderTbv" prefHeight="283.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                     <columns>
-                        <TableColumn fx:id="items" minWidth="5.99993896484375" prefWidth="126.0" text="Items" />
-                        <TableColumn fx:id="table" minWidth="5.99993896484375" prefWidth="122.00003051757812" text="Table" />
-                        <TableColumn fx:id="orderType" prefWidth="112.66662347316742" text="Order Type" />
-                        <TableColumn fx:id="customer" minWidth="5.99993896484375" prefWidth="117.33338165283203" text="Customer" />
-                        <TableColumn fx:id="orderTime" minWidth="5.99993896484375" prefWidth="121.99998474121094" text="Order Time" />
+                        <TableColumn fx:id="items" minWidth="5.99993896484375" prefWidth="127.33334863185883" text="Items" />
+                        <TableColumn fx:id="table" minWidth="5.99993896484375" prefWidth="84.0" text="Table" />
+                        <TableColumn fx:id="orderType" prefWidth="117.99998474121094" text="Order Type" />
+                        <TableColumn fx:id="customer" minWidth="5.99993896484375" prefWidth="117.99993896484375" text="Customer" />
+                        <TableColumn fx:id="orderTime" minWidth="5.99993896484375" prefWidth="270.0000305175781" text="Order Time" />
                     </columns>
                 </TableView>
             </center>
