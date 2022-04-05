@@ -20,25 +20,8 @@ import java.io.IOException;
  */
 public class CustomerScreenController {
     @FXML
-    private Button viewProfile, makeBooking, viewMenu;
+    private Button makeBooking, viewMenu;
 
-    /**
-     * To show the profile screen.
-     * Takes user to new screen.
-     * @param event Button click
-     * @throws IOException Throws if input fails
-     */
-    public void profileOnAction(ActionEvent event) throws IOException {
-        Stage profileScreen = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("ProfileScreen.fxml"));
-        profileScreen.setTitle("Profile Interface");
-        profileScreen.setScene(new Scene(root, 730, 530));
-        profileScreen.setX(600);
-        profileScreen.setY(250);
-        profileScreen.initModality(Modality.APPLICATION_MODAL);
-        profileScreen.show();
-
-    }
 
     /**
      * To show the booking screen.
