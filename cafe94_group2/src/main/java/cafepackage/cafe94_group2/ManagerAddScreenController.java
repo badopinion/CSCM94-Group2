@@ -159,7 +159,9 @@ public class ManagerAddScreenController implements Initializable {
         existingStaffListView.getItems().clear();
         for(User u : res.login.getStaffList()){
             if(u instanceof Staff){
-                existingStaffListView.getItems().add(u.getUsername());
+                if(!(u instanceof Manager)) {
+                    existingStaffListView.getItems().add(u.getUsername());
+                }
             }
         }
     }

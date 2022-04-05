@@ -47,6 +47,7 @@ public class Restaurant implements Serializable {
         this.login = new Login();
         this.menu = new Menu();
         this.menu.populateMenu();
+        //addOrders();
         this.tables = new Table[] {
                 new Table(1, 2), new Table(2, 2), new Table(3, 2),
                 new Table(4, 2), new Table(5, 4), new Table(6, 4),
@@ -210,6 +211,7 @@ public class Restaurant implements Serializable {
         return 0;
     }
 
+
     /**
      * Method sets an order in the order arraylist as complete
      * @param completedOrder the order to mark complete
@@ -275,6 +277,7 @@ public class Restaurant implements Serializable {
      * Saves the restaurant object (and all aggregated or referenced objects with it - full system state save)
      * Please note the load function is in Main. Need to be able to load without previous instance existing
      */
+
     public void saveRestaurant(){
         try {
             File restaurantFile = new File("restaurant.ser");

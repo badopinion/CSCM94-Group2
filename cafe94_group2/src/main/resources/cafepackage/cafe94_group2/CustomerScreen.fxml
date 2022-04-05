@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.CustomerScreenController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafepackage.cafe94_group2.CustomerScreenController">
    <children>
       <GridPane prefHeight="400.0" prefWidth="600.0">
         <columnConstraints>
@@ -26,17 +26,12 @@
                   <Font name="Arial Black" size="19.0" />
                </font>
             </Label>
-            <Button fx:id="viewProfile" contentDisplay="CENTER" mnemonicParsing="false" onAction="#profileOnAction" prefHeight="59.0" prefWidth="216.0" text="View profile" GridPane.rowIndex="1">
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </Button>
             <Button fx:id="makeBooking" contentDisplay="CENTER" mnemonicParsing="false" onAction="#bookingOnAction" prefHeight="59.0" prefWidth="216.0" text="Make bookings" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="19.0" />
                </font>
             </Button>
-            <Button fx:id="viewMenu" contentDisplay="CENTER" mnemonicParsing="false" onAction="#menuOnAction" prefHeight="59.0" prefWidth="216.0" text="View Menu" GridPane.rowIndex="2">
+            <Button fx:id="viewMenu" contentDisplay="CENTER" mnemonicParsing="false" onAction="#menuOnAction" prefHeight="59.0" prefWidth="216.0" text="View Menu" GridPane.rowIndex="1">
                <font>
                   <Font size="19.0" />
                </font>

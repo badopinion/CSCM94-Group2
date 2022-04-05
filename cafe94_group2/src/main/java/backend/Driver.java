@@ -7,6 +7,7 @@ package backend;
 
 public class Driver extends Staff{
 
+
     /**
      * Driver information
      * @param username the driver's username
@@ -17,5 +18,6 @@ public class Driver extends Staff{
      */
     public Driver(String username, String password, String firstName, String lastName, String homeAddress){
         super(username, password, firstName, lastName, homeAddress);
+
     }
 }

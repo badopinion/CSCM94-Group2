@@ -7,6 +7,7 @@ package backend;
  */
 
 public class Chef extends Staff{
+
     /**
      * Chef information
      * @param username The chef's id
@@ -17,5 +18,6 @@ public class Chef extends Staff{
      */
     public Chef(String username, String password, String firstName, String lastName, String homeAddress){
         super(username, password, firstName, lastName, homeAddress);
+
     }
 }

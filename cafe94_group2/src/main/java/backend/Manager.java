@@ -8,6 +8,7 @@ package backend;
 
 public class Manager extends Staff{
 
+
     /**
      * Manager information
      * @param username
@@ -18,5 +19,6 @@ public class Manager extends Staff{
      */
     public Manager(String username, String password, String firstName, String lastName, String homeAddress){
         super(username, password, firstName, lastName, homeAddress);
+
     }
 }

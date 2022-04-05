@@ -9,7 +9,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import javafx.stage.StageStyle;
+
 import java.io.IOException;
+
+
 
 /**
  * This is Manager screen Controller
@@ -17,9 +22,13 @@ import java.io.IOException;
  * @version 1
  */
 
+
 public class ManagerScreenController {
     @FXML
     private Button addStaffButton;
+
+    @FXML
+    private Button reportGeneratorButton3;
     @FXML
     private Button outstandingOrderButton;
 
@@ -29,6 +38,7 @@ public class ManagerScreenController {
      * @param actionEvent Button click
      * @throws IOException Throws if input fails
      */
+
     @FXML
     private void addStaffOnAction(ActionEvent actionEvent) throws IOException {
         Stage addStaffScreen = new Stage();
@@ -40,6 +50,7 @@ public class ManagerScreenController {
         addStaffScreen.initModality(Modality.APPLICATION_MODAL);
         addStaffScreen.show();
     }
+
 
     /**
      * To show the outstanding orders.
@@ -58,4 +69,17 @@ public class ManagerScreenController {
         outstandingOrderScreen.initModality(Modality.APPLICATION_MODAL);
         outstandingOrderScreen.show();
     }
+
+      @FXML
+    private void reportGeneratorAction3(ActionEvent actionEvent) throws IOException {
+          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("report.fxml"));
+          Parent root1 = (Parent) fxmlLoader.load();
+          Stage stage = new Stage();
+          stage.initModality(Modality.APPLICATION_MODAL);
+          stage.initStyle(StageStyle.UNDECORATED);
+          stage.setTitle("ABC");
+          stage.setScene(new Scene(root1));
+          stage.show();
+    }
+
 }

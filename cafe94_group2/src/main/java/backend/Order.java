@@ -39,10 +39,12 @@ public class Order implements Serializable{
         orderDateTime = LocalDateTime.now();
     }
 
+
     /**
      * Getters
      * @return returns the orderid, customer, the order notes, if the order is completed or cancelled and the items on the menu
      */
+
     public int getOrderID() {
         return orderID;
     }
@@ -67,10 +69,12 @@ public class Order implements Serializable{
         return orderedMenuItems;
     }
 
+
     /**
      * Setters
      * @param orderNotes the order notes
      */
+
     public void setOrderNotes(String orderNotes) {
         this.orderNotes = orderNotes;
     }

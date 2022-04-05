@@ -11,7 +11,10 @@ import java.util.ArrayList;
 
 public class Staff extends User{
 
+    private int staffId;
+
     private ArrayList<Shift> shifts = new ArrayList<Shift>();
+
 
     /**
      * Constructor
@@ -22,9 +25,18 @@ public class Staff extends User{
      * @param homeAddress the staff's home address
      */
 
+
+    //Constructor - OJ
+    //Added StaffTypeEnum to tell the difference between the staff (look at driver,chef,waiter they are same class not need to have 3) SR
     public Staff(String username, String password, String firstName, String lastName, String homeAddress){
         super(username, password, firstName, lastName, homeAddress);
 
+    }
+
+
+    //Getters - OJ
+    public int getStaffId() {
+        return staffId;
     }
 
 
@@ -35,4 +47,5 @@ public class Staff extends User{
     public ArrayList<Shift> getShifts() {
         return shifts;
     }
+
 }

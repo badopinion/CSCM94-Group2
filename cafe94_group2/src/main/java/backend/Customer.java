@@ -24,10 +24,12 @@ public class Customer extends User{
 		super(username, password, firstName, lastName, homeAddress);
     }
 
+
     /**
      * get Order History
      * @return return order history
      */
+
 
     public ArrayList<Order> getOrderHistory() {
         return orderHistory;

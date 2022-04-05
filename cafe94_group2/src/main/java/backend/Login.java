@@ -11,6 +11,7 @@ import java.io.Serializable;
  */
 
 public class Login implements Serializable {
+
 	private User loggedIn = null; // User that is currently logged in. JB
 	private ArrayList<User> userList = new ArrayList<User>(); // All user profiles. JB
 
@@ -216,6 +217,7 @@ public class Login implements Serializable {
 		return this.loggedIn;
 	}
 
+
 	/**
 	 * Given a username, removes a user from the list.
 	 * @param username Username of the person to delete.
@@ -228,7 +230,16 @@ public class Login implements Serializable {
 		}
 	}
 
-	// Gets the full staff list - JB
+	/**
+	 * Gets the full staff list
+	 * @return an array list of staff objects
+	 */
+	public ArrayList<Staff> getStaffList() {
+		ArrayList<Staff> out = new ArrayList<Staff>();
+		for(User u : userList){
+			if(u instanceof Staff){
+				out.add((Staff) u);
+
 	public ArrayList<User> getStaffList() {
 		ArrayList<User> out = new ArrayList<User>();
 		for (User u : userList){
