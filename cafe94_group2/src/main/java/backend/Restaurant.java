@@ -21,6 +21,7 @@ public class Restaurant implements Serializable {
     private ArrayList<String> temporaryOrderStringList = new ArrayList<>();
     private ArrayList<MenuItem> temporaryOrderList = new ArrayList<MenuItem>();
 
+
     // Restaurant aggregates tables. JB
     private Table[] tables;
 
@@ -172,6 +173,36 @@ public class Restaurant implements Serializable {
         }
         return 0;
     }
+
+    /**
+     * Method sets an order in the order arraylist as complete
+     * @param completedOrder the order to mark complete
+     */
+    public void setOrderComplete(Order completedOrder){
+        for (Order order : orders) {
+            if (order.equals(completedOrder)){
+                order.setOrderCompleted(true);
+            }
+        }
+    }
+
+
+    /**
+     * method to take a string representing date time and return an order with a corresponding time
+     * @param dateTimeString the time that the order was placed
+     * @return
+     */
+    public Order returnOrderByOrderTimeString(String dateTimeString){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd : HH mm ss");
+        LocalDateTime orderDateTime = LocalDateTime.parse(dateTimeString, formatter);
+        for (Order order : orders){
+            if (order.getOrderDateTime().isEqual(orderDateTime)){
+                return order;
+            }
+        }
+        return null;
+    }
+
 
     /**
      * turns an arraylist of order objects into orderstring objects for displaying in tableview
